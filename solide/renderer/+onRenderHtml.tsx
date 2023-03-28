@@ -1,15 +1,40 @@
 export default onRenderHtml;
-import { renderToString } from "solid-js/web";
-import { escapeInject, dangerouslySkipEscape } from "vite-plugin-ssr/server";
+import {
+  generateHydrationScript,
+  renderToStream,
+  renderToString,
+} from "solid-js/web";
+import {
+  escapeInject,
+  dangerouslySkipEscape,
+  stampPipe,
+} from "vite-plugin-ssr/server";
+import { getTitle } from "./getTitle";
 import { getPageElement } from "./getPageElement";
 import type { PageContextServer } from "./types";
+import { PageContextProvider } from "./PageContextProvider";
 
 async function onRenderHtml(pageContext: PageContextServer) {
   const page = getPageElement(pageContext);
-  const p = renderToString(() => page);
 
-  // const { pipe } = renderToStream(() => page);
-  // stampPipe(pipe, "node-stream");
+  const title = getTitle(pageContext);
+  const titleTag = !title ? "" : escapeInject`<title>${title}</title>`;
+
+  const { description } = pageContext.exports;
+  const descriptionTag = !description
+    ? ""
+    : escapeInject`<meta name="description" content="${description}" />`;
+
+  const Head = pageContext.exports.Head || (() => <></>);
+  const head = (
+    <PageContextProvider pageContext={pageContext}>
+      <Head />
+    </PageContextProvider>
+  );
+  const headHtml = renderToString(() => head);
+
+  const { pipe } = renderToStream(() => page);
+  stampPipe(pipe, "node-stream");
 
   const lang = pageContext.exports.lang || "en";
 
@@ -17,9 +42,13 @@ async function onRenderHtml(pageContext: PageContextServer) {
     <html lang='${lang}'>
       <head>
         <meta charset="UTF-8" />
+        ${titleTag}
+        ${descriptionTag}
+        ${dangerouslySkipEscape(headHtml)}
+        ${dangerouslySkipEscape(generateHydrationScript())}
       </head>
       <body>
-        <div id="page-view">${dangerouslySkipEscape(p)}</div>
+        <div id="page-view">${pipe}</div>
       </body>
     </html>`;
 

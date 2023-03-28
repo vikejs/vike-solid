@@ -10,7 +10,7 @@ function LayoutDefault(props: { children: JSX.Element }) {
     <div
       style={{
         display: "flex",
-        maxWidth: 900,
+        "max-width": "900px",
         margin: "auto",
       }}
     >
@@ -29,12 +29,12 @@ function Sidebar(props: { children: JSX.Element }) {
     <div
       id="sidebar"
       style={{
-        padding: 20,
-        flexShrink: 0,
+        padding: "20px",
+        "flex-shrink": 0,
         display: "flex",
-        flexDirection: "column",
-        lineHeight: "1.8em",
-        borderRight: "2px solid #eee",
+        "flex-direction": "column",
+        "line-height": "1.8em",
+        "border-right": "2px solid #eee",
       }}
     >
       {props.children}
@@ -48,9 +48,9 @@ function Content(props: { children: JSX.Element }) {
       <div
         id="page-content"
         style={{
-          padding: 20,
-          paddingBottom: 50,
-          minHeight: "100vh",
+          padding: "20px",
+          "padding-bottom": "50px",
+          "min-height": "100vh",
         }}
       >
         {props.children}
@@ -63,8 +63,8 @@ function Logo() {
   return (
     <div
       style={{
-        marginTop: 20,
-        marginBottom: 10,
+        "margin-top": "20px",
+        "margin-bottom": "10px",
       }}
     >
       <a href="/">

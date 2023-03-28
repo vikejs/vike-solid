@@ -26,15 +26,15 @@
   },
   "dependencies": {
     "vite-plugin-solid": "^2.6.1",
-    "vite": "~4.1.0",
-    "vite-plugin-ssr": "^0.4.104"
+    "vite": "^4.2.1",
+    "vite-plugin-ssr": "^0.4.106"
   },
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup"
   },
   "peerDependencies": {
-    "solid-js": "1.6.x"
+    "solid-js": "^1.6.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.10",

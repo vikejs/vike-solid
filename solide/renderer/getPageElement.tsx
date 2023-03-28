@@ -2,7 +2,7 @@ export { getPageElement };
 
 import type { PageContext } from "./types";
 import { PageContextProvider } from "./PageContextProvider";
-import { JSX } from "solid-js";
+import type { JSX } from "solid-js";
 
 function getPageElement(pageContext: PageContext): JSX.Element {
   const Layout = pageContext.exports.Layout ?? PassThrough;
@@ -20,6 +20,6 @@ function getPageElement(pageContext: PageContext): JSX.Element {
   return page;
 }
 
-function PassThrough({ children }: any) {
-  return <>{children}</>;
+function PassThrough(props: { children: JSX.Element }) {
+  return <>{props.children}</>;
 }
