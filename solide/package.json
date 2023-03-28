@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "vite-plugin-solid": "^2.6.1",
-    "vite": "^4.2.1",
+    "vite": "~4.1.0",
     "vite-plugin-ssr": "^0.4.104"
   },
   "scripts": {
