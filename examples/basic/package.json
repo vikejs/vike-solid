@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "dev": "solide dev",
+    "build": "solide build",
+    "preview": "solide preview"
+  },
+  "dependencies": {
+    "cross-fetch": "^3.1.5",
+    "node-fetch": "^3.3.1",
+    "solid-js": "^1.6.16",
+    "solide": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  },
+  "type": "module"
+}

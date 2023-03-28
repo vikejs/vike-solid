@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "dev": "cd solide/ && pnpm run dev",
+    "build": "cd solide/ && pnpm run build",
+    "release": "cd solide/ && pnpm run release",
+    "========= Clean": "",
+    "clean": "git clean -Xdf",
+    "reset": "pnpm run clean && pnpm install && pnpm run build",
+    "========= Only allow pnpm; forbid yarn & npm": "",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "pnpm": {
+    "overrides": {
+      "solide": "link:./solide/"
+    }
+  },
+  "packageManager": "pnpm@7.30.5"
+}
