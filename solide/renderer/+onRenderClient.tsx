@@ -11,13 +11,11 @@ async function onRenderClient(pageContext: PageContextClient) {
   // Dispose to prevent duplicate pages when navigating.
   if (dispose) dispose();
 
-  const page = getPageElement(pageContext)!;
-
   const container = document.getElementById("page-view")!;
   if (pageContext.isHydration) {
-    hydrate(() => page, container);
+    dispose = hydrate(() => getPageElement(pageContext)!, container);
   } else {
-    render(() => page, container);
+    dispose = render(() => getPageElement(pageContext)!, container);
   }
 
   const title = getTitle(pageContext);
