@@ -29,7 +29,7 @@ const config: UserConfig = {
   ],
   optimizeDeps: { include: ["solid-js"] },
   ssr: {
-    external: ["solide"],
+    external: ["solide", "vite-plugin-ssr/server"],
   },
 };
 
