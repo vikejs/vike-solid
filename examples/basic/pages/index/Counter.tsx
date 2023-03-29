@@ -1,4 +1,4 @@
-import React, { createSignal } from "solid-js";
+import { createSignal } from "solid-js";
 
 export { Counter };
 

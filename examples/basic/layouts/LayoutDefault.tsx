@@ -1,11 +1,9 @@
-export default LayoutDefault;
-
 import "./style.css";
 import logoUrl from "../assets/logo.svg";
 import { Link } from "../components/Link";
 import type { JSX } from "solid-js";
 
-function LayoutDefault(props: { children: JSX.Element }) {
+export default function LayoutDefault(props: { children: JSX.Element }) {
   return (
     <div
       style={{

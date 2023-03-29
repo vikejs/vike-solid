@@ -1,8 +1,6 @@
-export { Link };
-
 import { usePageContext } from "solide/usePageContext";
 
-function Link(props: { href: string; children: string }) {
+export function Link(props: { href: string; children: string }) {
   const pageContext = usePageContext();
   const { urlPathname } = pageContext;
   const isActive =

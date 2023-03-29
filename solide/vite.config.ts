@@ -8,7 +8,14 @@ const config: UserConfig = {
   root,
   plugins: [
     solidPlugin({
+      // dev: false,
       ssr: true,
+      // hot: false,
+      typescript: {
+        onlyRemoveTypeImports: true,
+        // isTSX: true,
+        // allExtensions: true,
+      },
     }),
     ssr({
       extensions: [

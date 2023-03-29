@@ -1,8 +1,6 @@
-export default Page;
-
 import type { MovieDetails } from "../types";
 
-function Page(props: { movie: MovieDetails }) {
+export default function Page(props: { movie: MovieDetails }) {
   return (
     <>
       <h1>{props.movie.title}</h1>

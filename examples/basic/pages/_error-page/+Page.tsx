@@ -1,6 +1,4 @@
-export default Page;
-
-function Page(props: { is404: boolean; errorInfo?: string }) {
+export default function Page(props: { is404: boolean; errorInfo?: string }) {
   if (props.is404) {
     return (
       <>

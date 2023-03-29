@@ -1,2 +1,4 @@
 // Default Layout (can be overriden by pages)
-export { default } from "../layouts/LayoutDefault";
+import { default as Layout } from "../layouts/LayoutDefault";
+
+export default Layout;

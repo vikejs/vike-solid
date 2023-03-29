@@ -1,9 +1,7 @@
-export default Page;
-
 import { For } from "solid-js";
 import type { Movie } from "../types";
 
-function Page(props: { movies: Movie[] }) {
+export default function Page(props: { movies: Movie[] }) {
   return (
     <>
       <h1>Star Wars Movies</h1>

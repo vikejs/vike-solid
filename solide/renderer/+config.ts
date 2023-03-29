@@ -12,7 +12,7 @@ export type UserConfig = Partial<
 >;
 
 export type SolideConfig = {
-  /** React element renderer and appended into &lt;head>&lt;/head> */
+  /** Solid element renderer and appended into &lt;head>&lt;/head> */
   Head: Component;
   Layout: Component;
   title: string;

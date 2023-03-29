@@ -34,6 +34,7 @@ async function onRenderHtml(pageContext: PageContextServer) {
   const headHtml = renderToString(() => head);
 
   const { pipe } = renderToStream(() => page);
+  // const PPP = renderToString(() => page);
   stampPipe(pipe, "node-stream");
 
   const lang = pageContext.exports.lang || "en";

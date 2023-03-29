@@ -1,8 +1,6 @@
-export default Page;
-
 import { Counter } from "./Counter";
 
-function Page() {
+export default function Page() {
   return (
     <>
       <h1>My Solide app</h1>
