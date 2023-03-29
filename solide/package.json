@@ -33,6 +33,7 @@
     "@types/node": "^18.15.10",
     "babel-preset-solid": "^1.6.16",
     "rollup": "^3.20.2",
+    "rollup-plugin-dts": "^5.3.0",
     "solid-js": "^1.6.0",
     "tslib": "^2.5.0",
     "typescript": "^5.0.2"
@@ -40,13 +41,13 @@
   "typesVersions": {
     "*": {
       ".": [
-        "dist/index/index.d.ts"
+        "dist/index.d.ts"
       ],
       "types": [
         "types.d.ts"
       ],
       "usePageContext": [
-        "./dist/usePageContext/index.d.ts"
+        "./dist/components/usePageContext.d.ts"
       ]
     }
   },

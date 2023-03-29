@@ -1,4 +1,5 @@
 import withSolid from "./with-solid.js";
+import dts from "rollup-plugin-dts";
 
 export default [
   withSolid({
@@ -24,4 +25,9 @@ export default [
     ssr: false,
     external: ["vite-plugin-ssr/server", "vite-plugin-ssr/plugin"],
   }),
+  {
+    input: ["./index.ts", "./components/usePageContext.tsx"],
+    output: [{ dir: "dist", format: "es" }],
+    plugins: [dts()],
+  },
 ];

@@ -3,14 +3,14 @@ export type { PageContextClient };
 export type { PageContext };
 export type { PageProps };
 export type { Page };
-export type { Component };
 
 import type {
   PageContextBuiltIn,
   PageContextBuiltInClientWithClientRouting as PageContextBuiltInClient,
 } from "vite-plugin-ssr";
 import type { SolideConfig } from "./+config";
-import type { Component, JSX } from "solid-js";
+import type { JSX } from "solid-js";
+export type { Component } from "solid-js";
 
 type Page = (pageProps: PageProps) => JSX.Element;
 type PageProps = Record<string, unknown>;
