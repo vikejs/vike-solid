@@ -15,7 +15,7 @@
   "dependencies": {
     "vite": "^4.2.1",
     "vite-plugin-solid": "^2.6.1",
-    "vite-plugin-ssr": "^0.4.106"
+    "vite-plugin-ssr": "^0.4.108"
   },
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",

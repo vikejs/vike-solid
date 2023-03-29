@@ -18,12 +18,12 @@ async function onRenderHtml(pageContext: PageContextServer) {
   const title = getTitle(pageContext);
   const titleTag = !title ? "" : escapeInject`<title>${title}</title>`;
 
-  const { description } = pageContext.exports;
+  const { description } = pageContext.config;
   const descriptionTag = !description
     ? ""
     : escapeInject`<meta name="description" content="${description}" />`;
 
-  const Head = pageContext.exports.Head || (() => <></>);
+  const Head = pageContext.config.Head || (() => <></>);
   const headHtml = renderToString(() => (
     <PageContextProvider pageContext={pageContext}>
       <Head />
@@ -34,7 +34,7 @@ async function onRenderHtml(pageContext: PageContextServer) {
   // const asString = renderToString(() => page);
   stampPipe(pipe, "node-stream");
 
-  const lang = pageContext.exports.lang || "en";
+  const lang = pageContext.config.lang || "en";
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang='${lang}'>

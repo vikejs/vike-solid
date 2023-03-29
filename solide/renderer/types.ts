@@ -19,7 +19,7 @@ type WrapperComponent = ({ children }: { children: any }) => JSX.Element;
 export type PageContextCommon = {
   Page: Page;
   pageProps?: PageProps;
-  exports: {
+  config: {
     Layout?: WrapperComponent;
     Wrapper?: WrapperComponent;
   };
@@ -27,7 +27,7 @@ export type PageContextCommon = {
 
 type PageContextServer = PageContextBuiltIn<Page> &
   PageContextCommon & {
-    exports: Partial<SolideConfig>;
+    config: Partial<SolideConfig>;
   };
 type PageContextClient = PageContextBuiltInClient<Page> & PageContextCommon;
 type PageContext = PageContextClient | PageContextServer;

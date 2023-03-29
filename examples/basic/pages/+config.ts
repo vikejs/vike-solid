@@ -1,7 +1,10 @@
 import type { Config } from "solide";
+import Layout from '../layouts/LayoutDefault'
 
 // Default config (can be overriden by pages)
 export default {
+  // @ts-expect-error
+  Layout,
   // <title>
   title: "My Solide App",
   // <meta name="description">

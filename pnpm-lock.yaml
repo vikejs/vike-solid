@@ -39,11 +39,11 @@ importers:
       typescript: ^5.0.2
       vite: ^4.2.1
       vite-plugin-solid: ^2.6.1
-      vite-plugin-ssr: ^0.4.106
+      vite-plugin-ssr: ^0.4.108
     dependencies:
       vite: 4.2.1_@types+node@18.15.10
       vite-plugin-solid: 2.6.1_solid-js@1.6.16+vite@4.2.1
-      vite-plugin-ssr: 0.4.106_vite@4.2.1
+      vite-plugin-ssr: 0.4.108_vite@4.2.1
     devDependencies:
       '@babel/core': 7.21.3
       '@babel/preset-env': 7.20.2_@babel+core@7.21.3
@@ -1591,6 +1591,12 @@ packages:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
     dev: true
 
+  /acorn/8.8.2:
+    resolution: {integrity: sha512-xjIYgE8HBrkpd/sJqOGNspf8uHG+NOHGOw6a/Urj8taM2EXfdNAH2oFcPeIFfsv3+kz/mJrS5VuMqbNLjCa2vw==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+    dev: false
+
   /ansi-styles/3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
     engines: {node: '>=4'}
@@ -2238,8 +2244,8 @@ packages:
       - supports-color
     dev: false
 
-  /vite-plugin-ssr/0.4.106_vite@4.2.1:
-    resolution: {integrity: sha512-HAXRK4KKTGtuE4l4KML3ZdJbev779Z3MYDTqDCrXOkSXQOciA44dOYXPyOKQqRvf+xRHvPnmwaDZVncVHixtww==}
+  /vite-plugin-ssr/0.4.108_vite@4.2.1:
+    resolution: {integrity: sha512-WaKbwafwtBSy5EBG4u02qPNzr0VcSAPzm4wvBCInLFlBDUZ25IL4ARev+OhkM3thqdPrECtb+FBB7CMbJDT5mA==}
     engines: {node: '>=12.19.0'}
     hasBin: true
     peerDependencies:
@@ -2252,6 +2258,7 @@ packages:
       '@brillout/import': 0.2.2
       '@brillout/json-serializer': 0.5.3
       '@brillout/vite-plugin-import-build': 0.2.13
+      acorn: 8.8.2
       cac: 6.7.14
       es-module-lexer: 0.10.5
       esbuild: 0.17.14
