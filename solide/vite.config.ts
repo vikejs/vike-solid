@@ -13,8 +13,9 @@ const config: UserConfig = {
       // hot: false,
       typescript: {
         onlyRemoveTypeImports: true,
-        // isTSX: true,
-        // allExtensions: true,
+      },
+      solid: {
+        hydratable: true,
       },
     }),
     ssr({

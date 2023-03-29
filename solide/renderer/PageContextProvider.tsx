@@ -1,8 +1,8 @@
 export { PageContextProvider };
 export { usePageContext };
 
-import { useContext, createContext, JSX } from "solid-js";
-import { PageContext } from "./types";
+import { useContext, createContext, type JSX } from "solid-js";
+import type { PageContext } from "./types";
 import { getGlobalObject } from "./utils/getGlobalObject";
 
 const { Context } = getGlobalObject("PageContextProvider.ts", {
