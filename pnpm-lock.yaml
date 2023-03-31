@@ -39,11 +39,11 @@ importers:
       typescript: ^5.0.2
       vite: ^4.2.1
       vite-plugin-solid: ^2.6.1
-      vite-plugin-ssr: ^0.4.108
+      vite-plugin-ssr: ^0.4.110
     dependencies:
       vite: 4.2.1_@types+node@18.15.10
       vite-plugin-solid: 2.6.1_solid-js@1.6.16+vite@4.2.1
-      vite-plugin-ssr: 0.4.108_vite@4.2.1
+      vite-plugin-ssr: 0.4.110_vite@4.2.1
     devDependencies:
       '@babel/core': 7.21.3
       '@babel/preset-env': 7.20.2_@babel+core@7.21.3
@@ -2244,8 +2244,8 @@ packages:
       - supports-color
     dev: false
 
-  /vite-plugin-ssr/0.4.108_vite@4.2.1:
-    resolution: {integrity: sha512-WaKbwafwtBSy5EBG4u02qPNzr0VcSAPzm4wvBCInLFlBDUZ25IL4ARev+OhkM3thqdPrECtb+FBB7CMbJDT5mA==}
+  /vite-plugin-ssr/0.4.110_vite@4.2.1:
+    resolution: {integrity: sha512-0/UH/rdIamaMOrVxyoVCy7yNvTycMWck8PKWgFnpaa2WhNOjLN9LlsTIPbCMeDyGd6J7DwlRNL8Fk6hGBsu6JQ==}
     engines: {node: '>=12.19.0'}
     hasBin: true
     peerDependencies:
