@@ -4,18 +4,31 @@ import { hydrate, render } from "solid-js/web";
 import { getTitle } from "./getTitle";
 import type { PageContextClient } from "./types";
 import { getPageElement } from "./getPageElement";
+import { createStore, reconcile } from "solid-js/store";
+
+const [pageContextStore, setPageContext] = createStore<PageContextClient>(
+  {} as PageContextClient
+);
 
 let dispose: () => void;
+let rendered = false;
 
 async function onRenderClient(pageContext: PageContextClient) {
-  // Dispose to prevent duplicate pages when navigating.
-  if (dispose) dispose();
+  if (!rendered) {
+    // Dispose to prevent duplicate pages when navigating.
+    if (dispose) dispose();
 
-  const container = document.getElementById("page-view")!;
-  if (pageContext.isHydration) {
-    dispose = hydrate(() => getPageElement(pageContext)!, container);
+    setPageContext(pageContext);
+
+    const container = document.getElementById("page-view")!;
+    if (pageContext.isHydration) {
+      dispose = hydrate(() => getPageElement(pageContextStore)!, container);
+    } else {
+      dispose = render(() => getPageElement(pageContextStore)!, container);
+    }
+    rendered = true;
   } else {
-    dispose = render(() => getPageElement(pageContext)!, container);
+    setPageContext(reconcile(pageContext));
   }
 
   const title = getTitle(pageContext);

@@ -1,18 +1,17 @@
 export { getPageElement };
 
 import type { PageContext } from "./types";
-import { PageContextProvider } from "./PageContextProvider";
+import { PageContextProvider, usePageContext } from "./PageContextProvider";
 import type { JSX } from "solid-js";
+import { Dynamic } from "solid-js/web";
+import type { Store } from "solid-js/store";
 
-function getPageElement(pageContext: PageContext): JSX.Element {
-  const Layout = pageContext.config.Layout ?? PassThrough;
-  const Wrapper = pageContext.config.Wrapper ?? PassThrough;
-  const { Page, pageProps } = pageContext;
+function getPageElement(pageContext: Store<PageContext>): JSX.Element {
   const page = (
     <PageContextProvider pageContext={pageContext}>
       <Wrapper>
         <Layout>
-          <Page {...pageProps} />
+          <Page />
         </Layout>
       </Wrapper>
     </PageContextProvider>
@@ -20,6 +19,36 @@ function getPageElement(pageContext: PageContext): JSX.Element {
   return page;
 }
 
-function PassThrough(props: { children: JSX.Element }) {
+function Wrapper(props: { children: JSX.Element }) {
+  const pageContext = usePageContext();
+  return (
+    <Dynamic component={pageContext.config.Wrapper ?? Passthrough}>
+      {props.children}
+    </Dynamic>
+  );
+}
+
+function Layout(props: { children: JSX.Element }) {
+  const pageContext = usePageContext();
+  return (
+    <Dynamic component={pageContext.config.Layout ?? Passthrough}>
+      {props.children}
+    </Dynamic>
+  );
+}
+
+function Page() {
+  const pageContext = usePageContext();
+  return (
+    <>
+      <Dynamic
+        component={pageContext.Page}
+        {...(pageContext.pageProps ?? {})}
+      />
+    </>
+  );
+}
+
+function Passthrough(props: { children: JSX.Element }) {
   return <>{props.children}</>;
 }

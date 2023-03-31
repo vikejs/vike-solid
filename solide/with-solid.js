@@ -67,6 +67,7 @@ function processOptions(options) {
     external: [
       "solid-js",
       "solid-js/web",
+      "solid-js/store",
       "path",
       "express",
       "stream",

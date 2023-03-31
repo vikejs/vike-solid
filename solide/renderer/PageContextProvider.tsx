@@ -2,18 +2,19 @@ export { PageContextProvider };
 export { usePageContext };
 
 import { useContext, createContext, type JSX } from "solid-js";
+import { type Store } from "solid-js/store";
 import type { PageContext } from "./types";
 import { getGlobalObject } from "./utils/getGlobalObject";
 
 const { Context } = getGlobalObject("PageContextProvider.ts", {
-  Context: createContext<PageContext>({} as PageContext),
+  Context: createContext<Store<PageContext>>(),
 });
 
 function PageContextProvider(props: {
-  pageContext: PageContext;
+  pageContext: Store<PageContext>;
   children: JSX.Element;
 }) {
-  if (!props.pageContext) throw new Error("Argument pageContext missing");
+  if (!props.pageContext) throw new Error("Argument pageContextStore missing");
   return (
     <Context.Provider value={props.pageContext}>
       {props.children}
