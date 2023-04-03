@@ -14,7 +14,7 @@ function PageContextProvider(props: {
   pageContext: Store<PageContext>;
   children: JSX.Element;
 }) {
-  if (!props.pageContext) throw new Error("Argument pageContextStore missing");
+  if (!props.pageContext) throw new Error("Argument pageContext missing");
   return (
     <Context.Provider value={props.pageContext}>
       {props.children}

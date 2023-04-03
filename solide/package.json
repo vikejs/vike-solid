@@ -22,21 +22,21 @@
     "build": "rollup -c rollup.config.js"
   },
   "peerDependencies": {
-    "solid-js": "^1.6.0"
+    "solid-js": "^1.7.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-typescript": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-typescript": "^7.21.4",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@types/node": "^18.15.10",
-    "babel-preset-solid": "^1.6.16",
+    "@types/node": "^18.15.11",
+    "babel-preset-solid": "^1.7.1",
     "rollup": "^3.20.2",
     "rollup-plugin-dts": "^5.3.0",
-    "solid-js": "^1.6.0",
+    "solid-js": "^1.7.1",
     "tslib": "^2.5.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.3"
   },
   "typesVersions": {
     "*": {
