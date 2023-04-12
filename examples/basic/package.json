@@ -1,4 +1,5 @@
 {
+  "private": true,
   "scripts": {
     "dev": "solide dev",
     "build": "solide build",

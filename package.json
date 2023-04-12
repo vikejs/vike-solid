@@ -9,10 +9,5 @@
     "========= Only allow pnpm; forbid yarn & npm": "",
     "preinstall": "npx only-allow pnpm"
   },
-  "pnpm": {
-    "overrides": {
-      "solide": "link:./solide/"
-    }
-  },
-  "packageManager": "pnpm@7.30.5"
+  "packageManager": "pnpm@7.32.0"
 }
