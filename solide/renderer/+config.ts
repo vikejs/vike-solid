@@ -1,13 +1,10 @@
-import type { Config } from "vite-plugin-ssr";
+import type { Config } from "vite-plugin-ssr/types";
 import type { Component } from "./types.js";
 
 export type UserConfig = Partial<
   SolideConfig & { Page: Component } & Pick<
       Config,
-      | "route"
-      | "prerender"
-      | "isErrorPage"
-      | "iKnowThePerformanceRisksOfAsyncRouteFunctions"
+      "route" | "prerender" | "iKnowThePerformanceRisksOfAsyncRouteFunctions"
     >
 >;
 

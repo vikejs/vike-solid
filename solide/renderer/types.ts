@@ -7,7 +7,7 @@ export type { Page };
 import type {
   PageContextBuiltIn,
   PageContextBuiltInClientWithClientRouting as PageContextBuiltInClient,
-} from "vite-plugin-ssr";
+} from "vite-plugin-ssr/types";
 import type { SolideConfig } from "./+config";
 import type { JSX } from "solid-js";
 export type { Component } from "solid-js";
