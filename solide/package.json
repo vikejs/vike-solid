@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "vite": "^4.2.1",
-    "vite-plugin-solid": "^2.6.1",
-    "vite-plugin-ssr": "^0.4.110"
+    "vite-plugin-solid": "^2.7.0",
+    "vite-plugin-ssr": "^0.4.112"
   },
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
@@ -29,14 +29,14 @@
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-typescript": "^7.21.4",
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.2",
     "@types/node": "^18.15.11",
-    "babel-preset-solid": "^1.7.1",
+    "babel-preset-solid": "^1.7.3",
     "rollup": "^3.20.2",
     "rollup-plugin-dts": "^5.3.0",
-    "solid-js": "^1.7.1",
+    "solid-js": "^1.7.3",
     "tslib": "^2.5.0",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.4"
   },
   "typesVersions": {
     "*": {
