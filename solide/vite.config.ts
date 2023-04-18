@@ -1,44 +1,11 @@
-import solidPlugin from "vite-plugin-solid";
-import ssr from "vite-plugin-ssr/plugin";
+import vpvs from "./vite-plugin-vike-solid";
 import type { UserConfig } from "vite";
 
 const root = process.cwd();
 
 const config: UserConfig = {
   root,
-  plugins: [
-    solidPlugin({
-      // dev: false,
-      ssr: true,
-      // hot: false,
-      typescript: {
-        onlyRemoveTypeImports: true,
-      },
-      solid: {
-        hydratable: true,
-      },
-    }),
-    ssr({
-      extensions: [
-        {
-          npmPackageName: "solide",
-          pageConfigsDistFiles: [
-            "solide/renderer/+onRenderHtml.js",
-            "solide/renderer/+onRenderClient.js",
-            "solide/renderer/+config.js",
-            "solide/renderer/+passToClient.js",
-            "solide/renderer/+onPageTransitionStart.js",
-            "solide/renderer/+onPageTransitionEnd.js",
-          ],
-        },
-      ],
-      disableAutoFullBuild: true,
-    }),
-  ],
-  optimizeDeps: { include: ["solid-js"] },
-  ssr: {
-    external: ["solide", "vite-plugin-ssr/server"],
-  },
+  plugins: [vpvs()],
 };
 
 export default config;

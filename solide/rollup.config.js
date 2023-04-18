@@ -1,5 +1,6 @@
 import withSolid from "./with-solid.js";
 import dts from "rollup-plugin-dts";
+import { babel } from "@rollup/plugin-babel";
 
 export default [
   withSolid({
@@ -26,8 +27,24 @@ export default [
     external: ["vite-plugin-ssr/server", "vite-plugin-ssr/plugin"],
   }),
   {
-    input: ["./index.ts", "./components/usePageContext.tsx"],
+    input: [
+      "./index.ts",
+      "./components/usePageContext.tsx",
+      "./vite-plugin-vike-solid.ts",
+    ],
     output: [{ dir: "dist", format: "es" }],
     plugins: [dts()],
+  },
+  {
+    input: "./vite-plugin-vike-solid.ts",
+    plugins: [
+      babel({
+        extensions: [".js", ".ts", ".jsx", ".tsx"],
+        babelHelpers: "bundled",
+        presets: ["@babel/preset-typescript"],
+      }),
+    ],
+    output: [{ file: "dist/vite-plugin-vike-solid.js", format: "es" }],
+    external: ["vite"],
   },
 ];
