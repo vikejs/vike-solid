@@ -8,7 +8,7 @@
   "dependencies": {
     "cross-fetch": "^3.1.5",
     "node-fetch": "^3.3.1",
-    "solid-js": "^1.7.3",
+    "solid-js": "^1.7.5",
     "solide": "workspace:*"
   },
   "devDependencies": {
