@@ -2,13 +2,13 @@ import type { Config } from "vite-plugin-ssr/types";
 import type { Component } from "./types.js";
 
 export type UserConfig = Partial<
-  SolideConfig & { Page: Component } & Pick<
+  VikeSolidConfig & { Page: Component } & Pick<
       Config,
       "route" | "prerender" | "iKnowThePerformanceRisksOfAsyncRouteFunctions"
     >
 >;
 
-export type SolideConfig = {
+export type VikeSolidConfig = {
   /** Solid element renderer and appended into &lt;head>&lt;/head> */
   Head: Component;
   Layout: Component;

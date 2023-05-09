@@ -1,5 +1,5 @@
 {
-  "name": "solide",
+  "name": "vike-solid",
   "version": "0.0.4",
   "type": "module",
   "exports": {
@@ -60,6 +60,6 @@
     "client.d.ts"
   ],
   "bin": "./cli/entry.js",
-  "repository": "github:magne4000/solide",
+  "repository": "github:magne4000/vike-solid",
   "license": "MIT"
 }

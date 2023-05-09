@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "dev": "cd solide/ && pnpm run dev",
-    "build": "cd solide/ && pnpm run build",
-    "release": "cd solide/ && pnpm run release",
+    "dev": "cd vike-solid/ && pnpm run dev",
+    "build": "cd vike-solid/ && pnpm run build",
+    "release": "cd vike-solid/ && pnpm run release",
     "========= Clean": "",
     "clean": "git clean -Xdf",
     "reset": "pnpm run clean && pnpm install && pnpm run build",

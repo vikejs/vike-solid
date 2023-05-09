@@ -12,7 +12,7 @@ function overrideConfig(): Plugin {
     config: () => ({
       optimizeDeps: { include: ["solid-js"] },
       ssr: {
-        external: ["solide", "vite-plugin-ssr/server"],
+        external: ["vike-solid", "vite-plugin-ssr/server"],
       },
     }),
   };
@@ -37,12 +37,12 @@ export default function (options: Options = {}): Plugin[] {
     ssr({
       extensions: [
         {
-          npmPackageName: "solide",
+          npmPackageName: "vike-solid",
           pageConfigsDistFiles: [
-            "solide/renderer/+onRenderHtml.js",
-            "solide/renderer/+onRenderClient.js",
-            "solide/renderer/+config.js",
-            "solide/renderer/+passToClient.js",
+            "vike-solid/renderer/+onRenderHtml.js",
+            "vike-solid/renderer/+onRenderClient.js",
+            "vike-solid/renderer/+config.js",
+            "vike-solid/renderer/+passToClient.js",
           ],
         },
       ],
