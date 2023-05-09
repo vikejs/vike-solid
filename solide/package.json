@@ -9,9 +9,7 @@
     "./renderer/+onRenderHtml.js": "./dist/_onRenderHtml.js",
     "./renderer/+onRenderClient.js": "./dist/_onRenderClient.js",
     "./renderer/+config.js": "./dist/_config.js",
-    "./renderer/+passToClient.js": "./dist/_passToClient.js",
-    "./renderer/+onPageTransitionStart.js": "./dist/_onPageTransitionStart.js",
-    "./renderer/+onPageTransitionEnd.js": "./dist/_onPageTransitionEnd.js"
+    "./renderer/+passToClient.js": "./dist/_passToClient.js"
   },
   "dependencies": {
     "vite": "^4.3.5",
@@ -49,8 +47,8 @@
       "vite": [
         "dist/vite-plugin-vike-solid.d.ts"
       ],
-      "types": [
-        "types.d.ts"
+      "client": [
+        "client.d.ts"
       ],
       "usePageContext": [
         "./dist/components/usePageContext.d.ts"
@@ -59,7 +57,7 @@
   },
   "files": [
     "dist/",
-    "types.d.ts"
+    "client.d.ts"
   ],
   "bin": "./cli/entry.js",
   "repository": "github:magne4000/solide",

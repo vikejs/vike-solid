@@ -43,8 +43,6 @@ export default function (options: Options = {}): Plugin[] {
             "solide/renderer/+onRenderClient.js",
             "solide/renderer/+config.js",
             "solide/renderer/+passToClient.js",
-            "solide/renderer/+onPageTransitionStart.js",
-            "solide/renderer/+onPageTransitionEnd.js",
           ],
         },
       ],

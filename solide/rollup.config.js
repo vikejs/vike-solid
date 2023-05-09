@@ -18,8 +18,6 @@ export default [
   withSolid({
     input: [
       "./renderer/+onRenderClient.tsx",
-      "./renderer/+onPageTransitionStart.ts",
-      "./renderer/+onPageTransitionEnd.ts",
       "./components/usePageContext.tsx",
       "./cli/index.ts",
     ],
