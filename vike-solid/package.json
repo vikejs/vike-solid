@@ -42,7 +42,7 @@
   "typesVersions": {
     "*": {
       ".": [
-        "dist/index.d.ts"
+        "index.d.ts"
       ],
       "vite": [
         "dist/vite-plugin-vike-solid.d.ts"
@@ -51,12 +51,13 @@
         "client.d.ts"
       ],
       "usePageContext": [
-        "./dist/components/usePageContext.d.ts"
+        "dist/components/usePageContext.d.ts"
       ]
     }
   },
   "files": [
     "dist/",
+    "index.d.ts",
     "client.d.ts"
   ],
   "bin": "./cli/entry.js",

@@ -1,9 +1,10 @@
 import solidPlugin, { type Options as SolidOptions } from "vite-plugin-solid";
-import ssr from "vite-plugin-ssr/plugin";
+import ssr, { UserConfig } from "vite-plugin-ssr/plugin";
 import { mergeConfig, type Plugin } from "vite";
 
 export interface Options {
   solid?: SolidOptions;
+  vps?: UserConfig;
 }
 
 function overrideConfig(): Plugin {
@@ -34,20 +35,25 @@ export default function (options: Options = {}): Plugin[] {
         options.solid ?? {}
       )
     ),
-    ssr({
-      extensions: [
+    ssr(
+      mergeConfig(
         {
-          npmPackageName: "vike-solid",
-          pageConfigsDistFiles: [
-            "vike-solid/renderer/+onRenderHtml.js",
-            "vike-solid/renderer/+onRenderClient.js",
-            "vike-solid/renderer/+config.js",
-            "vike-solid/renderer/+passToClient.js",
+          extensions: [
+            {
+              npmPackageName: "vike-solid",
+              pageConfigsDistFiles: [
+                "vike-solid/renderer/+onRenderHtml.js",
+                "vike-solid/renderer/+onRenderClient.js",
+                "vike-solid/renderer/+config.js",
+                "vike-solid/renderer/+passToClient.js",
+              ],
+            },
           ],
+          disableAutoFullBuild: true,
         },
-      ],
-      disableAutoFullBuild: true,
-    }),
+        options.vps ?? {}
+      )
+    ),
     overrideConfig(),
   ];
 }
