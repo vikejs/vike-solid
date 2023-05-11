@@ -42,7 +42,7 @@
   "typesVersions": {
     "*": {
       ".": [
-        "index.d.ts"
+        "dist/index.d.ts"
       ],
       "vite": [
         "dist/vite-plugin-vike-solid.d.ts"
@@ -57,10 +57,10 @@
   },
   "files": [
     "dist/",
-    "index.d.ts",
     "client.d.ts"
   ],
   "bin": "./cli/entry.js",
+  "types": "dist/index.d.ts",
   "repository": "github:magne4000/vike-solid",
   "license": "MIT"
 }
