@@ -1,12 +1,10 @@
-import type { Config } from "vite-plugin-ssr/types";
+export type * from "vite-plugin-ssr/types";
+
+import type { Config, ConfigNonHeaderFile } from "vite-plugin-ssr/types";
 import type { Component } from "./types.js";
 
-export type UserConfig = Partial<
-  VikeSolidConfig & { Page: Component } & Pick<
-      Config,
-      "route" | "prerender" | "iKnowThePerformanceRisksOfAsyncRouteFunctions"
-    >
->;
+export type UserConfig = Config &
+  Partial<VikeSolidConfig & { Page: Component }>;
 
 export type VikeSolidConfig = {
   /** Solid element renderer and appended into &lt;head>&lt;/head> */
@@ -21,6 +19,9 @@ export type VikeSolidConfig = {
 };
 
 export default {
+  onRenderHtml: "import:vike-solid/renderer/onRenderHtml",
+  onRenderClient: "import:vike-solid/renderer/onRenderClient",
+  passToClient: ["pageProps", "title"],
   clientRouting: true,
   hydrationCanBeAborted: true,
   meta: {
@@ -40,4 +41,4 @@ export default {
       env: "server-only",
     },
   },
-} satisfies Config;
+} satisfies ConfigNonHeaderFile;

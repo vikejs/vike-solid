@@ -11,9 +11,8 @@ function overrideConfig(): Plugin {
   return {
     name: "vite-plugin-vike-solid",
     config: () => ({
-      optimizeDeps: { include: ["solid-js"] },
-      ssr: {
-        external: ["vike-solid", "vite-plugin-ssr/server"],
+      optimizeDeps: {
+        include: ["solid-js", "vike-solid/renderer/onRenderClient"],
       },
     }),
   };
@@ -38,17 +37,6 @@ export default function (options: Options = {}): Plugin[] {
     ssr(
       mergeConfig(
         {
-          extensions: [
-            {
-              npmPackageName: "vike-solid",
-              pageConfigsDistFiles: [
-                "vike-solid/renderer/+onRenderHtml.js",
-                "vike-solid/renderer/+onRenderClient.js",
-                "vike-solid/renderer/+config.js",
-                "vike-solid/renderer/+passToClient.js",
-              ],
-            },
-          ],
           disableAutoFullBuild: true,
         },
         options.vps ?? {}

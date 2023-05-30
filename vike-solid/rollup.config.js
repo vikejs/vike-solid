@@ -7,10 +7,8 @@ export default [
     input: [
       "./renderer/+onRenderHtml.tsx",
       "./renderer/+config.ts",
-      "./renderer/+passToClient.ts",
       "./components/usePageContext.tsx",
       "./cli/index.ts",
-      "./index.ts",
     ],
     ssr: true,
     external: ["vite-plugin-ssr/server", "vite-plugin-ssr/plugin"],
@@ -26,11 +24,11 @@ export default [
   }),
   {
     input: [
-      "./index.ts",
+      "./renderer/+config.ts",
       "./components/usePageContext.tsx",
       "./vite-plugin-vike-solid.ts",
     ],
-    output: [{ dir: "dist", format: "es" }],
+    output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
     plugins: [dts()],
   },
   {
@@ -42,7 +40,13 @@ export default [
         presets: ["@babel/preset-typescript"],
       }),
     ],
-    output: [{ file: "dist/vite-plugin-vike-solid.js", format: "es" }],
+    output: [
+      {
+        file: "dist/vite-plugin-vike-solid.js",
+        format: "es",
+        sanitizeFileName: false,
+      },
+    ],
     external: ["vite"],
   },
 ];

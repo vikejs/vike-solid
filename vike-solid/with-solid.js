@@ -1,7 +1,7 @@
 import { cwd } from "node:process";
-import { resolve, dirname } from "node:path";
+import { dirname, resolve } from "node:path";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
-import { rmSync, readFileSync } from "node:fs";
+import { readFileSync, rmSync } from "node:fs";
 import { babel } from "@rollup/plugin-babel";
 
 function findClosestPackageJson(start = cwd(), level = 0) {
@@ -47,6 +47,7 @@ function processOptions(options) {
   }
 
   const output = {
+    sanitizeFileName: false,
     format: "esm",
     dir: "dist",
     // sourcemap: true,
