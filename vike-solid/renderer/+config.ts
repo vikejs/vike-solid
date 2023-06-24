@@ -1,6 +1,6 @@
 export type * from "vite-plugin-ssr/types";
 
-import type { Config, ConfigNonHeaderFile } from "vite-plugin-ssr/types";
+import type { Config } from "vite-plugin-ssr/types";
 import type { Component } from "./types.js";
 
 export type UserConfig = Config &
@@ -41,4 +41,4 @@ export default {
       env: "server-only",
     },
   },
-} satisfies ConfigNonHeaderFile;
+} satisfies Config
