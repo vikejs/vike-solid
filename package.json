@@ -9,5 +9,5 @@
     "========= Only allow pnpm; forbid yarn & npm": "",
     "preinstall": "npx only-allow pnpm"
   },
-  "packageManager": "pnpm@7.32.0"
+  "packageManager": "pnpm@8.6.2"
 }
