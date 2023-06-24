@@ -8,7 +8,7 @@ import type {
   PageContextBuiltIn,
   PageContextBuiltInClientWithClientRouting as PageContextBuiltInClient,
 } from "vite-plugin-ssr/types";
-import type { VikeSolidConfig } from "./+config";
+import type { Config } from "./+config";
 import type { JSX } from "solid-js";
 
 export type { Component } from "solid-js";
@@ -28,7 +28,7 @@ export type PageContextCommon = {
 
 type PageContextServer = PageContextBuiltIn<Page> &
   PageContextCommon & {
-    config: Partial<VikeSolidConfig>;
+    config: Partial<Config>;
   };
 type PageContextClient = PageContextBuiltInClient<Page> & PageContextCommon;
 type PageContext = PageContextClient | PageContextServer;

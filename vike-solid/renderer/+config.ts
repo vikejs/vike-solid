@@ -1,22 +1,21 @@
-export type * from "vite-plugin-ssr/types";
-
-import type { Config } from "vite-plugin-ssr/types";
+import type { Config as ConfigCore } from 'vite-plugin-ssr/types'
 import type { Component } from "./types.js";
 
-export type UserConfig = Config &
-  Partial<VikeSolidConfig & { Page: Component }>;
-
-export type VikeSolidConfig = {
+export type Config = ConfigCore & {
   /** Solid element renderer and appended into &lt;head>&lt;/head> */
-  Head: Component;
-  Layout: Component;
-  title: string;
-  description: string;
+  Head?: Component;
+  Layout?: Component;
+  title?: string;
+  description?: string;
   /**
    * @default 'en'
    */
-  lang: string;
+  lang?: string;
+  Page?: Component;
 };
+
+// alias
+export type UserConfig = Config;
 
 export default {
   onRenderHtml: "import:vike-solid/renderer/onRenderHtml",
@@ -41,4 +40,4 @@ export default {
       env: "server-only",
     },
   },
-} satisfies Config
+} satisfies ConfigCore
