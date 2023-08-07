@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "vike-solid dev",
+    "build": "vike-solid build",
+    "preview": "vike-solid preview"
+  },
+  "dependencies": {
+    "solid-js": "^1.7.5",
+    "vike-solid": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  },
+  "type": "module"
+}

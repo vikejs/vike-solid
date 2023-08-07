@@ -21,7 +21,7 @@ async function onRenderClient(pageContext: PageContextClient) {
     setPageContext(pageContext);
 
     const container = document.getElementById("page-view")!;
-    if (pageContext.isHydration) {
+    if (container.innerHTML !== "" && pageContext.isHydration) {
       dispose = hydrate(() => getPageElement(pageContextStore)!, container);
     } else {
       dispose = render(() => getPageElement(pageContextStore)!, container);

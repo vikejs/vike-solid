@@ -27,6 +27,19 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
 
+  examples/ssr-spa:
+    dependencies:
+      solid-js:
+        specifier: ^1.7.5
+        version: 1.7.5
+      vike-solid:
+        specifier: workspace:*
+        version: link:../../vike-solid
+    devDependencies:
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
+
   vike-solid:
     dependencies:
       vite:
