@@ -6,11 +6,11 @@
     "preview": "vike-solid preview"
   },
   "dependencies": {
-    "solid-js": "^1.7.5",
+    "solid-js": "^1.7.10",
     "vike-solid": "workspace:*"
   },
   "devDependencies": {
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.6"
   },
   "type": "module"
 }

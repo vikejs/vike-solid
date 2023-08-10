@@ -6,13 +6,13 @@
     "preview": "vike-solid preview"
   },
   "dependencies": {
-    "cross-fetch": "^3.1.6",
-    "node-fetch": "^3.3.1",
-    "solid-js": "^1.7.5",
+    "cross-fetch": "^3.1.8",
+    "node-fetch": "^3.3.2",
+    "solid-js": "^1.7.10",
     "vike-solid": "workspace:*"
   },
   "devDependencies": {
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.6"
   },
   "type": "module"
 }
