@@ -30,7 +30,13 @@ async function onRenderHtml(pageContext: PageContextServer) {
     </PageContextProvider>
   ));
 
-  const { pipe } = renderToStream(() => getPageElement(pageContext));
+  const { pipe } = renderToStream(() =>
+    !pageContext.Page ? (
+      <></> // the ssr config flag is false
+    ) : (
+      getPageElement(pageContext)
+    )
+  );
   // const asString = renderToString(() => page);
   stampPipe(pipe, "node-stream");
 
