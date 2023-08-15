@@ -3,10 +3,11 @@
   "scripts": {
     "dev": "vike-solid dev",
     "build": "vike-solid build",
-    "preview": "vike-solid preview"
+    "preview": "vike-solid preview",
+    "test": "tsc --noEmit"
   },
   "dependencies": {
-    "solid-js": "^1.7.10",
+    "solid-js": "^1.7.11",
     "vike-solid": "workspace:*"
   },
   "devDependencies": {
