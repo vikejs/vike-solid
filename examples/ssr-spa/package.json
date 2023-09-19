@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "solid-js": "^1.7.11",
-    "vike-solid": "workspace:*"
+    "vike-solid": "workspace:*",
+    "vite-plugin-ssr": "^0.4.141"
   },
   "devDependencies": {
     "typescript": "^5.1.6"
