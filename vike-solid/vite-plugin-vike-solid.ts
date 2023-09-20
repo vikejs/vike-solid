@@ -31,17 +31,10 @@ export default function (options: Options = {}): Plugin[] {
             hydratable: true,
           },
         },
-        options.solid ?? {}
-      )
+        options.solid ?? {},
+      ),
     ),
-    ssr(
-      mergeConfig(
-        {
-          disableAutoFullBuild: true,
-        },
-        options.vps ?? {}
-      )
-    ),
+    ssr(options.vps ?? {}),
     overrideConfig(),
   ];
 }
