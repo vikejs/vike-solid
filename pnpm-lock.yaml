@@ -23,8 +23,8 @@ importers:
         specifier: workspace:*
         version: link:../../vike-solid
       vite-plugin-ssr:
-        specifier: ^0.4.136
-        version: 0.4.136(vite@4.4.9)
+        specifier: ^0.4.141
+        version: 0.4.141(vite@4.4.9)
     devDependencies:
       typescript:
         specifier: ^5.1.6
@@ -38,6 +38,9 @@ importers:
       vike-solid:
         specifier: workspace:*
         version: link:../../vike-solid
+      vite-plugin-ssr:
+        specifier: ^0.4.141
+        version: 0.4.141(vite@4.4.9)
     devDependencies:
       typescript:
         specifier: ^5.1.6
@@ -92,8 +95,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite-plugin-ssr:
-        specifier: ^0.4.136
-        version: 0.4.136(vite@4.4.9)
+        specifier: ^0.4.141
+        version: 0.4.141(vite@4.4.9)
 
 packages:
 
@@ -1284,11 +1287,11 @@ packages:
   /@brillout/import@0.2.3:
     resolution: {integrity: sha512-1T8WlD75eeFSMrptGy8jiLHmfHgMmSjWvLOIUvHmSVZt+6k0eQqYUoK4KbmE4T9pVLIfxvZSOm2D68VEqKRHRw==}
 
-  /@brillout/json-serializer@0.5.4:
-    resolution: {integrity: sha512-Lz/gQXKSoykR4g0PmBHpa+ILNJU7K0mZpWfBpDg5NnmPyHiDVnipwoH90Zv613FAwgUaV5HMCgYns6Lh78M+Yw==}
+  /@brillout/json-serializer@0.5.6:
+    resolution: {integrity: sha512-48u+Wthh0muDueyooi/Or59DDFCPitnuCN9OkMWoj7MQAbDn5pS/cVBB7ds6ENmtC1Qb0spI4PfKZxQSBEkubg==}
 
-  /@brillout/picocolors@1.0.6:
-    resolution: {integrity: sha512-Ln5rMxhWyGaQxZu6LTbA7izEI7xytbvK9QFwuH3Rj61rAPArLeKYMUmNa3f8COHl3++iBs98gTu9Slmyvnst2Q==}
+  /@brillout/picocolors@1.0.9:
+    resolution: {integrity: sha512-Lt/W5JsA75hcDJ2cOAlE4TqSMl6c9K+rXGRo/cU2fApnmhbRcNdkR4UHQDAwtWfZyUKWaxdwSui+jp+74J1pZg==}
 
   /@brillout/require-shim@0.1.2:
     resolution: {integrity: sha512-3I4LRHnVZXoSAsEoni5mosq9l6eiJED58d9V954W4CIZ88AUfYBanWGBGbJG3NztaRTpFHEA6wB3Hn93BmmJdg==}
@@ -2064,8 +2067,8 @@ packages:
   /electron-to-chromium@1.4.490:
     resolution: {integrity: sha512-6s7NVJz+sATdYnIwhdshx/N/9O6rvMxmhVoDSDFdj6iA45gHR8EQje70+RYsF4GeB+k0IeNSBnP7yG9ZXJFr7A==}
 
-  /es-module-lexer@0.10.5:
-    resolution: {integrity: sha512-+7IwY/kiGAacQfY+YBhKMvEmyAJnw5grTUgjG85Pe7vcUI/6b7pZjZG8nQ7+48YhzEAEqrEgD2dCz/JIK+AYvw==}
+  /es-module-lexer@1.3.1:
+    resolution: {integrity: sha512-JUFAyicQV9mXc3YRxPnDlrfBKpqt6hUYzz9/boprUJHs4e4KVr3XwOF70doO6gwXUor6EWZJAyWAfKki84t20Q==}
 
   /esbuild@0.17.19:
     resolution: {integrity: sha512-XQ0jAPFkK/u3LcVRcvVHQcTIqD6E2H1fvZMA5dQPSOWb3suUbWbfbRf94pjc0bNzRYLfIrDRQXr7X+LHIm5oHw==}
@@ -2807,8 +2810,8 @@ packages:
       - supports-color
     dev: false
 
-  /vite-plugin-ssr@0.4.136(vite@4.4.9):
-    resolution: {integrity: sha512-2a9huIue8AkoE2SUccVpo+9uQoEYFGdnObtRgGMyOZWaBw8mQ7jxn0k4lE66ScsfasF4B4F3UWC37sLfEneP8w==}
+  /vite-plugin-ssr@0.4.141(vite@4.4.9):
+    resolution: {integrity: sha512-mRYP7CWauioeCFWFhzNjYK/4Gv+mtfClM4oj5NZrHS3kmd2vQ/uHENOSccFZniqRTZoMzQoufqpGTd+1uT9vEg==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2819,13 +2822,13 @@ packages:
         optional: true
     dependencies:
       '@brillout/import': 0.2.3
-      '@brillout/json-serializer': 0.5.4
-      '@brillout/picocolors': 1.0.6
+      '@brillout/json-serializer': 0.5.6
+      '@brillout/picocolors': 1.0.9
       '@brillout/require-shim': 0.1.2
       '@brillout/vite-plugin-import-build': 0.2.18
       acorn: 8.10.0
       cac: 6.7.14
-      es-module-lexer: 0.10.5
+      es-module-lexer: 1.3.1
       esbuild: 0.17.19
       fast-glob: 3.3.1
       sirv: 2.0.3

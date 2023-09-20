@@ -1,4 +1,4 @@
-import type { Config } from "vike-solid";
+import type { Config } from "vite-plugin-ssr/types";
 
 export default {
   ssr: false, // SPA
