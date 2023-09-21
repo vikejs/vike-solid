@@ -3,7 +3,8 @@
 
 # `vike-solid`
 
-SolidJS integration for [Vike](https://github.com/brillout/vite-plugin-ssr/issues/736).
+SolidJS integration for [Vike](https://github.com/brillout/vite-plugin-ssr/issues/736) (using the
+[V1 design](https://vite-plugin-ssr.com/migration/v1-design)).
 
 > [!NOTE]  
 > For integrations with React and Vue, see the other [`vike-*` packages](https://vite-plugin-ssr.com/vike-packages).
