@@ -2,18 +2,18 @@ export default onRenderClient;
 
 import { hydrate, render } from "solid-js/web";
 import { getTitle } from "./getTitle";
-import type { PageContextClient } from "./types";
+import type { PageContext } from "vite-plugin-ssr/types";
 import { getPageElement } from "./getPageElement";
 import { createStore, reconcile } from "solid-js/store";
 
-const [pageContextStore, setPageContext] = createStore<PageContextClient>(
-  {} as PageContextClient
+const [pageContextStore, setPageContext] = createStore<PageContext>(
+  {} as PageContext
 );
 
 let dispose: () => void;
 let rendered = false;
 
-async function onRenderClient(pageContext: PageContextClient) {
+async function onRenderClient(pageContext: PageContext) {
   if (!rendered) {
     // Dispose to prevent duplicate pages when navigating.
     if (dispose) dispose();

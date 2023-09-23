@@ -58,7 +58,7 @@ export default {
 import type { Component } from "./types.js";
 declare global {
   namespace VikePackages {
-    export interface ConfigVikeSolid {
+    interface ConfigVikeReact {
       /** Solid element renderer and appended into <head></head> */
       Head?: Component;
       Layout?: Component;
@@ -80,6 +80,7 @@ declare global {
        *
        */
       ssr?: boolean;
+      /** The page's root Solid component */
       Page?: Component;
     }
   }
