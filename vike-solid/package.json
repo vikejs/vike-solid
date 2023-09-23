@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
-    "build": "rollup -c rollup.config.js",
+    "build": "tsc --noEmit && rollup -c rollup.config.js",
     "release": "pnpm run build && bumpp --commit --push --tag && pnpm publish"
   },
   "dependencies": {

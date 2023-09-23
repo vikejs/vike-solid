@@ -1,12 +1,8 @@
 export { getTitle };
 
-import type { ConfigEntries } from "vite-plugin-ssr/types";
+import type { PageContext } from "vite-plugin-ssr/types";
 
-function getTitle(pageContext: {
-  title?: unknown;
-  config: Record<string, unknown>;
-  configEntries: ConfigEntries;
-}): null | string {
+function getTitle(pageContext: PageContext): null | string {
   if (typeof pageContext.title === "string") {
     return pageContext.title;
   }

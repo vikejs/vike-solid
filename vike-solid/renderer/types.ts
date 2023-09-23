@@ -10,6 +10,7 @@ declare global {
     interface PageContext {
       Page: Page;
       pageProps: Record<string, unknown>;
+      title?: string;
     }
   }
 }

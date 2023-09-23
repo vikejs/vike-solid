@@ -1,4 +1,4 @@
-import type { Config, ConfigEffect } from "vite-plugin-ssr/types";
+import type { Config, ConfigEffect, PageContext } from "vite-plugin-ssr/types";
 
 // Depending on the value of `config.meta.ssr`, set other config options' `env`
 // accordingly.
@@ -62,7 +62,7 @@ declare global {
       /** Solid element renderer and appended into <head></head> */
       Head?: Component;
       Layout?: Component;
-      title?: string;
+      title?: string | ((pageContext: PageContext) => string);
       description?: string;
       /**
        * @default 'en'

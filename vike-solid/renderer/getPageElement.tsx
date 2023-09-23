@@ -22,7 +22,7 @@ function getPageElement(pageContext: Store<PageContext>): JSX.Element {
 function Wrapper(props: { children: JSX.Element }) {
   const pageContext = usePageContext();
   return (
-    <Dynamic component={pageContext.config.Wrapper ?? Passthrough}>
+    <Dynamic component={/*pageContext.config.Wrapper ??*/ Passthrough}>
       {props.children}
     </Dynamic>
   );
