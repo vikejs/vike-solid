@@ -2,7 +2,7 @@ export default onRenderClient;
 
 import { hydrate, render } from "solid-js/web";
 import { getTitle } from "./getTitle";
-import type { PageContextClient } from "vite-plugin-ssr/types";
+import type { PageContextClient } from "vike/types";
 import { getPageElement } from "./getPageElement";
 import { createStore, reconcile } from "solid-js/store";
 

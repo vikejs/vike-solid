@@ -19,12 +19,12 @@ importers:
       solid-js:
         specifier: ^1.7.11
         version: 1.7.11
+      vike:
+        specifier: ^0.4.142
+        version: 0.4.142(vite@4.4.9)
       vike-solid:
         specifier: workspace:*
         version: link:../../vike-solid
-      vite-plugin-ssr:
-        specifier: ^0.4.142
-        version: 0.4.142(vite@4.4.9)
     devDependencies:
       typescript:
         specifier: ^5.1.6
@@ -35,12 +35,12 @@ importers:
       solid-js:
         specifier: ^1.7.11
         version: 1.7.11
+      vike:
+        specifier: ^0.4.142
+        version: 0.4.142(vite@4.4.9)
       vike-solid:
         specifier: workspace:*
         version: link:../../vike-solid
-      vite-plugin-ssr:
-        specifier: ^0.4.142
-        version: 0.4.142(vite@4.4.9)
     devDependencies:
       typescript:
         specifier: ^5.1.6
@@ -91,12 +91,12 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
+      vike:
+        specifier: ^0.4.142
+        version: 0.4.142(vite@4.4.9)
       vite:
         specifier: ^4.4.9
         version: 4.4.9(@types/node@18.17.4)
-      vite-plugin-ssr:
-        specifier: ^0.4.142
-        version: 0.4.142(vite@4.4.9)
 
 packages:
 
@@ -2913,27 +2913,8 @@ packages:
   /validate-html-nesting@1.2.2:
     resolution: {integrity: sha512-hGdgQozCsQJMyfK5urgFcWEqsSSrK63Awe0t/IMR0bZ0QMtnuaiHzThW81guu3qx9abLi99NEuiaN6P9gVYsNg==}
 
-  /vite-plugin-solid@2.7.0(solid-js@1.7.12)(vite@4.4.9):
-    resolution: {integrity: sha512-avp/Jl5zOp/Itfo67xtDB2O61U7idviaIp4mLsjhCa13PjKNasz+IID0jYTyqUp9SFx6/PmBr6v4KgDppqompg==}
-    peerDependencies:
-      solid-js: ^1.7.2
-      vite: ^3.0.0 || ^4.0.0
-    dependencies:
-      '@babel/core': 7.22.20
-      '@babel/preset-typescript': 7.22.15(@babel/core@7.22.20)
-      '@types/babel__core': 7.20.1
-      babel-preset-solid: 1.7.12(@babel/core@7.22.20)
-      merge-anything: 5.1.7
-      solid-js: 1.7.12
-      solid-refresh: 0.5.3(solid-js@1.7.12)
-      vite: 4.4.9(@types/node@18.17.4)
-      vitefu: 0.2.4(vite@4.4.9)
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /vite-plugin-ssr@0.4.142(vite@4.4.9):
-    resolution: {integrity: sha512-ZDgpocnTEUmhYxGgMah8ZNK1Sfy5CFVcdXu+Ll3zRtGIPyWT5vYvASs2BLYEneqantHpde2b31Khzb0hxmP62w==}
+  /vike@0.4.142(vite@4.4.9):
+    resolution: {integrity: sha512-eciryBs3k29SwSQM2esZzjt9Fyig/tNAgQ5xlduw9XVNUnd1hdWPr8CBi7yzvWgeavggPmywbt+Da1OLBoO8Kg==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2956,6 +2937,25 @@ packages:
       sirv: 2.0.3
       source-map-support: 0.5.21
       vite: 4.4.9(@types/node@18.17.4)
+
+  /vite-plugin-solid@2.7.0(solid-js@1.7.12)(vite@4.4.9):
+    resolution: {integrity: sha512-avp/Jl5zOp/Itfo67xtDB2O61U7idviaIp4mLsjhCa13PjKNasz+IID0jYTyqUp9SFx6/PmBr6v4KgDppqompg==}
+    peerDependencies:
+      solid-js: ^1.7.2
+      vite: ^3.0.0 || ^4.0.0
+    dependencies:
+      '@babel/core': 7.22.20
+      '@babel/preset-typescript': 7.22.15(@babel/core@7.22.20)
+      '@types/babel__core': 7.20.1
+      babel-preset-solid: 1.7.12(@babel/core@7.22.20)
+      merge-anything: 5.1.7
+      solid-js: 1.7.12
+      solid-refresh: 0.5.3(solid-js@1.7.12)
+      vite: 4.4.9(@types/node@18.17.4)
+      vitefu: 0.2.4(vite@4.4.9)
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /vite@4.4.9(@types/node@18.17.4):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}

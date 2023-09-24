@@ -1,4 +1,4 @@
-import type { Config } from "vite-plugin-ssr/types";
+import type { Config } from "vike/types";
 import vikeSolid from "vike-solid";
 import Layout from "../layouts/LayoutDefault";
 import Head from "./Head";

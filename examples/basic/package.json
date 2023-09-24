@@ -11,7 +11,7 @@
     "node-fetch": "^3.3.2",
     "solid-js": "^1.7.11",
     "vike-solid": "workspace:*",
-    "vite-plugin-ssr": "^0.4.142"
+    "vike": "^0.4.142"
   },
   "devDependencies": {
     "typescript": "^5.1.6"

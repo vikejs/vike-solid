@@ -1,6 +1,6 @@
 import { build } from "vite";
 import config from "../vite.config";
-// import { prerender } from 'vite-plugin-ssr/prerender'
+// import { prerender } from 'vike/prerender'
 
 main();
 
