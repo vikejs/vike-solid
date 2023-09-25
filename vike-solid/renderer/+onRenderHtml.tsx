@@ -1,14 +1,6 @@
 export default onRenderHtml;
-import {
-  generateHydrationScript,
-  renderToStream,
-  renderToString,
-} from "solid-js/web";
-import {
-  escapeInject,
-  dangerouslySkipEscape,
-  stampPipe,
-} from "vike/server";
+import { generateHydrationScript, renderToStream, renderToString } from "solid-js/web";
+import { dangerouslySkipEscape, escapeInject, stampPipe } from "vike/server";
 import { getTitle } from "./getTitle";
 import { getPageElement } from "./getPageElement";
 import type { PageContext } from "vike/types";
@@ -30,6 +22,9 @@ async function onRenderHtml(pageContext: PageContext) {
     </PageContextProvider>
   ));
 
+  const favicon = pageContext.config.favicon;
+  const faviconTag = !favicon ? '' : escapeInject`<link rel="icon" href="${favicon}" />`;
+
   const { pipe } = renderToStream(() =>
     !pageContext.Page ? (
       <></> // the ssr config flag is false
@@ -47,6 +42,7 @@ async function onRenderHtml(pageContext: PageContext) {
       <head>
         <meta charset="UTF-8" />
         ${titleTag}
+        ${faviconTag}
         ${descriptionTag}
         ${dangerouslySkipEscape(headHtml)}
         ${dangerouslySkipEscape(generateHydrationScript())}

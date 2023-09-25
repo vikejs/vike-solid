@@ -46,6 +46,9 @@ export default {
     description: {
       env: "server-only",
     },
+    favicon: {
+      env: 'server-only'
+    },
     lang: {
       env: "server-only",
     },
@@ -64,6 +67,7 @@ declare global {
       Layout?: Component;
       title?: string | ((pageContext: PageContext) => string);
       description?: string;
+      favicon?: string
       /**
        * @default 'en'
        */
