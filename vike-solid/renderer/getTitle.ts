@@ -1,6 +1,6 @@
 export { getTitle };
 
-import type { PageContext } from "vite-plugin-ssr/types";
+import type { PageContext } from "vike/types";
 
 function getTitle(pageContext: PageContext): null | string {
   if (typeof pageContext.title === "string") {

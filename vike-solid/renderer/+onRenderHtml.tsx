@@ -8,10 +8,10 @@ import {
   escapeInject,
   dangerouslySkipEscape,
   stampPipe,
-} from "vite-plugin-ssr/server";
+} from "vike/server";
 import { getTitle } from "./getTitle";
 import { getPageElement } from "./getPageElement";
-import type { PageContext } from "vite-plugin-ssr/types";
+import type { PageContext } from "vike/types";
 import { PageContextProvider } from "./PageContextProvider";
 
 async function onRenderHtml(pageContext: PageContext) {

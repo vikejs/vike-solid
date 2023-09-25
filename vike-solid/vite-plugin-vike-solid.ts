@@ -1,5 +1,5 @@
 import solidPlugin, { type Options as SolidOptions } from "vite-plugin-solid";
-import ssr, { UserConfig } from "vite-plugin-ssr/plugin";
+import ssr, { UserConfig } from "vike/plugin";
 import { mergeConfig, type Plugin } from "vite";
 
 export interface Options {

@@ -11,7 +11,7 @@ export default [
       "./cli/index.ts",
     ],
     ssr: true,
-    external: ["vite-plugin-ssr/server", "vite-plugin-ssr/plugin"],
+    external: ["vike/server", "vike/plugin"],
   }),
   withSolid({
     input: [
@@ -20,7 +20,7 @@ export default [
       "./cli/index.ts",
     ],
     ssr: false,
-    external: ["vite-plugin-ssr/server", "vite-plugin-ssr/plugin"],
+    external: ["vike/server", "vike/plugin"],
   }),
   {
     input: [

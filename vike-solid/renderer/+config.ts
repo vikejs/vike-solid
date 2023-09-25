@@ -1,10 +1,10 @@
-import type { Config, ConfigEffect, PageContext } from "vite-plugin-ssr/types";
+import type { Config, ConfigEffect, PageContext } from "vike/types";
 // We purposely define the ConfigVikeSolid interface in this file: that way we ensure it's always applied whenever the user `import vikeSolid from 'vike-solid'`
 import type { Component } from "./types.js";
 
 // Depending on the value of `config.meta.ssr`, set other config options' `env`
 // accordingly.
-// See https://vite-plugin-ssr.com/meta#modify-existing-configurations
+// See https://vike.dev/meta#modify-existing-configurations
 const toggleSsrRelatedConfig: ConfigEffect = ({
   configDefinedAt,
   configValue,
@@ -74,7 +74,7 @@ declare global {
        * If false, render mode is SPA. In other words, the page will only be
        * rendered in the browser.
        *
-       * See https://vite-plugin-ssr.com/render-modes
+       * See https://vike.dev/render-modes
        *
        * @default true
        *

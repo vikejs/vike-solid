@@ -1,7 +1,7 @@
 export default onBeforeRender;
 
 import fetch from "cross-fetch";
-import type { PageContext } from "vite-plugin-ssr/types";
+import type { PageContext } from "vike/types";
 import { filterMovieData } from "../filterMovieData";
 import type { MovieDetails } from "../types";
 

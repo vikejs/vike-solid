@@ -1,4 +1,4 @@
-import type { PageContext } from "vite-plugin-ssr/types";
+import type { PageContext } from "vike/types";
 import { PageContextProvider, usePageContext } from "./PageContextProvider";
 import type { JSX } from "solid-js";
 import { Dynamic } from "solid-js/web";
