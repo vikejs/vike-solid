@@ -11,10 +11,10 @@ import {
 } from "vite-plugin-ssr/server";
 import { getTitle } from "./getTitle";
 import { getPageElement } from "./getPageElement";
-import type { PageContextServer } from "./types";
+import type { PageContext } from "vite-plugin-ssr/types";
 import { PageContextProvider } from "./PageContextProvider";
 
-async function onRenderHtml(pageContext: PageContextServer) {
+async function onRenderHtml(pageContext: PageContext) {
   const title = getTitle(pageContext);
   const titleTag = !title ? "" : escapeInject`<title>${title}</title>`;
 

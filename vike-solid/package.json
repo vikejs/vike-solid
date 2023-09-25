@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
-    "build": "rollup -c rollup.config.js",
+    "build": "tsc --noEmit && rollup -c rollup.config.js",
     "release": "pnpm run build && bumpp --commit --push --tag && pnpm publish"
   },
   "dependencies": {
@@ -20,7 +20,7 @@
   "peerDependencies": {
     "solid-js": "^1.7.12",
     "vite": "^4.4.9",
-    "vite-plugin-ssr": "^0.4.141"
+    "vite-plugin-ssr": "^0.4.142"
   },
   "devDependencies": {
     "@babel/core": "^7.22.20",
@@ -37,7 +37,7 @@
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
-    "vite-plugin-ssr": "^0.4.141"
+    "vite-plugin-ssr": "^0.4.142"
   },
   "typesVersions": {
     "*": {

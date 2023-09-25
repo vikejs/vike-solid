@@ -1,4 +1,6 @@
-import type { Config, ConfigEffect } from "vite-plugin-ssr/types";
+import type { Config, ConfigEffect, PageContext } from "vite-plugin-ssr/types";
+// We purposely define the ConfigVikeSolid interface in this file: that way we ensure it's always applied whenever the user `import vikeSolid from 'vike-solid'`
+import type { Component } from "./types.js";
 
 // Depending on the value of `config.meta.ssr`, set other config options' `env`
 // accordingly.
@@ -54,15 +56,13 @@ export default {
   },
 } satisfies Config;
 
-// We purposely define the ConfigVikeSolid interface in this file: that way we ensure it's always applied whenever the user `import vikeSolid from 'vike-solid'`
-import type { Component } from "./types.js";
 declare global {
   namespace VikePackages {
-    export interface ConfigVikeSolid {
+    interface ConfigVikeSolid {
       /** Solid element renderer and appended into <head></head> */
       Head?: Component;
       Layout?: Component;
-      title?: string;
+      title?: string | ((pageContext: PageContext) => string);
       description?: string;
       /**
        * @default 'en'
@@ -80,6 +80,7 @@ declare global {
        *
        */
       ssr?: boolean;
+      /** The page's root Solid component */
       Page?: Component;
     }
   }
