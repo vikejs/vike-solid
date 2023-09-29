@@ -1,7 +1,7 @@
 Basic example of using `vike-solid`.
 
 ```bash
-git clone git@github.com:magne4000/vike-solid
+git clone git@github.com:vikejs/vike-solid
 cd vike-solid/examples/basic/
 pnpm install
 pnpm run dev
