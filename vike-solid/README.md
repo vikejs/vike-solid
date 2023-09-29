@@ -8,4 +8,4 @@ SolidJS integration for [Vike](https://github.com/vikejs/vike) (using the [V1 de
 > [!NOTE]  
 > For integrations with React and Vue, see the other [`vike-*` packages](https://vike.dev/vike-packages).
 
-See [examples/](https://github.com/magne4000/vike-solid/tree/main/examples).
+See [examples/](https://github.com/vikejs/vike-solid/tree/main/examples).

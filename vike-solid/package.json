@@ -62,6 +62,6 @@
   "bin": "./cli/entry.js",
   "main": "dist/+config.js",
   "types": "dist/renderer/+config.d.ts",
-  "repository": "github:magne4000/vike-solid",
+  "repository": "github:vikejs/vike-solid",
   "license": "MIT"
 }
