@@ -1,4 +1,4 @@
-[<img src="https://avatars.githubusercontent.com/u/86403530?s=200&v=4" align="right" width="64" height="64">](https://vike.dev)
+[<img src="https://vike.dev/vike-readme.svg" align="right" height="90">](https://vike.dev)
 [![npm version](https://img.shields.io/npm/v/vike-solid)](https://www.npmjs.com/package/vike-solid)
 
 # `vike-solid`
