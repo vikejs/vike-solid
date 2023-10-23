@@ -27,8 +27,8 @@ const toggleSsrRelatedConfig: ConfigEffect = ({
 };
 
 export default {
-  onRenderHtml: "import:vike-solid/renderer/onRenderHtml",
-  onRenderClient: "import:vike-solid/renderer/onRenderClient",
+  onRenderHtml: "import:vike-solid/renderer/onRenderHtml:onRenderHtml",
+  onRenderClient: "import:vike-solid/renderer/onRenderClient:onRenderClient",
   passToClient: ["pageProps", "title"],
   clientRouting: true,
   hydrationCanBeAborted: true,

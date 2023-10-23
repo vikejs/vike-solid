@@ -1,12 +1,20 @@
-export default onRenderHtml;
-import { generateHydrationScript, renderToStream, renderToString } from "solid-js/web";
+// https://vike.dev/onRenderHtml
+export { onRenderHtml };
+
+import {
+  generateHydrationScript,
+  renderToStream,
+  renderToString,
+} from "solid-js/web";
 import { dangerouslySkipEscape, escapeInject, stampPipe } from "vike/server";
 import { getTitle } from "./getTitle";
 import { getPageElement } from "./getPageElement";
-import type { PageContext } from "vike/types";
+import type { OnRenderHtmlAsync } from "vike/types";
 import { PageContextProvider } from "./PageContextProvider";
 
-async function onRenderHtml(pageContext: PageContext) {
+const onRenderHtml: OnRenderHtmlAsync = async (
+  pageContext
+): ReturnType<OnRenderHtmlAsync> => {
   const title = getTitle(pageContext);
   const titleTag = !title ? "" : escapeInject`<title>${title}</title>`;
 
@@ -52,7 +60,5 @@ async function onRenderHtml(pageContext: PageContext) {
       </body>
     </html>`;
 
-  return {
-    documentHtml,
-  };
-}
+  return documentHtml;
+};
