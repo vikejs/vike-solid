@@ -1,12 +1,16 @@
-export default onBeforeRender;
+// https://vike.dev/onBeforeRender
+export { onBeforeRender };
 
 import fetch from "node-fetch";
 //import { filterMovieData } from '../filterMovieData'
 import type { Movie, MovieDetails } from "../types";
+import type { OnBeforeRenderAsync } from "vike/types";
 
 // export { prerender }
 
-async function onBeforeRender() {
+const onBeforeRender: OnBeforeRenderAsync = async (
+  pageContext
+): ReturnType<OnBeforeRenderAsync> => {
   const movies = await getStarWarsMovies();
   return {
     pageContext: {
