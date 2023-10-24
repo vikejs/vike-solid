@@ -29,7 +29,15 @@ const toggleSsrRelatedConfig: ConfigEffect = ({
 export default {
   onRenderHtml: "import:vike-solid/renderer/onRenderHtml:onRenderHtml",
   onRenderClient: "import:vike-solid/renderer/onRenderClient:onRenderClient",
+
+  // A page can define an onBeforeRender() hook to be run on the server, which
+  // can fetch data and return it as additional page context. Typically it will
+  // return the page's root Solid component's props and additional data that can
+  // be used by the renderers.
+  // It is a cumulative config option, so a web app using vike-solid can extend
+  // this list.
   passToClient: ["pageProps", "title"],
+
   clientRouting: true,
   hydrationCanBeAborted: true,
   meta: {
@@ -46,7 +54,7 @@ export default {
       env: "server-only",
     },
     favicon: {
-      env: 'server-only'
+      env: "server-only",
     },
     lang: {
       env: "server-only",
@@ -67,7 +75,7 @@ declare global {
       Layout?: Component;
       title?: string | ((pageContext: PageContext) => string);
       description?: string;
-      favicon?: string
+      favicon?: string;
       /**
        * @default 'en'
        */
