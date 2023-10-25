@@ -25,17 +25,23 @@ const onRenderClient: OnRenderClientAsync = async (
 
     const container = document.getElementById("page-view")!;
     if (container.innerHTML !== "" && pageContext.isHydration) {
+      // Hydration
       dispose = hydrate(() => getPageElement(pageContextStore)!, container);
     } else {
+      // First rendering
       dispose = render(() => getPageElement(pageContextStore)!, container);
     }
     rendered = true;
   } else {
-    setPageContext(reconcile(pageContext));
-  }
+    // Client routing
+    // See https://vike.dev/server-routing-vs-client-routing
 
-  const title = getTitle(pageContext);
-  if (title !== null) {
-    document.title = title;
+    setPageContext(reconcile(pageContext));
+
+    // Get the page's `title` config value, which may be different from the
+    // previous page. It can even be null, in which case we should unset the
+    // document title.
+    const title = getTitle(pageContext);
+    document.title = title || "";
   }
-}
+};
