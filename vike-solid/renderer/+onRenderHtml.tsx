@@ -58,6 +58,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (
       <body>
         <div id="page-view">${pipe}</div>
       </body>
+      <!-- built with https://github.com/vikejs/vike-solid -->
     </html>`;
 
   return documentHtml;
