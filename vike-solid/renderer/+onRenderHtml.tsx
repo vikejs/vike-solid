@@ -6,11 +6,13 @@ import {
   renderToStream,
   renderToString,
 } from "solid-js/web";
-import { dangerouslySkipEscape, escapeInject, stampPipe } from "vike/server";
+import { dangerouslySkipEscape, escapeInject, stampPipe, version } from "vike/server";
 import { getTitle } from "./getTitle";
 import { getPageElement } from "./getPageElement";
 import type { OnRenderHtmlAsync } from "vike/types";
 import { PageContextProvider } from "./PageContextProvider";
+
+checkVikeVersion()
 
 const onRenderHtml: OnRenderHtmlAsync = async (
   pageContext
@@ -63,3 +65,13 @@ const onRenderHtml: OnRenderHtmlAsync = async (
 
   return documentHtml;
 };
+
+function checkVikeVersion() {
+  if (version) {
+    const versionParts = version.split('.').map((s) => parseInt(s, 10)) as [number, number, number]
+    if (versionParts[0] > 0) return
+    if (versionParts[1] > 4) return
+    if (versionParts[2] >= 147) return
+  }
+  throw new Error('Update Vike to its latest version (or vike@0.4.147 and any version above)')
+}
