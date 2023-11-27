@@ -10,7 +10,6 @@ export function ClientOnly<T>(props: {
   load: () => Promise<{ default: Component<T> } | Component<T>>
   children: (Component: Component<T>) => JSX.Element
   fallback: JSX.Element
-  deps?: Parameters<typeof createSignal>[1]
 }) {
   const [getComponent, setComponent] = createSignal<Component<unknown> | undefined>(undefined);
 
