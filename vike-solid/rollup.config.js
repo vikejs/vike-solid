@@ -8,6 +8,7 @@ export default [
       "./renderer/+onRenderHtml.tsx",
       "./renderer/+config.ts",
       "./components/usePageContext.tsx",
+      "./components/ClientOnly.tsx",
       "./cli/index.ts",
     ],
     ssr: true,
@@ -26,6 +27,7 @@ export default [
     input: [
       "./renderer/+config.ts",
       "./components/usePageContext.tsx",
+      "./components/ClientOnly.tsx",
       "./vite-plugin-vike-solid.ts",
     ],
     output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
