@@ -2,13 +2,6 @@
   "name": "vike-solid",
   "version": "0.2.5",
   "type": "module",
-  "exports": {
-    ".": "./dist/+config.js",
-    "./vite": "./dist/vite-plugin-vike-solid.js",
-    "./usePageContext": "./dist/usePageContext.js",
-    "./renderer/onRenderHtml": "./dist/+onRenderHtml.js",
-    "./renderer/onRenderClient": "./dist/+onRenderClient.js"
-  },
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
     "build": "tsc --noEmit && rollup -c rollup.config.js",
@@ -39,6 +32,14 @@
     "vite": "^4.5.0",
     "vike": "^0.4.147"
   },
+  "exports": {
+    ".": "./dist/+config.js",
+    "./vite": "./dist/vite-plugin-vike-solid.js",
+    "./usePageContext": "./dist/usePageContext.js",
+    "./ClientOnly": "./dist/ClientOnly.js",
+    "./renderer/onRenderHtml": "./dist/+onRenderHtml.js",
+    "./renderer/onRenderClient": "./dist/+onRenderClient.js"
+  },
   "typesVersions": {
     "*": {
       ".": [
@@ -52,6 +53,9 @@
       ],
       "usePageContext": [
         "dist/components/usePageContext.d.ts"
+      ],
+      "ClientOnly": [
+        "dist/components/ClientOnly.d.ts"
       ]
     }
   },
