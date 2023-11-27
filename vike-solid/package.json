@@ -11,7 +11,7 @@
     "vite-plugin-solid": "^2.7.2"
   },
   "peerDependencies": {
-    "solid-js": "^1.8.5",
+    "solid-js": "^1.8.6",
     "vite": "^5.0.2",
     "vike": "^0.4.147"
   },
@@ -22,13 +22,13 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^18.17.4",
-    "babel-preset-solid": "^1.8.4",
+    "babel-preset-solid": "^1.8.6",
     "bumpp": "^9.2.0",
-    "rollup": "^4.5.0",
+    "rollup": "^4.6.0",
     "rollup-plugin-dts": "^6.1.0",
-    "solid-js": "^1.8.5",
+    "solid-js": "^1.8.6",
     "tslib": "^2.6.2",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.2",
     "vite": "^5.0.2",
     "vike": "^0.4.147"
   },
