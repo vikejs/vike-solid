@@ -1,5 +1,5 @@
 import type { Component, JSX } from "solid-js";
-import { createEffect, createSignal, lazy, startTransition } from "solid-js";
+import { createEffect, createSignal, lazy, Suspense } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
 function ClientOnlyError() {
@@ -11,7 +11,7 @@ export function ClientOnly<T>(props: {
   children: (Component: Component<T>) => JSX.Element
   fallback: JSX.Element
 }) {
-  const [getComponent, setComponent] = createSignal<Component<unknown>>(() => props.fallback);
+  const [getComponent, setComponent] = createSignal<Component<unknown> | undefined>(undefined);
 
   createEffect(() => {
     const loadComponent = () => {
@@ -28,8 +28,8 @@ export function ClientOnly<T>(props: {
       setComponent(() => Component);
     };
 
-    startTransition(loadComponent);
+    loadComponent();
   });
 
-  return <Dynamic component={getComponent()} />;
+  return <Suspense fallback={props.fallback}><Dynamic component={getComponent()} /></Suspense>;
 }
