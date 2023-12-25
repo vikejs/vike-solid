@@ -17,13 +17,13 @@ checkVikeVersion()
 const onRenderHtml: OnRenderHtmlAsync = async (
   pageContext
 ): ReturnType<OnRenderHtmlAsync> => {
+  const { stream, favicon, description } = pageContext.config
+
   const title = getTitle(pageContext);
   const titleTag = !title ? "" : escapeInject`<title>${title}</title>`;
 
-  const { description } = pageContext.config;
-  const descriptionTag = !description
-    ? ""
-    : escapeInject`<meta name="description" content="${description}" />`;
+  const faviconTag = !favicon ? '' : escapeInject`<link rel="icon" href="${favicon}" />`
+  const descriptionTag = !description ? '' : escapeInject`<meta name="description" content="${description}" />`
 
   const Head = pageContext.config.Head || (() => <></>);
   const headHtml = renderToString(() => (
@@ -32,18 +32,17 @@ const onRenderHtml: OnRenderHtmlAsync = async (
     </PageContextProvider>
   ));
 
-  const favicon = pageContext.config.favicon;
-  const faviconTag = !favicon ? '' : escapeInject`<link rel="icon" href="${favicon}" />`;
+  type TPipe = (writable: { write: (v: string) => void; }) => void
 
-  const { pipe } = renderToStream(() =>
-    !pageContext.Page ? (
-      <></> // the ssr config flag is false
-    ) : (
-      getPageElement(pageContext)
-    )
-  );
-  // const asString = renderToString(() => page);
-  stampPipe(pipe, "node-stream");
+  let pageView: string | ReturnType<typeof dangerouslySkipEscape> | TPipe = ''
+  if (!!pageContext.Page) {
+    if (!stream) {
+      pageView = dangerouslySkipEscape(renderToString(() => getPageElement(pageContext)))
+    } else {
+      pageView = renderToStream(() => getPageElement(pageContext)).pipe
+      stampPipe(pageView, "node-stream");
+    }
+  }
 
   const lang = pageContext.config.lang || "en";
 
@@ -58,7 +57,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (
         ${dangerouslySkipEscape(generateHydrationScript())}
       </head>
       <body>
-        <div id="page-view">${pipe}</div>
+        <div id="page-view">${pageView}</div>
       </body>
       <!-- built with https://github.com/vikejs/vike-solid -->
     </html>`;
