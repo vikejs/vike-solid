@@ -63,6 +63,9 @@ export default {
       env: { config: true },
       effect: toggleSsrRelatedConfig,
     },
+    stream: {
+      env: { server: true }
+    },
   },
 } satisfies Config;
 
@@ -70,8 +73,11 @@ export default {
 declare global {
   namespace VikePackages {
     interface ConfigVikeSolid {
+      /** The page's root Solid component */
+      Page?: Component;
       /** Solid element renderer and appended into <head></head> */
       Head?: Component;
+      /** A component, usually common to several pages, that wraps the root component `Page` */
       Layout?: Component;
       title?: string | ((pageContext: PageContext) => string);
       description?: string;
@@ -92,8 +98,13 @@ declare global {
        *
        */
       ssr?: boolean;
-      /** The page's root Solid component */
-      Page?: Component;
+      /**
+       * Whether to stream the page's HTML. Requires Server-Side Rendering (`ssr: true`).
+       *
+       * @default false
+       *
+       */
+      stream?: boolean
     }
   }
 }
