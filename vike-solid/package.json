@@ -13,7 +13,7 @@
   "peerDependencies": {
     "solid-js": "^1.8.7",
     "vite": "^4.4 || ^5.0.2",
-    "vike": "^0.4.150"
+    "vike": "^0.4.152"
   },
   "devDependencies": {
     "@babel/core": "^7.23.6",
@@ -30,7 +30,7 @@
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
-    "vike": "^0.4.150"
+    "vike": "^0.4.152"
   },
   "exports": {
     ".": "./dist/+config.js",
