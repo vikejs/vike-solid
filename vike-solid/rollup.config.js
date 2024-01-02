@@ -8,6 +8,7 @@ export default [
       "./renderer/+onRenderHtml.tsx",
       "./renderer/+config.ts",
       "./components/usePageContext.tsx",
+      "./components/useData.tsx",
       "./components/ClientOnly.tsx",
       "./cli/index.ts",
     ],
@@ -18,6 +19,7 @@ export default [
     input: [
       "./renderer/+onRenderClient.tsx",
       "./components/usePageContext.tsx",
+      "./components/useData.tsx",
       "./cli/index.ts",
     ],
     ssr: false,
@@ -27,6 +29,7 @@ export default [
     input: [
       "./renderer/+config.ts",
       "./components/usePageContext.tsx",
+      "./components/useData.tsx",
       "./components/ClientOnly.tsx",
       "./vite-plugin-vike-solid.ts",
     ],

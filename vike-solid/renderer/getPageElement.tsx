@@ -26,6 +26,7 @@ function Layout(props: { children: JSX.Element }) {
 
 function Page() {
   const pageContext = usePageContext();
+  // TODO/next-major-release: remove pageProps (i.e. tell users to use data() instead of onBeforeRender() to fetch data)
   return (
     <>
       <Dynamic

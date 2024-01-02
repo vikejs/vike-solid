@@ -36,6 +36,7 @@
     ".": "./dist/+config.js",
     "./vite": "./dist/vite-plugin-vike-solid.js",
     "./usePageContext": "./dist/usePageContext.js",
+    "./useData": "./dist/useData.js",
     "./ClientOnly": "./dist/ClientOnly.js",
     "./renderer/onRenderHtml": "./dist/+onRenderHtml.js",
     "./renderer/onRenderClient": "./dist/+onRenderClient.js"
@@ -53,6 +54,9 @@
       ],
       "usePageContext": [
         "dist/components/usePageContext.d.ts"
+      ],
+      "useData": [
+        "dist/components/useData.d.ts"
       ],
       "ClientOnly": [
         "dist/components/ClientOnly.d.ts"

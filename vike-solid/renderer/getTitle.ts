@@ -4,9 +4,16 @@ import type { PageContext } from "vike/types";
 
 /**
  * Get the page's title if defined, either from the additional data fetched by
- * the page's onBeforeRender() hook or from the config.
+ * the page's data() and onBeforeRender() hook or from the config.
  */
 function getTitle(pageContext: PageContext): null | string {
+  // from data() hook
+  if (pageContext.data?.title !== undefined) {
+    return pageContext.data.title;
+  }
+
+  // TODO/next-major-release: remove support for setting title over onBeforeRender()
+  // from onBeforeRender() hook
   if (pageContext.title !== undefined) {
     return pageContext.title;
   }
