@@ -12,11 +12,19 @@ declare global {
       // to `false` (SPA mode).
       Page?: Page;
 
-      /** Properties of the page's root Solid component. */
+      // TODO/next-major-release: remove pageProps (i.e. tell users to use data() instead of onBeforeRender() to fetch data)
+      /** Properties of the page's root Solid component - e.g. set by onBeforeRender() hook */
       pageProps?: Record<string, unknown>;
 
-      /** &lt;title>${title}&lt;/title> - has precedence over the config */
+      // TODO/next-major-release: remove support for setting title over onBeforeRender()
+      /** &lt;title>${title}&lt;/title> - set by onBeforeRender() hook, has precedence over the config */
       title?: string;
+
+      // Needed by getTitle()
+      data?: {
+        /** &lt;title>${title}&lt;/title> - set by data() hook, has precedence over the onBeforeRender() hook */
+        title?: string;
+      };
     }
   }
 }

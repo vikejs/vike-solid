@@ -1,14 +1,12 @@
 import { For } from "solid-js";
-import type { Data } from "./+data";
-import { useData } from "vike-solid/useData";
+import type { Movie } from "../types";
 
-export default function Page() {
-  const { movies } = useData<Data>();
+export default function Page(props: { movies: Movie[] }) {
   return (
     <>
       <h1>Star Wars Movies</h1>
       <ol>
-        <For each={movies}>
+        <For each={props.movies}>
           {(movie, i) => (
             <li>
               <a href={`/star-wars/${movie.id}`}>{movie.title}</a> (

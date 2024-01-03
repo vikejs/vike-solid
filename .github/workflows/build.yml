@@ -5,12 +5,16 @@ on:
 
 jobs:
   test:
-    name: Test on ${{ matrix.os }}
+    name: Test ${{ matrix.example }} on ${{ matrix.os }}
 
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
+        example:
+          - examples/basic
+          - examples/onBeforeRender
+          - examples/ssr-spa
 
     steps:
       - uses: actions/checkout@v4
@@ -20,16 +24,10 @@ jobs:
       - name: Build vike-solid
         run: pnpm run build
 
-      - name: Test building examples/basic
+      - name: Test building example
         run: pnpm run build
-        working-directory: ./examples/basic
-      - name: Test building examples/ssr-spa
-        run: pnpm run build
-        working-directory: ./examples/ssr-spa
+        working-directory: ./${{ matrix.example }}
 
-      - name: Test TypeScript examples/basic
+      - name: Test TypeScript example
         run: pnpm run test
-        working-directory: ./examples/basic
-      - name: Test TypeScript examples/ssr-spa
-        run: pnpm run test
-        working-directory: ./examples/ssr-spa
+        working-directory: ./${{ matrix.example }}
