@@ -1,6 +1,7 @@
 export { getTitle };
 
 import type { PageContext } from "vike/types";
+import { isCallable } from "./utils/isCallable";
 
 /**
  * Get the page's title if defined, either from the additional data fetched by
@@ -30,14 +31,12 @@ function getTitle(pageContext: PageContext): null | string {
     return null;
   }
   const { configDefinedAt } = titleConfig;
-  if (typeof title === "function") {
+  if (isCallable(title)) {
     const val = title(pageContext);
-    if (typeof val === "string") {
-      return val;
-    }
-    if (val) {
+    if (typeof val !== "string") {
       throw new Error(configDefinedAt + " should return a string");
     }
+    return val;
   }
   throw new Error(
     configDefinedAt + " should be a string or a function returning a string"
