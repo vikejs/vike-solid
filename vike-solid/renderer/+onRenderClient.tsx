@@ -6,6 +6,7 @@ import { getTitle } from "./getTitle";
 import type { OnRenderClientAsync, PageContextClient } from "vike/types";
 import { getPageElement } from "./getPageElement";
 import { createStore, reconcile } from "solid-js/store";
+import { getLang } from "./getLang";
 
 const [pageContextStore, setPageContext] = createStore<PageContextClient>(
   {} as PageContextClient
@@ -42,6 +43,9 @@ const onRenderClient: OnRenderClientAsync = async (
     // previous page. It can even be null, in which case we should unset the
     // document title.
     const title = getTitle(pageContext);
+    const lang = getLang(pageContext) || 'en'
+
     document.title = title || "";
+    document.documentElement.lang = lang
   }
 };

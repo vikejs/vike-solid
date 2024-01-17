@@ -11,6 +11,7 @@ import { getTitle } from "./getTitle";
 import { getPageElement } from "./getPageElement";
 import type { OnRenderHtmlAsync } from "vike/types";
 import { PageContextProvider } from "./PageContextProvider";
+import { getLang } from "./getLang";
 
 checkVikeVersion()
 
@@ -44,7 +45,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (
     }
   }
 
-  const lang = pageContext.config.lang || "en";
+  const lang = getLang(pageContext) || "en";
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang='${lang}'>
