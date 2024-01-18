@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  vike-solid: link:./vike-solid/
+
 importers:
 
   .: {}
@@ -23,7 +26,7 @@ importers:
         specifier: ^0.4.148
         version: 0.4.152(vite@5.0.11)
       vike-solid:
-        specifier: workspace:*
+        specifier: link:../../vike-solid
         version: link:../../vike-solid
     devDependencies:
       typescript:
@@ -45,7 +48,7 @@ importers:
         specifier: ^0.4.148
         version: 0.4.153(vite@5.0.11)
       vike-solid:
-        specifier: workspace:*
+        specifier: link:../../vike-solid
         version: link:../../vike-solid
     devDependencies:
       typescript:
@@ -61,7 +64,7 @@ importers:
         specifier: ^0.4.148
         version: 0.4.152(vite@5.0.11)
       vike-solid:
-        specifier: workspace:*
+        specifier: link:../../vike-solid
         version: link:../../vike-solid
     devDependencies:
       typescript:

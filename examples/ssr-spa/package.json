@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "solid-js": "^1.7.11",
-    "vike-solid": "workspace:*",
+    "vike-solid": "^0.2.9",
     "vike": "^0.4.148"
   },
   "devDependencies": {

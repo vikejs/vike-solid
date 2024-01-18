@@ -9,5 +9,10 @@
     "========= Only allow pnpm; forbid yarn & npm": "",
     "preinstall": "npx only-allow pnpm"
   },
+  "pnpm": {
+    "overrides": {
+      "vike-solid": "link:./vike-solid/"
+    }
+  },
   "packageManager": "pnpm@8.6.2"
 }
