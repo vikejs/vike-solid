@@ -7,11 +7,10 @@
     "test": "tsc --noEmit"
   },
   "dependencies": {
-    "cross-fetch": "^3.1.8",
     "node-fetch": "^3.3.2",
     "solid-js": "^1.7.11",
     "vike-solid": "^0.2.9",
-    "vike": "^0.4.148"
+    "vike": "^0.4.159"
   },
   "devDependencies": {
     "typescript": "^5.1.6"

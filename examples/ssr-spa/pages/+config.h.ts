@@ -9,8 +9,6 @@ export default {
   Head,
   // <title>
   title: "My Vike Solid App",
-  // <meta name="description">
-  description: "Demo showcasing vike-solid",
-  ssr: true, // can be removed, this is the default anyway
+  ssr: true, // can be removed since `true` is the default
   extends: vikeSolid,
 } satisfies Config;

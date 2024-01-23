@@ -9,7 +9,5 @@ export default {
   Head,
   // <title>
   title: "My Vike Solid App",
-  // <meta name="description">
-  description: "Demo showcasing vike-solid",
   extends: vikeSolid,
 } satisfies Config;

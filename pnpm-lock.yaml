@@ -13,9 +13,6 @@ importers:
 
   examples/basic:
     dependencies:
-      cross-fetch:
-        specifier: ^3.1.8
-        version: 3.1.8
       node-fetch:
         specifier: ^3.3.2
         version: 3.3.2
@@ -23,30 +20,8 @@ importers:
         specifier: ^1.7.11
         version: 1.8.7
       vike:
-        specifier: ^0.4.148
-        version: 0.4.152(vite@5.0.11)
-      vike-solid:
-        specifier: link:../../vike-solid
-        version: link:../../vike-solid
-    devDependencies:
-      typescript:
-        specifier: ^5.1.6
-        version: 5.3.3
-
-  examples/onBeforeRender:
-    dependencies:
-      cross-fetch:
-        specifier: ^3.1.8
-        version: 3.1.8
-      node-fetch:
-        specifier: ^3.3.2
-        version: 3.3.2
-      solid-js:
-        specifier: ^1.7.11
-        version: 1.8.7
-      vike:
-        specifier: ^0.4.148
-        version: 0.4.153(vite@5.0.11)
+        specifier: ^0.4.159
+        version: 0.4.160(vite@5.0.11)
       vike-solid:
         specifier: link:../../vike-solid
         version: link:../../vike-solid
@@ -61,8 +36,8 @@ importers:
         specifier: ^1.7.11
         version: 1.8.7
       vike:
-        specifier: ^0.4.148
-        version: 0.4.152(vite@5.0.11)
+        specifier: ^0.4.159
+        version: 0.4.160(vite@5.0.11)
       vike-solid:
         specifier: link:../../vike-solid
         version: link:../../vike-solid
@@ -117,8 +92,8 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
       vike:
-        specifier: ^0.4.156
-        version: 0.4.156(vite@5.0.11)
+        specifier: ^0.4.159
+        version: 0.4.160(vite@5.0.11)
       vite:
         specifier: ^5.0.11
         version: 5.0.11(@types/node@18.17.4)
@@ -1329,17 +1304,10 @@ packages:
   /@brillout/require-shim@0.1.2:
     resolution: {integrity: sha512-3I4LRHnVZXoSAsEoni5mosq9l6eiJED58d9V954W4CIZ88AUfYBanWGBGbJG3NztaRTpFHEA6wB3Hn93BmmJdg==}
 
-  /@brillout/vite-plugin-import-build@0.3.2:
-    resolution: {integrity: sha512-QuVO20cZ1Qkzir9llCKpzonS29oELGQUyxNyqWh95pAnLB6HXRcix+yDlhdHbS6WyY65ar6B2h0bixKKyGZJPg==}
-    dependencies:
-      '@brillout/import': 0.2.3
-    dev: false
-
   /@brillout/vite-plugin-server-entry@0.4.3:
     resolution: {integrity: sha512-JDWFZOsSJfDo9511r7OJDeNON7x5mwIGNZCi1DQWaVuYK2cs9J/eD3Jwypg4M1ex9iAb/WvI+aSAEfsVGmNeMQ==}
     dependencies:
       '@brillout/import': 0.2.3
-    dev: true
 
   /@esbuild/android-arm64@0.19.7:
     resolution: {integrity: sha512-YEDcw5IT7hW3sFKZBkCAQaOCJQLONVcD4bOyTXMZz5fr66pTHnAet46XAtbXAkJRfIn2YVhdC6R9g4xa27jQ1w==}
@@ -1968,14 +1936,6 @@ packages:
       browserslist: 4.22.2
     dev: true
 
-  /cross-fetch@3.1.8:
-    resolution: {integrity: sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==}
-    dependencies:
-      node-fetch: 2.6.12
-    transitivePeerDependencies:
-      - encoding
-    dev: false
-
   /cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
@@ -2369,18 +2329,6 @@ packages:
     resolution: {integrity: sha512-NsXBU0UgBxo2rQLOeWNZqS3fvflWePMECr8CoSWoSTqCqGbVVsvl9vZu1HfQicYN0g5piV9Gh8RTEvo/uP752w==}
     dev: true
 
-  /node-fetch@2.6.12:
-    resolution: {integrity: sha512-C/fGU2E8ToujUivIO0H+tpQ6HWo4eEmchoPIoXtxCrVghxdKq+QOHqEZW7tuP3KlV3bC8FRMO5nMCC7Zm1VP6g==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-    dependencies:
-      whatwg-url: 5.0.0
-    dev: false
-
   /node-fetch@3.3.2:
     resolution: {integrity: sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -2697,10 +2645,6 @@ packages:
     resolution: {integrity: sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==}
     engines: {node: '>=6'}
 
-  /tr46@0.0.3:
-    resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
-    dev: false
-
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
@@ -2756,60 +2700,8 @@ packages:
   /validate-html-nesting@1.2.2:
     resolution: {integrity: sha512-hGdgQozCsQJMyfK5urgFcWEqsSSrK63Awe0t/IMR0bZ0QMtnuaiHzThW81guu3qx9abLi99NEuiaN6P9gVYsNg==}
 
-  /vike@0.4.152(vite@5.0.11):
-    resolution: {integrity: sha512-KZ9hOp5eBt156klkK4pAjzkIS9eUIaJ+zy6Le8PUc7Jxqti6CIMFJZOX2RB2grn3u3PXbQdLZuEZWXc+tEaUaA==}
-    engines: {node: '>=16.0.0'}
-    hasBin: true
-    peerDependencies:
-      react-streaming: '>=0.3.5'
-      vite: '>=3.1.0'
-    peerDependenciesMeta:
-      react-streaming:
-        optional: true
-    dependencies:
-      '@brillout/import': 0.2.3
-      '@brillout/json-serializer': 0.5.8
-      '@brillout/picocolors': 1.0.10
-      '@brillout/require-shim': 0.1.2
-      '@brillout/vite-plugin-import-build': 0.3.2
-      acorn: 8.10.0
-      cac: 6.7.14
-      es-module-lexer: 1.3.1
-      esbuild: 0.19.7
-      fast-glob: 3.3.2
-      sirv: 2.0.3
-      source-map-support: 0.5.21
-      vite: 5.0.11(@types/node@18.17.4)
-    dev: false
-
-  /vike@0.4.153(vite@5.0.11):
-    resolution: {integrity: sha512-V7QGZJScVNw6zJxzH1LiXvCP1HlIl06BfuW3DrAD4AUfP+z1teoOEBn11E7jElF5FR6+i8cDmWAZstZdJag/vA==}
-    engines: {node: '>=16.0.0'}
-    hasBin: true
-    peerDependencies:
-      react-streaming: '>=0.3.5'
-      vite: '>=3.1.0'
-    peerDependenciesMeta:
-      react-streaming:
-        optional: true
-    dependencies:
-      '@brillout/import': 0.2.3
-      '@brillout/json-serializer': 0.5.8
-      '@brillout/picocolors': 1.0.10
-      '@brillout/require-shim': 0.1.2
-      '@brillout/vite-plugin-import-build': 0.3.2
-      acorn: 8.10.0
-      cac: 6.7.14
-      es-module-lexer: 1.3.1
-      esbuild: 0.19.7
-      fast-glob: 3.3.2
-      sirv: 2.0.3
-      source-map-support: 0.5.21
-      vite: 5.0.11(@types/node@18.17.4)
-    dev: false
-
-  /vike@0.4.156(vite@5.0.11):
-    resolution: {integrity: sha512-CaeG+clu+oLDKSv4B+6aOYoWNUb/URF6dK3/AeC9NJD0XvsfW8at1yQO5hA3M1SVWpe7c/tUGw1uYVgceT4JMw==}
+  /vike@0.4.160(vite@5.0.11):
+    resolution: {integrity: sha512-sC+MR1gkY/wgPSbVOlc05PF429CSja3Cc5Ps7+vgccsIH5fhRTm8gS6TwmEK130stK0xauiS2hK9T7BvFTv5rA==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2832,7 +2724,6 @@ packages:
       sirv: 2.0.3
       source-map-support: 0.5.21
       vite: 5.0.11(@types/node@18.17.4)
-    dev: true
 
   /vite-plugin-solid@2.8.0(solid-js@1.8.11)(vite@5.0.11):
     resolution: {integrity: sha512-n5FAm7ZmTl94VWUoiJCgG7bouF2NlC9CA1wY/qbVnkFbYDWk++bFWyNoU48aLJ+lMtzNeYzJypJXOHzFKxL9xA==}
@@ -2902,17 +2793,6 @@ packages:
   /web-streams-polyfill@3.2.1:
     resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
     engines: {node: '>= 8'}
-    dev: false
-
-  /webidl-conversions@3.0.1:
-    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
-    dev: false
-
-  /whatwg-url@5.0.0:
-    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
-    dependencies:
-      tr46: 0.0.3
-      webidl-conversions: 3.0.1
     dev: false
 
   /which@2.0.2:
