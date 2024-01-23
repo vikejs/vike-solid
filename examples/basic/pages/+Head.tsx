@@ -2,7 +2,7 @@
 
 import logoUrl from "../assets/logo.svg";
 
-export default function Head() {
+export function Head() {
   return (
     <>
       <link rel="icon" href={logoUrl} />
