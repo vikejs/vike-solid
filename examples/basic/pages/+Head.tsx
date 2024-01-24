@@ -2,7 +2,7 @@
 
 import logoUrl from "../assets/logo.svg";
 
-export default function Head() {
+export function Head() {
   return (
     <>
       <meta name="description" content="Demo showcasing Vike + Solid" />
