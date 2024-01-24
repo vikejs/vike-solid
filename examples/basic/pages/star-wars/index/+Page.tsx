@@ -3,7 +3,7 @@ import type { Data } from "./+data";
 import { useData } from "vike-solid/useData";
 
 export default function Page() {
-  const { movies } = useData<Data>();
+  const movies = useData<Data>();
   return (
     <>
       <h1>Star Wars Movies</h1>
@@ -19,7 +19,10 @@ export default function Page() {
       </ol>
       <p>
         Source:{" "}
-        <a href="https://star-wars.brillout.com">star-wars.brillout.com</a>.
+        <a href="https://brillout.github.io/star-wars">
+          brillout.github.io/star-wars
+        </a>
+        .
       </p>
     </>
   );

@@ -5,7 +5,4 @@
 
 SolidJS integration for [Vike](https://github.com/vikejs/vike).
 
-> [!NOTE]  
-> For integrations with React and Vue, see the other [`vike-*` packages](https://vike.dev/vike-packages).
-
 See [examples/](https://github.com/vikejs/vike-solid/tree/main/examples).
