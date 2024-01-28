@@ -9,7 +9,7 @@
   "dependencies": {
     "solid-js": "^1.7.11",
     "vike-solid": "^0.2.9",
-    "vike": "^0.4.159"
+    "vike": "^0.4.160"
   },
   "devDependencies": {
     "typescript": "^5.1.6"

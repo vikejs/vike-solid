@@ -1,11 +1,10 @@
 export { PageContextProvider };
-export { usePageContext };
-export { useData };
+export { Context };
 
-import { useContext, createContext, type JSX } from "solid-js";
+import { createContext, type JSX } from "solid-js";
 import { type Store } from "solid-js/store";
 import type { PageContext } from "vike/types";
-import { getGlobalObject } from "./utils/getGlobalObject";
+import { getGlobalObject } from "../utils/getGlobalObject";
 
 const { Context } = getGlobalObject("PageContextProvider.ts", {
   Context: createContext<Store<PageContext>>(),
@@ -21,24 +20,4 @@ function PageContextProvider(props: {
       {props.children}
     </Context.Provider>
   );
-}
-
-/** Access the pageContext from any SolidJS component */
-function usePageContext() {
-  const pageContext = useContext(Context);
-  if (!pageContext)
-    throw new Error(
-      "<PageContextProvider> is needed for being able to use usePageContext()"
-    );
-  return pageContext;
-}
-/** Access `pageContext.data` from any SolidJS component
- *
- * See
- * - https://vike.dev/data
- * - https://vike.dev/pageContext-anywhere
- */
-function useData<Data>(): Data {
-  const { data } = usePageContext() as any;
-  return data;
 }

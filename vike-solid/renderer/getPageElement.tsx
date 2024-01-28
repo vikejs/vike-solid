@@ -1,5 +1,6 @@
 import type { PageContext } from "vike/types";
-import { PageContextProvider, usePageContext } from "./PageContextProvider";
+import { PageContextProvider } from "./PageContextProvider";
+import { usePageContext } from "../hooks/usePageContext";
 import type { JSX } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import type { Store } from "solid-js/store";

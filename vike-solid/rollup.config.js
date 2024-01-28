@@ -5,10 +5,11 @@ import { babel } from "@rollup/plugin-babel";
 export default [
   withSolid({
     input: [
-      "./renderer/+onRenderHtml.tsx",
-      "./renderer/+config.ts",
-      "./components/usePageContext.tsx",
-      "./components/useData.tsx",
+      "./renderer/onRenderHtml.tsx",
+      "./main.ts",
+      "./+config.ts",
+      "./hooks/usePageContext.tsx",
+      "./hooks/useData.tsx",
       "./components/ClientOnly.tsx",
       "./cli/index.ts",
     ],
@@ -17,9 +18,9 @@ export default [
   }),
   withSolid({
     input: [
-      "./renderer/+onRenderClient.tsx",
-      "./components/usePageContext.tsx",
-      "./components/useData.tsx",
+      "./renderer/onRenderClient.tsx",
+      "./hooks/usePageContext.tsx",
+      "./hooks/useData.tsx",
       "./cli/index.ts",
     ],
     ssr: false,
@@ -27,9 +28,10 @@ export default [
   }),
   {
     input: [
-      "./renderer/+config.ts",
-      "./components/usePageContext.tsx",
-      "./components/useData.tsx",
+      "./main.ts",
+      "./+config.ts",
+      "./hooks/usePageContext.tsx",
+      "./hooks/useData.tsx",
       "./components/ClientOnly.tsx",
       "./vite-plugin-vike-solid.ts",
     ],
