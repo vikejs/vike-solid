@@ -16,8 +16,8 @@
     "vike": "^0.4.160"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.7",
-    "@babel/preset-env": "^7.23.8",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "@babel/preset-typescript": "^7.23.3",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
