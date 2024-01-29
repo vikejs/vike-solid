@@ -1,5 +1,7 @@
+export { config };
+
 import type { Config, ConfigEffect, PageContext } from "vike/types";
-import type { Component } from "./types.js";
+import type { Component } from "./types";
 
 // Depending on the value of `config.meta.ssr`, set other config options' `env`
 // accordingly.
@@ -26,7 +28,7 @@ const toggleSsrRelatedConfig: ConfigEffect = ({
   };
 };
 
-export default {
+const config = {
   // https://vike.dev/onRenderHtml
   onRenderHtml: "import:vike-solid/renderer/onRenderHtml:onRenderHtml",
   // https://vike.dev/onRenderClient
@@ -61,7 +63,7 @@ export default {
   },
 } satisfies Config;
 
-// We purposely define the ConfigVikeSolid interface in this file: that way we ensure it's always applied whenever the user `import vikeSolid from 'vike-solid'`
+// We purposely define the ConfigVikeSolid interface in this file: that way we ensure it's always applied whenever the user `import vikeSolid from 'vike-solid/config'`
 // https://vike.dev/pageContext#typescript
 declare global {
   namespace VikePackages {

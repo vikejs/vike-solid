@@ -13,7 +13,7 @@
   "peerDependencies": {
     "solid-js": "^1.8.7",
     "vite": "^4.4 || ^5.0.2",
-    "vike": "^0.4.159"
+    "vike": "^0.4.160"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
@@ -33,18 +33,22 @@
     "vike": "^0.4.160"
   },
   "exports": {
-    ".": "./dist/+config.js",
+    ".": "./dist/main.js",
+    "./config": "./dist/+config.js",
     "./vite": "./dist/vite-plugin-vike-solid.js",
     "./usePageContext": "./dist/usePageContext.js",
     "./useData": "./dist/useData.js",
     "./ClientOnly": "./dist/ClientOnly.js",
-    "./renderer/onRenderHtml": "./dist/+onRenderHtml.js",
-    "./renderer/onRenderClient": "./dist/+onRenderClient.js"
+    "./renderer/onRenderHtml": "./dist/onRenderHtml.js",
+    "./renderer/onRenderClient": "./dist/onRenderClient.js"
   },
   "typesVersions": {
     "*": {
       ".": [
-        "dist/renderer/+config.d.ts"
+        "dist/main.d.ts"
+      ],
+      "config": [
+        "dist/+config.d.ts"
       ],
       "vite": [
         "dist/vite-plugin-vike-solid.d.ts"
@@ -53,10 +57,10 @@
         "client.d.ts"
       ],
       "usePageContext": [
-        "dist/components/usePageContext.d.ts"
+        "dist/hooks/usePageContext.d.ts"
       ],
       "useData": [
-        "dist/components/useData.d.ts"
+        "dist/hooks/useData.d.ts"
       ],
       "ClientOnly": [
         "dist/components/ClientOnly.d.ts"
@@ -68,8 +72,8 @@
     "client.d.ts"
   ],
   "bin": "./cli/entry.js",
-  "main": "dist/+config.js",
-  "types": "dist/renderer/+config.d.ts",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "repository": "github:vikejs/vike-solid",
   "license": "MIT"
 }
