@@ -27,7 +27,7 @@ importers:
         version: link:../../vike-solid
     devDependencies:
       typescript:
-        specifier: ^5.1.6
+        specifier: ^5.3.3
         version: 5.3.3
 
   examples/ssr-spa:
@@ -43,7 +43,7 @@ importers:
         version: link:../../vike-solid
     devDependencies:
       typescript:
-        specifier: ^5.1.6
+        specifier: ^5.3.3
         version: 5.3.3
 
   vike-solid:
