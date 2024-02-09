@@ -7,9 +7,9 @@
     "test": "tsc --noEmit"
   },
   "dependencies": {
-    "solid-js": "^1.7.11",
-    "vike-solid": "^0.2.9",
-    "vike": "^0.4.160"
+    "solid-js": "^1.8.14",
+    "vike": "^0.4.160",
+    "vike-solid": "^0.3.1"
   },
   "devDependencies": {
     "typescript": "^5.1.6"
