@@ -33,7 +33,25 @@ To add `vike-solid` to an existing Vike app:
 npm install vike-solid
 ```
 
-2. Extend your existing Vike config files with `vike-solid`:
+2. Edit your Vite config:
+
+```ts
+// vite.config.ts
+
+import vikeSolid from "vike-solid/vite";
+import vike from "vike/plugin";
+import type { UserConfig } from "vite";
+
+export default {
+  plugins: [
+    vike(),
+    // Add vikeSolid() after vike()
+    vikeSolid()
+  ]
+} satisfies UserConfig
+```
+
+3. Extend your existing Vike config files with `vike-solid`:
 
 ```diff
  // /pages/+config.h.js
