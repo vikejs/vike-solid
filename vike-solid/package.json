@@ -71,7 +71,6 @@
     "dist/",
     "client.d.ts"
   ],
-  "bin": "./cli/entry.js",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "repository": "github:vikejs/vike-solid",

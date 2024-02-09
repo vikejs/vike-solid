@@ -1,11 +1,5 @@
 import solidPlugin, { type Options as SolidOptions } from "vite-plugin-solid";
-import ssr, { UserConfig } from "vike/plugin";
 import { mergeConfig, type Plugin } from "vite";
-
-export interface Options {
-  solid?: SolidOptions;
-  vps?: UserConfig;
-}
 
 function overrideConfig(): Plugin {
   return {
@@ -18,7 +12,7 @@ function overrideConfig(): Plugin {
   };
 }
 
-export default function (options: Options = {}): Plugin[] {
+export default function (options: Partial<SolidOptions> = {}): Plugin[] {
   return [
     solidPlugin(
       mergeConfig(
@@ -31,10 +25,9 @@ export default function (options: Options = {}): Plugin[] {
             hydratable: true,
           },
         },
-        options.solid ?? {},
+        options ?? {},
       ),
     ),
-    ssr(options.vps ?? {}),
     overrideConfig(),
   ];
 }

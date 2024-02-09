@@ -29,6 +29,9 @@ importers:
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
+      vite:
+        specifier: ^5.1.1
+        version: 5.1.1(@types/node@18.17.4)
 
   examples/ssr-spa:
     dependencies:
@@ -45,6 +48,9 @@ importers:
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
+      vite:
+        specifier: ^5.1.1
+        version: 5.1.1(@types/node@18.17.4)
 
   vike-solid:
     dependencies:
