@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  vike-solid: ^0.3.1
+  vike-solid: link:./vike-solid/
 
 importers:
 
@@ -23,12 +23,15 @@ importers:
         specifier: ^0.4.160
         version: 0.4.160(vite@5.1.1)
       vike-solid:
-        specifier: ^0.3.1
+        specifier: link:../../vike-solid
         version: link:../../vike-solid
     devDependencies:
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
+      vite:
+        specifier: ^5.1.1
+        version: 5.1.1(@types/node@18.17.4)
 
   examples/ssr-spa:
     dependencies:
@@ -39,12 +42,15 @@ importers:
         specifier: ^0.4.160
         version: 0.4.160(vite@5.1.1)
       vike-solid:
-        specifier: ^0.3.1
+        specifier: link:../../vike-solid
         version: link:../../vike-solid
     devDependencies:
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
+      vite:
+        specifier: ^5.1.1
+        version: 5.1.1(@types/node@18.17.4)
 
   vike-solid:
     dependencies:
