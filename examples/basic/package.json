@@ -9,7 +9,7 @@
   "dependencies": {
     "node-fetch": "^3.3.2",
     "solid-js": "^1.8.15",
-    "vike": "^0.4.163",
+    "vike": "^0.4.165",
     "vike-solid": "^0.4.1"
   },
   "devDependencies": {
