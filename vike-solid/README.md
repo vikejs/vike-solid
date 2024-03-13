@@ -54,7 +54,7 @@ export default {
 3. Extend your existing Vike config files with `vike-solid`:
 
 ```diff
- // /pages/+config.h.js
+ // /pages/+config.js
 
 +import vikeSolid from 'vike-solid/config'
 +
