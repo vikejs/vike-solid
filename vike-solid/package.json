@@ -8,7 +8,7 @@
     "release": "pnpm run build && bumpp --commit --push --tag && pnpm publish"
   },
   "dependencies": {
-    "vite-plugin-solid": "^2.10.1"
+    "vite-plugin-solid": "^2.10.2"
   },
   "peerDependencies": {
     "solid-js": "^1.8.7",
@@ -24,7 +24,7 @@
     "@types/node": "^18.17.4",
     "babel-preset-solid": "^1.8.15",
     "bumpp": "^9.4.0",
-    "rollup": "^4.12.1",
+    "rollup": "^4.13.0",
     "rollup-plugin-dts": "^6.1.0",
     "solid-js": "^1.8.15",
     "tslib": "^2.6.2",
