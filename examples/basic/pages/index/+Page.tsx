@@ -1,4 +1,12 @@
-import { ClientOnly } from "vike-solid/ClientOnly";
+import { clientOnly } from "vike-solid/ClientOnly";
+
+const ClientOnlyCounter = clientOnly(() => import("./Counter"));
+const ClientOnlyCounterSlow = clientOnly(async () => {
+  // Wasting time to show the fallback
+  await new Promise(resolve => setTimeout(resolve, 2000));
+
+  return import("./Counter");
+});
 
 export default function Page() {
   return (
@@ -8,22 +16,9 @@ export default function Page() {
       <ul>
         <li>Rendered to HTML.</li>
 
-        <ClientOnly load={() => import("./Counter")} fallback={<li>Waiting for client-side only component to load (quick)</li>}>
-          {(Counter) => <li>
-            Interactive 1. <Counter />
-          </li>}
-        </ClientOnly>
+        <li><ClientOnlyCounter fallback={<>Waiting for client-side only component to load (quick)</>} /></li>
 
-        <ClientOnly load={async () => {
-          // Wasting time to show the fallback
-          await new Promise(resolve => setTimeout(resolve, 2000));
-
-          return import("./Counter");
-        }} fallback={<li>Waiting for client-side only component to load (slow)</li>}>
-          {(Counter) => <li>
-            Interactive 2. <Counter />
-          </li>}
-        </ClientOnly>
+        <li><ClientOnlyCounterSlow fallback={<>Waiting for client-side only component to load (slow)</>} /></li>
       </ul>
     </>
   );

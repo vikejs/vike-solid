@@ -21,7 +21,7 @@ SolidJS integration for Vike, see [vike.dev/solid](https://vike.dev/solid).
 
 ## Scaffold new app
 
-Use [Bati](https://batijs.github.io/) to scaffold a Vike app using `vike-solid`.
+Use [Bati](https://batijs.dev/) to scaffold a Vike app using `vike-solid`.
 
 ## Add to existing app
 
