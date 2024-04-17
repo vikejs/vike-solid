@@ -12,10 +12,10 @@ import {
   stampPipe,
   version,
 } from "vike/server";
-import { getHeadSetting } from "./getHeadSetting";
-import { getPageElement } from "./getPageElement";
+import { getHeadSetting } from "./getHeadSetting.js";
+import { getPageElement } from "./getPageElement.js";
 import type { OnRenderHtmlAsync } from "vike/types";
-import { PageContextProvider } from "./PageContextProvider";
+import { PageContextProvider } from "./PageContextProvider.js";
 
 checkVikeVersion();
 

@@ -1,7 +1,7 @@
 import type { Config } from "vike/types";
 import vikeSolid from "vike-solid/config";
-import Layout from "../layouts/LayoutDefault";
-import Head from "./Head";
+import Layout from "../layouts/LayoutDefault.js";
+import Head from "./Head.js";
 
 // Default config (can be overridden by pages)
 export default {

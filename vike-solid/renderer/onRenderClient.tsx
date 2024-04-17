@@ -2,9 +2,9 @@
 export { onRenderClient };
 
 import { hydrate, render } from "solid-js/web";
-import { getHeadSetting } from "./getHeadSetting";
+import { getHeadSetting } from "./getHeadSetting.js";
 import type { OnRenderClientAsync, PageContextClient } from "vike/types";
-import { getPageElement } from "./getPageElement";
+import { getPageElement } from "./getPageElement.js";
 import { createStore, reconcile } from "solid-js/store";
 
 const [pageContextStore, setPageContext] = createStore<PageContextClient>(

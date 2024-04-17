@@ -1,5 +1,5 @@
 import { For } from "solid-js";
-import type { Data } from "./+data";
+import type { Data } from "./+data.js";
 import { useData } from "vike-solid/useData";
 
 export default function Page() {

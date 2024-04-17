@@ -1,7 +1,7 @@
 export { config };
 
 import type { Config, ConfigEffect, PageContext } from "vike/types";
-import type { Component } from "./types";
+import type { Component } from "solid-js";
 
 // Depending on the value of `config.meta.ssr`, set other config options' `env`
 // accordingly.
