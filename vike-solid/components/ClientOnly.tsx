@@ -1,10 +1,10 @@
 import {
-  Component,
-  ComponentProps,
+  type Component,
+  type ComponentProps,
   createEffect,
   createMemo,
   createSignal,
-  JSX,
+  type JSX,
   lazy,
   onMount,
   sharedConfig,

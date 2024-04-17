@@ -1,6 +1,6 @@
 export { useData };
 
-import { usePageContext } from "./usePageContext";
+import { usePageContext } from "./usePageContext.js";
 
 /** Access `pageContext.data` from any SolidJS component
  *

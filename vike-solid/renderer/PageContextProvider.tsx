@@ -4,7 +4,7 @@ export { Context };
 import { createContext, type JSX } from "solid-js";
 import { type Store } from "solid-js/store";
 import type { PageContext } from "vike/types";
-import { getGlobalObject } from "../utils/getGlobalObject";
+import { getGlobalObject } from "../utils/getGlobalObject.js";
 
 const { Context } = getGlobalObject("PageContextProvider.ts", {
   Context: createContext<Store<PageContext>>(),

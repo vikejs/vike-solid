@@ -3,7 +3,7 @@ export { data };
 export type Data = Awaited<ReturnType<typeof data>>;
 
 import fetch from "node-fetch";
-import type { Movie, MovieDetails } from "../types";
+import type { Movie, MovieDetails } from "../types.js";
 
 const data = async () => {
   const response = await fetch(

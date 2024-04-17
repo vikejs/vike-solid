@@ -1,4 +1,4 @@
-import vpvs from "./vite-plugin-vike-solid";
+import vpvs from "./vite-plugin-vike-solid.js";
 import type { UserConfig } from "vite";
 
 const root = process.cwd();

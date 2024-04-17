@@ -1,7 +1,7 @@
 export { usePageContext };
 
 import { useContext } from "solid-js";
-import { Context } from "../renderer/PageContextProvider";
+import { Context } from "../renderer/PageContextProvider.js";
 
 /** Access the pageContext from any SolidJS component */
 function usePageContext() {

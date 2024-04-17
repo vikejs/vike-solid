@@ -1,6 +1,6 @@
 export { title };
 
-import type { Data } from "./+data";
+import type { Data } from "./+data.js";
 import type { PageContext } from "vike/types";
 
 function title(pageContext: PageContext<Data>) {

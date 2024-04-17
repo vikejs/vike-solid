@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "scripts": {
     "dev": "cd vike-solid/ && pnpm run dev",
     "build": "cd vike-solid/ && pnpm run build",

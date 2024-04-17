@@ -4,7 +4,7 @@ export type Data = Awaited<ReturnType<typeof data>>;
 
 import fetch from "node-fetch";
 import type { PageContextServer } from "vike/types";
-import type { MovieDetails } from "../types";
+import type { MovieDetails } from "../types.js";
 
 const data = async (pageContext: PageContextServer) => {
   const response = await fetch(

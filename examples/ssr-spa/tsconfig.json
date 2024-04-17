@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "strict": true,
-    "module": "ES2020",
-    "moduleResolution": "node",
-    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "target": "ES2021",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "types": ["vike-solid/client"],
     "jsx": "preserve",
