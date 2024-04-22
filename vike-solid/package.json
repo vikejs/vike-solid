@@ -24,13 +24,13 @@
     "@types/node": "^18.17.4",
     "babel-preset-solid": "^1.8.16",
     "bumpp": "^9.4.0",
-    "rollup": "^4.14.3",
+    "rollup": "^4.16.1",
     "rollup-plugin-dts": "^6.1.0",
     "solid-js": "^1.8.16",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5",
-    "vike": "^0.4.168",
-    "vite": "^5.2.9"
+    "vike": "^0.4.171",
+    "vite": "^5.2.10"
   },
   "exports": {
     ".": "./dist/main.js",
