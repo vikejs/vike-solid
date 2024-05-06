@@ -16,21 +16,21 @@
     "vite": "^4.4 || ^5.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.4",
-    "@babel/preset-env": "^7.24.4",
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
     "@babel/preset-typescript": "^7.24.1",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^18.17.4",
     "babel-preset-solid": "^1.8.17",
-    "bumpp": "^9.4.0",
-    "rollup": "^4.17.1",
+    "bumpp": "^9.4.1",
+    "rollup": "^4.17.2",
     "rollup-plugin-dts": "^6.1.0",
     "solid-js": "^1.8.17",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5",
     "vike": "^0.4.171",
-    "vite": "^5.2.10"
+    "vite": "^5.2.11"
   },
   "exports": {
     ".": "./dist/main.js",
