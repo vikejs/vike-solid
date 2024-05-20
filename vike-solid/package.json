@@ -25,7 +25,7 @@
     "babel-preset-solid": "^1.8.17",
     "bumpp": "^9.4.1",
     "rollup": "^4.17.2",
-    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-dts": "^6.1.1",
     "solid-js": "^1.8.17",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5",
