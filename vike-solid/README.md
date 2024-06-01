@@ -5,6 +5,6 @@
 
 [Solid](https://www.solidjs.com) integration for Vike.
 
-- Docs at [`vike.dev`](https://vike.dev) and [`vike.dev/vike-solid`](https://vike.dev/vike-solid)
+- Docs at [`vike.dev/vike-solid`](https://vike.dev/vike-solid)
 - [Examples](https://github.com/vikejs/vike-solid/tree/main/examples)
 - [MIGRATION.md](https://github.com/vikejs/vike-solid/blob/main/MIGRATION.md)
