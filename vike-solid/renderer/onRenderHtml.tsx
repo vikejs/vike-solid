@@ -22,6 +22,9 @@ checkVikeVersion();
 const onRenderHtml: OnRenderHtmlAsync = async (
   pageContext
 ): ReturnType<OnRenderHtmlAsync> => {
+  // Reverse the layouts.
+  pageContext.config.Layout = pageContext.config.Layout?.toReversed() ?? [];
+
   const title = getHeadSetting("title", pageContext);
   const favicon = getHeadSetting("favicon", pageContext);
   const lang = getHeadSetting("lang", pageContext) || "en";

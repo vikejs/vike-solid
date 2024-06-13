@@ -5,7 +5,7 @@ import { hydrate, render } from "solid-js/web";
 import { getHeadSetting } from "./getHeadSetting.js";
 import type { OnRenderClientAsync, PageContextClient } from "vike/types";
 import { getPageElement } from "./getPageElement.js";
-import { createStore, reconcile } from "solid-js/store";
+import { createStore, produce, reconcile } from "solid-js/store";
 
 const [pageContextStore, setPageContext] = createStore<PageContextClient>(
   {} as PageContextClient
@@ -17,6 +17,9 @@ let rendered = false;
 const onRenderClient: OnRenderClientAsync = async (
   pageContext
 ): ReturnType<OnRenderClientAsync> => {
+  // Reverse the layouts.
+  pageContext.config.Layout = pageContext.config.Layout?.toReversed() ?? [];
+
   if (!rendered) {
     // Dispose to prevent duplicate pages when navigating.
     if (dispose) dispose();
@@ -35,7 +38,7 @@ const onRenderClient: OnRenderClientAsync = async (
   } else {
     // Client-side navigation
 
-    setPageContext(reconcile(pageContext));
+    setPageContext(pageContext);
 
     const title = getHeadSetting("title", pageContext) || "";
     const lang = getHeadSetting("lang", pageContext) || "en";
