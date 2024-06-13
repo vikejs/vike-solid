@@ -72,8 +72,8 @@ const config = {
 // We purposely define the ConfigVikeSolid interface in this file: that way we ensure it's always applied whenever the user `import vikeSolid from 'vike-solid/config'`
 // https://vike.dev/pageContext#typescript
 declare global {
-  namespace VikePackages {
-    interface ConfigVikeSolid {
+  namespace Vike {
+    interface Config {
       /** The page's root Solid component */
       Page?: Component;
       /** Solid element renderer and appended into <head></head> */
