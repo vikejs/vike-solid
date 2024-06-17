@@ -56,14 +56,12 @@ export function ClientOnly<T>(props: {
  * @see {@link https://docs.solidjs.com/solid-start/reference/client/client-only}
  */
 export function clientOnly<T extends Component<any>>(
-  fn: () => Promise<{
-    default: T;
-  }>
+  fn: () => Promise<{ default: T } | T>
 ) {
   if (isServer) return (props: ComponentProps<T> & { fallback?: JSX.Element }) => props.fallback;
 
   const [comp, setComp] = createSignal<T>();
-  fn().then(m => setComp(() => m.default));
+  fn().then(m => setComp(() => 'default' in m ? m.default : m));
   return (props: ComponentProps<T>) => {
     let Comp: T | undefined;
     let m: boolean;
