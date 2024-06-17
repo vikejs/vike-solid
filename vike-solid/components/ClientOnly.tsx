@@ -52,18 +52,16 @@ export function ClientOnly<T>(props: {
 
 // Copied from https://github.com/solidjs/solid-start/blob/2d75d5fedfd11f739b03ca34decf23865868ac09/packages/start/src/shared/clientOnly.tsx#L7
 /**
- * Same as `clientOnly` from solid-start
- * @see {@link https://docs.solidjs.com/solid-start/reference/client/client-only}
+ * Load and render a component only on the client-side.
+ * @see {@link https://vike.dev/clientOnly}
  */
 export function clientOnly<T extends Component<any>>(
-  fn: () => Promise<{
-    default: T;
-  }>
+  fn: () => Promise<{ default: T } | T>
 ) {
   if (isServer) return (props: ComponentProps<T> & { fallback?: JSX.Element }) => props.fallback;
 
   const [comp, setComp] = createSignal<T>();
-  fn().then(m => setComp(() => m.default));
+  fn().then(m => setComp(() => 'default' in m ? m.default : m));
   return (props: ComponentProps<T>) => {
     let Comp: T | undefined;
     let m: boolean;
