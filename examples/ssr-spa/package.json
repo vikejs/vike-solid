@@ -7,13 +7,13 @@
     "test": "tsc --noEmit"
   },
   "dependencies": {
-    "solid-js": "^1.8.16",
-    "vike": "^0.4.168",
+    "solid-js": "^1.8.17",
+    "vike": "^0.4.177",
     "vike-solid": "link:vike-solid"
   },
   "devDependencies": {
     "typescript": "^5.4.5",
-    "vite": "^5.2.9"
+    "vite": "^5.3.1"
   },
   "type": "module"
 }
