@@ -1,17 +1,8 @@
 // https://vike.dev/onRenderHtml
 export { onRenderHtml };
 
-import {
-  generateHydrationScript,
-  renderToStream,
-  renderToString,
-} from "solid-js/web";
-import {
-  dangerouslySkipEscape,
-  escapeInject,
-  stampPipe,
-  version,
-} from "vike/server";
+import { generateHydrationScript, renderToStream, renderToString } from "solid-js/web";
+import { dangerouslySkipEscape, escapeInject, stampPipe, version } from "vike/server";
 import { getHeadSetting } from "./getHeadSetting.js";
 import { getPageElement } from "./getPageElement.js";
 import type { OnRenderHtmlAsync } from "vike/types";
@@ -22,9 +13,6 @@ checkVikeVersion();
 const onRenderHtml: OnRenderHtmlAsync = async (
   pageContext
 ): ReturnType<OnRenderHtmlAsync> => {
-  // Reverse the layouts.
-  pageContext.config.Layout = pageContext.config.Layout?.toReversed() ?? [];
-
   const title = getHeadSetting("title", pageContext);
   const favicon = getHeadSetting("favicon", pageContext);
   const lang = getHeadSetting("lang", pageContext) || "en";

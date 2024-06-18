@@ -1,10 +1,10 @@
 import type { PageContext } from "vike/types";
 import { PageContextProvider } from "./PageContextProvider.js";
 import { usePageContext } from "../hooks/usePageContext.js";
-import type { JSX, FlowComponent, FlowProps, ParentComponent } from "solid-js";
-import { createComponent, createComputed, createEffect, createMemo, For } from "solid-js";
+import type { FlowComponent, JSX } from "solid-js";
+import { createComponent, createComputed } from "solid-js";
 import { Dynamic } from "solid-js/web";
-import { createStore, reconcile, unwrap, type Store } from "solid-js/store";
+import { createStore, reconcile, type Store } from "solid-js/store";
 
 export function getPageElement(pageContext: Store<PageContext>): JSX.Element {
   const page = (
@@ -26,7 +26,7 @@ function Layout(props: { children: JSX.Element }) {
     setLayouts(reconcile(pageContext.config.Layout!));
   })
   const renderLayouts = (i: number = 0) => {
-    let item: FlowComponent = layouts[i];
+    let item = layouts.at(-(i + 1));
 
     if (!item) return props.children;
 
@@ -54,20 +54,3 @@ function Page() {
 function Passthrough(props: { children: JSX.Element }) {
   return <>{props.children}</>;
 }
-
-/**
- * Utility for tracking non-primitive values inside a store. (e.g. Arrays, Objects, Functions).
- *
- * Otherwise, your createMemo or createEffect won't run even if it actually changed.
- *
- * Reference: https://github.com/solidjs/solid/discussions/829#discussioncomment-2102335
- */
-function deepTrack(store: any) {
-  for (const k in store) {
-    const value = store[k];
-    if (typeof value === "object") {
-      deepTrack(value);
-    }
-  }
-}
-
