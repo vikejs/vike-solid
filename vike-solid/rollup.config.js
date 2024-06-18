@@ -10,7 +10,7 @@ export default [
       "+config": "./+config.ts",
       "hooks/usePageContext": "./hooks/usePageContext.tsx",
       "hooks/useData": "./hooks/useData.tsx",
-      "components/ClientOnly": "./components/ClientOnly.tsx"
+      "components/clientOnly": "./components/clientOnly.tsx"
     },
     ssr: true,
     external: ["vike/server", "vike/plugin"]
@@ -30,7 +30,7 @@ export default [
       "./+config.ts",
       "./hooks/usePageContext.tsx",
       "./hooks/useData.tsx",
-      "./components/ClientOnly.tsx",
+      "./components/clientOnly.tsx",
       "./vite-plugin-vike-solid.ts"
     ],
     output: [{ dir: "dist", format: "es", sanitizeFileName: false }],

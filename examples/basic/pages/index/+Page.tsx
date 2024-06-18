@@ -1,4 +1,4 @@
-import { clientOnly } from "vike-solid/ClientOnly";
+import { clientOnly } from "vike-solid/clientOnly";
 
 const ClientOnlyCounter = clientOnly(() => import("./Counter"));
 const ClientOnlyCounterSlow = clientOnly(async () => {
