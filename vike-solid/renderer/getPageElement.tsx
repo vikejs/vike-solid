@@ -1,9 +1,10 @@
 import type { PageContext } from "vike/types";
 import { PageContextProvider } from "./PageContextProvider.js";
 import { usePageContext } from "../hooks/usePageContext.js";
-import type { JSX } from "solid-js";
+import type { FlowComponent, JSX } from "solid-js";
+import { createComponent, createComputed } from "solid-js";
 import { Dynamic } from "solid-js/web";
-import type { Store } from "solid-js/store";
+import { createStore, reconcile, type Store } from "solid-js/store";
 
 export function getPageElement(pageContext: Store<PageContext>): JSX.Element {
   const page = (
@@ -18,11 +19,27 @@ export function getPageElement(pageContext: Store<PageContext>): JSX.Element {
 
 function Layout(props: { children: JSX.Element }) {
   const pageContext = usePageContext();
-  return (
-    <Dynamic component={pageContext.config.Layout ?? Passthrough}>
-      {props.children}
-    </Dynamic>
-  );
+
+  const [layouts, setLayouts] = createStore<FlowComponent[]>([]);
+
+  createComputed(() => {
+    setLayouts(reconcile(pageContext.config.Layout!));
+  })
+  const renderLayouts = (i: number = 0) => {
+    let item = layouts.at(-(i + 1));
+
+    if (!item) return props.children;
+
+    if (typeof item !== "function") item = Passthrough;
+
+    return createComponent(item, {
+      get children(): JSX.Element {
+        return renderLayouts(i + 1);
+      },
+    });
+  };
+
+  return renderLayouts();
 }
 
 function Page() {

@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "node-fetch": "^3.3.2",
-    "solid-js": "^1.8.16",
-    "vike": "^0.4.168",
+    "solid-js": "^1.8.17",
+    "vike": "^0.4.177",
     "vike-solid": "link:vike-solid"
   },
   "devDependencies": {

@@ -5,7 +5,7 @@ import { hydrate, render } from "solid-js/web";
 import { getHeadSetting } from "./getHeadSetting.js";
 import type { OnRenderClientAsync, PageContextClient } from "vike/types";
 import { getPageElement } from "./getPageElement.js";
-import { createStore, reconcile } from "solid-js/store";
+import { createStore } from "solid-js/store";
 
 const [pageContextStore, setPageContext] = createStore<PageContextClient>(
   {} as PageContextClient
@@ -35,7 +35,7 @@ const onRenderClient: OnRenderClientAsync = async (
   } else {
     // Client-side navigation
 
-    setPageContext(reconcile(pageContext));
+    setPageContext(pageContext);
 
     const title = getHeadSetting("title", pageContext) || "";
     const lang = getHeadSetting("lang", pageContext) || "en";

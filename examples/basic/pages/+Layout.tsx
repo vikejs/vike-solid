@@ -1,4 +1,4 @@
-import "./style.css";
+import "../layouts/style.css";
 import logoUrl from "../assets/logo.svg";
 import { Link } from "../components/Link.js";
 import type { JSX } from "solid-js";
@@ -16,6 +16,9 @@ export function Layout(props: { children?: JSX.Element }) {
         <Logo />
         <Link href="/">Welcome</Link>
         <Link href="/star-wars">Data Fetching</Link>
+        <Link href="/without-ssr">Without SSR</Link>
+        <Link href="/starship">Nested Layout 1</Link>
+        <Link href="/stardust">Nested Layout 2</Link>
       </Sidebar>
       <Content>{props.children}</Content>
     </div>

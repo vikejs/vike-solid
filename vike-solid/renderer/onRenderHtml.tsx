@@ -1,17 +1,8 @@
 // https://vike.dev/onRenderHtml
 export { onRenderHtml };
 
-import {
-  generateHydrationScript,
-  renderToStream,
-  renderToString,
-} from "solid-js/web";
-import {
-  dangerouslySkipEscape,
-  escapeInject,
-  stampPipe,
-  version,
-} from "vike/server";
+import { generateHydrationScript, renderToStream, renderToString } from "solid-js/web";
+import { dangerouslySkipEscape, escapeInject, stampPipe, version } from "vike/server";
 import { getHeadSetting } from "./getHeadSetting.js";
 import { getPageElement } from "./getPageElement.js";
 import type { OnRenderHtmlAsync } from "vike/types";
