@@ -6,7 +6,7 @@ export default [
   withSolid({
     input: {
       "renderer/onRenderHtml": "./renderer/onRenderHtml.tsx",
-      "main": "./main.ts",
+      "index": "./index.ts",
       "+config": "./+config.ts",
       "hooks/usePageContext": "./hooks/usePageContext.tsx",
       "hooks/useData": "./hooks/useData.tsx",
@@ -26,7 +26,7 @@ export default [
   }),
   {
     input: [
-      "./main.ts",
+      "./index.ts",
       "./+config.ts",
       "./hooks/usePageContext.tsx",
       "./hooks/useData.tsx",

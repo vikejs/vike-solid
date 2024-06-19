@@ -1,43 +1,26 @@
-export { config };
+import type { Config } from "vike/types";
+import { ssrEffect } from './renderer/ssrEffect.js'
 
-import type { Config, ConfigEffect, PageContext } from "vike/types";
-import type { Component } from "solid-js";
+// This is required to make TypeScript load the global interfaces such as Vike.PageContext so that they're always loaded. 
+// We can assume that the user always imports this file over `import vikeSolid from 'vike-solid/config'`
+import "./types/index.js"
 
-// Depending on the value of `config.meta.ssr`, set other config options' `env`
-// accordingly.
-// See https://vike.dev/meta#:~:text=Modifying%20the%20environment%20of%20existing%20hooks
-const toggleSsrRelatedConfig: ConfigEffect = ({
-  configDefinedAt,
-  configValue,
-}) => {
-  if (typeof configValue !== "boolean") {
-    throw new Error(`${configDefinedAt} should be a boolean`);
-  }
+export default {
+  name: "vike-solid",
+  require: {
+    vike: '>=0.4.173'
+  },
 
-  return {
-    meta: {
-      // When the SSR flag is false, we want to render the page only in the
-      // browser. We achieve this by then making the `Page` implementation
-      // accessible only in the client's renderer.
-      Page: {
-        env: configValue
-          ? { server: true, client: true } // default
-          : { client: true },
-      },
-    },
-  };
-};
-
-const config = {
-  // @ts-ignore Remove this ts-ignore once Vike's new version is released.
-  name: 'vike-solid',
   // https://vike.dev/onRenderHtml
   onRenderHtml: "import:vike-solid/renderer/onRenderHtml:onRenderHtml",
   // https://vike.dev/onRenderClient
   onRenderClient: "import:vike-solid/renderer/onRenderClient:onRenderClient",
   // https://vike.dev/clientRouting
+
+  // https://vike.dev/clientRouting
   clientRouting: true,
   hydrationCanBeAborted: true,
+
   // https://vike.dev/meta
   meta: {
     Head: {
@@ -58,7 +41,7 @@ const config = {
     },
     ssr: {
       env: { config: true },
-      effect: toggleSsrRelatedConfig,
+      effect: ssrEffect,
     },
     stream: {
       env: { server: true },
@@ -67,45 +50,9 @@ const config = {
     name: {
       env: { config: true }
     },
+    // Vike already defines the setting 'require', but we redundantly define it here for older Vike versions (otherwise older Vike versions will complain that 'require` is an unknown config). TODO/eventually: remove this once <=0.4.172 versions become rare (also because we use the `require` setting starting from `0.4.173`).
+    require: {
+      env: { config: true }
+    },
   },
 } satisfies Config;
-
-// We purposely define the ConfigVikeSolid interface in this file: that way we ensure it's always applied whenever the user `import vikeSolid from 'vike-solid/config'`
-// https://vike.dev/pageContext#typescript
-declare global {
-  namespace Vike {
-    interface Config {
-      /** The page's root Solid component */
-      Page?: Component;
-      /** Solid element renderer and appended into <head></head> */
-      Head?: Component;
-      /** A component, usually common to several pages, that wraps the root component `Page` */
-      Layout?: Component;
-      title?: string | ((pageContext: PageContext) => string);
-      favicon?: string;
-      /**
-       * @default 'en'
-       */
-      lang?: string;
-      /**
-       * If true, render mode is SSR or pre-rendering (aka SSG). In other words, the
-       * page's HTML will be rendered at build-time or request-time.
-       * If false, render mode is SPA. In other words, the page will only be
-       * rendered in the browser.
-       *
-       * See https://vike.dev/render-modes
-       *
-       * @default true
-       *
-       */
-      ssr?: boolean;
-      /**
-       * Whether to stream the page's HTML. Requires Server-Side Rendering (`ssr: true`).
-       *
-       * @default false
-       *
-       */
-      stream?: boolean;
-    }
-  }
-}

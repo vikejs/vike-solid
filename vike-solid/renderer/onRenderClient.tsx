@@ -23,7 +23,7 @@ const onRenderClient: OnRenderClientAsync = async (
 
     setPageContext(pageContext);
 
-    const container = document.getElementById("page-view")!;
+    const container = document.getElementById("root")!;
     if (container.innerHTML !== "" && pageContext.isHydration) {
       // Hydration
       dispose = hydrate(() => getPageElement(pageContextStore)!, container);
