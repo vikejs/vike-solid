@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
     "build": "tsc --noEmit && rollup -c rollup.config.js",
-    "release": "release-me patch",
-    "release:minor": "release-me minor",
-    "release:commit": "release-me commit"
+    "release": "LANG=en_US release-me patch",
+    "release:minor": "LANG=en_US release-me minor",
+    "release:commit": "LANG=en_US release-me commit"
   },
   "dependencies": {
     "vite-plugin-solid": "^2.10.2"
