@@ -1,6 +1,5 @@
 import type { PageContext } from "vike/types";
-import { PageContextProvider } from "./PageContextProvider.js";
-import { usePageContext } from "../hooks/usePageContext.js";
+import { usePageContext, PageContextProvider } from "../hooks/usePageContext.js";
 import type { FlowComponent, JSX } from "solid-js";
 import { createComponent, createComputed } from "solid-js";
 import { Dynamic } from "solid-js/web";

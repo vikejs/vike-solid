@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
     "build": "tsc --noEmit && rollup -c rollup.config.js",
-    "release": "pnpm run build && bumpp --commit --push --tag && pnpm publish"
+    "release": "release-me patch",
+    "release:minor": "release-me minor",
+    "release:commit": "release-me commit"
   },
   "dependencies": {
     "vite-plugin-solid": "^2.10.2"
@@ -19,6 +21,7 @@
     "@babel/core": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
+    "@brillout/release-me": "^0.3.9",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^18.17.4",
@@ -33,7 +36,7 @@
     "vite": "^5.3.1"
   },
   "exports": {
-    ".": "./dist/main.js",
+    ".": "./dist/index.js",
     "./config": "./dist/+config.js",
     "./vite": "./dist/vite-plugin-vike-solid.js",
     "./usePageContext": "./dist/hooks/usePageContext.js",
@@ -48,7 +51,7 @@
   "typesVersions": {
     "*": {
       ".": [
-        "dist/main.d.ts"
+        "dist/index.d.ts"
       ],
       "config": [
         "dist/+config.d.ts"
@@ -74,8 +77,8 @@
     "dist/",
     "client.d.ts"
   ],
-  "main": "dist/main.js",
-  "types": "dist/main.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "github:vikejs/vike-solid",
   "license": "MIT"
 }
