@@ -14,12 +14,8 @@ function PageContextProvider(props: {
   pageContext: Store<PageContext>;
   children: JSX.Element;
 }) {
-  const { solidContext } = globalContext
-  return (
-    <solidContext.Provider value={props.pageContext}>
-      {props.children}
-    </solidContext.Provider>
-  );
+  const { solidContext } = globalContext;
+  return <solidContext.Provider value={props.pageContext}>{props.children}</solidContext.Provider>;
 }
 
 /**
@@ -28,11 +24,8 @@ function PageContextProvider(props: {
  * https://vike.dev/usePageContext
  */
 function usePageContext(): PageContext {
-  const { solidContext } = globalContext
-  const pageContext = useContext(solidContext)
-  if (!pageContext)
-    throw new Error(
-      "<PageContextProvider> is needed for being able to use usePageContext()"
-    );
+  const { solidContext } = globalContext;
+  const pageContext = useContext(solidContext);
+  if (!pageContext) throw new Error("<PageContextProvider> is needed for being able to use usePageContext()");
   return pageContext;
 }

@@ -15,12 +15,7 @@ function findClosestPackageJson(start = cwd(), level = 0) {
 }
 
 function processOptions(options) {
-  const {
-    babelOptions,
-    solidOptions,
-    ssr,
-    external: externalOptions,
-  } = options;
+  const { babelOptions, solidOptions, ssr, external: externalOptions } = options;
   const currentDir = process.cwd();
   const pkg = findClosestPackageJson(currentDir);
   const extensions = [".js", ".ts", ".jsx", ".tsx"];
@@ -28,7 +23,7 @@ function processOptions(options) {
   const src = options.input || pkg.source;
   if (!src) {
     throw new Error(
-      'No input was provided. Please provide an input via the "input" option or via "source" in the package.json'
+      'No input was provided. Please provide an input via the "input" option or via "source" in the package.json',
     );
   }
 
@@ -42,7 +37,7 @@ function processOptions(options) {
 
   if (!src) {
     throw new Error(
-      "No input source found. You can add it to the `source` property in your `package.json` or feed it into the `input` option in the `withConfig` function."
+      "No input source found. You can add it to the `source` property in your `package.json` or feed it into the `input` option in the `withConfig` function.",
     );
   }
 
@@ -65,15 +60,7 @@ function processOptions(options) {
 
   return {
     input: src,
-    external: [
-      "solid-js",
-      "solid-js/web",
-      "solid-js/store",
-      "path",
-      "express",
-      "stream",
-      ...external,
-    ],
+    external: ["solid-js", "solid-js/web", "solid-js/store", "path", "express", "stream", ...external],
     output,
     plugins: [
       babel({

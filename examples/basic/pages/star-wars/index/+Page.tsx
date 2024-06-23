@@ -11,18 +11,13 @@ export default function Page() {
         <For each={movies}>
           {(movie, i) => (
             <li>
-              <a href={`/star-wars/${movie.id}`}>{movie.title}</a> (
-              {movie.release_date})
+              <a href={`/star-wars/${movie.id}`}>{movie.title}</a> ({movie.release_date})
             </li>
           )}
         </For>
       </ol>
       <p>
-        Source:{" "}
-        <a href="https://brillout.github.io/star-wars">
-          brillout.github.io/star-wars
-        </a>
-        .
+        Source: <a href="https://brillout.github.io/star-wars">brillout.github.io/star-wars</a>.
       </p>
     </>
   );

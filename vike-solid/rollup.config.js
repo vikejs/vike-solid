@@ -6,23 +6,23 @@ export default [
   withSolid({
     input: {
       "renderer/onRenderHtml": "./renderer/onRenderHtml.tsx",
-      "index": "./index.ts",
+      index: "./index.ts",
       "+config": "./+config.ts",
       "hooks/usePageContext": "./hooks/usePageContext.tsx",
       "hooks/useData": "./hooks/useData.tsx",
-      "components/clientOnly": "./components/clientOnly.tsx"
+      "components/clientOnly": "./components/clientOnly.tsx",
     },
     ssr: true,
-    external: ["vike/server", "vike/plugin"]
+    external: ["vike/server", "vike/plugin"],
   }),
   withSolid({
     input: {
       "renderer/onRenderClient": "./renderer/onRenderClient.tsx",
       "hooks/usePageContext": "./hooks/usePageContext.tsx",
-      "hooks/useData": "./hooks/useData.tsx"
+      "hooks/useData": "./hooks/useData.tsx",
     },
     ssr: false,
-    external: ["vike/server", "vike/plugin"]
+    external: ["vike/server", "vike/plugin"],
   }),
   {
     input: [
@@ -31,10 +31,10 @@ export default [
       "./hooks/usePageContext.tsx",
       "./hooks/useData.tsx",
       "./components/clientOnly.tsx",
-      "./vite-plugin-vike-solid.ts"
+      "./vite-plugin-vike-solid.ts",
     ],
     output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
-    plugins: [dts()]
+    plugins: [dts()],
   },
   {
     input: "./vite-plugin-vike-solid.ts",
@@ -42,16 +42,16 @@ export default [
       babel({
         extensions: [".js", ".ts", ".jsx", ".tsx"],
         babelHelpers: "bundled",
-        presets: ["@babel/preset-typescript"]
-      })
+        presets: ["@babel/preset-typescript"],
+      }),
     ],
     output: [
       {
         file: "dist/vite-plugin-vike-solid.js",
         format: "es",
-        sanitizeFileName: false
-      }
+        sanitizeFileName: false,
+      },
     ],
-    external: ["vite"]
-  }
+    external: ["vite"],
+  },
 ];

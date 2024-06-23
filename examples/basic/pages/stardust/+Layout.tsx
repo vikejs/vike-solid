@@ -8,17 +8,13 @@ function Layout(props: FlowProps) {
       <h1>Star Dust ✨</h1>
       <p>
         <b>
-          This page uses the layout <code>/pages/+Layout.tsx</code> with a
-          nested layout <code>/pages/stardust/+Layout.tsx</code>.
+          This page uses the layout <code>/pages/+Layout.tsx</code> with a nested layout{" "}
+          <code>/pages/stardust/+Layout.tsx</code>.
         </b>
       </p>
+      <p>This merely tests if Solid detects a "change" in the layout array despite being the same length.</p>
       <p>
-        This merely tests if Solid detects a "change" in the layout array
-        despite being the same length.
-      </p>
-      <p>
-        <b>State is preserved upon navigating within the nested layout.</b>{" "}
-        <Counter />
+        <b>State is preserved upon navigating within the nested layout.</b> <Counter />
       </p>
       <br />
       <div
@@ -36,13 +32,7 @@ function Layout(props: FlowProps) {
 
 function Link(props: any) {
   // We set `keep-scroll-position` to tell Vike to preserve the current scroll position
-  return (
-    <a
-      keep-scroll-position=""
-      style={{ marginRight: 10, ...props.style }}
-      {...props}
-    />
-  );
+  return <a keep-scroll-position="" style={{ marginRight: 10, ...props.style }} {...props} />;
 }
 
 function Counter() {
