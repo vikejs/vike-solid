@@ -24,7 +24,7 @@ declare global {
 
       /** <link rel="icon" href="${favicon}" /> */
       favicon?: string;
-      
+
       /** <html lang="${lang}">
        *
        *  @default 'en'
@@ -43,7 +43,7 @@ declare global {
        *
        */
       ssr?: boolean;
-      
+
       /**
        * Whether to stream the page's HTML. Requires Server-Side Rendering (`ssr: true`).
        *
@@ -55,7 +55,7 @@ declare global {
       stream?: boolean;
     }
     interface ConfigResolved {
-        Layout?: Array<Component>;
-      }
+      Layout?: Array<Component>;
+    }
   }
 }

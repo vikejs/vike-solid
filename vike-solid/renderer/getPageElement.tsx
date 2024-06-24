@@ -23,7 +23,7 @@ function Layout(props: { children: JSX.Element }) {
 
   createComputed(() => {
     setLayouts(reconcile(pageContext.config.Layout!));
-  })
+  });
   const renderLayouts = (i: number = 0) => {
     let item = layouts.at(-(i + 1));
 

@@ -7,16 +7,12 @@ import type { OnRenderClientAsync, PageContextClient } from "vike/types";
 import { getPageElement } from "./getPageElement.js";
 import { createStore } from "solid-js/store";
 
-const [pageContextStore, setPageContext] = createStore<PageContextClient>(
-  {} as PageContextClient
-);
+const [pageContextStore, setPageContext] = createStore<PageContextClient>({} as PageContextClient);
 
 let dispose: () => void;
 let rendered = false;
 
-const onRenderClient: OnRenderClientAsync = async (
-  pageContext
-): ReturnType<OnRenderClientAsync> => {
+const onRenderClient: OnRenderClientAsync = async (pageContext): ReturnType<OnRenderClientAsync> => {
   if (!rendered) {
     // Dispose to prevent duplicate pages when navigating.
     if (dispose) dispose();
@@ -54,8 +50,7 @@ const onRenderClient: OnRenderClientAsync = async (
 
 // https://stackoverflow.com/questions/260857/changing-website-favicon-dynamically/260876#260876
 function setFavicon(faviconUrl: string | null) {
-  let link: HTMLLinkElement | null =
-    document.querySelector("link[rel~='icon']");
+  let link: HTMLLinkElement | null = document.querySelector("link[rel~='icon']");
   if (!faviconUrl) {
     if (link) document.head.removeChild(link);
     return;

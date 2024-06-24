@@ -5,7 +5,7 @@ import { isCallable } from "../utils/isCallable.js";
 
 function getHeadSetting(
   headSetting: "title" | "favicon" | "lang",
-  pageContext: PageContext
+  pageContext: PageContext,
 ): undefined | null | string {
   const config = pageContext.configEntries[headSetting]?.[0];
   if (!config) return undefined;
@@ -19,9 +19,6 @@ function getHeadSetting(
     }
     return valStr;
   } else {
-    throw new Error(
-      config.configDefinedAt +
-        " should be a string or a function returning a string"
-    );
+    throw new Error(config.configDefinedAt + " should be a string or a function returning a string");
   }
 }

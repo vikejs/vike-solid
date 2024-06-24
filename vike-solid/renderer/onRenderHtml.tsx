@@ -10,9 +10,7 @@ import { PageContextProvider } from "../hooks/usePageContext.js";
 
 checkVikeVersion();
 
-const onRenderHtml: OnRenderHtmlAsync = async (
-  pageContext
-): ReturnType<OnRenderHtmlAsync> => {
+const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRenderHtmlAsync> => {
   const title = getHeadSetting("title", pageContext);
   const favicon = getHeadSetting("favicon", pageContext);
   const lang = getHeadSetting("lang", pageContext) || "en";
@@ -27,16 +25,14 @@ const onRenderHtml: OnRenderHtmlAsync = async (
     </PageContextProvider>
   ));
 
-  const headHtml = dangerouslySkipEscape(head)
+  const headHtml = dangerouslySkipEscape(head);
 
   type TPipe = (writable: { write: (v: string) => void }) => void;
 
   let pageView: string | ReturnType<typeof dangerouslySkipEscape> | TPipe = "";
   if (!!pageContext.Page) {
     if (!pageContext.config.stream) {
-      pageView = dangerouslySkipEscape(
-        renderToString(() => getPageElement(pageContext))
-      );
+      pageView = dangerouslySkipEscape(renderToString(() => getPageElement(pageContext)));
     } else {
       pageView = renderToStream(() => getPageElement(pageContext)).pipe;
       stampPipe(pageView, "node-stream");
@@ -65,11 +61,11 @@ const onRenderHtml: OnRenderHtmlAsync = async (
 // TODO/eventually: remove this once <=0.4.172 versions become rare.
 function checkVikeVersion() {
   if (version) {
-    const versionParts = version.split('.').map((s) => parseInt(s, 10)) as [number, number, number]
-    if (versionParts[0] > 0) return
-    if (versionParts[1] > 4) return
-    if (versionParts[2] >= 173) return
+    const versionParts = version.split(".").map((s) => parseInt(s, 10)) as [number, number, number];
+    if (versionParts[0] > 0) return;
+    if (versionParts[1] > 4) return;
+    if (versionParts[2] >= 173) return;
   }
   // We can leave it 0.4.173 until we entirely remove checkVikeVersion() (because starting vike@0.4.173 we use the new `require` setting).
-  throw new Error('Update Vike to 0.4.173 or above')
+  throw new Error("Update Vike to 0.4.173 or above");
 }

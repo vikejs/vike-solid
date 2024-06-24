@@ -4,6 +4,11 @@
     "dev": "cd vike-solid/ && pnpm run dev",
     "build": "cd vike-solid/ && pnpm run build",
     "release": "cd vike-solid/ && pnpm run release",
+    "========= Formatting": "",
+    "format": "pnpm run format:biome",
+    "format:prettier": "git ls-files | egrep '\\.(json|js|jsx|css|ts|tsx|vue|mjs|cjs)$' | grep --invert-match package.json | xargs pnpm exec prettier --write",
+    "format:biome": "biome format --write .",
+    "format:check": "biome format . || (echo 'Fix formatting by running `$ pnpm run -w format`.' && exit 1)",
     "========= Clean": "",
     "clean": "git clean -Xdf",
     "reset": "pnpm run clean && pnpm install && pnpm run build",
@@ -15,5 +20,9 @@
       "vike-solid": "link:./vike-solid/"
     }
   },
-  "packageManager": "pnpm@9.1.2"
+  "packageManager": "pnpm@9.1.2",
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.2",
+    "prettier": "^3.3.2"
+  }
 }

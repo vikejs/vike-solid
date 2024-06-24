@@ -1,14 +1,14 @@
 import type { Config } from "vike/types";
-import { ssrEffect } from './renderer/ssrEffect.js'
+import { ssrEffect } from "./renderer/ssrEffect.js";
 
-// This is required to make TypeScript load the global interfaces such as Vike.PageContext so that they're always loaded. 
+// This is required to make TypeScript load the global interfaces such as Vike.PageContext so that they're always loaded.
 // We can assume that the user always imports this file over `import vikeSolid from 'vike-solid/config'`
-import "./types/index.js"
+import "./types/index.js";
 
 export default {
   name: "vike-solid",
   require: {
-    vike: '>=0.4.173'
+    vike: ">=0.4.173",
   },
 
   // https://vike.dev/onRenderHtml
@@ -48,11 +48,11 @@ export default {
     },
     // Vike already defines the setting 'name', but we redundantly define it here for older Vike versions (otherwise older Vike versions will complain that 'name` is an unknown config).
     name: {
-      env: { config: true }
+      env: { config: true },
     },
     // Vike already defines the setting 'require', but we redundantly define it here for older Vike versions (otherwise older Vike versions will complain that 'require` is an unknown config). TODO/eventually: remove this once <=0.4.172 versions become rare (also because we use the `require` setting starting from `0.4.173`).
     require: {
-      env: { config: true }
+      env: { config: true },
     },
   },
 } satisfies Config;
