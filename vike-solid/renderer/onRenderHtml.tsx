@@ -33,7 +33,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
   if (pageContext.Page) {
     if (!pageContext.config.stream) {
       pageView = dangerouslySkipEscape(renderToString(() => getPageElement(pageContext)));
-    } else if (pageContext.config.stream === 'web') {
+    } else if (pageContext.config.stream === "web") {
       pageView = renderToStream(() => getPageElement(pageContext)).pipeTo;
       stampPipe(pageView, "web-stream");
     } else {

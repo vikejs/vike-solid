@@ -53,7 +53,7 @@ declare global {
        * https://vike.dev/stream
        *
        */
-      stream?: boolean | 'web';
+      stream?: boolean | "web";
     }
     interface ConfigResolved {
       Layout?: Array<Component>;
