@@ -10,5 +10,6 @@ export default {
   // <title>
   title: "My Vike Solid App",
   ssr: true, // can be removed since `true` is the default
+  stream: true,
   extends: vikeSolid,
 } satisfies Config;

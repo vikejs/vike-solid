@@ -1,12 +1,14 @@
 // https://vike.dev/onRenderHtml
-export { onRenderHtml };
-
 import { generateHydrationScript, renderToStream, renderToString } from "solid-js/web";
 import { dangerouslySkipEscape, escapeInject, stampPipe, version } from "vike/server";
 import { getHeadSetting } from "./getHeadSetting.js";
 import { getPageElement } from "./getPageElement.js";
 import type { OnRenderHtmlAsync } from "vike/types";
 import { PageContextProvider } from "../hooks/usePageContext.js";
+
+export { onRenderHtml };
+
+type TPipe = Parameters<typeof stampPipe>[0];
 
 checkVikeVersion();
 
@@ -27,12 +29,13 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
 
   const headHtml = dangerouslySkipEscape(head);
 
-  type TPipe = (writable: { write: (v: string) => void }) => void;
-
   let pageView: string | ReturnType<typeof dangerouslySkipEscape> | TPipe = "";
-  if (!!pageContext.Page) {
+  if (pageContext.Page) {
     if (!pageContext.config.stream) {
       pageView = dangerouslySkipEscape(renderToString(() => getPageElement(pageContext)));
+    } else if (pageContext.config.stream === 'web') {
+      pageView = renderToStream(() => getPageElement(pageContext)).pipeTo;
+      stampPipe(pageView, "web-stream");
     } else {
       pageView = renderToStream(() => getPageElement(pageContext)).pipe;
       stampPipe(pageView, "node-stream");

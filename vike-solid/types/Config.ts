@@ -46,13 +46,14 @@ declare global {
 
       /**
        * Whether to stream the page's HTML. Requires Server-Side Rendering (`ssr: true`).
+       * If true, the stream will be a Node Stream. If you need a Web Stream, use `stream: 'web'`.
        *
        * @default false
        *
        * https://vike.dev/stream
        *
        */
-      stream?: boolean;
+      stream?: boolean | 'web';
     }
     interface ConfigResolved {
       Layout?: Array<Component>;
