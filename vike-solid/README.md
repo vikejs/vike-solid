@@ -7,4 +7,4 @@
 
 - Docs at [`vike.dev/vike-solid`](https://vike.dev/vike-solid)
 - [Examples](https://github.com/vikejs/vike-solid/tree/main/examples)
-- [MIGRATION.md](https://github.com/vikejs/vike-solid/blob/main/MIGRATION.md)
+- [CHANGELOG.md](https://github.com/vikejs/vike-solid/blob/main/CHANGELOG.md)
