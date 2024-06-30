@@ -1,10 +1,11 @@
-Full example of using `vike-solid`, showcasing:
+Full-fledged example of using `vike-solid`, showcasing:
 
-- [layouts](https://vike.dev/layouts)
-- rendering to `<head>`
-- fetching data with [`data()`](https://vike.dev/data) hooks
+- [Layout](https://vike.dev/Layout)
+- Rendering to `<head>`
+- Fetching data with [`data()`](https://vike.dev/data) hook
+- [Toggling SSR](https://vike.dev/ssr) on a per-page basis.
 - [configs](https://vike.dev/config)
-- [error pages](https://vike.dev/error-page)
+- [Error page](https://vike.dev/error-page)
 
 ```bash
 git clone git@github.com:vikejs/vike-solid
