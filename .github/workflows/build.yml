@@ -13,6 +13,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         example:
           - examples/full
+          - examples/minimal
 
     steps:
       - uses: actions/checkout@v4

@@ -40,6 +40,22 @@ importers:
         specifier: ^5.2.9
         version: 5.3.1(@types/node@20.14.5)
 
+  examples/minimal:
+    dependencies:
+      solid-js:
+        specifier: ^1.8.17
+        version: 1.8.17
+      vike:
+        specifier: ^0.4.177
+        version: 0.4.177(vite@5.3.1(@types/node@20.14.5))
+      vike-solid:
+        specifier: link:../../vike-solid
+        version: link:../../vike-solid
+    devDependencies:
+      vite:
+        specifier: ^5.2.9
+        version: 5.3.1(@types/node@20.14.5)
+
   vike-solid:
     dependencies:
       vite-plugin-solid:
