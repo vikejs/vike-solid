@@ -1,4 +1,4 @@
-Basic example of using `vike-solid`, showcasing:
+Full example of using `vike-solid`, showcasing:
 
 - [layouts](https://vike.dev/layouts)
 - rendering to `<head>`
@@ -8,7 +8,7 @@ Basic example of using `vike-solid`, showcasing:
 
 ```bash
 git clone git@github.com:vikejs/vike-solid
-cd vike-solid/examples/basic/
+cd vike-solid/examples/full/
 pnpm install
 pnpm run dev
 ```

@@ -18,7 +18,7 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2
 
-  examples/basic:
+  examples/full:
     dependencies:
       node-fetch:
         specifier: ^3.3.2
@@ -35,28 +35,9 @@ importers:
     devDependencies:
       typescript:
         specifier: ^5.4.5
-        version: 5.4.5
+        version: 5.5.2
       vite:
         specifier: ^5.2.9
-        version: 5.3.1(@types/node@20.14.5)
-
-  examples/ssr-spa:
-    dependencies:
-      solid-js:
-        specifier: ^1.8.17
-        version: 1.8.17
-      vike:
-        specifier: ^0.4.177
-        version: 0.4.177(vite@5.3.1(@types/node@20.14.5))
-      vike-solid:
-        specifier: link:../../vike-solid
-        version: link:../../vike-solid
-    devDependencies:
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-      vite:
-        specifier: ^5.3.1
         version: 5.3.1(@types/node@20.14.5)
 
   vike-solid:
@@ -2106,11 +2087,6 @@ packages:
   type-fest@4.20.1:
     resolution: {integrity: sha512-R6wDsVsoS9xYOpy8vgeBlqpdOyzJ12HNfQhC/aAKWM3YoCV9TtunJzh/QpkMgeDhkoynDcw5f1y+qF9yc/HHyg==}
     engines: {node: '>=16'}
-
-  typescript@5.4.5:
-    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
-    engines: {node: '>=14.17'}
-    hasBin: true
 
   typescript@5.5.2:
     resolution: {integrity: sha512-NcRtPEOsPFFWjobJEtfihkLCZCXZt/os3zf8nTxjVH3RvTSxjrCamJpbExGvYOF+tFHc3pA65qpdwPbzjohhew==}
@@ -4263,8 +4239,6 @@ snapshots:
   type-fest@3.13.1: {}
 
   type-fest@4.20.1: {}
-
-  typescript@5.4.5: {}
 
   typescript@5.5.2: {}
 
