@@ -29,4 +29,4 @@ jobs:
 
       - name: Test TypeScript example
         run: pnpm run test
-        working-directory: ./${{ matrix.example }}
+        working-directory: ./examples/full

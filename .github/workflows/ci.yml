@@ -1,0 +1,43 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  test:
+    # Prevent workflow being run twice, https://github.com/orgs/community/discussions/57827#discussioncomment-6579237
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
+
+    name: ${{ matrix.cmd }} (${{ matrix.os }})
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      # Don't cancel other matrix operations if one fails
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+        cmd:
+          - pnpm run test:e2e
+          - pnpm run test:types
+        # `exclude` docs & alternatives:
+        # - https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategymatrixexclude
+        # - https://stackoverflow.com/questions/68994484/how-to-skip-a-configuration-of-a-matrix-with-github-actions/68994907#68994907
+        # - https://stackoverflow.com/questions/66025220/paired-values-in-github-actions-matrix/68940067#68940067
+        exclude:
+          - os: windows-latest
+            cmd: pnpm run test:types
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - run: pnpm install
+      - run: pnpm exec playwright install chromium
+      - run: pnpm run build
+
+      - run: ${{ matrix.cmd }}
