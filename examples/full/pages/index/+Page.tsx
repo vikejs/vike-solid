@@ -11,7 +11,7 @@ const ClientOnlyCounterSlow = clientOnly(async () => {
 export default function Page() {
   return (
     <>
-      <h1>My vike-solid app</h1>
+      <h1>My Vike + Solid App</h1>
       This page is:
       <ul>
         <li>Rendered to HTML.</li>

@@ -1,19 +1,15 @@
 {
-  "private": true,
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview",
-    "test": "tsc --noEmit"
+    "preview": "vite build && vite preview"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2",
     "solid-js": "^1.8.17",
     "vike": "^0.4.177",
     "vike-solid": "link:vike-solid"
   },
   "devDependencies": {
-    "typescript": "^5.4.5",
     "vite": "^5.2.9"
   },
   "type": "module"
