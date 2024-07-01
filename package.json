@@ -26,7 +26,7 @@
   },
   "packageManager": "pnpm@9.1.2",
   "devDependencies": {
-    "@biomejs/biome": "^1.8.2",
+    "@biomejs/biome": "^1.8.3",
     "@brillout/test-e2e": "^0.5.33",
     "@brillout/test-types": "^0.1.15",
     "playwright": "^1.45.0",
