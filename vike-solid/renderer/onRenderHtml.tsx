@@ -37,18 +37,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
 
   const headHtml = dangerouslySkipEscape(head);
 
-  let pageView: string | ReturnType<typeof dangerouslySkipEscape> | TPipe = "";
-  if (pageContext.Page) {
-    if (!pageContext.config.stream) {
-      pageView = dangerouslySkipEscape(renderToString(() => getPageElement(pageContext)));
-    } else if (pageContext.config.stream === "web") {
-      pageView = renderToStream(() => getPageElement(pageContext)).pipeTo;
-      stampPipe(pageView, "web-stream");
-    } else {
-      pageView = renderToStream(() => getPageElement(pageContext)).pipe;
-      stampPipe(pageView, "node-stream");
-    }
-  }
+  const pageHtml = getPageHtml(pageContext);
 
   const { htmlAttributesString, bodyAttributesString } = getTagAttributes(pageContext);
 
@@ -65,13 +54,29 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
         ${dangerouslySkipEscape(generateHydrationScript())}
       </head>
       <body${dangerouslySkipEscape(bodyAttributesString)}>
-        <div id="root">${pageView}</div>
+        <div id="root">${pageHtml}</div>
       </body>
       <!-- built with https://github.com/vikejs/vike-solid -->
     </html>`;
 
   return documentHtml;
 };
+
+function getPageHtml(pageContext: PageContext) {
+  let pageHtml: string | ReturnType<typeof dangerouslySkipEscape> | TPipe = "";
+  if (pageContext.Page) {
+    if (!pageContext.config.stream) {
+      pageHtml = dangerouslySkipEscape(renderToString(() => getPageElement(pageContext)));
+    } else if (pageContext.config.stream === "web") {
+      pageHtml = renderToStream(() => getPageElement(pageContext)).pipeTo;
+      stampPipe(pageHtml, "web-stream");
+    } else {
+      pageHtml = renderToStream(() => getPageElement(pageContext)).pipe;
+      stampPipe(pageHtml, "node-stream");
+    }
+  }
+  return pageHtml;
+}
 
 function getTagAttributes(pageContext: PageContext) {
   let lang = getHeadSetting("lang", pageContext);
