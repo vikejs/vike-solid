@@ -66,5 +66,9 @@ export default {
       global: true,
       cumulative: true, // for Vike extensions
     },
+    onAfterRenderClient: {
+      env: { server: false, client: true },
+      cumulative: true,
+    },
   },
 } satisfies Config;

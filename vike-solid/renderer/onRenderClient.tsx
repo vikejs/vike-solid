@@ -6,6 +6,7 @@ import { getHeadSetting } from "./getHeadSetting.js";
 import type { OnRenderClientAsync, PageContextClient } from "vike/types";
 import { getPageElement } from "./getPageElement.js";
 import { createStore } from "solid-js/store";
+import { callCumulativeHooks } from "../utils/callCumulativeHooks.js";
 
 const [pageContextStore, setPageContext] = createStore<PageContextClient>({} as PageContextClient);
 
@@ -38,6 +39,11 @@ const onRenderClient: OnRenderClientAsync = async (pageContext): ReturnType<OnRe
     // E.g. document.title
     updateDocument(pageContext);
   }
+
+  // Use cases:
+  // - Custom user settings: https://vike.dev/head#custom-settings
+  // - Testing tools: https://github.com/vikejs/vike-react/issues/95
+  await callCumulativeHooks(pageContext.config.onAfterRenderClient, pageContext);
 };
 
 function updateDocument(pageContext: PageContextClient) {

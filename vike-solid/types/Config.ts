@@ -7,6 +7,7 @@ import type {
   // - https://stackoverflow.com/questions/46559021/typescript-use-of-global-type-inside-namespace-with-same-type
   // - https://github.com/Microsoft/TypeScript/issues/983
   PageContext as PageContext_,
+  PageContextClient,
 } from "vike/types";
 import type { TagAttributes } from "../utils/getTagAttributesString";
 import type { Viewport } from "../renderer/onRenderHtml";
@@ -149,11 +150,19 @@ declare global {
        * https://vike.dev/stream
        */
       stream?: boolean | "web";
+
+      /**
+       * Client-side hook called after the page is rendered.
+       *
+       * https://vike.dev/onAfterRenderClient
+       */
+      onAfterRenderClient?: (pageContext: PageContextClient) => void;
     }
     interface ConfigResolved {
       Layout?: Array<Component>;
       bodyAttributes?: TagAttributes[];
       htmlAttributes?: TagAttributes[];
+      onAfterRenderClient?: Function[];
     }
   }
 }
