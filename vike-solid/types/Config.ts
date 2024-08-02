@@ -67,6 +67,21 @@ declare global {
       description?: string | ((pageContext: PageContextServer) => string);
 
       /**
+       * Set the page's preview image upon URL sharing.
+       *
+       * Generates:
+       * ```jsx
+       * <head>
+       *   <meta property="og:image" content={image}>
+       *   <meta name="twitter:card" content="summary_large_image">
+       * </head>
+       * ```
+       *
+       * https://vike.dev/image
+       */
+      image?: string | ((pageContext: PageContextServer) => string);
+
+      /**
        * Set the page's favicon.
        *
        * Generates:

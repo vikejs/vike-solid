@@ -17,12 +17,16 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
   const title = getHeadSetting("title", pageContext);
   const favicon = getHeadSetting("favicon", pageContext);
   const description = getHeadSetting("description", pageContext);
+  const image = getHeadSetting("image", pageContext);
 
   const titleTag = !title ? "" : escapeInject`<title>${title}</title><meta property="og:title" content="${title}">`;
   const faviconTag = !favicon ? "" : escapeInject`<link rel="icon" href="${favicon}" />`;
   const descriptionTags = !description
     ? ""
     : escapeInject`<meta name="description" content="${description}"><meta property="og:description" content="${description}">`;
+  const imageTags = !image
+    ? ""
+    : escapeInject`<meta property="og:image" content="${image}"><meta name="twitter:card" content="summary_large_image">`;
 
   const Head = pageContext.config.Head || (() => <></>);
   const head = renderToString(() => (
@@ -56,6 +60,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
         ${headHtml}
         ${faviconTag}
         ${descriptionTags}
+        ${imageTags}
         ${dangerouslySkipEscape(generateHydrationScript())}
       </head>
       <body${dangerouslySkipEscape(bodyAttributesString)}>

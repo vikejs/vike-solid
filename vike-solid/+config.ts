@@ -36,6 +36,9 @@ export default {
     description: {
       env: { server: true },
     },
+    image: {
+      env: { server: true },
+    },
     favicon: {
       env: { server: true, client: true },
     },
