@@ -12,9 +12,9 @@ export { onRenderHtml };
 type TPipe = Parameters<typeof stampPipe>[0];
 
 const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRenderHtmlAsync> => {
-  const headHtml = getHeadHtml(pageContext);
-
   const pageHtml = getPageHtml(pageContext);
+
+  const headHtml = getHeadHtml(pageContext);
 
   const { htmlAttributesString, bodyAttributesString } = getTagAttributes(pageContext);
 
