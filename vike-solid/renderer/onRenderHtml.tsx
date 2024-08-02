@@ -3,8 +3,9 @@ import { generateHydrationScript, renderToStream, renderToString } from "solid-j
 import { dangerouslySkipEscape, escapeInject, stampPipe, version } from "vike/server";
 import { getHeadSetting } from "./getHeadSetting.js";
 import { getPageElement } from "./getPageElement.js";
-import type { OnRenderHtmlAsync } from "vike/types";
+import type { OnRenderHtmlAsync, PageContext } from "vike/types";
 import { PageContextProvider } from "../hooks/usePageContext.js";
+import { getTagAttributesString, type TagAttributes } from "../utils/getTagAttributesString.js";
 
 export { onRenderHtml };
 
@@ -15,7 +16,6 @@ checkVikeVersion();
 const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRenderHtmlAsync> => {
   const title = getHeadSetting("title", pageContext);
   const favicon = getHeadSetting("favicon", pageContext);
-  const lang = getHeadSetting("lang", pageContext) || "en";
 
   const titleTag = !title ? "" : escapeInject`<title>${title}</title>`;
   const faviconTag = !favicon ? "" : escapeInject`<link rel="icon" href="${favicon}" />`;
@@ -42,8 +42,10 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
     }
   }
 
+  const { htmlAttributesString, bodyAttributesString } = getTagAttributes(pageContext);
+
   const documentHtml = escapeInject`<!DOCTYPE html>
-    <html lang='${lang}'>
+    <html${dangerouslySkipEscape(htmlAttributesString)}>
       <head>
         <meta charset="UTF-8" />
         ${titleTag}
@@ -51,7 +53,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
         ${faviconTag}
         ${dangerouslySkipEscape(generateHydrationScript())}
       </head>
-      <body>
+      <body${dangerouslySkipEscape(bodyAttributesString)}>
         <div id="root">${pageView}</div>
       </body>
       <!-- built with https://github.com/vikejs/vike-solid -->
@@ -59,6 +61,25 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
 
   return documentHtml;
 };
+
+function getTagAttributes(pageContext: PageContext) {
+  let lang = getHeadSetting("lang", pageContext);
+  // Don't set `lang` to its default value if it's `null` (so that users can set it to `null` in order to remove the default value)
+  if (lang === undefined) lang = "en";
+
+  const bodyAttributes = mergeTagAttributesList(pageContext.config.bodyAttributes);
+  const htmlAttributes = mergeTagAttributesList(pageContext.config.htmlAttributes);
+
+  const bodyAttributesString = getTagAttributesString(bodyAttributes);
+  const htmlAttributesString = getTagAttributesString({ ...htmlAttributes, lang: lang ?? htmlAttributes.lang });
+
+  return { htmlAttributesString, bodyAttributesString };
+}
+function mergeTagAttributesList(tagAttributesList: TagAttributes[] = []) {
+  const tagAttributes: TagAttributes = {};
+  tagAttributesList.forEach((tagAttrs) => Object.assign(tagAttributes, tagAttrs));
+  return tagAttributes;
+}
 
 // We don't need this anymore starting from vike@0.4.173 which added the `require` setting.
 // TODO/eventually: remove this once <=0.4.172 versions become rare.

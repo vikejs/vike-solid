@@ -1,6 +1,14 @@
 // https://vike.dev/meta#typescript
 import type { Component, JSX } from "solid-js";
 
+import type {
+  // Rename it to `PageContext_` to be able to reference it from within `namespace Vike`
+  // - https://stackoverflow.com/questions/46559021/typescript-use-of-global-type-inside-namespace-with-same-type
+  // - https://github.com/Microsoft/TypeScript/issues/983
+  PageContext as PageContext_,
+} from "vike/types";
+import type { TagAttributes } from "../utils/getTagAttributesString";
+
 declare global {
   namespace Vike {
     interface Config {
@@ -25,12 +33,28 @@ declare global {
       /** <link rel="icon" href="${favicon}" /> */
       favicon?: string;
 
-      /** <html lang="${lang}">
+      /**
+       * Set the page's language (`<html lang>`).
        *
-       *  @default 'en'
+       * @default 'en'
        *
+       * https://vike.dev/lang
        */
-      lang?: string;
+      lang?: string | ((pageContext: PageContext_) => string) | null;
+
+      /**
+       * Add tag attributes such as `<html class="dark">`.
+       *
+       * https://vike.dev/htmlAttributes
+       */
+      htmlAttributes?: TagAttributes;
+
+      /**
+       * Add tag attributes such as `<body class="dark">`.
+       *
+       * https://vike.dev/bodyAttributes
+       */
+      bodyAttributes?: TagAttributes;
 
       /**
        * If `true`, the page is rendered twice: on the server-side (to HTML) and on the client-side (hydration).
@@ -57,6 +81,8 @@ declare global {
     }
     interface ConfigResolved {
       Layout?: Array<Component>;
+      bodyAttributes?: TagAttributes[];
+      htmlAttributes?: TagAttributes[];
     }
   }
 }

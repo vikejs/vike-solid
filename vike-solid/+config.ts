@@ -54,5 +54,15 @@ export default {
     require: {
       env: { config: true },
     },
+    htmlAttributes: {
+      env: { server: true },
+      global: true,
+      cumulative: true, // for Vike extensions
+    },
+    bodyAttributes: {
+      env: { server: true },
+      global: true,
+      cumulative: true, // for Vike extensions
+    },
   },
 } satisfies Config;

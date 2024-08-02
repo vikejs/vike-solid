@@ -5,5 +5,8 @@ import type { Config } from "vike/types";
 export default {
   // <title>
   title: "My Vike + Solid App",
+  bodyAttributes: {
+    class: "dark",
+  },
   extends: vikeSolid,
 } satisfies Config;
