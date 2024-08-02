@@ -28,7 +28,7 @@ declare global {
       Layout?: Component;
 
       /** <title>${title}</title> */
-      title?: string | ((pageContext: PageContext) => string);
+      title?: string | ((pageContext: PageContext_) => string);
 
       /** <link rel="icon" href="${favicon}" /> */
       favicon?: string;
