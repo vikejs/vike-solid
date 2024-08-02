@@ -13,14 +13,22 @@ import type { TagAttributes } from "../utils/getTagAttributesString";
 declare global {
   namespace Vike {
     interface Config {
-      /** The page's root Solid component */
+      /**
+       * The page's root Solid component.
+       *
+       * https://vike.dev/Page
+       */
       Page?: () => JSX.Element;
 
-      /** Solid element renderer and appended into <head></head> */
+      /**
+       * Add arbitrary `<head>` tags.
+       *
+       * https://vike.dev/Head
+       */
       Head?: Component;
 
       /**
-       * A component that defines the visual layout of the page common to several pages.
+       * A component that defines the visual layout common to several pages.
        *
        * Technically: the `<Layout>` component wraps the root component `<Page>`.
        *
@@ -28,7 +36,19 @@ declare global {
        */
       Layout?: Component;
 
-      /** <title>${title}</title> */
+      /**
+       * Set the page's tilte.
+       *
+       * Generates:
+       * ```jsx
+       * <head>
+       *   <title>{title}</title>
+       *   <meta property="og:title" content={title} />
+       * </head>
+       * ```
+       *
+       * https://vike.dev/title
+       */
       title?: string | ((pageContext: PageContext_) => string);
 
       /**
@@ -46,7 +66,18 @@ declare global {
        */
       description?: string | ((pageContext: PageContextServer) => string);
 
-      /** <link rel="icon" href="${favicon}" /> */
+      /**
+       * Set the page's favicon.
+       *
+       * Generates:
+       * ```jsx
+       * <head>
+       *   <link rel="icon" href={favicon} />
+       * </head>
+       * ```
+       *
+       * https://vike.dev/favicon
+       */
       favicon?: string;
 
       /**
@@ -77,21 +108,20 @@ declare global {
        *
        * If `false`, the page is rendered only once in the browser.
        *
-       * https://vike.dev/ssr
-       *
        * @default true
        *
+       * https://vike.dev/ssr
        */
       ssr?: boolean;
 
       /**
        * Whether to stream the page's HTML. Requires Server-Side Rendering (`ssr: true`).
-       * If true, the stream will be a Node Stream. If you need a Web Stream, use `stream: 'web'`.
+       *
+       * If `true`, the stream will be a Node Stream. If you need a Web Stream, use `stream: 'web'`.
        *
        * @default false
        *
        * https://vike.dev/stream
-       *
        */
       stream?: boolean | "web";
     }
