@@ -56,14 +56,6 @@ export default {
     stream: {
       env: { server: true },
     },
-    // Vike already defines the setting 'name', but we redundantly define it here for older Vike versions (otherwise older Vike versions will complain that 'name` is an unknown config).
-    name: {
-      env: { config: true },
-    },
-    // Vike already defines the setting 'require', but we redundantly define it here for older Vike versions (otherwise older Vike versions will complain that 'require` is an unknown config). TODO/eventually: remove this once <=0.4.172 versions become rare (also because we use the `require` setting starting from `0.4.173`).
-    require: {
-      env: { config: true },
-    },
     htmlAttributes: {
       env: { server: true },
       global: true,
