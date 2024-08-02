@@ -36,8 +36,8 @@ importers:
         specifier: ^1.8.17
         version: 1.8.18
       vike:
-        specifier: ^0.4.181
-        version: 0.4.181(vite@5.3.4(@types/node@20.14.11))
+        specifier: ^0.4.182
+        version: 0.4.182(vite@5.3.4(@types/node@20.14.11))
       vike-solid:
         specifier: link:../../vike-solid
         version: link:../../vike-solid
@@ -55,8 +55,8 @@ importers:
         specifier: ^1.8.17
         version: 1.8.18
       vike:
-        specifier: ^0.4.181
-        version: 0.4.181(vite@5.3.4(@types/node@20.14.11))
+        specifier: ^0.4.182
+        version: 0.4.182(vite@5.3.4(@types/node@20.14.11))
       vike-solid:
         specifier: link:../../vike-solid
         version: link:../../vike-solid
@@ -114,8 +114,8 @@ importers:
         specifier: ^5.5.3
         version: 5.5.3
       vike:
-        specifier: ^0.4.181
-        version: 0.4.181(vite@5.3.4(@types/node@18.17.4))
+        specifier: ^0.4.182
+        version: 0.4.182(vite@5.3.4(@types/node@18.17.4))
       vite:
         specifier: ^5.3.4
         version: 5.3.4(@types/node@18.17.4)
@@ -2468,8 +2468,8 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  vike@0.4.181:
-    resolution: {integrity: sha512-pGhTonZ67yx3t4isx2UEKqx+ZhKJk1ZrwXBHfmy0Rs8T/u4JOIB58OahNDbVu1k4cvFeNzSqxcpI1BBVfaF5ZA==}
+  vike@0.4.182:
+    resolution: {integrity: sha512-1qZzckh5tyvVbZ3cGptieOFcpyfd8avHINGk7R38uEohR/mnW4pRjv9ff6V0sskDu3V8k+ndREK+Hq0hxJPikg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -4865,7 +4865,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vike@0.4.181(vite@5.3.4(@types/node@18.17.4)):
+  vike@0.4.182(vite@5.3.4(@types/node@18.17.4)):
     dependencies:
       '@brillout/import': 0.2.3
       '@brillout/json-serializer': 0.5.13
@@ -4882,7 +4882,7 @@ snapshots:
       source-map-support: 0.5.21
       vite: 5.3.4(@types/node@18.17.4)
 
-  vike@0.4.181(vite@5.3.4(@types/node@20.14.11)):
+  vike@0.4.182(vite@5.3.4(@types/node@20.14.11)):
     dependencies:
       '@brillout/import': 0.2.3
       '@brillout/json-serializer': 0.5.13
