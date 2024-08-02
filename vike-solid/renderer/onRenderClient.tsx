@@ -35,7 +35,6 @@ const onRenderClient: OnRenderClientAsync = async (pageContext): ReturnType<OnRe
 
     const title = getHeadSetting("title", pageContext) || "";
     const lang = getHeadSetting("lang", pageContext) || "en";
-    const favicon = getHeadSetting("favicon", pageContext);
 
     // We skip if the value is undefined because we shouldn't remove values set in HTML (by the Head setting).
     //  - This also means that previous values will leak: upon client-side navigation, the title set by the previous
@@ -44,21 +43,5 @@ const onRenderClient: OnRenderClientAsync = async (pageContext): ReturnType<OnRe
     //    can set the value to `null` to ensure that previous values are overridden.
     if (title !== undefined) document.title = title;
     if (lang !== undefined) document.documentElement.lang = lang;
-    if (favicon !== undefined) setFavicon(favicon);
   }
 };
-
-// https://stackoverflow.com/questions/260857/changing-website-favicon-dynamically/260876#260876
-function setFavicon(faviconUrl: string | null) {
-  let link: HTMLLinkElement | null = document.querySelector("link[rel~='icon']");
-  if (!faviconUrl) {
-    if (link) document.head.removeChild(link);
-    return;
-  }
-  if (!link) {
-    link = document.createElement("link");
-    link.rel = "icon";
-    document.head.appendChild(link);
-  }
-  link.href = faviconUrl;
-}
