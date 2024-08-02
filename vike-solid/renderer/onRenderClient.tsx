@@ -32,16 +32,22 @@ const onRenderClient: OnRenderClientAsync = async (pageContext): ReturnType<OnRe
     // Client-side navigation
 
     setPageContext(pageContext);
+  }
 
-    const title = getHeadSetting("title", pageContext) || "";
-    const lang = getHeadSetting("lang", pageContext) || "en";
-
-    // We skip if the value is undefined because we shouldn't remove values set in HTML (by the Head setting).
-    //  - This also means that previous values will leak: upon client-side navigation, the title set by the previous
-    //    page won't be removed if the next page doesn't override it. But that's okay because usually pages always have
-    //    a favicon and title, which means that previous values are always overridden. Also, as a workaround, the user
-    //    can set the value to `null` to ensure that previous values are overridden.
-    if (title !== undefined) document.title = title;
-    if (lang !== undefined) document.documentElement.lang = lang;
+  if (!pageContext.isHydration) {
+    // E.g. document.title
+    updateDocument(pageContext);
   }
 };
+
+function updateDocument(pageContext: PageContextClient) {
+  const title = getHeadSetting("title", pageContext);
+  const lang = getHeadSetting("lang", pageContext);
+
+  // - We skip if `undefined` as we shouldn't remove values set by the Head setting.
+  // - Setting a default prevents the previous value to be leaked: upon client-side navigation, the value set by the previous page won't be removed if the next page doesn't override it.
+  //   - Most of the time, the user sets a default himself (i.e. a value defined at /pages/+config.js)
+  //     - If he doesn't have a default then he can use `null` to opt into Vike's defaults
+  if (title !== undefined) document.title = title || "";
+  if (lang !== undefined) document.documentElement.lang = lang || "en";
+}
