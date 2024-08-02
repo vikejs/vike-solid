@@ -3,7 +3,7 @@ import { generateHydrationScript, renderToStream, renderToString } from "solid-j
 import { dangerouslySkipEscape, escapeInject, stampPipe } from "vike/server";
 import { getHeadSetting } from "./getHeadSetting.js";
 import { getPageElement } from "./getPageElement.js";
-import type { OnRenderHtmlAsync, PageContext } from "vike/types";
+import type { OnRenderHtmlAsync, PageContextServer } from "vike/types";
 import { PageContextProvider } from "../hooks/usePageContext.js";
 import { getTagAttributesString, type TagAttributes } from "../utils/getTagAttributesString.js";
 
@@ -12,12 +12,48 @@ export { onRenderHtml };
 type TPipe = Parameters<typeof stampPipe>[0];
 
 const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRenderHtmlAsync> => {
+  const headHtml = getHeadHtml(pageContext);
+
+  const pageHtml = getPageHtml(pageContext);
+
+  const { htmlAttributesString, bodyAttributesString } = getTagAttributes(pageContext);
+
+  return escapeInject`<!DOCTYPE html>
+    <html${dangerouslySkipEscape(htmlAttributesString)}>
+      <head>
+        <meta charset="UTF-8" />
+        ${headHtml}
+        ${dangerouslySkipEscape(generateHydrationScript())}
+      </head>
+      <body${dangerouslySkipEscape(bodyAttributesString)}>
+        <div id="root">${pageHtml}</div>
+      </body>
+    </html>`;
+};
+
+function getPageHtml(pageContext: PageContextServer) {
+  let pageHtml: string | ReturnType<typeof dangerouslySkipEscape> | TPipe = "";
+  if (pageContext.Page) {
+    if (!pageContext.config.stream) {
+      pageHtml = dangerouslySkipEscape(renderToString(() => getPageElement(pageContext)));
+    } else if (pageContext.config.stream === "web") {
+      pageHtml = renderToStream(() => getPageElement(pageContext)).pipeTo;
+      stampPipe(pageHtml, "web-stream");
+    } else {
+      pageHtml = renderToStream(() => getPageElement(pageContext)).pipe;
+      stampPipe(pageHtml, "node-stream");
+    }
+  }
+  return pageHtml;
+}
+
+function getHeadHtml(pageContext: PageContextServer) {
   const title = getHeadSetting("title", pageContext);
   const favicon = getHeadSetting("favicon", pageContext);
   const description = getHeadSetting("description", pageContext);
   const image = getHeadSetting("image", pageContext);
 
-  const titleTag = !title ? "" : escapeInject`<title>${title}</title><meta property="og:title" content="${title}">`;
+  const titleTags = !title ? "" : escapeInject`<title>${title}</title><meta property="og:title" content="${title}">`;
   const faviconTag = !favicon ? "" : escapeInject`<link rel="icon" href="${favicon}" />`;
   const descriptionTags = !description
     ? ""
@@ -35,50 +71,20 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
     </PageContextProvider>
   ));
 
-  const headHtml = dangerouslySkipEscape(head);
+  const headElementHtml = dangerouslySkipEscape(head);
 
-  const pageHtml = getPageHtml(pageContext);
-
-  const { htmlAttributesString, bodyAttributesString } = getTagAttributes(pageContext);
-
-  const documentHtml = escapeInject`<!DOCTYPE html>
-    <html${dangerouslySkipEscape(htmlAttributesString)}>
-      <head>
-        <meta charset="UTF-8" />
-        ${titleTag}
-        ${viewportTag}
-        ${headHtml}
-        ${faviconTag}
-        ${descriptionTags}
-        ${imageTags}
-        ${dangerouslySkipEscape(generateHydrationScript())}
-      </head>
-      <body${dangerouslySkipEscape(bodyAttributesString)}>
-        <div id="root">${pageHtml}</div>
-      </body>
-      <!-- built with https://github.com/vikejs/vike-solid -->
-    </html>`;
-
-  return documentHtml;
-};
-
-function getPageHtml(pageContext: PageContext) {
-  let pageHtml: string | ReturnType<typeof dangerouslySkipEscape> | TPipe = "";
-  if (pageContext.Page) {
-    if (!pageContext.config.stream) {
-      pageHtml = dangerouslySkipEscape(renderToString(() => getPageElement(pageContext)));
-    } else if (pageContext.config.stream === "web") {
-      pageHtml = renderToStream(() => getPageElement(pageContext)).pipeTo;
-      stampPipe(pageHtml, "web-stream");
-    } else {
-      pageHtml = renderToStream(() => getPageElement(pageContext)).pipe;
-      stampPipe(pageHtml, "node-stream");
-    }
-  }
-  return pageHtml;
+  const headHtml = escapeInject`
+    ${titleTags}
+    ${viewportTag}
+    ${headElementHtml}
+    ${faviconTag}
+    ${descriptionTags}
+    ${imageTags}
+  `;
+  return headHtml;
 }
 
-function getTagAttributes(pageContext: PageContext) {
+function getTagAttributes(pageContext: PageContextServer) {
   let lang = getHeadSetting("lang", pageContext);
   // Don't set `lang` to its default value if it's `null` (so that users can set it to `null` in order to remove the default value)
   if (lang === undefined) lang = "en";
