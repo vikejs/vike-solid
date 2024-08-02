@@ -39,6 +39,9 @@ export default {
     image: {
       env: { server: true },
     },
+    viewport: {
+      env: { server: true },
+    },
     favicon: {
       env: { server: true },
       global: true,

@@ -9,6 +9,7 @@ import type {
   PageContext as PageContext_,
 } from "vike/types";
 import type { TagAttributes } from "../utils/getTagAttributesString";
+import type { Viewport } from "../renderer/onRenderHtml";
 
 declare global {
   namespace Vike {
@@ -80,6 +81,15 @@ declare global {
        * https://vike.dev/image
        */
       image?: string | ((pageContext: PageContextServer) => string);
+
+      /**
+       * Set the page's width shown to the user on mobile/tablet devices.
+       *
+       * @default "responsive"
+       *
+       * https://vike.dev/viewport
+       */
+      viewport?: Viewport;
 
       /**
        * Set the page's favicon.
