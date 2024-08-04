@@ -37,7 +37,6 @@
     "vite": "^5.3.4"
   },
   "exports": {
-    ".": "./dist/index.js",
     "./config": "./dist/+config.js",
     "./vite": "./dist/vite-plugin-vike-solid.js",
     "./usePageContext": "./dist/hooks/usePageContext.js",
@@ -51,9 +50,6 @@
   },
   "typesVersions": {
     "*": {
-      ".": [
-        "dist/index.d.ts"
-      ],
       "config": [
         "dist/+config.d.ts"
       ],
@@ -78,8 +74,6 @@
     "dist/",
     "client.d.ts"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "repository": "github:vikejs/vike-solid",
   "license": "MIT"
 }
