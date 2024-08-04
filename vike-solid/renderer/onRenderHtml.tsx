@@ -6,6 +6,7 @@ import { getPageElement } from "./getPageElement.js";
 import type { OnRenderHtmlAsync, PageContextServer } from "vike/types";
 import { PageContextProvider } from "../hooks/usePageContext.js";
 import { getTagAttributesString, type TagAttributes } from "../utils/getTagAttributesString.js";
+import type { Component } from "solid-js";
 
 export { onRenderHtml };
 
@@ -63,13 +64,9 @@ function getHeadHtml(pageContext: PageContextServer) {
     : escapeInject`<meta property="og:image" content="${image}"><meta name="twitter:card" content="summary_large_image">`;
   const viewportTag = dangerouslySkipEscape(getViewportTag(pageContext.config.viewport));
 
-  const Head = pageContext.config.Head || (() => <></>);
-  const head = renderToString(() => (
-    <PageContextProvider pageContext={pageContext}>
-      <Head />
-    </PageContextProvider>
-  ));
-  const headElementHtml = dangerouslySkipEscape(head);
+  const headElementHtml = dangerouslySkipEscape(
+    getHeadElementHtml(pageContext.config.Head || (() => <></>), pageContext),
+  );
 
   const headHtml = escapeInject`
     ${titleTags}
@@ -80,6 +77,15 @@ function getHeadHtml(pageContext: PageContextServer) {
     ${imageTags}
   `;
   return headHtml;
+}
+function getHeadElementHtml(Head: Component, pageContext: PageContextServer): string {
+  const headElement = () => (
+    <PageContextProvider pageContext={pageContext}>
+      <Head />
+    </PageContextProvider>
+  );
+  const headElementHtml = renderToString(headElement);
+  return headElementHtml;
 }
 
 function getTagAttributes(pageContext: PageContextServer) {
