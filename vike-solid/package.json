@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
+    "dev:check-types": "tsc --noEmit --watch",
     "build": "tsc --noEmit && rollup -c rollup.config.js",
     "release": "LANG=en_US release-me patch",
     "release:minor": "LANG=en_US release-me minor",
