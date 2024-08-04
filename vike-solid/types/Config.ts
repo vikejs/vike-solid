@@ -160,6 +160,7 @@ declare global {
     }
     interface ConfigResolved {
       Layout?: Array<Component>;
+      Head?: Array<Component>;
       bodyAttributes?: TagAttributes[];
       htmlAttributes?: TagAttributes[];
       onAfterRenderClient?: Function[];

@@ -64,14 +64,17 @@ function getHeadHtml(pageContext: PageContextServer) {
     : escapeInject`<meta property="og:image" content="${image}"><meta name="twitter:card" content="summary_large_image">`;
   const viewportTag = dangerouslySkipEscape(getViewportTag(pageContext.config.viewport));
 
-  const headElementHtml = dangerouslySkipEscape(
-    getHeadElementHtml(pageContext.config.Head || (() => <></>), pageContext),
+  const headElementsHtml = dangerouslySkipEscape(
+    (pageContext.config.Head ?? [])
+      .filter((Head) => Head !== null && Head !== undefined)
+      .map((Head) => getHeadElementHtml(Head, pageContext))
+      .join("\n"),
   );
 
   const headHtml = escapeInject`
     ${titleTags}
     ${viewportTag}
-    ${headElementHtml}
+    ${headElementsHtml}
     ${faviconTag}
     ${descriptionTags}
     ${imageTags}

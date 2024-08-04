@@ -25,6 +25,7 @@ export default {
   meta: {
     Head: {
       env: { server: true },
+      cumulative: true,
     },
     Layout: {
       env: { server: true, client: true },
