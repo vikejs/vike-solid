@@ -27,7 +27,7 @@ declare global {
        *
        * https://vike.dev/Head
        */
-      Head?: Component;
+      Head?: Head;
 
       /**
        * A component that defines the visual layout common to several pages.
@@ -160,10 +160,24 @@ declare global {
     }
     interface ConfigResolved {
       Layout?: Array<Component>;
-      Head?: Array<Component>;
+      Head?: Array<Head>;
       bodyAttributes?: TagAttributes[];
       htmlAttributes?: TagAttributes[];
       onAfterRenderClient?: Function[];
     }
   }
 }
+
+export type Head = Component | JSX.Element;
+
+// JSDocs are preserved
+type PickWithoutGetter<T, K extends keyof T> = {
+  [P in K]: Exclude<T[P], Function>;
+};
+export type ConfigFromHook = PickWithoutGetter<Vike.Config, "Head" | "title" | "description" | "image">;
+export type ConfigFromHookResolved = {
+  Head?: Head[];
+  title?: string;
+  description?: string;
+  image?: string;
+};

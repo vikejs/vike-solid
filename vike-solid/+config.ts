@@ -21,6 +21,8 @@ export default {
   clientRouting: true,
   hydrationCanBeAborted: true,
 
+  passToClient: ["_configFromHook"],
+
   // https://vike.dev/meta
   meta: {
     Head: {

@@ -1,4 +1,5 @@
 import type { JSX } from "solid-js";
+import type { ConfigFromHookResolved } from "./Config";
 
 // https://vike.dev/pageContext#typescript
 declare global {
@@ -9,3 +10,9 @@ declare global {
     }
   }
 }
+
+// Internal usage
+export type PageContextInternal = {
+  _configFromHook?: ConfigFromHookResolved;
+  _headAlreadySet?: true;
+};

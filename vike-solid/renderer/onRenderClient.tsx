@@ -7,6 +7,7 @@ import type { OnRenderClientAsync, PageContextClient } from "vike/types";
 import { getPageElement } from "./getPageElement.js";
 import { createStore } from "solid-js/store";
 import { callCumulativeHooks } from "../utils/callCumulativeHooks.js";
+import type { PageContextInternal } from "../types/PageContext.js";
 
 const [pageContextStore, setPageContext] = createStore<PageContextClient>({} as PageContextClient);
 
@@ -46,7 +47,9 @@ const onRenderClient: OnRenderClientAsync = async (pageContext): ReturnType<OnRe
   await callCumulativeHooks(pageContext.config.onAfterRenderClient, pageContext);
 };
 
-function updateDocument(pageContext: PageContextClient) {
+function updateDocument(pageContext: PageContextClient & PageContextInternal) {
+  pageContext._headAlreadySet = true;
+
   const title = getHeadSetting("title", pageContext);
   const lang = getHeadSetting("lang", pageContext);
 

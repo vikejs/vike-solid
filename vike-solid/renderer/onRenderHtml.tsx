@@ -6,7 +6,10 @@ import { getPageElement } from "./getPageElement.js";
 import type { OnRenderHtmlAsync, PageContextServer } from "vike/types";
 import { PageContextProvider } from "../hooks/usePageContext.js";
 import { getTagAttributesString, type TagAttributes } from "../utils/getTagAttributesString.js";
-import type { Component } from "solid-js";
+import type { PageContextInternal } from "../types/PageContext.js";
+import type { Head } from "../types/Config.js";
+import type { JSX } from "solid-js/jsx-runtime";
+import { isCallable } from "../utils/isCallable.js";
 
 export { onRenderHtml };
 
@@ -48,7 +51,9 @@ function getPageHtml(pageContext: PageContextServer) {
   return pageHtml;
 }
 
-function getHeadHtml(pageContext: PageContextServer) {
+function getHeadHtml(pageContext: PageContextServer & PageContextInternal) {
+  pageContext._headAlreadySet = true;
+
   const title = getHeadSetting("title", pageContext);
   const favicon = getHeadSetting("favicon", pageContext);
   const description = getHeadSetting("description", pageContext);
@@ -65,7 +70,12 @@ function getHeadHtml(pageContext: PageContextServer) {
   const viewportTag = dangerouslySkipEscape(getViewportTag(pageContext.config.viewport));
 
   const headElementsHtml = dangerouslySkipEscape(
-    (pageContext.config.Head ?? [])
+    [
+      // Added by +Head
+      ...(pageContext.config.Head ?? []),
+      // Added by useConfig()
+      ...(pageContext._configFromHook?.Head ?? []),
+    ]
       .filter((Head) => Head !== null && Head !== undefined)
       .map((Head) => getHeadElementHtml(Head, pageContext))
       .join("\n"),
@@ -81,14 +91,22 @@ function getHeadHtml(pageContext: PageContextServer) {
   `;
   return headHtml;
 }
-function getHeadElementHtml(Head: Component, pageContext: PageContextServer): string {
-  const headElement = () => (
-    <PageContextProvider pageContext={pageContext}>
-      <Head />
-    </PageContextProvider>
-  );
+function getHeadElementHtml(Head: Head, pageContext: PageContextServer): string {
+  let headElement: () => JSX.Element;
+  if (isElement(Head)) {
+    headElement = () => Head;
+  } else {
+    headElement = () => (
+      <PageContextProvider pageContext={pageContext}>
+        <Head />
+      </PageContextProvider>
+    );
+  }
   const headElementHtml = renderToString(headElement);
   return headElementHtml;
+}
+function isElement(value: unknown): value is JSX.Element {
+  return !isCallable(value);
 }
 
 function getTagAttributes(pageContext: PageContextServer) {
