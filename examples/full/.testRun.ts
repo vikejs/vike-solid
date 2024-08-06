@@ -2,6 +2,7 @@ export { testRun };
 
 import { test, expect, run, fetchHtml, page, getServerUrl, autoRetry, partRegex } from "@brillout/test-e2e";
 import assert from "node:assert";
+const dataHk = partRegex`data-hk="${/[0-9-]+/}"`;
 
 let isProd: boolean;
 
@@ -41,6 +42,8 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
   });
 
   testNavigationBetweenWithSSRAndWithoutSSR();
+
+  testHeadComponent();
 }
 
 function testNavigationBetweenWithSSRAndWithoutSSR() {
@@ -105,10 +108,8 @@ function testUrl({
       expect(html).toContain(text);
     }
 
-    const dataHkHash = /[0-9-]+/;
-
     expect(getTitle(html)).toBe(title);
-    expect(html).toMatch(partRegex`<link data-hk="${dataHkHash}" rel="icon" href="${getAssetUrl("logo.svg")}">`);
+    expect(html).toMatch(partRegex`<link ${dataHk} rel="icon" href="${getAssetUrl("logo.svg")}">`);
 
     if (!description) description = "Demo showcasing Vike + Solid";
     expect(html).toMatch(partRegex`<meta name="description" content="${description}">`);
@@ -120,6 +121,30 @@ function testUrl({
     }
     const body = await page.textContent("body");
     expect(body).toContain(text);
+  });
+}
+
+function testHeadComponent() {
+  test("Head Component (HTML)", async () => {
+    const html = await fetchHtml("/images");
+    expect(html).toMatch(
+      partRegex`<script ${dataHk} type="application/ld+json">{"@context":"https://schema.org/","contentUrl":{"src":"${getAssetUrl(
+        "logo-new.svg",
+      )}"},"creator":{"@type":"Person","name":"brillout"}}</script>`,
+    );
+    expect(html).toMatch(
+      partRegex`<script ${dataHk} type="application/ld+json">{"@context":"https://schema.org/","contentUrl":{"src":"${getAssetUrl(
+        "logo.svg",
+      )}"},"creator":{"@type":"Person","name":"Romuald Brillout"}}</script>`,
+    );
+  });
+  test("Head Component (Hydration)", async () => {
+    await page.goto(getServerUrl() + "/");
+    await testCounter();
+    ensureWasClientSideRouted("/pages/index");
+    await page.click('a:has-text("Head Component")');
+    await testCounter();
+    ensureWasClientSideRouted("/pages/index");
   });
 }
 
