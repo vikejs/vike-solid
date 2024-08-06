@@ -1,6 +1,7 @@
 export { testRun };
 
 import { test, expect, run, fetchHtml, page, getServerUrl, autoRetry, partRegex } from "@brillout/test-e2e";
+import assert from "node:assert";
 
 let isProd: boolean;
 
@@ -9,10 +10,9 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
 
   isProd = cmd !== "pnpm run dev";
 
-  const title = "My Vike + Solid App";
   testUrl({
     url: "/",
-    title,
+    title: "My Vike + Solid App",
     text: "Rendered to HTML.",
     counter: true,
   });
@@ -20,12 +20,14 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
   testUrl({
     url: "/star-wars",
     title: "6 Star Wars Movies",
+    description: "All the 6 movies from the Star Wars franchise",
     text: "A New Hope",
   });
 
   testUrl({
     url: "/star-wars/3",
     title: "Return of the Jedi",
+    description: "Star Wars Movie Return of the Jedi from Richard Marquand",
     text: "1983-05-25",
   });
 
@@ -85,12 +87,14 @@ function testNavigationBetweenWithSSRAndWithoutSSR() {
 function testUrl({
   url,
   title,
+  description,
   text,
   counter,
   noSSR,
 }: {
   url: string;
   title: string;
+  description?: string;
   text: string;
   counter?: true;
   noSSR?: true;
@@ -100,15 +104,14 @@ function testUrl({
     if (!noSSR) {
       expect(html).toContain(text);
     }
-    expect(getTitle(html)).toBe(title);
-    const hash = /[a-zA-Z0-9_-]+/;
+
     const dataHkHash = /[0-9-]+/;
 
-    if (!isProd) {
-      expect(html).toMatch(partRegex`<link data-hk="${dataHkHash}" rel="icon" href="/assets/logo.svg">`);
-    } else {
-      expect(html).toMatch(partRegex`<link data-hk="${dataHkHash}" rel="icon" href="/assets/static/logo.${hash}.svg">`);
-    }
+    expect(getTitle(html)).toBe(title);
+    expect(html).toMatch(partRegex`<link data-hk="${dataHkHash}" rel="icon" href="${getAssetUrl("logo.svg")}">`);
+
+    if (!description) description = "Demo showcasing Vike + Solid";
+    expect(html).toMatch(partRegex`<meta name="description" content="${description}">`);
   });
   test(url + " (Hydration)", async () => {
     await page.goto(getServerUrl() + url);
@@ -160,4 +163,13 @@ function findFirstPageId(html: string) {
   const pageId = match![1];
   expect(pageId).toBeTruthy();
   return pageId;
+}
+
+function getAssetUrl(fileName: string) {
+  if (!isProd) {
+    return `/assets/${fileName}`;
+  }
+  const [fileBaseName, fileExt, ...r] = fileName.split(".");
+  assert(r.length === 0);
+  return partRegex`/assets/static/${fileBaseName}.${/[a-zA-Z0-9_-]+/}.${fileExt}`;
 }
