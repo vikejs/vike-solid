@@ -11,7 +11,6 @@
 * make Head setting cumulative ([c5dd9bd](https://github.com/vikejs/vike-solid/commit/c5dd9bd104fa31669ea8b2a847d855e8edbc4d52))
 * make title setting generate <meta property="og:title"> ([8681dd3](https://github.com/vikejs/vike-solid/commit/8681dd3bbe3bedf4228afae23d98f8b75706f315))
 * remove <ClientOnly> component ([ab747da](https://github.com/vikejs/vike-solid/commit/ab747da60c7039e9cbebb8896d068ce51bf33441))
-* use vike@0.4.182 [Remove me from CHAGELOG.md] ([88acfd2](https://github.com/vikejs/vike-solid/commit/88acfd2729286e0ac9914d5edb4ad614145a20f7))
 
 
 ### Features
