@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "solid-js": "^1.8.17",
-    "vike": "^0.4.182",
+    "vike": "^0.4.183",
     "vike-solid": "link:vike-solid"
   },
   "devDependencies": {
