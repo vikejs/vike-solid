@@ -10,7 +10,7 @@
     "vike-solid": "link:vike-solid"
   },
   "devDependencies": {
-    "vite": "^5.3.4"
+    "vite": "^5.4.0"
   },
   "type": "module"
 }
