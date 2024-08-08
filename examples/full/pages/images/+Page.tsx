@@ -4,6 +4,7 @@ import { Head } from "vike-solid/Head";
 import logoOld from "../../assets/logo.svg";
 import logoNew from "../../assets/logo-new.svg";
 import { Counter } from "../../components/Counter";
+import { Show } from "solid-js";
 
 function Page() {
   return (
@@ -29,19 +30,21 @@ function Image({ src, author }: { src: string; author: string }) {
   return (
     <>
       <img src={src} height={48} style={{ "vertical-align": "middle", "margin-left": "10px" }} />
-      <Head>
-        <script
-          type="application/ld+json"
-          innerHTML={JSON.stringify({
-            "@context": "https://schema.org/",
-            contentUrl: { src },
-            creator: {
-              "@type": "Person",
-              name: author,
-            },
-          })}
-        ></script>
-      </Head>
+      <Show when={import.meta.env.SSR}>
+        <Head>
+          <script
+            type="application/ld+json"
+            innerHTML={JSON.stringify({
+              "@context": "https://schema.org/",
+              contentUrl: { src },
+              creator: {
+                "@type": "Person",
+                name: author,
+              },
+            })}
+          ></script>
+        </Head>
+      </Show>
     </>
   );
 }
