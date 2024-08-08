@@ -24,7 +24,7 @@
     "@brillout/release-me": "^0.3.9",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@types/node": "^18.17.4",
+    "@types/node": "^20.14.11",
     "babel-preset-solid": "^1.8.18",
     "bumpp": "^9.4.1",
     "rollup": "^4.19.0",

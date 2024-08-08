@@ -69,7 +69,7 @@ importers:
     dependencies:
       vite-plugin-solid:
         specifier: ^2.10.2
-        version: 2.10.2(solid-js@1.8.18)(vite@5.4.0(@types/node@18.17.4))
+        version: 2.10.2(solid-js@1.8.18)(vite@5.4.0(@types/node@20.14.11))
     devDependencies:
       '@babel/core':
         specifier: ^7.24.9
@@ -90,8 +90,8 @@ importers:
         specifier: ^15.2.3
         version: 15.2.3(rollup@4.19.0)
       '@types/node':
-        specifier: ^18.17.4
-        version: 18.17.4
+        specifier: ^20.14.11
+        version: 20.14.11
       babel-preset-solid:
         specifier: ^1.8.18
         version: 1.8.18(@babel/core@7.24.9)
@@ -115,10 +115,10 @@ importers:
         version: 5.5.3
       vike:
         specifier: ^0.4.183
-        version: 0.4.183(vite@5.4.0(@types/node@18.17.4))
+        version: 0.4.183(vite@5.4.0(@types/node@20.14.11))
       vite:
         specifier: ^5.4.0
-        version: 5.4.0(@types/node@18.17.4)
+        version: 5.4.0(@types/node@20.14.11)
 
 packages:
 
@@ -1389,9 +1389,6 @@ packages:
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
-
-  '@types/node@18.17.4':
-    resolution: {integrity: sha512-ATL4WLgr7/W40+Sp1WnNTSKbgVn6Pvhc/2RHAdt8fl6NsQyp4oPCi2eKcGOvA494bwf1K/W6nGgZ9TwDqvpjdw==}
 
   '@types/node@20.14.11':
     resolution: {integrity: sha512-kprQpL8MMeszbz6ojB5/tU8PLN4kesnN8Gjzw349rDlNgsSzg90lAVj3llK99Dh7JON+t9AuscPPFW6mPbTnSA==}
@@ -3706,12 +3703,9 @@ snapshots:
 
   '@types/estree@1.0.5': {}
 
-  '@types/node@18.17.4': {}
-
   '@types/node@20.14.11':
     dependencies:
       undici-types: 5.26.5
-    optional: true
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -4686,8 +4680,7 @@ snapshots:
   uglify-js@3.18.0:
     optional: true
 
-  undici-types@5.26.5:
-    optional: true
+  undici-types@5.26.5: {}
 
   unicode-canonical-property-names-ecmascript@2.0.0: {}
 
@@ -4713,23 +4706,6 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vike@0.4.183(vite@5.4.0(@types/node@18.17.4)):
-    dependencies:
-      '@brillout/import': 0.2.3
-      '@brillout/json-serializer': 0.5.13
-      '@brillout/picocolors': 1.0.14
-      '@brillout/require-shim': 0.1.2
-      '@brillout/vite-plugin-server-entry': 0.4.7
-      acorn: 8.12.1
-      cac: 6.7.14
-      es-module-lexer: 1.5.4
-      esbuild: 0.19.12
-      fast-glob: 3.3.2
-      semver: 7.6.3
-      sirv: 2.0.4
-      source-map-support: 0.5.21
-      vite: 5.4.0(@types/node@18.17.4)
-
   vike@0.4.183(vite@5.4.0(@types/node@20.14.11)):
     dependencies:
       '@brillout/import': 0.2.3
@@ -4747,7 +4723,7 @@ snapshots:
       source-map-support: 0.5.21
       vite: 5.4.0(@types/node@20.14.11)
 
-  vite-plugin-solid@2.10.2(solid-js@1.8.18)(vite@5.4.0(@types/node@18.17.4)):
+  vite-plugin-solid@2.10.2(solid-js@1.8.18)(vite@5.4.0(@types/node@20.14.11)):
     dependencies:
       '@babel/core': 7.24.9
       '@types/babel__core': 7.20.5
@@ -4755,19 +4731,10 @@ snapshots:
       merge-anything: 5.1.7
       solid-js: 1.8.18
       solid-refresh: 0.6.3(solid-js@1.8.18)
-      vite: 5.4.0(@types/node@18.17.4)
-      vitefu: 0.2.5(vite@5.4.0(@types/node@18.17.4))
+      vite: 5.4.0(@types/node@20.14.11)
+      vitefu: 0.2.5(vite@5.4.0(@types/node@20.14.11))
     transitivePeerDependencies:
       - supports-color
-
-  vite@5.4.0(@types/node@18.17.4):
-    dependencies:
-      esbuild: 0.21.5
-      postcss: 8.4.41
-      rollup: 4.19.0
-    optionalDependencies:
-      '@types/node': 18.17.4
-      fsevents: 2.3.3
 
   vite@5.4.0(@types/node@20.14.11):
     dependencies:
@@ -4778,9 +4745,9 @@ snapshots:
       '@types/node': 20.14.11
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.4.0(@types/node@18.17.4)):
+  vitefu@0.2.5(vite@5.4.0(@types/node@20.14.11)):
     optionalDependencies:
-      vite: 5.4.0(@types/node@18.17.4)
+      vite: 5.4.0(@types/node@20.14.11)
 
   web-streams-polyfill@3.2.1: {}
 
