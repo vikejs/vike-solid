@@ -81,6 +81,9 @@ function getHeadHtml(pageContext: PageContextServer & PageContextInternal) {
       .join("\n"),
   );
 
+  // Not needed on the client-side, thus we remove it to save KBs sent to the client
+  delete pageContext._configFromHook;
+
   const headHtml = escapeInject`
     ${titleTags}
     ${viewportTag}
