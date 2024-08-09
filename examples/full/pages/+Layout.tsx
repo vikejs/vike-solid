@@ -19,6 +19,7 @@ export function Layout(props: { children?: JSX.Element }) {
         <Link href="/without-ssr">Without SSR</Link>
         <Link href="/starship">Nested Layout 1</Link>
         <Link href="/stardust">Nested Layout 2</Link>
+        <Link href="/images">useConfig()</Link>
       </Sidebar>
       <Content>{props.children}</Content>
     </div>

@@ -1,4 +1,8 @@
+export { Page };
+
 import { clientOnly } from "vike-solid/clientOnly";
+import { Config } from "vike-solid/Config";
+import image from "../../assets/logo-new.svg";
 
 const ClientOnlyCounter = clientOnly(() => import("./Counter"));
 const ClientOnlyCounterSlow = clientOnly(async () => {
@@ -8,9 +12,10 @@ const ClientOnlyCounterSlow = clientOnly(async () => {
   return import("./Counter");
 });
 
-export default function Page() {
+function Page() {
   return (
     <>
+      <Config image={image}></Config>
       <h1>My Vike + Solid App</h1>
       This page is:
       <ul>

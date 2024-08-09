@@ -2,6 +2,7 @@ export { testRun };
 
 import { test, expect, run, fetchHtml, page, getServerUrl, autoRetry, partRegex } from "@brillout/test-e2e";
 import assert from "node:assert";
+const dataHk = partRegex`data-hk="${/[0-9-]+/}"`;
 
 let isProd: boolean;
 
@@ -15,6 +16,7 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
     title: "My Vike + Solid App",
     text: "Rendered to HTML.",
     counter: true,
+    image: true,
   });
 
   testUrl({
@@ -22,6 +24,7 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
     title: "6 Star Wars Movies",
     description: "All the 6 movies from the Star Wars franchise",
     text: "A New Hope",
+    image: true,
   });
 
   testUrl({
@@ -41,6 +44,8 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
   });
 
   testNavigationBetweenWithSSRAndWithoutSSR();
+
+  testUseConfig();
 }
 
 function testNavigationBetweenWithSSRAndWithoutSSR() {
@@ -91,6 +96,7 @@ function testUrl({
   text,
   counter,
   noSSR,
+  image,
 }: {
   url: string;
   title: string;
@@ -98,6 +104,7 @@ function testUrl({
   text: string;
   counter?: true;
   noSSR?: true;
+  image?: true;
 }) {
   test(url + " (HTML)", async () => {
     const html = await fetchHtml(url);
@@ -105,13 +112,17 @@ function testUrl({
       expect(html).toContain(text);
     }
 
-    const dataHkHash = /[0-9-]+/;
-
     expect(getTitle(html)).toBe(title);
-    expect(html).toMatch(partRegex`<link data-hk="${dataHkHash}" rel="icon" href="${getAssetUrl("logo.svg")}">`);
+    expect(html).toMatch(partRegex`<link ${dataHk} rel="icon" href="${getAssetUrl("logo.svg")}">`);
 
     if (!description) description = "Demo showcasing Vike + Solid";
     expect(html).toMatch(partRegex`<meta name="description" content="${description}">`);
+
+    if (image) {
+      expect(html).toMatch(partRegex`<meta property="og:image" content="${getAssetUrl("logo-new.svg")}">`);
+    } else {
+      expect(html).not.toContain("og:image");
+    }
   });
   test(url + " (Hydration)", async () => {
     await page.goto(getServerUrl() + url);
@@ -120,6 +131,32 @@ function testUrl({
     }
     const body = await page.textContent("body");
     expect(body).toContain(text);
+  });
+}
+
+function testUseConfig() {
+  test("useConfig() HTML", async () => {
+    const html = await fetchHtml("/images");
+    expect(html).toMatch(
+      partRegex`<script ${dataHk} type="application/ld+json">{"@context":"https://schema.org/","contentUrl":{"src":"${getAssetUrl(
+        "logo-new.svg",
+      )}"},"creator":{"@type":"Person","name":"brillout"}}</script>`,
+    );
+    expect(html).toMatch(
+      partRegex`<script ${dataHk} type="application/ld+json">{"@context":"https://schema.org/","contentUrl":{"src":"${getAssetUrl(
+        "logo.svg",
+      )}"},"creator":{"@type":"Person","name":"Romuald Brillout"}}</script>`,
+    );
+  });
+  test("useConfig() hydration", async () => {
+    await page.goto(getServerUrl() + "/");
+    await testCounter();
+    ensureWasClientSideRouted("/pages/index");
+    await page.click('a:has-text("useConfig()")');
+    await testCounter();
+    ensureWasClientSideRouted("/pages/index");
+    await page.goto(getServerUrl() + "/images");
+    await testCounter();
   });
 }
 
