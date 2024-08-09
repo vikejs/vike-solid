@@ -16,6 +16,7 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
     title: "My Vike + Solid App",
     text: "Rendered to HTML.",
     counter: true,
+    image: true,
   });
 
   testUrl({
@@ -23,6 +24,7 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
     title: "6 Star Wars Movies",
     description: "All the 6 movies from the Star Wars franchise",
     text: "A New Hope",
+    image: true,
   });
 
   testUrl({
@@ -94,6 +96,7 @@ function testUrl({
   text,
   counter,
   noSSR,
+  image,
 }: {
   url: string;
   title: string;
@@ -101,6 +104,7 @@ function testUrl({
   text: string;
   counter?: true;
   noSSR?: true;
+  image?: true;
 }) {
   test(url + " (HTML)", async () => {
     const html = await fetchHtml(url);
@@ -113,6 +117,12 @@ function testUrl({
 
     if (!description) description = "Demo showcasing Vike + Solid";
     expect(html).toMatch(partRegex`<meta name="description" content="${description}">`);
+
+    if (image) {
+      expect(html).toMatch(partRegex`<meta property="og:image" content="${getAssetUrl("logo-new.svg")}">`);
+    } else {
+      expect(html).not.toContain("og:image");
+    }
   });
   test(url + " (Hydration)", async () => {
     await page.goto(getServerUrl() + url);
