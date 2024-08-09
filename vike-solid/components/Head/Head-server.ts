@@ -1,7 +1,5 @@
 export { Head };
 
-// Same as ./Head-client.ts but importing useConfig-server.js
-
 import { useConfig } from "../../hooks/useConfig/useConfig-server.js";
 import type { JSX } from "solid-js/jsx-runtime";
 
