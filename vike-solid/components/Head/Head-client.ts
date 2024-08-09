@@ -2,9 +2,6 @@ export { Head };
 
 // Same as ./Head-server.ts but importing useConfig-client.js
 
-import { useConfig } from "../../hooks/useConfig/useConfig-client.js";
-import type { JSX } from "solid-js/jsx-runtime";
-
 /**
  * Add arbitrary `<head>` tags.
  *
@@ -12,8 +9,6 @@ import type { JSX } from "solid-js/jsx-runtime";
  *
  * https://vike.dev/Head
  */
-function Head({ children }: { children: JSX.Element }): null {
-  const config = useConfig();
-  config({ Head: children });
+function Head(): null {
   return null;
 }
