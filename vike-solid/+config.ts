@@ -15,7 +15,6 @@ export default {
   onRenderHtml: "import:vike-solid/renderer/onRenderHtml:onRenderHtml",
   // https://vike.dev/onRenderClient
   onRenderClient: "import:vike-solid/renderer/onRenderClient:onRenderClient",
-  // https://vike.dev/clientRouting
 
   // https://vike.dev/clientRouting
   clientRouting: true,
