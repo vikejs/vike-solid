@@ -1,3 +1,19 @@
+## [0.7.1](https://github.com/vikejs/vike-solid/compare/v0.7.0...v0.7.1) (2024-08-12)
+
+
+### Bug Fixes
+
+* don't unnecessarily pass useConfig() values to client-side ([613bce3](https://github.com/vikejs/vike-solid/commit/613bce3383ffe0ff33bad647c6fb0322e7461779))
+* update peerDependencies list ([d5051e1](https://github.com/vikejs/vike-solid/commit/d5051e105d97f3b04340a1eb7d8fdc7afa3c28fb))
+
+
+### Features
+
+* new [components `<Head>` and `<Config>`](https://vike.dev/useConfig#config-head) ([#104](https://github.com/vikejs/vike-solid/issues/104)) ([ed1c070](https://github.com/vikejs/vike-solid/commit/ed1c070ef4bc2d4ee158d21ab1a151df07ed924b))
+* support setting `{body,html}Attributes` based on `pageContext` ([ce05a56](https://github.com/vikejs/vike-solid/commit/ce05a564dac219d1f08f3ca9b4483a8f87aab785))
+
+
+
 # [0.7.0](https://github.com/vikejs/vike-solid/compare/v0.6.2...v0.7.0) (2024-08-06)
 
 
