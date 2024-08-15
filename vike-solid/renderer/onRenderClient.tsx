@@ -14,7 +14,11 @@ const [pageContextStore, setPageContext] = createStore<PageContextClient>({} as 
 let dispose: () => void;
 let rendered = false;
 
-const onRenderClient: OnRenderClientAsync = async (pageContext): ReturnType<OnRenderClientAsync> => {
+const onRenderClient: OnRenderClientAsync = async (
+  pageContext: PageContextClient & PageContextInternal,
+): ReturnType<OnRenderClientAsync> => {
+  pageContext._headAlreadySet = pageContext.isHydration;
+
   if (!rendered) {
     // Dispose to prevent duplicate pages when navigating.
     if (dispose) dispose();
@@ -37,6 +41,7 @@ const onRenderClient: OnRenderClientAsync = async (pageContext): ReturnType<OnRe
   }
 
   if (!pageContext.isHydration) {
+    pageContext._headAlreadySet = true;
     // E.g. document.title
     updateDocument(pageContext);
   }
@@ -47,9 +52,7 @@ const onRenderClient: OnRenderClientAsync = async (pageContext): ReturnType<OnRe
   await callCumulativeHooks(pageContext.config.onAfterRenderClient, pageContext);
 };
 
-function updateDocument(pageContext: PageContextClient & PageContextInternal) {
-  pageContext._headAlreadySet = true;
-
+function updateDocument(pageContext: PageContextClient) {
   const title = getHeadSetting<string | null>("title", pageContext);
   const lang = getHeadSetting<string | null>("lang", pageContext);
 
