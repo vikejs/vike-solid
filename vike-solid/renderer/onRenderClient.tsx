@@ -42,8 +42,7 @@ const onRenderClient: OnRenderClientAsync = async (
 
   if (!pageContext.isHydration) {
     pageContext._headAlreadySet = true;
-    // E.g. document.title
-    updateDocument(pageContext);
+    applyHeadSettings(pageContext);
   }
 
   // Use cases:
@@ -52,7 +51,7 @@ const onRenderClient: OnRenderClientAsync = async (
   await callCumulativeHooks(pageContext.config.onAfterRenderClient, pageContext);
 };
 
-function updateDocument(pageContext: PageContextClient) {
+function applyHeadSettings(pageContext: PageContextClient) {
   const title = getHeadSetting<string | null>("title", pageContext);
   const lang = getHeadSetting<string | null>("lang", pageContext);
 
