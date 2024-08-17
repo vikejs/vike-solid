@@ -1,8 +1,8 @@
 export { testRun };
 
-import { test, expect, run, fetchHtml, page, getServerUrl, autoRetry, partRegex } from "@brillout/test-e2e";
 import assert from "node:assert";
-const dataHk = partRegex`data-hk="${/[0-9-]+/}"`;
+import { autoRetry, expect, fetchHtml, getServerUrl, page, partRegex, run, test } from "@brillout/test-e2e";
+const dataHk = partRegex`data-hk=${/[0-9-]+/}`;
 
 let isProd: boolean;
 

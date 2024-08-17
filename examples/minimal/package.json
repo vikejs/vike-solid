@@ -5,12 +5,12 @@
     "preview": "vite build && vite preview"
   },
   "dependencies": {
-    "solid-js": "^1.8.17",
-    "vike": "^0.4.183",
+    "solid-js": "^1.8.21",
+    "vike": "^0.4.184",
     "vike-solid": "link:vike-solid"
   },
   "devDependencies": {
-    "vite": "^5.4.0"
+    "vite": "^5.4.1"
   },
   "type": "module"
 }
