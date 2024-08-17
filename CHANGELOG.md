@@ -1,3 +1,18 @@
+## [0.7.2](https://github.com/vikejs/vike-solid/compare/v0.7.1...v0.7.2) (2024-08-17)
+
+
+### Bug Fixes
+
+* enable useConfig() after hydration ([#179](https://github.com/vikejs/vike-solid/issues/179)) ([0d28905](https://github.com/vikejs/vike-solid/commit/0d289053eb0ea3717de8b2b82f0a49bf28436219))
+* fix `useConfig()` for `{body,html}Attributes` (vikejs/vike-vue[#180](https://github.com/vikejs/vike-solid/issues/180)) ([bf3c091](https://github.com/vikejs/vike-solid/commit/bf3c091d6185634027c7a46b5d19a29b6f5559df))
+* fix callable cumulative configs ([56682a8](https://github.com/vikejs/vike-solid/commit/56682a8576eeeb2b5ba14c65045bd99dfeea3cb5))
+* fix JSDoc ([5d1187b](https://github.com/vikejs/vike-solid/commit/5d1187bd8967e9990849b7fc21df62cbb81f35ed))
+* JSDocs typo ([8a9d46f](https://github.com/vikejs/vike-solid/commit/8a9d46fe61ce2e7dcac26ac5bc96e78c69a0ab1b))
+* support callable cumulative configs ([9f18380](https://github.com/vikejs/vike-solid/commit/9f18380971d15d3781fa190c72456619600bb0eb))
+* update lang upon useConfig() ([b2818be](https://github.com/vikejs/vike-solid/commit/b2818be5db3453d94dff2ed797775acbd3925d34))
+
+
+
 ## [0.7.1](https://github.com/vikejs/vike-solid/compare/v0.7.0...v0.7.1) (2024-08-12)
 
 
