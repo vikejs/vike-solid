@@ -5,7 +5,7 @@ import type { ConfigFromHookResolved } from "./Config";
 declare global {
   namespace Vike {
     interface PageContext {
-      /** The root React component of the page */
+      /** The root Solid component of the page */
       Page?: () => JSX.Element;
     }
   }
