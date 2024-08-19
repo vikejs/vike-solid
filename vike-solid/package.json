@@ -27,12 +27,12 @@
     "@types/node": "^22.4.0",
     "babel-preset-solid": "^1.8.19",
     "bumpp": "^9.5.1",
-    "rollup": "^4.20.0",
+    "rollup": "^4.21.0",
     "rollup-plugin-dts": "^6.1.1",
     "solid-js": "^1.8.21",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4",
-    "vike": "^0.4.184",
+    "vike": "^0.4.188",
     "vite": "^5.4.1"
   },
   "exports": {
