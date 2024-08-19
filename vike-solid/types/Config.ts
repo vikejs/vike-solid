@@ -1,18 +1,10 @@
-// https://vike.dev/meta#typescript
-import type { Component, JSX } from "solid-js";
-
-import type {
-  PageContextServer,
-  // Rename it to `PageContext_` to be able to reference it from within `namespace Vike`
-  // - https://stackoverflow.com/questions/46559021/typescript-use-of-global-type-inside-namespace-with-same-type
-  // - https://github.com/Microsoft/TypeScript/issues/983
-  PageContext as PageContext_,
-  PageContextClient,
-} from "vike/types";
+import type { PageContextServer, PageContext, PageContextClient } from "vike/types";
 import type { TagAttributes } from "../utils/getTagAttributesString";
 import type { Viewport } from "../renderer/onRenderHtml";
 import type { ConfigsCumulative } from "../hooks/useConfig/configsCumulative";
+import type { Component, JSX } from "solid-js";
 
+// https://vike.dev/meta#typescript
 declare global {
   namespace Vike {
     interface Config {
@@ -168,6 +160,11 @@ declare global {
     }
   }
 }
+
+// Be able to reference it from within `namespace Vike`
+// - https://stackoverflow.com/questions/46559021/typescript-use-of-global-type-inside-namespace-with-same-type
+// - https://github.com/Microsoft/TypeScript/issues/983
+type PageContext_ = PageContext;
 
 export type Head = Component | JSX.Element;
 

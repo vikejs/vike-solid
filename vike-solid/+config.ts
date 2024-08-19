@@ -1,11 +1,9 @@
+export { config };
+
 import type { Config } from "vike/types";
 import { ssrEffect } from "./renderer/ssrEffect.js";
 
-// This is required to make TypeScript load the global interfaces such as Vike.PageContext so that they're always loaded.
-// We can assume that the user always imports this file over `import vikeSolid from 'vike-solid/config'`
-import "./types/index.js";
-
-export default {
+const config = {
   name: "vike-solid",
   require: {
     vike: ">=0.4.182",
@@ -74,3 +72,7 @@ export default {
     },
   },
 } satisfies Config;
+
+// This is required to make TypeScript load the global interfaces Vike.Config and Vike.PageContext so that they're always loaded: we can assume that the user always imports this file over `import vikeSolid from 'vike-solid/config'`
+import "./types/Config.js";
+import "./types/PageContext.js";
