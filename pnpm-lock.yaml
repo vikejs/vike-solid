@@ -36,8 +36,8 @@ importers:
         specifier: ^1.8.21
         version: 1.8.21
       vike:
-        specifier: ^0.4.184
-        version: 0.4.188(vite@5.4.1(@types/node@22.4.0))
+        specifier: ^0.4.191
+        version: 0.4.191(vite@5.4.1(@types/node@22.4.0))
       vike-solid:
         specifier: link:../../vike-solid
         version: link:../../vike-solid
@@ -55,8 +55,8 @@ importers:
         specifier: ^1.8.21
         version: 1.8.21
       vike:
-        specifier: ^0.4.184
-        version: 0.4.188(vite@5.4.1(@types/node@22.4.0))
+        specifier: ^0.4.191
+        version: 0.4.191(vite@5.4.1(@types/node@22.4.0))
       vike-solid:
         specifier: link:../../vike-solid
         version: link:../../vike-solid
@@ -114,8 +114,8 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4
       vike:
-        specifier: ^0.4.188
-        version: 0.4.188(vite@5.4.1(@types/node@22.4.0))
+        specifier: ^0.4.191
+        version: 0.4.191(vite@5.4.1(@types/node@22.4.0))
       vite:
         specifier: ^5.4.1
         version: 5.4.1(@types/node@22.4.0)
@@ -2246,8 +2246,8 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  vike@0.4.188:
-    resolution: {integrity: sha512-1gY2hNFSPiiDS4FvRcv7Gn5pxjYw7kQbbVhVuncP36RiszOuIkGUqjaATvVK3t2NeULvaLId4rDgV83dda7XEw==}
+  vike@0.4.191:
+    resolution: {integrity: sha512-1Cu5kaoz2zjlXygTYztEa/iz2GTwoDQQDlutKM+DlXdkaK4h2NArl3pOiyu6omS3SRsrPVNJwK7nV8JmTgxPnA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -4487,7 +4487,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vike@0.4.188(vite@5.4.1(@types/node@22.4.0)):
+  vike@0.4.191(vite@5.4.1(@types/node@22.4.0)):
     dependencies:
       '@brillout/import': 0.2.3
       '@brillout/json-serializer': 0.5.13

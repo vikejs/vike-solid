@@ -62,7 +62,7 @@
 * The setting `favicon` now only accepts one global
 value, see https://vike.dev/favicon#global
 * The [`title` setting](https://vike.dev/title) now also adds the `<meta property="og:title">` tag; if you generate it yourself then make sure to remove it.
-* Update to `vike@0.4.182` or above.
+* Update to `vike@0.4.191` or above.
 
 
 

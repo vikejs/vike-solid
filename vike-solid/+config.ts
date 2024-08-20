@@ -6,7 +6,7 @@ import { ssrEffect } from "./renderer/ssrEffect.js";
 const config = {
   name: "vike-solid",
   require: {
-    vike: ">=0.4.182",
+    vike: ">=0.4.191",
   },
 
   // https://vike.dev/onRenderHtml
