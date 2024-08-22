@@ -32,6 +32,13 @@ declare global {
       Layout?: Component;
 
       /**
+       * A component wrapping the the root component `<Page>`.
+       *
+       * https://vike.dev/Wrapper
+       */
+      Wrapper?: Component;
+
+      /**
        * Set the page's tilte.
        *
        * Generates:
@@ -153,6 +160,7 @@ declare global {
     }
     interface ConfigResolved {
       Layout?: Array<Component>;
+      Wrapper?: Array<Component>;
       Head?: Array<Head>;
       bodyAttributes?: TagAttributes[];
       htmlAttributes?: TagAttributes[];

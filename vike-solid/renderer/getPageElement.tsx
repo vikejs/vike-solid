@@ -8,24 +8,32 @@ import { createStore, reconcile, type Store } from "solid-js/store";
 export function getPageElement(pageContext: Store<PageContext>): JSX.Element {
   const page = (
     <PageContextProvider pageContext={pageContext}>
-      <Layout>
+      <Wrapper>
         <Page />
-      </Layout>
+      </Wrapper>
     </PageContextProvider>
   );
   return page;
 }
 
-function Layout(props: { children: JSX.Element }) {
+function Wrapper(props: { children: JSX.Element }) {
   const pageContext = usePageContext();
 
-  const [layouts, setLayouts] = createStore<FlowComponent[]>([]);
+  const [wrappers, setWrappers] = createStore<FlowComponent[]>([]);
 
   createComputed(() => {
-    setLayouts(reconcile(pageContext.config.Layout!));
+    setWrappers(
+      reconcile([
+        // Inner wrapping
+        ...(pageContext.config.Layout || []),
+        // Outer wrapping
+        ...(pageContext.config.Wrapper || []),
+      ]),
+    );
   });
-  const renderLayouts = (i: number = 0) => {
-    let item = layouts.at(-(i + 1));
+
+  const renderWrappers = (i: number = 0) => {
+    let item = wrappers.at(-(i + 1));
 
     if (!item) return props.children;
 
@@ -33,12 +41,12 @@ function Layout(props: { children: JSX.Element }) {
 
     return createComponent(item, {
       get children(): JSX.Element {
-        return renderLayouts(i + 1);
+        return renderWrappers(i + 1);
       },
     });
   };
 
-  return renderLayouts();
+  return renderWrappers();
 }
 
 function Page() {
