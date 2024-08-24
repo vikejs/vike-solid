@@ -1,3 +1,23 @@
+## [0.7.3](https://github.com/vikejs/vike-solid/compare/v0.7.2...v0.7.3) (2024-08-24)
+
+
+### Bug Fixes
+
+* make useConfig() work for vike-solid hooks ([addbecd](https://github.com/vikejs/vike-solid/commit/addbecdae7d1caffdd1c0f45b1e6233c16bcebb6))
+* use vike@0.4.191 ([1a27788](https://github.com/vikejs/vike-solid/commit/1a277885768599fa4a12f10c33ee9972bd6db561))
+
+
+### Features
+
+* new setting [Wrapper](https://vike.dev/Wrapper) ([12eb11e](https://github.com/vikejs/vike-solid/commit/12eb11e3266743bc206d766c476a1607963f3106))
+
+
+### BREAKING CHANGES
+
+* Update to `vike@0.4.191` or above.
+
+
+
 ## [0.7.2](https://github.com/vikejs/vike-solid/compare/v0.7.1...v0.7.2) (2024-08-17)
 
 
