@@ -5,7 +5,7 @@ import type { PageContextInternal } from "../../types/PageContext.js";
 import type { ConfigFromHook } from "../../types/Config.js";
 import { usePageContext } from "../usePageContext.js";
 import { getPageContext } from "vike/getPageContext";
-import { applyHeadSettings } from "../../renderer/applyHeadSettings.jsx";
+import { applyHeadSettings } from "../../integration/applyHeadSettings.jsx";
 
 function useConfig(): (config: ConfigFromHook) => void {
   // Vike hook

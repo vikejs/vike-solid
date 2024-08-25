@@ -1,7 +1,7 @@
 export { config };
 
 import type { Config } from "vike/types";
-import { ssrEffect } from "./renderer/ssrEffect.js";
+import { ssrEffect } from "./integration/ssrEffect.js";
 
 const config = {
   name: "vike-solid",
@@ -10,9 +10,9 @@ const config = {
   },
 
   // https://vike.dev/onRenderHtml
-  onRenderHtml: "import:vike-solid/renderer/onRenderHtml:onRenderHtml",
+  onRenderHtml: "import:vike-solid/integration/onRenderHtml:onRenderHtml",
   // https://vike.dev/onRenderClient
-  onRenderClient: "import:vike-solid/renderer/onRenderClient:onRenderClient",
+  onRenderClient: "import:vike-solid/integration/onRenderClient:onRenderClient",
 
   // https://vike.dev/clientRouting
   clientRouting: true,
