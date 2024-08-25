@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  vike-solid: link:./vike-solid/
+  vike-solid: link:./packages/vike-solid/
 
 importers:
 
@@ -39,8 +39,8 @@ importers:
         specifier: ^0.4.191
         version: 0.4.191(vite@5.4.1(@types/node@22.4.0))
       vike-solid:
-        specifier: link:../../vike-solid
-        version: link:../../vike-solid
+        specifier: link:../../packages/vike-solid
+        version: link:../../packages/vike-solid
     devDependencies:
       typescript:
         specifier: ^5.5.4
@@ -58,14 +58,14 @@ importers:
         specifier: ^0.4.191
         version: 0.4.191(vite@5.4.1(@types/node@22.4.0))
       vike-solid:
-        specifier: link:../../vike-solid
-        version: link:../../vike-solid
+        specifier: link:../../packages/vike-solid
+        version: link:../../packages/vike-solid
     devDependencies:
       vite:
         specifier: ^5.4.1
         version: 5.4.1(@types/node@22.4.0)
 
-  vike-solid:
+  packages/vike-solid:
     dependencies:
       vite-plugin-solid:
         specifier: ^2.10.2
@@ -80,6 +80,9 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.24.7
         version: 7.24.7(@babel/core@7.25.2)
+      '@biomejs/biome':
+        specifier: ^1.8.3
+        version: 1.8.3
       '@brillout/release-me':
         specifier: ^0.4.0
         version: 0.4.0

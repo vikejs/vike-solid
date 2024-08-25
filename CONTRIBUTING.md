@@ -5,7 +5,7 @@
 Build `vike-solid`:
 
 ```bash
-git clone git@github.com:vikejs/vike-solid
+git clone https://github.com/vikejs/vike-solid.git
 cd vike-solid/ && pnpm install
 pnpm build
 cd ../
