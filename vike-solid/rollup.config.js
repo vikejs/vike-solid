@@ -5,7 +5,7 @@ import { babel } from "@rollup/plugin-babel";
 export default [
   withSolid({
     input: {
-      "renderer/onRenderHtml": "./renderer/onRenderHtml.tsx",
+      "integration/onRenderHtml": "./integration/onRenderHtml.tsx",
       "+config": "./+config.ts",
       "hooks/usePageContext": "./hooks/usePageContext.tsx",
       "hooks/useData": "./hooks/useData.tsx",
@@ -22,7 +22,7 @@ export default [
   }),
   withSolid({
     input: {
-      "renderer/onRenderClient": "./renderer/onRenderClient.tsx",
+      "integration/onRenderClient": "./integration/onRenderClient.tsx",
       "hooks/usePageContext": "./hooks/usePageContext.tsx",
       "hooks/useData": "./hooks/useData.tsx",
       "hooks/useConfig/useConfig-client": "./hooks/useConfig/useConfig-client.ts",
