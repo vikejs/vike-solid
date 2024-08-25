@@ -6,7 +6,7 @@ function overrideConfig(): Plugin {
     name: "vite-plugin-vike-solid",
     config: () => ({
       optimizeDeps: {
-        include: ["solid-js", "vike-solid/integration/onRenderClient"],
+        include: ["solid-js", "vike-solid/__internal/integration/onRenderClient"],
       },
     }),
   };

@@ -53,8 +53,8 @@
       "default": "./dist/components/Head/Head-server.js"
     },
     "./clientOnly": "./dist/helpers/clientOnly.js",
-    "./integration/onRenderHtml": "./dist/integration/onRenderHtml.js",
-    "./integration/onRenderClient": "./dist/integration/onRenderClient.js",
+    "./__internal/integration/onRenderHtml": "./dist/integration/onRenderHtml.js",
+    "./__internal/integration/onRenderClient": "./dist/integration/onRenderClient.js",
     "./client": {
       "types": "./client.d.ts"
     }

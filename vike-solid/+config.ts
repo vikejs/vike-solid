@@ -10,9 +10,9 @@ const config = {
   },
 
   // https://vike.dev/onRenderHtml
-  onRenderHtml: "import:vike-solid/integration/onRenderHtml:onRenderHtml",
+  onRenderHtml: "import:vike-solid/__internal/integration/onRenderHtml:onRenderHtml",
   // https://vike.dev/onRenderClient
-  onRenderClient: "import:vike-solid/integration/onRenderClient:onRenderClient",
+  onRenderClient: "import:vike-solid/__internal/integration/onRenderClient:onRenderClient",
 
   // https://vike.dev/clientRouting
   clientRouting: true,
