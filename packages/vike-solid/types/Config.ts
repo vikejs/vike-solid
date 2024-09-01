@@ -1,4 +1,4 @@
-import type { PageContextServer, PageContext, PageContextClient } from "vike/types";
+import type { PageContextServer, PageContext, PageContextClient, ImportString } from "vike/types";
 import type { TagAttributes } from "../utils/getTagAttributesString";
 import type { Viewport } from "../integration/onRenderHtml";
 import type { ConfigsCumulative } from "../hooks/useConfig/configsCumulative";
@@ -36,7 +36,7 @@ declare global {
        *
        * https://vike.dev/Wrapper
        */
-      Wrapper?: Component;
+      Wrapper?: Component | ImportString;
 
       /**
        * Set the page's tilte.
