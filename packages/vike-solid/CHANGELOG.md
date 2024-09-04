@@ -1,3 +1,13 @@
+## [0.7.4](https://github.com/vikejs/vike-solid/compare/v0.7.3...v0.7.4) (2024-09-04)
+
+
+### Bug Fixes
+
+* add vite as peer dependency (fix [#110](https://github.com/vikejs/vike-solid/issues/110)) ([704e0a7](https://github.com/vikejs/vike-solid/commit/704e0a7ae3dd41e350d0a3f50516e0ebeee6a90d))
+* useData lose reactivity ([3fa1f95](https://github.com/vikejs/vike-solid/commit/3fa1f9561a1fa7f8811e67b6b3fb020cc4223955))
+
+
+
 ## [0.7.3](https://github.com/vikejs/vike-solid/compare/v0.7.2...v0.7.3) (2024-08-24)
 
 
