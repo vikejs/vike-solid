@@ -23,7 +23,7 @@ Enables your Solid components to fetch data using [TanStack Query](https://tanst
    ```js
    // pages/+config.js
 
-   import vikeSolid from 'vike-Solid/config'
+   import vikeSolid from 'vike-solid/config'
    import vikeSolidQuery from 'vike-solid-query/config'
 
    export default {
@@ -61,22 +61,24 @@ const Movie = (props: { id }) => {
 ```jsx
 // Define loading fallback
 <QueryBoundary query={query} loadingFallback={Loading}>
-    <Component />
+    {(data) => <div>{data.something}</div>}
 </QueryBoundary>
 // Define loading and error fallback 
 <QueryBoundary query={query} loadingFallback={Loading} errorFallback={Error}>
-    <Component />
+    {(data) => <div>{data.something}</div>}
 </QueryBoundary>
 // Define loading, error and not found fallback 
 <QueryBoundary query={query} loadingFallback={Loading} errorFallback={Error} notFoundFallback={NotFound}>
-    <Component />
+    {(data) => <div>{data.something}</div>}
 </QueryBoundary>
 ```
 
-> [!NOTE] Fallbacks type
+> [!NOTE] Types
+> `query: CreateQueryResult<T, Error>;`  
 > `loadingFallback?: JSX.Element;`  
 > `notFoundFallback?: JSX.Element;`  
-> `errorFallback?: JSX.Element | ((err: any, reset: () => void) => JSX.Element);`
+> `errorFallback?: JSX.Element | ((err: any, reset: () => void) => JSX.Element);`  
+> `children: (data: Exclude<T, null | false | undefined>) => JSX.Element;`
 
 ```tsx
 import { createQuery } from "@tanstack/solid-query";
@@ -130,10 +132,6 @@ import { QueryBoundary } from "vike-solid-query";
 import { For } from "solid-js";
 
 function Movies() {
-  const query = useSuspenseQuery({
-    queryKey: ['movies'],
-    queryFn: () => fetch('https://star-wars.brillout.com/api/films.json')
-  })
   const query = createQuery(() => ({
     queryKey: ["movies"],
     queryFn: () => fetch('https://star-wars.brillout.com/api/films.json')
