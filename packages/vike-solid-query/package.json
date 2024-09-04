@@ -1,0 +1,52 @@
+{
+  "name": "vike-solid-query",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "rollup -c rollup.config.js --watch",
+    "dev:typecheck": "tsc --noEmit --watch",
+    "build": "rollup -c rollup.config.js && tsc",
+    "release": "LANG=en_US release-me patch",
+    "release:minor": "LANG=en_US release-me minor",
+    "release:commit": "LANG=en_US release-me commit"
+  },
+  "peerDependencies": {
+    "@tanstack/solid-query": ">=5.0.0",
+    "solid-js": "^1.8.7",
+    "vike-solid": ">=0.7.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "6.0.4",
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "@tanstack/solid-query": "^5.52.2",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.21.2",
+    "rollup-plugin-dts": "6.1.1",
+    "solid-js": "^1.8.22",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "vike": "^0.4.193",
+    "vike-solid": "^0.7.3",
+    "vite": "5.4.2"
+  },
+  "exports": {
+    ".": "./dist/src/index.js",
+    "./config": "./dist/integration/+config.js",
+    "./__internal/integration/Wrapper": "./dist/integration/Wrapper.js"
+  },
+  "typesVersions": {
+    "*": {
+      "config": [
+        "dist/integration/+config.d.ts"
+      ],
+      "__internal/integration/Wrapper": [
+        "dist/integration/Wrapper.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "repository": "github:vikejs/vike-solid-query",
+  "license": "MIT"
+}

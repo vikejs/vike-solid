@@ -2,19 +2,20 @@
   "private": true,
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
     "preview": "vite build && vite preview",
     "test": "tsc --noEmit"
   },
   "dependencies": {
+    "@tanstack/solid-query": "5.52.2",
     "node-fetch": "^3.3.2",
-    "solid-js": "^1.8.21",
+    "solid-js": "^1.8.22",
     "vike": "^0.4.191",
-    "vike-solid": "workspace:*"
+    "vike-solid": "workspace:^",
+    "vike-solid-query": "workspace:^"
   },
   "devDependencies": {
     "typescript": "^5.5.4",
-    "vite": "^5.4.1"
+    "vite": "^5.4.2"
   },
   "type": "module"
 }
