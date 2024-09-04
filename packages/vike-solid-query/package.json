@@ -1,6 +1,6 @@
 {
   "name": "vike-solid-query",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
