@@ -1,6 +1,6 @@
 {
   "name": "vike-solid-query",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
@@ -16,6 +16,7 @@
     "vike-solid": ">=0.7.3"
   },
   "devDependencies": {
+    "@brillout/release-me": "^0.4.0",
     "@rollup/plugin-babel": "6.0.4",
     "@rollup/plugin-node-resolve": "15.2.3",
     "@tanstack/solid-query": "^5.52.2",
@@ -47,6 +48,6 @@
   "files": [
     "dist/"
   ],
-  "repository": "github:vikejs/vike-solid-query",
+  "repository": "github:vikejs/vike-solid",
   "license": "MIT"
 }
