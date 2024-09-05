@@ -20,6 +20,7 @@ Enables your Solid components to fetch data using [TanStack Query](https://tanst
 
 1. `npm install @tanstack/solid-query vike-solid-query`
 2. Extend `+config.js`:
+
    ```js
    // pages/+config.js
 
@@ -36,7 +37,7 @@ Enables your Solid components to fetch data using [TanStack Query](https://tanst
 
 ## Basic usage
 
-```jsx
+```tsx
 import { createQuery } from "@tanstack/solid-query";
 import { Suspense } from "solid-js";
 
@@ -58,29 +59,33 @@ const Movie = (props: { id }) => {
 
 ## `QueryBoundary`
 
-```jsx
-// Define loading fallback
+```tsx
+// Define the loading fallback
 <QueryBoundary query={query} loadingFallback={Loading}>
     {(data) => <div>{data.something}</div>}
 </QueryBoundary>
-// Define loading and error fallback 
+// Define the loading and error fallback 
 <QueryBoundary query={query} loadingFallback={Loading} errorFallback={Error}>
     {(data) => <div>{data.something}</div>}
 </QueryBoundary>
-// Define loading, error and not found fallback 
+// Define the loading, error and not found fallback 
 <QueryBoundary query={query} loadingFallback={Loading} errorFallback={Error} notFoundFallback={NotFound}>
     {(data) => <div>{data.something}</div>}
 </QueryBoundary>
 ```
 
-> [!NOTE] Types
-> `query: CreateQueryResult<T, Error>;`  
-> `loadingFallback?: JSX.Element;`  
-> `notFoundFallback?: JSX.Element;`  
-> `errorFallback?: JSX.Element | ((err: any, reset: () => void) => JSX.Element);`  
-> `children: (data: Exclude<T, null | false | undefined>) => JSX.Element;`
+**Types :**
+```js
+query: CreateQueryResult<T, Error>;  
+loadingFallback?: JSX.Element;  
+notFoundFallback?: JSX.Element;  
+errorFallback?: JSX.Element | ((err: any, reset: () => void) => JSX.Element);  
+children: (data: Exclude<T, null | false | undefined>) => JSX.Element;
+```
 
 ```tsx
+// Movie.tsx
+
 import { createQuery } from "@tanstack/solid-query";
 import { QueryBoundary } from "vike-solid-query";
 
@@ -124,7 +129,7 @@ function Movie(props: { id: string }) {
 
 To set tags such as `<title>` and `<meta name="description">` based on fetched data, you can use [`<Config>`, `<Head>`, and `useConfig()`](https://vike.dev/useConfig).
 
-```js
+```tsx
 import { createQuery } from "@tanstack/solid-query";
 import { Config } from 'vike-solid/Config'
 import { Head } from 'vike-solid/Head'
