@@ -8,17 +8,16 @@ Build `vike-solid`:
 git clone https://github.com/vikejs/vike-solid.git
 cd vike-solid/ && pnpm install
 pnpm build
-cd ../
 ```
 
 ## Validating
 
 ### Running the examples
 
-You can then test your modifications against an example, e.g. `examples/basic/`:
+You can then test your modifications against an example, e.g. `examples/full/`:
 
 ```bash
-cd examples/basic/
+cd examples/full/
 pnpm dev
 cd ../../
 ```
