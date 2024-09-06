@@ -40,16 +40,24 @@ const onRenderHtml: OnRenderHtmlAsync = async (
     </html>`;
 };
 
-function getPageHtml(pageContext: PageContextServer) {
+function getPageHtml(pageContext: PageContextServer & PageContextInternal) {
   let pageHtml: string | ReturnType<typeof dangerouslySkipEscape> | TPipe = "";
   if (pageContext.Page) {
     if (!pageContext.config.stream) {
       pageHtml = dangerouslySkipEscape(renderToString(() => getPageElement(pageContext)));
     } else if (pageContext.config.stream === "web") {
-      pageHtml = renderToStream(() => getPageElement(pageContext)).pipeTo;
+      pageHtml = renderToStream(() => getPageElement(pageContext), {
+        onCompleteShell(info) {
+          pageContext._stream ??= info;
+        },
+      }).pipeTo;
       stampPipe(pageHtml, "web-stream");
     } else {
-      pageHtml = renderToStream(() => getPageElement(pageContext)).pipe;
+      pageHtml = renderToStream(() => getPageElement(pageContext), {
+        onCompleteShell(info) {
+          pageContext._stream ??= info;
+        },
+      }).pipe;
       stampPipe(pageHtml, "node-stream");
     }
   }

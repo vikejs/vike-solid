@@ -186,3 +186,4 @@ export type ConfigFromHook = PickWithoutGetter<
 >;
 export type ConfigFromHookResolved = Omit<ConfigFromHook, ConfigsCumulative> &
   Pick<Vike.ConfigResolved, ConfigsCumulative>;
+export type Stream = { write: (v: string) => void };

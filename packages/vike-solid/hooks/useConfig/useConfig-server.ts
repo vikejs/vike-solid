@@ -1,7 +1,7 @@
 export { useConfig };
 import type { PageContext } from "vike/types";
 import type { PageContextInternal } from "../../types/PageContext.js";
-import type { ConfigFromHook } from "../../types/Config.js";
+import type { ConfigFromHook, Stream } from "../../types/Config.js";
 import { usePageContext } from "../usePageContext.js";
 import { getPageContext } from "vike/getPageContext";
 import { objectKeys } from "../../utils/objectKeys.js";
@@ -20,7 +20,14 @@ function useConfig(): (config: ConfigFromHook) => void {
 
   // Component
   pageContext = usePageContext();
-  return (config: ConfigFromHook) => setPageContextConfigFromHook(config, pageContext);
+  return (config: ConfigFromHook) => {
+    if (!pageContext._headAlreadySet) {
+      setPageContextConfigFromHook(config, pageContext);
+    } else {
+      // <head> already sent to the browser => send DOM-manipulating scripts during HTML streaming
+      apply(config, pageContext._stream!);
+    }
+  };
 }
 
 const configsClientSide = ["title"];
@@ -43,4 +50,12 @@ function setPageContextConfigFromHook(config: ConfigFromHook, pageContext: PageC
       pageContext._configFromHook![configName].push(configValue as any);
     }
   });
+}
+
+function apply(config: ConfigFromHook, stream: Stream) {
+  const { title } = config;
+  if (title) {
+    const htmlSnippet = `<script>document.title = ${JSON.stringify(title)}</script>`;
+    stream.write(htmlSnippet);
+  }
 }
