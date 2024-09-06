@@ -11,6 +11,7 @@
     "release:commit": "LANG=en_US release-me commit"
   },
   "dependencies": {
+    "isbot-fast": "^1.2.0",
     "vite-plugin-solid": "^2.10.2"
   },
   "peerDependencies": {

@@ -95,6 +95,9 @@ importers:
 
   packages/vike-solid:
     dependencies:
+      isbot-fast:
+        specifier: ^1.2.0
+        version: 1.2.0
       vite-plugin-solid:
         specifier: ^2.10.2
         version: 2.10.2(solid-js@1.8.22)(vite@5.4.2(@types/node@22.4.0)(terser@5.31.6))
@@ -1905,6 +1908,10 @@ packages:
   is-what@4.1.15:
     resolution: {integrity: sha512-uKua1wfy3Yt+YqsD6mTUEa2zSi3G1oPlqTflgaPJ7z63vUGN5pxFpnQfeSLMFnJDEsdvOtkp1rUWkYjB4YfhgA==}
     engines: {node: '>=12.13'}
+
+  isbot-fast@1.2.0:
+    resolution: {integrity: sha512-twjuQzy2gKMDVfKGQyQqrx6Uy4opu/fiVUTTpdqtFsd7OQijIp5oXvb27n5EemYXaijh5fomndJt/SPRLsEdSg==}
+    engines: {node: '>=6.0.0'}
 
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
@@ -4489,6 +4496,8 @@ snapshots:
       text-extensions: 2.4.0
 
   is-what@4.1.15: {}
+
+  isbot-fast@1.2.0: {}
 
   isexe@2.0.0: {}
 
