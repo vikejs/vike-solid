@@ -25,7 +25,6 @@ function PageContextProvider(props: {
  */
 function usePageContext(): PageContext {
   const { solidContext } = globalContext;
-  const pageContext = useContext(solidContext);
-  if (!pageContext) throw new Error("<PageContextProvider> is needed for being able to use usePageContext()");
+  const pageContext = useContext(solidContext)!;
   return pageContext;
 }

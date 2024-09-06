@@ -12,13 +12,13 @@ import { usePageContext } from "./usePageContext.js";
  * - https://vike.dev/pageContext-anywhere
  */
 function useData<Data>(): Data {
-  const ctx = usePageContext() as any;
+  const pageContext = usePageContext() as any;
 
   // sub store to keep reactivity https://github.com/vikejs/vike-solid/issues/114
-  const [data, setData] = createStore(ctx.data);
+  const [data, setData] = createStore(pageContext?.data);
 
   createEffect(() => {
-    setData(ctx.data);
+    setData(pageContext?.data);
   });
 
   return data;
