@@ -8,6 +8,6 @@ export default {
 
   passToClient: ["routeParams"],
   stream: true,
-  injectScriptsAt: "STREAM",
+  injectScriptsAt: "HTML_STREAM",
   extends: [vikeSolid, vikeSolidQuery],
 } satisfies Config;
