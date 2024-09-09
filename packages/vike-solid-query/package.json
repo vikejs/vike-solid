@@ -13,22 +13,22 @@
   "peerDependencies": {
     "@tanstack/solid-query": ">=5.0.0",
     "solid-js": "^1.8.7",
-    "vike-solid": ">=0.7.4"
+    "vike-solid": "workspace:^"
   },
   "devDependencies": {
-    "@brillout/release-me": "^0.4.0",
+    "@brillout/release-me": "^0.4.1",
     "@rollup/plugin-babel": "6.0.4",
     "@rollup/plugin-node-resolve": "15.2.3",
-    "@tanstack/solid-query": "^5.52.2",
+    "@tanstack/solid-query": "^5.55.4",
     "rimraf": "^6.0.1",
     "rollup": "^4.21.2",
     "rollup-plugin-dts": "6.1.1",
     "solid-js": "^1.8.22",
     "tsup": "^8.2.4",
-    "typescript": "^5.5.4",
+    "typescript": "^5.6.2",
     "vike": "^0.4.195",
-    "vike-solid": "^0.7.4",
-    "vite": "5.4.2"
+    "vike-solid": "workspace:*",
+    "vite": "^5.4.3"
   },
   "exports": {
     ".": "./dist/src/index.js",

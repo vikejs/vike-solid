@@ -32,7 +32,7 @@
     "@biomejs/biome": "^1.8.3",
     "@brillout/test-e2e": "^0.5.35",
     "@brillout/test-types": "^0.1.15",
-    "playwright": "^1.46.1",
+    "playwright": "^1.47.0",
     "prettier": "^3.3.3"
   },
   "packageManager": "pnpm@9.4.0"

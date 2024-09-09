@@ -19,10 +19,10 @@ importers:
         version: 0.5.35
       '@brillout/test-types':
         specifier: ^0.1.15
-        version: 0.1.15(typescript@5.5.4)
+        version: 0.1.15(typescript@5.6.2)
       playwright:
-        specifier: ^1.46.1
-        version: 1.46.1
+        specifier: ^1.47.0
+        version: 1.47.0
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
@@ -37,17 +37,17 @@ importers:
         version: 1.8.22
       vike:
         specifier: ^0.4.195
-        version: 0.4.195(vite@5.4.2(@types/node@22.4.0)(terser@5.31.6))
+        version: 0.4.195(vite@5.4.3(@types/node@22.5.4)(terser@5.32.0))
       vike-solid:
         specifier: link:../../packages/vike-solid
         version: link:../../packages/vike-solid
     devDependencies:
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
       vite:
-        specifier: ^5.4.1
-        version: 5.4.2(@types/node@22.4.0)(terser@5.31.6)
+        specifier: ^5.4.3
+        version: 5.4.3(@types/node@22.5.4)(terser@5.32.0)
 
   examples/minimal:
     dependencies:
@@ -56,20 +56,20 @@ importers:
         version: 1.8.22
       vike:
         specifier: ^0.4.195
-        version: 0.4.195(vite@5.4.2(@types/node@22.4.0)(terser@5.31.6))
+        version: 0.4.195(vite@5.4.3(@types/node@22.5.4)(terser@5.32.0))
       vike-solid:
         specifier: link:../../packages/vike-solid
         version: link:../../packages/vike-solid
     devDependencies:
       vite:
-        specifier: ^5.4.1
-        version: 5.4.2(@types/node@22.4.0)(terser@5.31.6)
+        specifier: ^5.4.3
+        version: 5.4.3(@types/node@22.5.4)(terser@5.32.0)
 
   examples/solid-query:
     dependencies:
       '@tanstack/solid-query':
-        specifier: 5.52.2
-        version: 5.52.2(solid-js@1.8.22)
+        specifier: 5.55.4
+        version: 5.55.4(solid-js@1.8.22)
       node-fetch:
         specifier: ^3.3.2
         version: 3.3.2
@@ -78,7 +78,7 @@ importers:
         version: 1.8.22
       vike:
         specifier: ^0.4.195
-        version: 0.4.195(vite@5.4.2(@types/node@22.4.0)(terser@5.31.6))
+        version: 0.4.195(vite@5.4.3(@types/node@22.5.4)(terser@5.32.0))
       vike-solid:
         specifier: link:../../packages/vike-solid
         version: link:../../packages/vike-solid
@@ -87,11 +87,11 @@ importers:
         version: link:../../packages/vike-solid-query
     devDependencies:
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
       vite:
-        specifier: ^5.4.2
-        version: 5.4.2(@types/node@22.4.0)(terser@5.31.6)
+        specifier: ^5.4.3
+        version: 5.4.3(@types/node@22.5.4)(terser@5.32.0)
 
   packages/vike-solid:
     dependencies:
@@ -100,7 +100,7 @@ importers:
         version: 1.2.0
       vite-plugin-solid:
         specifier: ^2.10.2
-        version: 2.10.2(solid-js@1.8.22)(vite@5.4.2(@types/node@22.4.0)(terser@5.31.6))
+        version: 2.10.2(solid-js@1.8.22)(vite@5.4.3(@types/node@22.5.4)(terser@5.32.0))
     devDependencies:
       '@babel/core':
         specifier: ^7.25.2
@@ -115,8 +115,8 @@ importers:
         specifier: ^1.8.3
         version: 1.8.3
       '@brillout/release-me':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.4.1
+        version: 0.4.1
       '@rollup/plugin-babel':
         specifier: ^6.0.4
         version: 6.0.4(@babel/core@7.25.2)(@types/babel__core@7.20.5)(rollup@4.21.2)
@@ -124,8 +124,8 @@ importers:
         specifier: ^15.2.3
         version: 15.2.3(rollup@4.21.2)
       '@types/node':
-        specifier: ^22.4.0
-        version: 22.4.0
+        specifier: ^22.5.4
+        version: 22.5.4
       babel-preset-solid:
         specifier: ^1.8.22
         version: 1.8.22(@babel/core@7.25.2)
@@ -137,7 +137,7 @@ importers:
         version: 4.21.2
       rollup-plugin-dts:
         specifier: ^6.1.1
-        version: 6.1.1(rollup@4.21.2)(typescript@5.5.4)
+        version: 6.1.1(rollup@4.21.2)(typescript@5.6.2)
       solid-js:
         specifier: ^1.8.22
         version: 1.8.22
@@ -145,20 +145,20 @@ importers:
         specifier: ^2.7.0
         version: 2.7.0
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
       vike:
         specifier: ^0.4.195
-        version: 0.4.195(vite@5.4.2(@types/node@22.4.0)(terser@5.31.6))
+        version: 0.4.195(vite@5.4.3(@types/node@22.5.4)(terser@5.32.0))
       vite:
-        specifier: ^5.4.2
-        version: 5.4.2(@types/node@22.4.0)(terser@5.31.6)
+        specifier: ^5.4.3
+        version: 5.4.3(@types/node@22.5.4)(terser@5.32.0)
 
   packages/vike-solid-query:
     devDependencies:
       '@brillout/release-me':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.4.1
+        version: 0.4.1
       '@rollup/plugin-babel':
         specifier: 6.0.4
         version: 6.0.4(@babel/core@7.25.2)(@types/babel__core@7.20.5)(rollup@4.21.2)
@@ -166,8 +166,8 @@ importers:
         specifier: 15.2.3
         version: 15.2.3(rollup@4.21.2)
       '@tanstack/solid-query':
-        specifier: ^5.52.2
-        version: 5.52.2(solid-js@1.8.22)
+        specifier: ^5.55.4
+        version: 5.55.4(solid-js@1.8.22)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -176,25 +176,25 @@ importers:
         version: 4.21.2
       rollup-plugin-dts:
         specifier: 6.1.1
-        version: 6.1.1(rollup@4.21.2)(typescript@5.5.4)
+        version: 6.1.1(rollup@4.21.2)(typescript@5.6.2)
       solid-js:
         specifier: ^1.8.22
         version: 1.8.22
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4)
+        version: 8.2.4(jiti@1.21.6)(postcss@8.4.45)(typescript@5.6.2)
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
       vike:
         specifier: ^0.4.195
-        version: 0.4.195(vite@5.4.2(@types/node@22.4.0)(terser@5.31.6))
+        version: 0.4.195(vite@5.4.3(@types/node@22.5.4)(terser@5.32.0))
       vike-solid:
         specifier: link:../vike-solid
         version: link:../vike-solid
       vite:
-        specifier: 5.4.2
-        version: 5.4.2(@types/node@22.4.0)(terser@5.31.6)
+        specifier: ^5.4.3
+        version: 5.4.3(@types/node@22.5.4)(terser@5.32.0)
 
 packages:
 
@@ -867,8 +867,8 @@ packages:
   '@brillout/picocolors@1.0.14':
     resolution: {integrity: sha512-XhyZY3/FUh56mDuLIjv5kN9qy+oQj7A/d2uQ6cJJ4uVv55+velua3abcrM5WIvs2RHZGA3EE7S9FWo+TjF10ew==}
 
-  '@brillout/release-me@0.4.0':
-    resolution: {integrity: sha512-V4YwITguHK3zOy9B4606lc9PQiFDp3p3Ifeq4KF7V8o9fs7OmcrfTWBE0EWFtiLhG2JeKb2RzM0t6Y4tLgXd6w==}
+  '@brillout/release-me@0.4.1':
+    resolution: {integrity: sha512-T+V05oyoXpl3b6H3Ahea7cFK+PCgkjSjwWFX/UozaFOclJTpHojfGxn7uG0r6hdyHKZSjJp8tRsYWb4t7J98Rw==}
     hasBin: true
 
   '@brillout/require-shim@0.1.2':
@@ -1332,11 +1332,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@tanstack/query-core@5.52.2':
-    resolution: {integrity: sha512-9vvbFecK4A0nDnrc/ks41e3UHONF1DAnGz8Tgbxkl59QcvKWmc0ewhYuIKRh8NC4ja5LTHT9EH16KHbn2AIYWA==}
+  '@tanstack/query-core@5.55.4':
+    resolution: {integrity: sha512-uoRqNnRfzOH4OMIoxj8E2+Us89UIGXfau981qYJWsNMkFS1GXR4UIyzUTVGq4N7SDLHgFPpo6IOazqUV5gkMZA==}
 
-  '@tanstack/solid-query@5.52.2':
-    resolution: {integrity: sha512-0wVnjusBQXpiSzTAmu+S90cmkqfA4caOH0ELYf7uS1YKQ62im2jVEtPvRmNaNvuPw/1ZLGesA0XI4obbnF5ZuQ==}
+  '@tanstack/solid-query@5.55.4':
+    resolution: {integrity: sha512-BbfTKFGXO0AxUWm3L2Wk4Wrwm0C1XTkXPDRDIVr3PEyznaYa5MWzyDPqoUzYuTRJTUs+1byPGtSHtaWbZNAW7g==}
     peerDependencies:
       solid-js: ^1.6.0
 
@@ -1355,8 +1355,8 @@ packages:
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
-  '@types/node@22.4.0':
-    resolution: {integrity: sha512-49AbMDwYUz7EXxKU/r7mXOsxwFr4BYbvB7tWYxVuLdb2ibd30ijjXINSMAHiEEZk5PCRBmW1gUeisn2VMKt3cQ==}
+  '@types/node@22.5.4':
+    resolution: {integrity: sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -1634,15 +1634,6 @@ packages:
   data-uri-to-buffer@4.0.1:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
-
-  debug@4.3.4:
-    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
 
   debug@4.3.6:
     resolution: {integrity: sha512-O/09Bd4Z1fBrU4VzkhFqVgpPzaGbw6Sm9FEkBT1A/YBXQFGuuSxa1dN2nxgxS34JmKXqYx8CZAwEVoJFImUXIg==}
@@ -1998,9 +1989,8 @@ packages:
   loupe@2.3.7:
     resolution: {integrity: sha512-zSMINGVYkdpYSOBmLi0D1Uo7JU9nVdQKrHxC8eYlV+9YKK9WePqAlL7lSlorG/U2Fw1w0hTBmaa/jrQ3UbPHtA==}
 
-  lru-cache@10.2.2:
-    resolution: {integrity: sha512-9hp3Vp2/hFQUiIwKo8XCeFVnrg8Pk3TYNPIR7tJADKi5YfcF7vEaK7avFHTlSy3kOKYaJQaalfEo6YuXdceBOQ==}
-    engines: {node: 14 || >=16.14}
+  lru-cache@10.4.3:
+    resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
   lru-cache@11.0.0:
     resolution: {integrity: sha512-Qv32eSV1RSCfhY3fpPE2GNZ8jgM9X7rdAfemLWqTUxwiyIC4jJ6Sy0fZ8H+oLWevO6i4/bizg7c8d8i6bxrzbA==}
@@ -2115,8 +2105,8 @@ packages:
   node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
 
-  normalize-package-data@6.0.1:
-    resolution: {integrity: sha512-6rvCfeRW+OEZagAB4lMLSNuTNYZWLVtKccK79VSTf//yTY5VOCgcpH80O+bZK8Neps7pUnd5G+QlMg1yV/2iZQ==}
+  normalize-package-data@6.0.2:
+    resolution: {integrity: sha512-V6gygoYb/5EmNI+MEGrWkC+e6+Rr7mTmfHrxDbLzxQogBkgzo76rkok0Am6thgSF7Mv2nLOajAJj5vDJZEFn7g==}
     engines: {node: ^16.14.0 || >=18.0.0}
 
   normalize-path@3.0.0:
@@ -2202,8 +2192,8 @@ packages:
   perfect-debounce@1.0.0:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
 
-  picocolors@1.0.1:
-    resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
+  picocolors@1.1.0:
+    resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
 
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
@@ -2230,13 +2220,13 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright-core@1.46.1:
-    resolution: {integrity: sha512-h9LqIQaAv+CYvWzsZ+h3RsrqCStkBHlgo6/TJlFst3cOTlLghBQlJwPOZKQJTKNaD3QIB7aAVQ+gfWbN3NXB7A==}
+  playwright-core@1.47.0:
+    resolution: {integrity: sha512-1DyHT8OqkcfCkYUD9zzUTfg7EfTd+6a8MkD/NWOvjo0u/SCNd5YmY/lJwFvUZOxJbWNds+ei7ic2+R/cRz/PDg==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.46.1:
-    resolution: {integrity: sha512-oPcr1yqoXLCkgKtD5eNUPLiN40rYEM39odNpIb6VE6S7/15gJmA1NzVv6zJYusV0e7tzvkU/utBFNa/Kpxmwng==}
+  playwright@1.47.0:
+    resolution: {integrity: sha512-jOWiRq2pdNAX/mwLiwFYnPHpEZ4rM+fRSQpRHwEwZlP2PUANvL3+aJOF/bvISMhFD30rqMxUB4RJx9aQbfh4Ww==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -2262,8 +2252,8 @@ packages:
       yaml:
         optional: true
 
-  postcss@8.4.41:
-    resolution: {integrity: sha512-TesUflQ0WKZqAvg52PWL6kHgLKP6xB6heTOdoYM0Wt2UHyxNa4K25EZZMgKns3BH1RLVbZCREPpLY0rhnNoHVQ==}
+  postcss@8.4.45:
+    resolution: {integrity: sha512-7KTLTdzdZZYscUc65XmjFiB73vBhBfbPztCYdUNvlaso9PrzjzcmjqBPR0lNGkcVlcO4BjiO5rK/qNz+XAen1Q==}
     engines: {node: ^10 || ^12 || >=14}
 
   prettier@3.3.3:
@@ -2403,8 +2393,8 @@ packages:
     peerDependencies:
       solid-js: ^1.3
 
-  source-map-js@1.2.0:
-    resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
+  source-map-js@1.2.1:
+    resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
   source-map-support@0.5.21:
@@ -2427,8 +2417,8 @@ packages:
   spdx-expression-parse@3.0.1:
     resolution: {integrity: sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q==}
 
-  spdx-license-ids@3.0.18:
-    resolution: {integrity: sha512-xxRs31BqRYHwiMzudOrpSiHtZ8i/GeionCBDSilhYRj+9gIcI8wCZTlXZKu9vZIVqViP3dcp9qE5G6AlIaD+TQ==}
+  spdx-license-ids@3.0.20:
+    resolution: {integrity: sha512-jg25NiDV/1fLtSgEgyvVyDunvaNHbuwF9lfNV17gSmPFAlYzdfNBlLtLzXTevwkPj7DhGbmN9VnmJIgLnhvaBw==}
 
   split2@4.2.0:
     resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
@@ -2479,8 +2469,8 @@ packages:
     resolution: {integrity: sha512-/Wo7DcT0u5HUV486xg675HtjNd3BXZ6xDbzsCUZPt5iw8bTQ63bP0Raut3mvro9u+CUyq7YQd8Cx55fsZXxqLQ==}
     engines: {node: '>=10'}
 
-  terser@5.31.6:
-    resolution: {integrity: sha512-PQ4DAriWzKj+qgehQ7LK5bQqCFNMmlhjR2PFFLuqGCpuCAauxemVBWwWOxo3UIwWQx8+Pr61Df++r76wDmkQBg==}
+  terser@5.32.0:
+    resolution: {integrity: sha512-v3Gtw3IzpBJ0ugkxEX8U0W6+TnPKRRCWGh1jC/iM/e3Ki5+qvO1L1EAZ56bZasc64aXHwRHNIQEzm6//i5cemQ==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -2553,25 +2543,25 @@ packages:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
 
-  type-fest@4.20.1:
-    resolution: {integrity: sha512-R6wDsVsoS9xYOpy8vgeBlqpdOyzJ12HNfQhC/aAKWM3YoCV9TtunJzh/QpkMgeDhkoynDcw5f1y+qF9yc/HHyg==}
+  type-fest@4.26.1:
+    resolution: {integrity: sha512-yOGpmOAL7CkKe/91I5O3gPICmJNLJ1G4zFYVAsRHg7M64biSnPtRj0WNQt++bRkjYOqjWXrhnUw1utzmVErAdg==}
     engines: {node: '>=16'}
 
-  typescript@5.5.4:
-    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+  typescript@5.6.2:
+    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
   ufo@1.5.4:
     resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
 
-  uglify-js@3.18.0:
-    resolution: {integrity: sha512-SyVVbcNBCk0dzr9XL/R/ySrmYf0s372K6/hFklzgcp2lBFyXtw4I7BOdDjlLhE1aVqaI/SHWXWmYdlZxuyF38A==}
+  uglify-js@3.19.3:
+    resolution: {integrity: sha512-v3Xu+yuwBXisp6QYTcH4UbH+xYJXqnq2m/LtQVWKWzYc1iehYnLixoQDN9FH6/j9/oybfd6W9Ghwkl8+UMKTKQ==}
     engines: {node: '>=0.8.0'}
     hasBin: true
 
-  undici-types@6.19.6:
-    resolution: {integrity: sha512-e/vggGopEfTKSvj4ihnOLTsqhrKRN3LeO6qSN/GxohhuRv8qH9bNQ4B8W7e/vFL+0XTnmHPB4/kegunZGA4Org==}
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
   unicode-canonical-property-names-ecmascript@2.0.0:
     resolution: {integrity: sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ==}
@@ -2622,8 +2612,8 @@ packages:
       '@testing-library/jest-dom':
         optional: true
 
-  vite@5.4.2:
-    resolution: {integrity: sha512-dDrQTRHp5C1fTFzcSaMxjk6vdpKvT+2/mIdE07Gw2ykehT49O0z/VHS3zZ8iV/Gh8BJJKHWOe5RjaNrW5xf/GA==}
+  vite@5.4.3:
+    resolution: {integrity: sha512-IH+nl64eq9lJjFqU+/yrRnrHPVTlgy42/+IzbOdaFDVlyLgI/wDlf+FCobXLX1cT0X5+7LMyH1mIy2xJdLfo8Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -2699,8 +2689,8 @@ packages:
   yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
-  yocto-queue@1.0.0:
-    resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
+  yocto-queue@1.1.1:
+    resolution: {integrity: sha512-b4JR1PFR10y1mKjhHY9LaGo6tmrgjit7hxVIeAmyMw3jegXR4dhYqLaQF5zMXZxY7tLpMyJeLjr1C4rLmkVe8g==}
     engines: {node: '>=12.20'}
 
 snapshots:
@@ -2713,7 +2703,7 @@ snapshots:
   '@babel/code-frame@7.24.7':
     dependencies:
       '@babel/highlight': 7.24.7
-      picocolors: 1.0.1
+      picocolors: 1.1.0
 
   '@babel/compat-data@7.25.4': {}
 
@@ -2884,7 +2874,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       chalk: 2.4.2
       js-tokens: 4.0.0
-      picocolors: 1.0.1
+      picocolors: 1.1.0
 
   '@babel/parser@7.25.4':
     dependencies:
@@ -3495,7 +3485,7 @@ snapshots:
       '@babel/parser': 7.25.4
       '@babel/template': 7.25.0
       '@babel/types': 7.25.4
-      debug: 4.3.4
+      debug: 4.3.6
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -3549,7 +3539,7 @@ snapshots:
 
   '@brillout/picocolors@1.0.14': {}
 
-  '@brillout/release-me@0.4.0':
+  '@brillout/release-me@0.4.1':
     dependencies:
       '@brillout/picocolors': 1.0.14
       commander: 11.1.0
@@ -3575,12 +3565,12 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@brillout/test-types@0.1.15(typescript@5.5.4)':
+  '@brillout/test-types@0.1.15(typescript@5.6.2)':
     dependencies:
       '@brillout/picocolors': 1.0.14
       fast-glob: 3.3.2
       source-map-support: 0.5.21
-      typescript: 5.5.4
+      typescript: 5.6.2
 
   '@brillout/vite-plugin-server-entry@0.4.12':
     dependencies:
@@ -3863,11 +3853,11 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.2':
     optional: true
 
-  '@tanstack/query-core@5.52.2': {}
+  '@tanstack/query-core@5.55.4': {}
 
-  '@tanstack/solid-query@5.52.2(solid-js@1.8.22)':
+  '@tanstack/solid-query@5.55.4(solid-js@1.8.22)':
     dependencies:
-      '@tanstack/query-core': 5.52.2
+      '@tanstack/query-core': 5.55.4
       solid-js: 1.8.22
 
   '@types/babel__core@7.20.5':
@@ -3893,9 +3883,9 @@ snapshots:
 
   '@types/estree@1.0.5': {}
 
-  '@types/node@22.4.0':
+  '@types/node@22.5.4':
     dependencies:
-      undici-types: 6.19.6
+      undici-types: 6.19.8
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -4127,7 +4117,7 @@ snapshots:
       git-raw-commits: 4.0.0
       git-semver-tags: 7.0.1
       hosted-git-info: 7.0.2
-      normalize-package-data: 6.0.1
+      normalize-package-data: 6.0.2
       read-pkg: 8.1.0
       read-pkg-up: 10.1.0
 
@@ -4194,10 +4184,6 @@ snapshots:
   dargs@8.1.0: {}
 
   data-uri-to-buffer@4.0.1: {}
-
-  debug@4.3.4:
-    dependencies:
-      ms: 2.1.2
 
   debug@4.3.6:
     dependencies:
@@ -4439,7 +4425,7 @@ snapshots:
       source-map: 0.6.1
       wordwrap: 1.0.0
     optionalDependencies:
-      uglify-js: 3.18.0
+      uglify-js: 3.19.3
 
   has-flag@3.0.0: {}
 
@@ -4449,7 +4435,7 @@ snapshots:
 
   hosted-git-info@7.0.2:
     dependencies:
-      lru-cache: 10.2.2
+      lru-cache: 10.4.3
 
   html-entities@2.3.3: {}
 
@@ -4559,7 +4545,7 @@ snapshots:
     dependencies:
       get-func-name: 2.0.2
 
-  lru-cache@10.2.2: {}
+  lru-cache@10.4.3: {}
 
   lru-cache@11.0.0: {}
 
@@ -4652,10 +4638,9 @@ snapshots:
 
   node-releases@2.0.18: {}
 
-  normalize-package-data@6.0.1:
+  normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      is-core-module: 2.13.1
       semver: 7.6.3
       validate-npm-package-license: 3.0.4
 
@@ -4692,7 +4677,7 @@ snapshots:
 
   p-limit@4.0.0:
     dependencies:
-      yocto-queue: 1.0.0
+      yocto-queue: 1.1.1
 
   p-locate@6.0.0:
     dependencies:
@@ -4718,7 +4703,7 @@ snapshots:
 
   path-scurry@1.11.1:
     dependencies:
-      lru-cache: 10.2.2
+      lru-cache: 10.4.3
       minipass: 7.1.2
 
   path-scurry@2.0.0:
@@ -4734,7 +4719,7 @@ snapshots:
 
   perfect-debounce@1.0.0: {}
 
-  picocolors@1.0.1: {}
+  picocolors@1.1.0: {}
 
   picomatch@2.3.1: {}
 
@@ -4756,28 +4741,28 @@ snapshots:
 
   playwright-core@1.45.0: {}
 
-  playwright-core@1.46.1: {}
+  playwright-core@1.47.0: {}
 
-  playwright@1.46.1:
+  playwright@1.47.0:
     dependencies:
-      playwright-core: 1.46.1
+      playwright-core: 1.47.0
     optionalDependencies:
       fsevents: 2.3.2
 
   pngjs@6.0.0: {}
 
-  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.41):
+  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.45):
     dependencies:
       lilconfig: 3.1.2
     optionalDependencies:
       jiti: 1.21.6
-      postcss: 8.4.41
+      postcss: 8.4.45
 
-  postcss@8.4.41:
+  postcss@8.4.45:
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.0.1
-      source-map-js: 1.2.0
+      picocolors: 1.1.0
+      source-map-js: 1.2.1
 
   prettier@3.3.3: {}
 
@@ -4799,14 +4784,14 @@ snapshots:
     dependencies:
       find-up: 6.3.0
       read-pkg: 8.1.0
-      type-fest: 4.20.1
+      type-fest: 4.26.1
 
   read-pkg@8.1.0:
     dependencies:
       '@types/normalize-package-data': 2.4.4
-      normalize-package-data: 6.0.1
+      normalize-package-data: 6.0.2
       parse-json: 7.1.1
-      type-fest: 4.20.1
+      type-fest: 4.26.1
 
   readdirp@3.6.0:
     dependencies:
@@ -4852,11 +4837,11 @@ snapshots:
       glob: 11.0.0
       package-json-from-dist: 1.0.0
 
-  rollup-plugin-dts@6.1.1(rollup@4.21.2)(typescript@5.5.4):
+  rollup-plugin-dts@6.1.1(rollup@4.21.2)(typescript@5.6.2):
     dependencies:
       magic-string: 0.30.10
       rollup: 4.21.2
-      typescript: 5.5.4
+      typescript: 5.6.2
     optionalDependencies:
       '@babel/code-frame': 7.24.7
 
@@ -4931,7 +4916,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  source-map-js@1.2.0: {}
+  source-map-js@1.2.1: {}
 
   source-map-support@0.5.21:
     dependencies:
@@ -4947,16 +4932,16 @@ snapshots:
   spdx-correct@3.2.0:
     dependencies:
       spdx-expression-parse: 3.0.1
-      spdx-license-ids: 3.0.18
+      spdx-license-ids: 3.0.20
 
   spdx-exceptions@2.5.0: {}
 
   spdx-expression-parse@3.0.1:
     dependencies:
       spdx-exceptions: 2.5.0
-      spdx-license-ids: 3.0.18
+      spdx-license-ids: 3.0.20
 
-  spdx-license-ids@3.0.18: {}
+  spdx-license-ids@3.0.20: {}
 
   split2@4.2.0: {}
 
@@ -5011,7 +4996,7 @@ snapshots:
       mkdirp: 1.0.4
       yallist: 4.0.0
 
-  terser@5.31.6:
+  terser@5.32.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
       acorn: 8.12.1
@@ -5051,7 +5036,7 @@ snapshots:
 
   tslib@2.7.0: {}
 
-  tsup@8.2.4(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4):
+  tsup@8.2.4(jiti@1.21.6)(postcss@8.4.45)(typescript@5.6.2):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.1)
       cac: 6.7.14
@@ -5062,16 +5047,16 @@ snapshots:
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
-      picocolors: 1.0.1
-      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.41)
+      picocolors: 1.1.0
+      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.45)
       resolve-from: 5.0.0
       rollup: 4.21.2
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
       tree-kill: 1.2.2
     optionalDependencies:
-      postcss: 8.4.41
-      typescript: 5.5.4
+      postcss: 8.4.45
+      typescript: 5.6.2
     transitivePeerDependencies:
       - jiti
       - supports-color
@@ -5082,16 +5067,16 @@ snapshots:
 
   type-fest@3.13.1: {}
 
-  type-fest@4.20.1: {}
+  type-fest@4.26.1: {}
 
-  typescript@5.5.4: {}
+  typescript@5.6.2: {}
 
   ufo@1.5.4: {}
 
-  uglify-js@3.18.0:
+  uglify-js@3.19.3:
     optional: true
 
-  undici-types@6.19.6: {}
+  undici-types@6.19.8: {}
 
   unicode-canonical-property-names-ecmascript@2.0.0: {}
 
@@ -5108,7 +5093,7 @@ snapshots:
     dependencies:
       browserslist: 4.23.3
       escalade: 3.1.2
-      picocolors: 1.0.1
+      picocolors: 1.1.0
 
   validate-html-nesting@1.2.2: {}
 
@@ -5117,7 +5102,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vike@0.4.195(vite@5.4.2(@types/node@22.4.0)(terser@5.31.6)):
+  vike@0.4.195(vite@5.4.3(@types/node@22.5.4)(terser@5.32.0)):
     dependencies:
       '@brillout/import': 0.2.3
       '@brillout/json-serializer': 0.5.13
@@ -5132,9 +5117,9 @@ snapshots:
       semver: 7.6.3
       sirv: 2.0.4
       source-map-support: 0.5.21
-      vite: 5.4.2(@types/node@22.4.0)(terser@5.31.6)
+      vite: 5.4.3(@types/node@22.5.4)(terser@5.32.0)
 
-  vite-plugin-solid@2.10.2(solid-js@1.8.22)(vite@5.4.2(@types/node@22.4.0)(terser@5.31.6)):
+  vite-plugin-solid@2.10.2(solid-js@1.8.22)(vite@5.4.3(@types/node@22.5.4)(terser@5.32.0)):
     dependencies:
       '@babel/core': 7.25.2
       '@types/babel__core': 7.20.5
@@ -5142,24 +5127,24 @@ snapshots:
       merge-anything: 5.1.7
       solid-js: 1.8.22
       solid-refresh: 0.6.3(solid-js@1.8.22)
-      vite: 5.4.2(@types/node@22.4.0)(terser@5.31.6)
-      vitefu: 0.2.5(vite@5.4.2(@types/node@22.4.0)(terser@5.31.6))
+      vite: 5.4.3(@types/node@22.5.4)(terser@5.32.0)
+      vitefu: 0.2.5(vite@5.4.3(@types/node@22.5.4)(terser@5.32.0))
     transitivePeerDependencies:
       - supports-color
 
-  vite@5.4.2(@types/node@22.4.0)(terser@5.31.6):
+  vite@5.4.3(@types/node@22.5.4)(terser@5.32.0):
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.4.41
+      postcss: 8.4.45
       rollup: 4.21.2
     optionalDependencies:
-      '@types/node': 22.4.0
+      '@types/node': 22.5.4
       fsevents: 2.3.3
-      terser: 5.31.6
+      terser: 5.32.0
 
-  vitefu@0.2.5(vite@5.4.2(@types/node@22.4.0)(terser@5.31.6)):
+  vitefu@0.2.5(vite@5.4.3(@types/node@22.5.4)(terser@5.32.0)):
     optionalDependencies:
-      vite: 5.4.2(@types/node@22.4.0)(terser@5.31.6)
+      vite: 5.4.3(@types/node@22.5.4)(terser@5.32.0)
 
   web-streams-polyfill@3.2.1: {}
 
@@ -5200,4 +5185,4 @@ snapshots:
 
   yallist@4.0.0: {}
 
-  yocto-queue@1.0.0: {}
+  yocto-queue@1.1.1: {}

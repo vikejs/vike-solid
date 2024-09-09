@@ -24,19 +24,19 @@
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-typescript": "^7.24.7",
     "@biomejs/biome": "^1.8.3",
-    "@brillout/release-me": "^0.4.0",
+    "@brillout/release-me": "^0.4.1",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@types/node": "^22.4.0",
+    "@types/node": "^22.5.4",
     "babel-preset-solid": "^1.8.22",
     "bumpp": "^9.5.2",
     "rollup": "^4.21.2",
     "rollup-plugin-dts": "^6.1.1",
     "solid-js": "^1.8.22",
     "tslib": "^2.7.0",
-    "typescript": "^5.5.4",
+    "typescript": "^5.6.2",
     "vike": "^0.4.195",
-    "vite": "^5.4.2"
+    "vite": "^5.4.3"
   },
   "exports": {
     "./config": "./dist/+config.js",
