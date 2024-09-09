@@ -1,5 +1,5 @@
 // https://vike.dev/onRenderHtml
-import { generateHydrationScript, renderToStream, renderToString } from "solid-js/web";
+import { generateHydrationScript, renderToStream, renderToString, renderToStringAsync } from "solid-js/web";
 import { dangerouslySkipEscape, escapeInject, stampPipe } from "vike/server";
 import { getHeadSetting } from "./getHeadSetting.js";
 import { getPageElement } from "./getPageElement.js";
@@ -10,6 +10,7 @@ import type { PageContextInternal } from "../types/PageContext.js";
 import type { Head } from "../types/Config.js";
 import type { JSX } from "solid-js/jsx-runtime";
 import { isCallable } from "../utils/isCallable.js";
+import isBot from "isbot-fast";
 
 export { onRenderHtml };
 
@@ -18,7 +19,7 @@ type TPipe = Parameters<typeof stampPipe>[0];
 const onRenderHtml: OnRenderHtmlAsync = async (
   pageContext: PageContextServer & PageContextInternal,
 ): ReturnType<OnRenderHtmlAsync> => {
-  const pageHtml = getPageHtml(pageContext);
+  const pageHtml = await getPageHtml(pageContext);
 
   const headHtml = getHeadHtml(pageContext);
 
@@ -40,16 +41,32 @@ const onRenderHtml: OnRenderHtmlAsync = async (
     </html>`;
 };
 
-function getPageHtml(pageContext: PageContextServer) {
+async function getPageHtml(pageContext: PageContextServer & PageContextInternal) {
   let pageHtml: string | ReturnType<typeof dangerouslySkipEscape> | TPipe = "";
+  const userAgent: string | undefined =
+    pageContext.headers?.["user-agent"] ||
+    // TODO/eventually: remove old way of acccessing the User Agent header.
+    // @ts-ignore
+    pageContext.userAgent;
+
   if (pageContext.Page) {
-    if (!pageContext.config.stream) {
+    if (userAgent && isBot(userAgent)) {
+      pageHtml = dangerouslySkipEscape(await renderToStringAsync(() => getPageElement(pageContext)));
+    } else if (!pageContext.config.stream) {
       pageHtml = dangerouslySkipEscape(renderToString(() => getPageElement(pageContext)));
     } else if (pageContext.config.stream === "web") {
-      pageHtml = renderToStream(() => getPageElement(pageContext)).pipeTo;
+      pageHtml = renderToStream(() => getPageElement(pageContext), {
+        onCompleteShell(info) {
+          pageContext._stream ??= info;
+        },
+      }).pipeTo;
       stampPipe(pageHtml, "web-stream");
     } else {
-      pageHtml = renderToStream(() => getPageElement(pageContext)).pipe;
+      pageHtml = renderToStream(() => getPageElement(pageContext), {
+        onCompleteShell(info) {
+          pageContext._stream ??= info;
+        },
+      }).pipe;
       stampPipe(pageHtml, "node-stream");
     }
   }

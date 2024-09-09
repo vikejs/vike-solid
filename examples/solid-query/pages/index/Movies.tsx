@@ -17,7 +17,7 @@ export function Movies() {
   };
 
   return (
-    <QueryBoundary query={query} loadingFallback={<p>Loading movies ...</p>}>
+    <QueryBoundary query={query} loadingFallback={"Loading movies..."}>
       {(movies) => (
         <>
           <Config title={`${movies.length} Star Wars movies`} />
