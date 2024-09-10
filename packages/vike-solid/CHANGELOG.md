@@ -1,3 +1,21 @@
+## 0.7.5 (2024-09-10)
+
+
+### Bug Fixes
+
+* properly export config (vikejs/vike-vue[#194](https://github.com/vikejs/vike-solid/issues/194)) ([604d1eb](https://github.com/vikejs/vike-solid/commit/604d1eb95eaf7eaad2477333bd6ad5b3e3d3e1d4))
+* return undefined instead of throw error upon missing pageContext (fix vikejs/vike-react[#147](https://github.com/vikejs/vike-solid/issues/147)) ([d9d37e0](https://github.com/vikejs/vike-solid/commit/d9d37e02ec94781663785283ba18d2abe6521336))
+* **useConfig:** add support for `useConfig()` with HTML streaming ([72b20ec](https://github.com/vikejs/vike-solid/commit/72b20ec699ee6dd53dc0ba4333bc3bc614f18795))
+* **useConfig:** enable using `useConfig()` with HTML streaming ([555aa71](https://github.com/vikejs/vike-solid/commit/555aa71cdf049089724ac77ac32ff03f0ff8cef8))
+
+
+### Features
+
+* add support for checking crawlers/bots and integrate `renderToStringAsync()` ([711742c](https://github.com/vikejs/vike-solid/commit/711742cae563fc888b064b8377a4c6a84d0b042d))
+* new extension `vike-solid-query` ([b04b04a](https://github.com/vikejs/vike-solid/commit/b04b04a044c992785f827bf28406c075e1a58eff))
+
+
+
 ## [0.7.4](https://github.com/vikejs/vike-solid/compare/v0.7.3...v0.7.4) (2024-09-04)
 
 
