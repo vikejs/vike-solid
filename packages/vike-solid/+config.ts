@@ -1,9 +1,7 @@
-export { config };
-
 import type { Config } from "vike/types";
 import { ssrEffect } from "./integration/ssrEffect.js";
 
-const config = {
+export default {
   name: "vike-solid",
   require: {
     vike: ">=0.4.195",
