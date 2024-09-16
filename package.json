@@ -11,7 +11,6 @@
     "test:types": "test-types",
     "========= Formatting": "",
     "format": "pnpm run format:biome",
-    "format:prettier": "git ls-files | egrep '\\.(json|js|jsx|css|ts|tsx|vue|mjs|cjs)$' | grep --invert-match package.json | xargs pnpm exec prettier --write",
     "format:biome": "biome format --write .",
     "format:check": "biome format . || (echo 'Fix formatting by running `$ pnpm run -w format`.' && exit 1)",
     "========= Release": "",
@@ -29,11 +28,10 @@
     }
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.8.3",
+    "@biomejs/biome": "^1.9.1",
     "@brillout/test-e2e": "^0.5.35",
     "@brillout/test-types": "^0.1.15",
-    "playwright": "^1.47.0",
-    "prettier": "^3.3.3"
+    "playwright": "^1.47.1"
   },
   "packageManager": "pnpm@9.4.0"
 }

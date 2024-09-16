@@ -17,18 +17,18 @@
   },
   "devDependencies": {
     "@brillout/release-me": "^0.4.1",
-    "@rollup/plugin-babel": "6.0.4",
-    "@rollup/plugin-node-resolve": "15.2.3",
-    "@tanstack/solid-query": "^5.55.4",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@tanstack/solid-query": "^5.56.2",
     "rimraf": "^6.0.1",
-    "rollup": "^4.21.2",
-    "rollup-plugin-dts": "6.1.1",
+    "rollup": "^4.21.3",
+    "rollup-plugin-dts": "^6.1.1",
     "solid-js": "^1.8.22",
     "tsup": "^8.2.4",
     "typescript": "^5.6.2",
     "vike": "^0.4.195",
     "vike-solid": "workspace:*",
-    "vite": "^5.4.4"
+    "vite": "^5.4.5"
   },
   "exports": {
     ".": "./dist/src/index.js",
