@@ -16,13 +16,12 @@
       "default": "./dist/src/index.js",
       "types": "./dist/src/index.d.ts"
     },
-    "./config": "./dist/integration/+config.js",
-    "./__internal/integration/Wrapper": "./dist/integration/Wrapper.jsx"
+    "./config": "./dist/integration/+config.js"
   },
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
     "dev:typecheck": "tsc --noEmit --watch",
-    "build": "rollup -c rollup.config.js && tsc",
+    "build": "tsc --noEmit && rollup -c rollup.config.js",
     "release": "LANG=en_US release-me patch",
     "release:minor": "LANG=en_US release-me minor",
     "release:commit": "LANG=en_US release-me commit"
@@ -37,7 +36,6 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.4",
     "@tanstack/solid-query": "^5.56.2",
-    "rimraf": "^6.0.1",
     "rollup": "^4.22.4",
     "rollup-plugin-dts": "^6.1.1",
     "solid-js": "^1.8.22",

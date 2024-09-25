@@ -5,9 +5,11 @@ export default [
   withSolid({
     input: {
       "src/server": "./src/index.ts",
+      "integration/+config": "./integration/+config.ts",
+      "integration/Wrapper": "./integration/Wrapper.tsx",
     },
     ssr: true,
-    external: [],
+    external: ["vike-solid/usePageContext"],
   }),
   withSolid({
     input: {
@@ -17,8 +19,8 @@ export default [
     external: [],
   }),
   {
-    input: ["./src/index.ts"],
-    output: [{ dir: "dist/src", format: "es", sanitizeFileName: false }],
+    input: ["./src/index.ts", "./integration/+config.ts", "./integration/Wrapper.tsx"],
+    output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
     plugins: [dts()],
   },
 ];
