@@ -6,6 +6,7 @@ settings:
 
 overrides:
   vike-solid: link:./packages/vike-solid/
+  vike-solid-query: link:./packages/vike-solid-query/
 
 importers:
 
@@ -80,7 +81,7 @@ importers:
         specifier: link:../../packages/vike-solid
         version: link:../../packages/vike-solid
       vike-solid-query:
-        specifier: workspace:^
+        specifier: link:../../packages/vike-solid-query
         version: link:../../packages/vike-solid-query
     devDependencies:
       typescript:
@@ -183,9 +184,6 @@ importers:
       vike-solid:
         specifier: link:../vike-solid
         version: link:../vike-solid
-      vite:
-        specifier: ^5.4.7
-        version: 5.4.7(@types/node@22.5.5)(terser@5.32.0)
 
 packages:
 

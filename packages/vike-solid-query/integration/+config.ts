@@ -5,7 +5,7 @@ import "vike-solid/config"; // Needed for declaration merging of Config
 export default {
   name: "vike-solid-query",
   require: {
-    "vike-solid": ">=0.7.3",
+    "vike-solid": ">=0.7.4",
   },
   Wrapper: "import:vike-solid-query/__internal/integration/Wrapper:default",
   queryClientConfig: {

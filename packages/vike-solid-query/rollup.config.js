@@ -4,15 +4,21 @@ import dts from "rollup-plugin-dts";
 export default [
   withSolid({
     input: {
-      "integration/+config": "./integration/+config.ts",
-      "integration/Wrapper": "./integration/Wrapper.tsx",
+      "src/server": "./src/index.ts",
     },
     ssr: true,
-    external: ["vike-solid/usePageContext"],
+    external: [],
+  }),
+  withSolid({
+    input: {
+      "src/index": "./src/index.ts",
+    },
+    ssr: false,
+    external: [],
   }),
   {
-    input: ["./integration/+config.ts", "./integration/Wrapper.tsx"],
-    output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
+    input: ["./src/index.ts"],
+    output: [{ dir: "dist/src", format: "es", sanitizeFileName: false }],
     plugins: [dts()],
   },
 ];

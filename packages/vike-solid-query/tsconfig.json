@@ -10,12 +10,11 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "allowJs": true,
-    "types": ["vite/client"],
     "isolatedModules": true,
     "outDir": "./dist",
     "declaration": true,
     "skipLibCheck": true,
     "rootDir": "./"
   },
-  "include": ["src/*", "global.d.ts"]
+  "include": ["integration/", "types.d.ts"]
 }
