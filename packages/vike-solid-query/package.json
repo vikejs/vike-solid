@@ -16,7 +16,14 @@
       "default": "./dist/src/index.js",
       "types": "./dist/src/index.d.ts"
     },
-    "./config": "./dist/integration/+config.js"
+    "./config": "./dist/integration/+config.js",
+    "./__internal/integration/Wrapper": {
+      "solid": "./dist/integration/Wrapper.js",
+      "import": {
+        "types": "./dist/integration/Wrapper.d.ts",
+        "default": "./dist/integration/Wrapper.js"
+      }
+    }
   },
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
