@@ -34,8 +34,8 @@ importers:
         specifier: ^1.8.22
         version: 1.8.22
       vike:
-        specifier: ^0.4.195
-        version: 0.4.196(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0))
+        specifier: ^0.4.197
+        version: 0.4.197(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0))
       vike-solid:
         specifier: link:../../packages/vike-solid
         version: link:../../packages/vike-solid
@@ -53,8 +53,8 @@ importers:
         specifier: ^1.8.22
         version: 1.8.22
       vike:
-        specifier: ^0.4.195
-        version: 0.4.196(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0))
+        specifier: ^0.4.197
+        version: 0.4.197(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0))
       vike-solid:
         specifier: link:../../packages/vike-solid
         version: link:../../packages/vike-solid
@@ -75,8 +75,8 @@ importers:
         specifier: ^1.8.22
         version: 1.8.22
       vike:
-        specifier: ^0.4.195
-        version: 0.4.196(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0))
+        specifier: ^0.4.197
+        version: 0.4.197(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0))
       vike-solid:
         specifier: link:../../packages/vike-solid
         version: link:../../packages/vike-solid
@@ -143,8 +143,8 @@ importers:
         specifier: ^5.6.2
         version: 5.6.2
       vike:
-        specifier: ^0.4.196
-        version: 0.4.196(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0))
+        specifier: ^0.4.197
+        version: 0.4.197(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0))
       vite:
         specifier: ^5.4.7
         version: 5.4.7(@types/node@22.5.5)(terser@5.32.0)
@@ -176,8 +176,8 @@ importers:
         specifier: ^5.6.2
         version: 5.6.2
       vike:
-        specifier: ^0.4.196
-        version: 0.4.196(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0))
+        specifier: ^0.4.197
+        version: 0.4.197(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0))
       vike-solid:
         specifier: link:../vike-solid
         version: link:../vike-solid
@@ -2317,8 +2317,8 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  vike@0.4.196:
-    resolution: {integrity: sha512-4APwQDsXYT5Ej5zl4wFJUkE1XezgLXevGxrsJpcGn+YHXRdbmiFsQhYyzc60GOaWB47U7QIqvfSk8K50GD4RxA==}
+  vike@0.4.197:
+    resolution: {integrity: sha512-WPQjnMRx9moxukRx2yV0+PayQLDAv7JG4s11+d/xXvM2Y1WqNKNCXSTKbqMdIGae24GkK9lWyHzuFSPVFzb4sw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -4567,7 +4567,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vike@0.4.196(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0)):
+  vike@0.4.197(vite@5.4.7(@types/node@22.5.5)(terser@5.32.0)):
     dependencies:
       '@brillout/import': 0.2.3
       '@brillout/json-serializer': 0.5.13
