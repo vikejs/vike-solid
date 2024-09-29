@@ -1,3 +1,7 @@
+## [0.7.6](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.5...vike-solid@0.7.6) (2024-09-29)
+
+
+
 ## 0.7.5 (2024-09-10)
 
 
