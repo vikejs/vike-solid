@@ -2,10 +2,33 @@
   "name": "vike-solid-query",
   "version": "0.0.1",
   "type": "module",
+  "main": "./dist/src/server.js",
+  "typings": "dist/src/index.d.ts",
+  "module": "./dist/src/server.js",
+  "types": "./dist/src/index.d.ts",
+  "browser": {
+    "./dist/src/server.js": "./dist/src/index.js"
+  },
+  "exports": {
+    ".": {
+      "browser": "./dist/src/index.js",
+      "node": "./dist/src/server.js",
+      "default": "./dist/src/index.js",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./config": "./dist/integration/+config.js",
+    "./__internal/integration/Wrapper": {
+      "solid": "./dist/integration/Wrapper.js",
+      "import": {
+        "types": "./dist/integration/Wrapper.d.ts",
+        "default": "./dist/integration/Wrapper.js"
+      }
+    }
+  },
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
     "dev:typecheck": "tsc --noEmit --watch",
-    "build": "rollup -c rollup.config.js && tsc",
+    "build": "tsc --noEmit && rollup -c rollup.config.js",
     "release": "LANG=en_US release-me patch",
     "release:minor": "LANG=en_US release-me minor",
     "release:commit": "LANG=en_US release-me commit"
@@ -20,19 +43,12 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.4",
     "@tanstack/solid-query": "^5.56.2",
-    "rimraf": "^6.0.1",
     "rollup": "^4.22.4",
     "rollup-plugin-dts": "^6.1.1",
     "solid-js": "^1.8.22",
     "typescript": "^5.6.2",
     "vike": "^0.4.197",
-    "vike-solid": "workspace:*",
-    "vite": "^5.4.7"
-  },
-  "exports": {
-    ".": "./dist/src/index.js",
-    "./config": "./dist/integration/+config.js",
-    "./__internal/integration/Wrapper": "./dist/integration/Wrapper.js"
+    "vike-solid": "workspace:*"
   },
   "typesVersions": {
     "*": {

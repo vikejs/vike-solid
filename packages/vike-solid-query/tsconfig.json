@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2021",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "allowSyntheticDefaultImports": true,
@@ -10,12 +11,9 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "allowJs": true,
-    "types": ["vite/client"],
     "isolatedModules": true,
     "outDir": "./dist",
     "declaration": true,
-    "skipLibCheck": true,
-    "rootDir": "./"
-  },
-  "include": ["src/*", "global.d.ts"]
+    "skipLibCheck": true
+  }
 }

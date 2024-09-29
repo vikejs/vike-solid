@@ -24,7 +24,8 @@
   },
   "pnpm": {
     "overrides": {
-      "vike-solid": "link:./packages/vike-solid/"
+      "vike-solid": "link:./packages/vike-solid/",
+      "vike-solid-query": "link:./packages/vike-solid-query/"
     }
   },
   "devDependencies": {
