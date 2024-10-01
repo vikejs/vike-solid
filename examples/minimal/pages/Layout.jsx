@@ -1,6 +1,6 @@
 import "./Layout.css";
 
-export function Layout({ children }) {
+export function Layout(props) {
   return (
     <PageLayout>
       <Sidebar>
@@ -11,12 +11,12 @@ export function Layout({ children }) {
           About
         </a>
       </Sidebar>
-      <Content>{children}</Content>
+      <Content>{props.children}</Content>
     </PageLayout>
   );
 }
 
-function PageLayout({ children }) {
+function PageLayout(props) {
   return (
     <div
       style={{
@@ -25,12 +25,12 @@ function PageLayout({ children }) {
         margin: "auto",
       }}
     >
-      {children}
+      {props.children}
     </div>
   );
 }
 
-function Sidebar({ children }) {
+function Sidebar(props) {
   return (
     <div
       style={{
@@ -43,12 +43,12 @@ function Sidebar({ children }) {
         "line-height": "1.8em",
       }}
     >
-      {children}
+      {props.children}
     </div>
   );
 }
 
-function Content({ children }) {
+function Content(props) {
   return (
     <div
       style={{
@@ -58,7 +58,7 @@ function Content({ children }) {
         "min-height": "100vh",
       }}
     >
-      {children}
+      {props.children}
     </div>
   );
 }

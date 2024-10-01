@@ -46,7 +46,7 @@ async function getPageHtml(pageContext: PageContextServer & PageContextInternal)
   const userAgent: string | undefined =
     pageContext.headers?.["user-agent"] ||
     // TODO/eventually: remove old way of acccessing the User Agent header.
-    // @ts-ignore
+    // @ts-expect-error Property 'userAgent' does not exist on type
     pageContext.userAgent;
 
   if (pageContext.Page) {

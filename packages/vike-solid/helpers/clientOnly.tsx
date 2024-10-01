@@ -17,7 +17,7 @@ import { isServer } from "solid-js/web";
  * @see {@link https://vike.dev/clientOnly}
  */
 export function clientOnly<T extends Component<any>>(fn: () => Promise<{ default: T } | T>) {
-  if (isServer) return (props: ComponentProps<T> & { fallback?: JSX.Element }) => props.fallback;
+  if (isServer) return (props: ComponentProps<T> & { fallback?: JSX.Element }) => <>{props.fallback}</>;
 
   const [comp, setComp] = createSignal<T>();
   fn().then((m) => setComp(() => ("default" in m ? m.default : m)));

@@ -9,7 +9,7 @@ export default function Page() {
       <h1>Star Wars Movies</h1>
       <ol>
         <For each={movies}>
-          {(movie, i) => (
+          {(movie) => (
             <li>
               <a href={`/star-wars/${movie.id}`}>{movie.title}</a> ({movie.release_date})
             </li>

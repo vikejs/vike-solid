@@ -25,22 +25,23 @@ function Page() {
   );
 }
 
-function Image({ src, author }: { src: string; author: string }) {
+function Image(props: { src: string; author: string }) {
   return (
     <>
-      <img src={src} height={48} style={{ "vertical-align": "middle", "margin-left": "10px" }} />
+      <img src={props.src} height={48} style={{ "vertical-align": "middle", "margin-left": "10px" }} />
       <Head>
         <script
           type="application/ld+json"
+          // eslint-disable-next-line solid/no-innerhtml
           innerHTML={JSON.stringify({
             "@context": "https://schema.org/",
-            contentUrl: { src },
+            contentUrl: { src: props.src },
             creator: {
               "@type": "Person",
-              name: author,
+              name: props.author,
             },
           })}
-        ></script>
+        />
       </Head>
     </>
   );

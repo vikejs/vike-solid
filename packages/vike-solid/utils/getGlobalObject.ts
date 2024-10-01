@@ -3,7 +3,7 @@ export function getGlobalObject<T extends Record<string, unknown> = never>(
   key: `${string}.ts`,
   defaultValue: T,
 ): T {
-  // @ts-ignore
+  // @ts-expect-error Property '_vike_solid' does not exist on type 'typeof globalThis'
   const globalObjectsAll = (globalThis[projectKey] = globalThis[projectKey] || {});
   const globalObject = (globalObjectsAll[key] = globalObjectsAll[key] || defaultValue);
   return globalObject;
