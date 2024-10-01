@@ -1,15 +1,12 @@
-import tseslint from 'typescript-eslint'
-import solid from 'eslint-plugin-solid/configs/typescript'
+import pluginTypescript from 'typescript-eslint'
+import pluginSolid from 'eslint-plugin-solid/configs/typescript'
 
-export default tseslint.config(
-  {
-    files: ['**/*.{js,ts,jsx,tsx}'],
-    ...solid
-  },
+export default pluginTypescript.config(
   {
     ignores: ['**/dist/']
   },
-  ...tseslint.configs.recommended,
+  ...pluginTypescript.configs.recommended,
+  pluginSolid,
   {
     rules: {
       '@typescript-eslint/no-explicit-any': 0,
