@@ -1,6 +1,11 @@
 import tseslint from 'typescript-eslint'
+import solid from 'eslint-plugin-solid/configs/typescript'
 
 export default tseslint.config(
+  {
+    files: ['**/*.{js,ts,jsx,tsx}'],
+    ...solid
+  },
   {
     ignores: ['**/dist/']
   },

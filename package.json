@@ -35,6 +35,7 @@
     "@brillout/test-e2e": "^0.5.35",
     "@brillout/test-types": "^0.1.15",
     "eslint": "^9.13.0",
+    "eslint-plugin-solid": "^0.14.3",
     "playwright": "^1.48.0",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.10.0"

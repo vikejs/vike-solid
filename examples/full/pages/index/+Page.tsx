@@ -15,7 +15,7 @@ const ClientOnlyCounterSlow = clientOnly(async () => {
 function Page() {
   return (
     <>
-      <Config image={image}></Config>
+      <Config image={image} />
       <h1>My Vike + Solid App</h1>
       This page is:
       <ul>

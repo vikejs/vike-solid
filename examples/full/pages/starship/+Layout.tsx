@@ -43,7 +43,7 @@ function Layout(props: FlowProps) {
 }
 
 function Link(props: any) {
-  return <a style={{ marginRight: 10, ...props.style }} {...props} />;
+  return <a style={{ 'margin-right': '10', ...props.style }} {...props} />;
 }
 
 function Counter() {
