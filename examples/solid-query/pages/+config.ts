@@ -9,5 +9,12 @@ export default {
   passToClient: ["routeParams"],
   stream: true,
   injectScriptsAt: "HTML_STREAM",
+  queryClientConfig: {
+    defaultOptions: {
+      queries: {
+        experimental_prefetchInRender: true,
+      },
+    },
+  },
   extends: [vikeSolid, vikeSolidQuery],
 } satisfies Config;
