@@ -1,0 +1,12 @@
+diff --git a/dist/rollup.js b/dist/rollup.js
+index 96ad0411859ce813a3da5d36e12fb681a1b4bf33..8c565208e33a7c2bad3c20481e11d6890315853f 100644
+--- a/dist/rollup.js
++++ b/dist/rollup.js
+@@ -8430,6 +8430,7 @@ var getRollupConfig = async (options) => {
+         footer: dtsOptions.footer,
+         entryFileNames: `[name]${outputExtension}`,
+         chunkFileNames: `[name]-[hash]${outputExtension}`,
++        sanitizeFileName: false,
+         plugins: [
+           format === "cjs" && options.cjsInterop && fixCjsExport
+         ].filter(Boolean)
