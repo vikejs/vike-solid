@@ -2,33 +2,60 @@
   "name": "vike-solid-query",
   "version": "0.1.0",
   "type": "module",
-  "main": "./dist/src/server.js",
+  "main": "./dist/src/index/server.js",
   "typings": "dist/src/index.d.ts",
-  "module": "./dist/src/server.js",
+  "module": "./dist/src/index/server.js",
   "types": "./dist/src/index.d.ts",
   "browser": {
-    "./dist/src/server.js": "./dist/src/index.js"
+    "./dist/src/index/server.js": "./dist/src/index.js"
   },
   "exports": {
     ".": {
-      "browser": "./dist/src/index.js",
-      "node": "./dist/src/server.js",
-      "default": "./dist/src/index.js",
-      "types": "./dist/src/index.d.ts"
+      "worker": {
+        "import": {
+          "types": "./dist/src/index.d.ts",
+          "default": "./dist/src/index/server.js"
+        }
+      },
+      "browser": {
+        "import": {
+          "types": "./dist/src/index.d.ts",
+          "default": "./dist/src/index.js"
+        }
+      },
+      "deno": {
+        "import": {
+          "types": "./dist/src/index.d.ts",
+          "default": "./dist/src/index/server.js"
+        }
+      },
+      "node": {
+        "import": {
+          "types": "./dist/src/index.d.ts",
+          "default": "./dist/src/index/server.js"
+        }
+      },
+      "import": {
+        "types": "./dist/src/index.d.ts",
+        "default": "./dist/src/index.js"
+      }
     },
-    "./config": "./dist/integration/+config.js",
     "./__internal/integration/Wrapper": {
-      "solid": "./dist/integration/Wrapper.js",
+      "solid": "./dist/integration/Wrapper.jsx",
       "import": {
         "types": "./dist/integration/Wrapper.d.ts",
         "default": "./dist/integration/Wrapper.js"
       }
+    },
+    "./config": {
+      "types": "./dist/integration/+config.d.ts",
+      "default": "./dist/integration/+config.js"
     }
   },
   "scripts": {
-    "dev": "rollup -c rollup.config.js --watch",
+    "dev": "tsup --watch",
     "dev:typecheck": "tsc --noEmit --watch",
-    "build": "tsc --noEmit && rollup -c rollup.config.js",
+    "build": "rimraf dist && tsup",
     "release": "LANG=en_US release-me patch",
     "release:minor": "LANG=en_US release-me minor",
     "release:commit": "LANG=en_US release-me commit"
@@ -43,20 +70,24 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@tanstack/solid-query": "^5.59.13",
+    "@types/node": "^22.5.5",
+    "rimraf": "^6.0.1",
     "rollup": "^4.24.0",
     "rollup-plugin-dts": "^6.1.1",
     "solid-js": "^1.9.2",
+    "tsup": "^8.3.0",
+    "tsup-preset-solid": "^2.2.0",
     "typescript": "^5.6.3",
     "vike": "^0.4.199",
     "vike-solid": "workspace:*"
   },
   "typesVersions": {
     "*": {
-      "config": [
-        "dist/integration/+config.d.ts"
-      ],
       "__internal/integration/Wrapper": [
-        "dist/integration/Wrapper.d.ts"
+        "./dist/integration/Wrapper.d.ts"
+      ],
+      "config": [
+        "./dist/integration/+config.d.ts"
       ]
     }
   },
