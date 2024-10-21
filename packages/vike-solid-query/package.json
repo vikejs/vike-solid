@@ -12,40 +12,27 @@
   "exports": {
     ".": {
       "worker": {
-        "import": {
-          "types": "./dist/src/index.d.ts",
-          "default": "./dist/src/index/server.js"
-        }
+        "types": "./dist/src/index.d.ts",
+        "default": "./dist/src/index/server.js"
       },
       "browser": {
-        "import": {
-          "types": "./dist/src/index.d.ts",
-          "default": "./dist/src/index.js"
-        }
-      },
-      "deno": {
-        "import": {
-          "types": "./dist/src/index.d.ts",
-          "default": "./dist/src/index/server.js"
-        }
-      },
-      "node": {
-        "import": {
-          "types": "./dist/src/index.d.ts",
-          "default": "./dist/src/index/server.js"
-        }
-      },
-      "import": {
         "types": "./dist/src/index.d.ts",
         "default": "./dist/src/index.js"
-      }
+      },
+      "deno": {
+        "types": "./dist/src/index.d.ts",
+        "default": "./dist/src/index/server.js"
+      },
+      "node": {
+        "types": "./dist/src/index.d.ts",
+        "default": "./dist/src/index/server.js"
+      },
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
     },
     "./__internal/integration/Wrapper": {
-      "solid": "./dist/integration/Wrapper.jsx",
-      "import": {
-        "types": "./dist/integration/Wrapper.d.ts",
-        "default": "./dist/integration/Wrapper.js"
-      }
+      "types": "./dist/integration/Wrapper.d.ts",
+      "default": "./dist/integration/Wrapper.js"
     },
     "./config": {
       "types": "./dist/integration/+config.d.ts",

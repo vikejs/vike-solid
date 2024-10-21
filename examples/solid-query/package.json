@@ -9,7 +9,7 @@
     "@tanstack/solid-query": "^5.56.2",
     "node-fetch": "^3.3.2",
     "solid-js": "^1.8.22",
-    "vike": "^0.4.197",
+    "vike": "^0.4.199",
     "vike-solid": "workspace:*",
     "vike-solid-query": "workspace:^"
   },

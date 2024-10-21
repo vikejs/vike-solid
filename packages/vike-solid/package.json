@@ -3,9 +3,9 @@
   "version": "0.7.6",
   "type": "module",
   "scripts": {
-    "dev": "rollup -c rollup.config.js --watch",
+    "dev": "tsup --watch",
     "dev:typecheck": "tsc --noEmit --watch",
-    "build": "tsc --noEmit && rollup -c rollup.config.js",
+    "build": "rimraf dist && tsup",
     "release": "LANG=en_US release-me patch",
     "release:minor": "LANG=en_US release-me minor",
     "release:commit": "LANG=en_US release-me commit"
@@ -29,66 +29,160 @@
     "@types/node": "^22.5.5",
     "babel-preset-solid": "^1.9.2",
     "bumpp": "^9.7.1",
+    "rimraf": "^6.0.1",
     "rollup": "^4.24.0",
     "rollup-plugin-dts": "^6.1.1",
     "solid-js": "^1.9.2",
     "tslib": "^2.7.0",
+    "tsup": "^8.3.0",
+    "tsup-preset-solid": "^2.2.0",
     "typescript": "^5.6.3",
     "vike": "^0.4.199",
     "vite": "^5.4.9"
   },
   "exports": {
-    "./config": "./dist/+config.js",
-    "./vite": "./dist/vite-plugin-vike-solid.js",
-    "./usePageContext": "./dist/hooks/usePageContext.js",
-    "./useData": "./dist/hooks/useData.js",
-    "./useConfig": {
-      "browser": "./dist/hooks/useConfig/useConfig-client.js",
-      "default": "./dist/hooks/useConfig/useConfig-server.js"
+    "./__internal/integration/onRenderClient": {
+      "types": "./dist/integration/onRenderClient.d.ts",
+      "default": "./dist/integration/onRenderClient.js"
+    },
+    "./__internal/integration/onRenderHtml": {
+      "worker": {
+        "types": "./dist/integration/onRenderHtml.d.ts",
+        "default": "./dist/integration/onRenderHtml/server.js"
+      },
+      "browser": {
+        "types": "./dist/integration/onRenderHtml.d.ts",
+        "default": "./dist/integration/onRenderHtml.js"
+      },
+      "deno": {
+        "types": "./dist/integration/onRenderHtml.d.ts",
+        "default": "./dist/integration/onRenderHtml/server.js"
+      },
+      "node": {
+        "types": "./dist/integration/onRenderHtml.d.ts",
+        "default": "./dist/integration/onRenderHtml/server.js"
+      },
+      "types": "./dist/integration/onRenderHtml.d.ts",
+      "default": "./dist/integration/onRenderHtml.js"
+    },
+    "./clientOnly": {
+      "types": "./dist/helpers/clientOnly.d.ts",
+      "default": "./dist/helpers/clientOnly.js"
+    },
+    "./config": {
+      "types": "./dist/+config.d.ts",
+      "default": "./dist/+config.js"
     },
     "./Config": {
-      "browser": "./dist/components/Config/Config-client.js",
-      "default": "./dist/components/Config/Config-server.js"
+      "worker": {
+        "types": "./dist/components/Config/Config-client.d.ts",
+        "default": "./dist/components/Config/Config-server/server.js"
+      },
+      "browser": {
+        "types": "./dist/components/Config/Config-client.d.ts",
+        "default": "./dist/components/Config/Config-client.js"
+      },
+      "deno": {
+        "types": "./dist/components/Config/Config-client.d.ts",
+        "default": "./dist/components/Config/Config-server/server.js"
+      },
+      "node": {
+        "types": "./dist/components/Config/Config-client.d.ts",
+        "default": "./dist/components/Config/Config-server/server.js"
+      },
+      "types": "./dist/components/Config/Config-client.d.ts",
+      "default": "./dist/components/Config/Config-client.js"
     },
     "./Head": {
-      "browser": "./dist/components/Head/Head-client.js",
-      "default": "./dist/components/Head/Head-server.js"
+      "worker": {
+        "types": "./dist/components/Head/Head-client.d.ts",
+        "default": "./dist/components/Head/Head-server/server.js"
+      },
+      "browser": {
+        "types": "./dist/components/Head/Head-client.d.ts",
+        "default": "./dist/components/Head/Head-client.js"
+      },
+      "deno": {
+        "types": "./dist/components/Head/Head-client.d.ts",
+        "default": "./dist/components/Head/Head-server/server.js"
+      },
+      "node": {
+        "types": "./dist/components/Head/Head-client.d.ts",
+        "default": "./dist/components/Head/Head-server/server.js"
+      },
+      "types": "./dist/components/Head/Head-client.d.ts",
+      "default": "./dist/components/Head/Head-client.js"
     },
-    "./clientOnly": "./dist/helpers/clientOnly.js",
-    "./__internal/integration/onRenderHtml": "./dist/integration/onRenderHtml.js",
-    "./__internal/integration/onRenderClient": "./dist/integration/onRenderClient.js",
+    "./useConfig": {
+      "worker": {
+        "types": "./dist/hooks/useConfig/useConfig-client.d.ts",
+        "default": "./dist/hooks/useConfig/useConfig-server/server.js"
+      },
+      "browser": {
+        "types": "./dist/hooks/useConfig/useConfig-client.d.ts",
+        "default": "./dist/hooks/useConfig/useConfig-client.js"
+      },
+      "deno": {
+        "types": "./dist/hooks/useConfig/useConfig-client.d.ts",
+        "default": "./dist/hooks/useConfig/useConfig-server/server.js"
+      },
+      "node": {
+        "types": "./dist/hooks/useConfig/useConfig-client.d.ts",
+        "default": "./dist/hooks/useConfig/useConfig-server/server.js"
+      },
+      "types": "./dist/hooks/useConfig/useConfig-client.d.ts",
+      "default": "./dist/hooks/useConfig/useConfig-client.js"
+    },
+    "./useData": {
+      "types": "./dist/hooks/useData.d.ts",
+      "default": "./dist/hooks/useData.js"
+    },
+    "./usePageContext": {
+      "types": "./dist/hooks/usePageContext.d.ts",
+      "default": "./dist/hooks/usePageContext.js"
+    },
+    "./vite": {
+      "types": "./dist/vite-plugin-vike-solid.d.ts",
+      "default": "./dist/vite-plugin-vike-solid.js"
+    },
     "./client": {
       "types": "./client.d.ts"
     }
   },
   "typesVersions": {
     "*": {
+      "__internal/integration/onRenderClient": [
+        "./dist/integration/onRenderClient.d.ts"
+      ],
+      "__internal/integration/onRenderHtml": [
+        "./dist/integration/onRenderHtml.d.ts"
+      ],
+      "clientOnly": [
+        "./dist/helpers/clientOnly.d.ts"
+      ],
       "config": [
-        "dist/+config.d.ts"
+        "./dist/+config.d.ts"
+      ],
+      "Config": [
+        "./dist/components/Config/Config-client.d.ts"
+      ],
+      "Head": [
+        "./dist/components/Head/Head-client.d.ts"
+      ],
+      "useConfig": [
+        "./dist/hooks/useConfig/useConfig-client.d.ts"
+      ],
+      "useData": [
+        "./dist/hooks/useData.d.ts"
+      ],
+      "usePageContext": [
+        "./dist/hooks/usePageContext.d.ts"
       ],
       "vite": [
-        "dist/vite-plugin-vike-solid.d.ts"
+        "./dist/vite-plugin-vike-solid.d.ts"
       ],
       "client": [
         "client.d.ts"
-      ],
-      "usePageContext": [
-        "dist/hooks/usePageContext.d.ts"
-      ],
-      "useData": [
-        "dist/hooks/useData.d.ts"
-      ],
-      "useConfig": [
-        "dist/hooks/useConfig/useConfig-server.d.ts"
-      ],
-      "Config": [
-        "./dist/components/Config/Config-server.d.ts"
-      ],
-      "Head": [
-        "./dist/components/Head/Head-server.d.ts"
-      ],
-      "clientOnly": [
-        "dist/helpers/clientOnly.d.ts"
       ]
     }
   },
@@ -97,5 +191,14 @@
     "client.d.ts"
   ],
   "repository": "github:vikejs/vike-solid",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "./dist/integration/onRenderClient.js",
+  "module": "./dist/integration/onRenderClient.js",
+  "types": "./dist/integration/onRenderClient.d.ts",
+  "browser": {
+    "./dist/integration/onRenderHtml/server.js": "./dist/integration/onRenderHtml.js",
+    "./dist/components/Config/Config-server/server.js": "./dist/components/Config/Config-client.js",
+    "./dist/components/Head/Head-server/server.js": "./dist/components/Head/Head-client.js",
+    "./dist/hooks/useConfig/useConfig-server/server.js": "./dist/hooks/useConfig/useConfig-client.js"
+  }
 }
