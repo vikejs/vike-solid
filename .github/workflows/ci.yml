@@ -20,6 +20,7 @@ jobs:
         cmd:
           - pnpm run test:e2e
           - pnpm run test:types
+          - pnpm run lint
         # `exclude` docs & alternatives:
         # - https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategymatrixexclude
         # - https://stackoverflow.com/questions/68994484/how-to-skip-a-configuration-of-a-matrix-with-github-actions/68994907#68994907
@@ -27,6 +28,8 @@ jobs:
         exclude:
           - os: windows-latest
             cmd: pnpm run test:types
+          - os: windows-latest
+            cmd: pnpm run lint
 
     steps:
       - uses: actions/checkout@v4
