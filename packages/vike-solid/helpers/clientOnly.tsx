@@ -21,6 +21,7 @@ export function clientOnly<T extends Component<any>>(fn: () => Promise<{ default
 
   const [comp, setComp] = createSignal<T>();
   fn().then((m) => setComp(() => ("default" in m ? m.default : m)));
+  // eslint-disable-next-line solid/reactivity
   return (props: ComponentProps<T>) => {
     let Comp: T | undefined;
     let m: boolean;
