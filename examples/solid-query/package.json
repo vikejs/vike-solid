@@ -6,16 +6,16 @@
     "test": "tsc --noEmit"
   },
   "dependencies": {
-    "@tanstack/solid-query": "^5.56.2",
+    "@tanstack/solid-query": "^5.59.13",
     "node-fetch": "^3.3.2",
-    "solid-js": "^1.8.22",
-    "vike": "^0.4.197",
+    "solid-js": "^1.9.2",
+    "vike": "^0.4.199",
     "vike-solid": "workspace:*",
     "vike-solid-query": "workspace:^"
   },
   "devDependencies": {
-    "typescript": "^5.6.2",
-    "vite": "^5.4.5"
+    "typescript": "^5.6.3",
+    "vite": "^5.4.9"
   },
   "type": "module"
 }
