@@ -14,7 +14,7 @@
     "format:biome": "biome format --write .",
     "format:check": "biome format . || (echo 'Fix formatting by running `$ pnpm run -w format`.' && exit 1)",
     "========= Lint": "",
-    "lint": "eslint packages/**/*.{js,ts,jsx,tsx} examples/**/*.{js,ts,jsx,tsx}",
+    "lint": "eslint .",
     "========= Release": "",
     "release": "cd ./packages/vike-solid/ && pnpm run release",
     "release:minor": "cd ./packages/vike-solid/ && pnpm run release:minor",

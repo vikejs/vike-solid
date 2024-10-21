@@ -1,7 +1,7 @@
 export { usePageContext };
 export { PageContextProvider };
 
-import { createContext, useContext, type JSX } from "solid-js";
+import { type JSX, createContext, useContext } from "solid-js";
 import { type Store } from "solid-js/store";
 import type { PageContext } from "vike/types";
 import { getGlobalObject } from "../utils/getGlobalObject.js";
@@ -15,6 +15,7 @@ function PageContextProvider(props: {
   children: JSX.Element;
 }) {
   const { solidContext } = globalContext;
+  // eslint-disable-next-line solid/reactivity
   return <solidContext.Provider value={props.pageContext}>{props.children}</solidContext.Provider>;
 }
 

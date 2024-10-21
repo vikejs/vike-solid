@@ -1,9 +1,9 @@
 import {
   type Component,
   type ComponentProps,
+  type JSX,
   createMemo,
   createSignal,
-  type JSX,
   onMount,
   sharedConfig,
   splitProps,
@@ -21,6 +21,7 @@ export function clientOnly<T extends Component<any>>(fn: () => Promise<{ default
 
   const [comp, setComp] = createSignal<T>();
   fn().then((m) => setComp(() => ("default" in m ? m.default : m)));
+  // eslint-disable-next-line solid/reactivity
   return (props: ComponentProps<T>) => {
     let Comp: T | undefined;
     let m: boolean;
@@ -28,8 +29,9 @@ export function clientOnly<T extends Component<any>>(fn: () => Promise<{ default
     if ((Comp = comp()) && !sharedConfig.context) return Comp(rest);
     const [mounted, setMounted] = createSignal(!sharedConfig.context);
     onMount(() => setMounted(true));
-    return createMemo(
+    const res = createMemo(
       () => ((Comp = comp()), (m = mounted()), untrack(() => (Comp && m ? Comp(rest) : props.fallback))),
     );
+    return res;
   };
 }
