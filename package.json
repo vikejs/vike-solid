@@ -38,7 +38,7 @@
     "eslint-plugin-solid": "^0.14.4",
     "playwright": "^1.49.0",
     "typescript": "^5.7.2",
-    "typescript-eslint": "^8.16.0"
+    "typescript-eslint": "^8.17.0"
   },
   "packageManager": "pnpm@9.14.4"
 }
