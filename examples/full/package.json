@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite dev --port 3000",
     "build": "vite build",
-    "preview": "vite build && vite preview",
+    "preview": "vite build && vite preview --port 3000",
     "test": "tsc --noEmit"
   },
   "dependencies": {
@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "typescript": "^5.7.2",
-    "vite": "^5.4.11"
+    "vite": "^6.0.3"
   },
   "type": "module"
 }

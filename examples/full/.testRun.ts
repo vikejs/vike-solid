@@ -7,7 +7,9 @@ const dataHk = partRegex`data-hk=${/[0-9-]+/}`;
 let isProd: boolean;
 
 function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
-  run(cmd);
+  run(cmd, {
+    serverIsReadyMessage: "Local:",
+  });
 
   isProd = cmd !== "pnpm run dev";
 
