@@ -1,3 +1,18 @@
+## [0.7.7](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.6...vike-solid@0.7.7) (2024-12-10)
+
+
+### Bug Fixes
+
+* improve stream setting type ([33873c5](https://github.com/vikejs/vike-solid/commit/33873c559964ecff0b38999bbe181506196b2b5a))
+* simplify JSDocs for stream setting ([e68e8e4](https://github.com/vikejs/vike-solid/commit/e68e8e4dd859af74ce36c25ca1aed87169030ce2))
+
+
+### Features
+
+* upgrade clientOnly helper ([d739a23](https://github.com/vikejs/vike-solid/commit/d739a23d110b174b174d232f2306e3871b871b92))
+
+
+
 ## [0.7.6](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.5...vike-solid@0.7.6) (2024-09-29)
 
 
