@@ -145,7 +145,7 @@ declare global {
        *
        * https://vike.dev/stream
        */
-      stream?: boolean | "web";
+      stream?: boolean | "node" | "web";
 
       /**
        * Client-side hook called after the page is rendered.
