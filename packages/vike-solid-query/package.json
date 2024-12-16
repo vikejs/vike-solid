@@ -41,7 +41,7 @@
   "devDependencies": {
     "@brillout/release-me": "^0.4.2",
     "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
     "@tanstack/solid-query": "^5.62.3",
     "rollup": "^4.28.1",
     "rollup-plugin-dts": "^6.1.1",
