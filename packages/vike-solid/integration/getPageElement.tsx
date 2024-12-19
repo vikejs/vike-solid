@@ -46,7 +46,7 @@ function Wrapper(props: { children: JSX.Element }) {
     });
   };
 
-  return <>{renderWrappers()}</>;
+  return <>{renderWrappers(0)}</>;
 }
 
 function Page() {
