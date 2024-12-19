@@ -1,3 +1,13 @@
+## [0.7.8](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.7...vike-solid@0.7.8) (2024-12-19)
+
+
+### Bug Fixes
+
+* Nested layouts infinite recursive call. ([938c6a9](https://github.com/vikejs/vike-solid/commit/938c6a9ee094cb4c32fab477aa6b66f758042b1e))
+* state persistence across new layout navigations. ([269d60c](https://github.com/vikejs/vike-solid/commit/269d60c32b8b05d9ef49a43d41792e17cff4022f))
+
+
+
 ## [0.7.7](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.6...vike-solid@0.7.7) (2024-12-10)
 
 
