@@ -28,12 +28,12 @@ function Wrapper(props: { children: JSX.Element }) {
         ...(pageContext.config.Layout || []),
         // Outer wrapping
         ...(pageContext.config.Wrapper || []),
-      ]),
+        ].reverse()),
     );
   });
 
   const renderWrappers = (i: number = 0) => {
-    let item = wrappers.at(-(i + 1));
+    let item = wrappers[i]; // Assumes reversed, and must access with `[i]` instead of `.at(i)` otherwise, wrapper's states are not persisted.
 
     if (!item) return props.children;
 
@@ -46,7 +46,7 @@ function Wrapper(props: { children: JSX.Element }) {
     });
   };
 
-  return <>{renderWrappers()}</>;
+  return <>{renderWrappers(0)}</>;
 }
 
 function Page() {
