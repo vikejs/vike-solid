@@ -23,12 +23,14 @@ function Wrapper(props: { children: JSX.Element }) {
 
   createComputed(() => {
     setWrappers(
-      reconcile([
-        // Inner wrapping
-        ...(pageContext.config.Layout || []),
-        // Outer wrapping
-        ...(pageContext.config.Wrapper || []),
-        ].reverse()),
+      reconcile(
+        [
+          // Inner wrapping
+          ...(pageContext.config.Layout || []),
+          // Outer wrapping
+          ...(pageContext.config.Wrapper || []),
+        ].reverse(),
+      ),
     );
   });
 
