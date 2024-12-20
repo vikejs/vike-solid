@@ -34,7 +34,7 @@ function Wrapper(props: { children: JSX.Element }) {
     );
   });
 
-  const renderWrappers = (i: number = 0) => {
+  const renderWrappers = (i: number) => {
     let item = wrappers[i]; // Assumes reversed, and must access with `[i]` instead of `.at(i)` otherwise, wrapper's states are not persisted.
 
     if (!item) return props.children;
