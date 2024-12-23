@@ -28,14 +28,14 @@
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@types/node": "^22.10.1",
     "babel-preset-solid": "^1.9.3",
-    "bumpp": "^9.9.1",
-    "rollup": "^4.28.1",
+    "bumpp": "^9.9.2",
+    "rollup": "^4.29.1",
     "rollup-plugin-dts": "^6.1.1",
     "solid-js": "^1.9.3",
     "tslib": "^2.8.1",
     "typescript": "^5.7.2",
-    "vike": "^0.4.209",
-    "vite": "^6.0.3"
+    "vike": "^0.4.210",
+    "vite": "^6.0.5"
   },
   "exports": {
     "./config": "./dist/+config.js",
