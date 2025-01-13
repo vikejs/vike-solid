@@ -1,20 +1,20 @@
 {
   "private": true,
   "scripts": {
-    "dev": "vite dev --port 3000",
-    "build": "vite build",
-    "preview": "vite build && vite preview --port 3000",
+    "dev": "vike dev",
+    "build": "vike build",
+    "preview": "vike build && vike preview",
     "test": "tsc --noEmit"
   },
   "dependencies": {
     "node-fetch": "^3.3.2",
-    "solid-js": "^1.9.3",
-    "vike": "^0.4.206",
+    "solid-js": "^1.9.4",
+    "vike": "^0.4.214",
     "vike-solid": "workspace:*"
   },
   "devDependencies": {
-    "typescript": "^5.7.2",
-    "vite": "^6.0.3"
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
   },
   "type": "module"
 }

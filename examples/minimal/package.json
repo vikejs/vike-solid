@@ -1,16 +1,16 @@
 {
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite build && vite preview"
+    "dev": "vike dev",
+    "build": "vike build",
+    "preview": "vike build && vike preview"
   },
   "dependencies": {
-    "solid-js": "^1.9.3",
-    "vike": "^0.4.206",
+    "solid-js": "^1.9.4",
+    "vike": "^0.4.214",
     "vike-solid": "workspace:*"
   },
   "devDependencies": {
-    "vite": "^6.0.3"
+    "vite": "^6.0.7"
   },
   "type": "module"
 }

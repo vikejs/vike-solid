@@ -1,21 +1,21 @@
 {
   "private": true,
   "scripts": {
-    "dev": "vite dev --port 3000",
-    "preview": "vite build && vite preview --port 3000",
+    "dev": "vike dev",
+    "preview": "vike build && vike preview",
     "test": "tsc --noEmit"
   },
   "dependencies": {
-    "@tanstack/solid-query": "^5.62.3",
+    "@tanstack/solid-query": "^5.64.0",
     "node-fetch": "^3.3.2",
-    "solid-js": "^1.9.3",
-    "vike": "^0.4.206",
+    "solid-js": "^1.9.4",
+    "vike": "^0.4.214",
     "vike-solid": "workspace:*",
     "vike-solid-query": "workspace:^"
   },
   "devDependencies": {
-    "typescript": "^5.7.2",
-    "vite": "^6.0.3"
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
   },
   "type": "module"
 }
