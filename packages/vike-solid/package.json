@@ -28,7 +28,7 @@
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@types/node": "^22.10.10",
     "babel-preset-solid": "^1.9.3",
-    "bumpp": "^9.11.1",
+    "bumpp": "^10.0.1",
     "rollup": "^4.32.0",
     "rollup-plugin-dts": "^6.1.1",
     "solid-js": "^1.9.4",
