@@ -10,20 +10,20 @@ import { applyHeadSettings } from "../../integration/applyHeadSettings.jsx";
 function useConfig(): (config: ConfigFromHook) => void {
   // Vike hook
   let pageContext = getPageContext() as PageContext & PageContextInternal;
-  if (pageContext) return (config: ConfigFromHook) => setPageContextConfigFromHook(config, pageContext);
 
   // Component
-  pageContext = usePageContext();
+  if (!pageContext) pageContext = usePageContext() as PageContext & PageContextInternal;;
   return (config: ConfigFromHook) => {
     if (!("_headAlreadySet" in pageContext)) {
       setPageContextConfigFromHook(config, pageContext);
     } else {
-      applyHead(config);
+      if (typeof window !== 'undefined') applyHead(config);
     }
   };
 }
 
 function setPageContextConfigFromHook(config: ConfigFromHook, pageContext: PageContextInternal) {
+  console.log("setting page context config from hook.", config)
   pageContext._configFromHook ??= {};
   Object.assign(pageContext._configFromHook, config);
 }
