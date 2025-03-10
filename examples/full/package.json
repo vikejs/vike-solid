@@ -8,13 +8,13 @@
   },
   "dependencies": {
     "node-fetch": "^3.3.2",
-    "solid-js": "^1.9.4",
-    "vike": "^0.4.219",
+    "solid-js": "^1.9.5",
+    "vike": "^0.4.224",
     "vike-solid": "workspace:*"
   },
   "devDependencies": {
-    "typescript": "^5.7.3",
-    "vite": "^6.0.11"
+    "typescript": "^5.8.2",
+    "vite": "^6.2.1"
   },
   "type": "module"
 }
