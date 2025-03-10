@@ -12,12 +12,12 @@ function useConfig(): (config: ConfigFromHook) => void {
   let pageContext = getPageContext() as PageContext & PageContextInternal;
 
   // Component
-  if (!pageContext) pageContext = usePageContext() as PageContext & PageContextInternal;;
+  if (!pageContext) pageContext = usePageContext() as PageContext & PageContextInternal;
   return (config: ConfigFromHook) => {
     if (!("_headAlreadySet" in pageContext)) {
       setPageContextConfigFromHook(config, pageContext);
     } else {
-      if (typeof window !== 'undefined') applyHead(config);
+      if (typeof window !== "undefined") applyHead(config);
     }
   };
 }
