@@ -23,7 +23,6 @@ function useConfig(): (config: ConfigFromHook) => void {
 }
 
 function setPageContextConfigFromHook(config: ConfigFromHook, pageContext: PageContextInternal) {
-  console.log("setting page context config from hook.", config)
   pageContext._configFromHook ??= {};
   Object.assign(pageContext._configFromHook, config);
 }
