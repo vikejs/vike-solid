@@ -1,3 +1,13 @@
+## [0.7.9](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.8...vike-solid@0.7.9) (2025-03-10)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([0b8857f](https://github.com/vikejs/vike-solid/commit/0b8857fa930f706f87dff76d605f4a22969659ac))
+* Removed early return for useConfig so applyHead can be set on ssr=false. (Fixes [#156](https://github.com/vikejs/vike-solid/issues/156)) ([3b488af](https://github.com/vikejs/vike-solid/commit/3b488af7e0b9d4b3574973f77047ef748138e037))
+
+
+
 ## [0.7.8](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.7...vike-solid@0.7.8) (2024-12-19)
 
 
