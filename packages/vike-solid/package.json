@@ -20,22 +20,22 @@
     "vite": ">=5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.9",
+    "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-typescript": "^7.26.0",
     "@brillout/release-me": "^0.4.3",
     "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@types/node": "^22.10.10",
     "babel-preset-solid": "^1.9.5",
-    "bumpp": "^10.0.3",
+    "bumpp": "^10.1.0",
     "rollup": "^4.35.0",
     "rollup-plugin-dts": "^6.1.1",
     "solid-js": "^1.9.5",
     "tslib": "^2.8.1",
     "typescript": "^5.8.2",
-    "vike": "^0.4.224",
-    "vite": "^6.2.1"
+    "vike": "^0.4.225",
+    "vite": "^6.2.2"
   },
   "exports": {
     "./config": "./dist/+config.js",
