@@ -8,7 +8,7 @@
 Enables your Solid components to fetch data using [TanStack Query](https://tanstack.com/query/latest).
 
 > [!NOTE]
-> You'll also get [progressive rendering](https://vike.dev/streaming#progressive-rendering) and [supports](https://tanstack.com/query/latest/docs/framework/solid/reference/createQuery#usage-with-suspense) for triggering SolidJS Suspense and ErrorBoundary components when the query is in a pending or error state.
+> You'll also get [progressive rendering](https://vike.dev/streaming#progressive-rendering) and [supports](https://tanstack.com/query/latest/docs/framework/solid/reference/useQuery#usage-with-suspense) for triggering SolidJS Suspense and ErrorBoundary components when the query is in a pending or error state.
 
 [Installation](#installation)  
 [Basic usage](#basic-usage)  
@@ -38,11 +38,11 @@ Enables your Solid components to fetch data using [TanStack Query](https://tanst
 ## Basic usage
 
 ```tsx
-import { createQuery } from "@tanstack/solid-query";
+import { useQuery } from "@tanstack/solid-query";
 import { Suspense } from "solid-js";
 
 const Movie = (props: { id }) => {
-    const query = createQuery(() => ({
+    const query = useQuery(() => ({
         queryKey: ["movies", props.id],
         queryFn: () =>
         fetch(`https://brillout.github.io/star-wars/api/films/${props.id}.json`)
@@ -76,7 +76,7 @@ const Movie = (props: { id }) => {
 
 **Types :**
 ```js
-query: CreateQueryResult<T, Error>;  
+query: UseQueryResult<T, Error>;  
 loadingFallback?: JSX.Element;  
 notFoundFallback?: JSX.Element;  
 errorFallback?: JSX.Element | ((err: any, reset: () => void) => JSX.Element);  
@@ -86,11 +86,11 @@ children: (data: Exclude<T, null | false | undefined>) => JSX.Element;
 ```tsx
 // Movie.tsx
 
-import { createQuery } from "@tanstack/solid-query";
+import { useQuery } from "@tanstack/solid-query";
 import { QueryBoundary } from "vike-solid-query";
 
 function Movie(props: { id: string }) {
-  const query = createQuery(() => ({
+  const query = useQuery(() => ({
     queryKey: ["movies", props.id],
     queryFn: () =>
         fetch(`https://brillout.github.io/star-wars/api/films/${props.id}.json`)
@@ -130,14 +130,14 @@ function Movie(props: { id: string }) {
 To set tags such as `<title>` and `<meta name="description">` based on fetched data, you can use [`<Config>`, `<Head>`, and `useConfig()`](https://vike.dev/useConfig).
 
 ```tsx
-import { createQuery } from "@tanstack/solid-query";
+import { useQuery } from "@tanstack/solid-query";
 import { Config } from 'vike-solid/Config'
 import { Head } from 'vike-solid/Head'
 import { QueryBoundary } from "vike-solid-query";
 import { For } from "solid-js";
 
 function Movies() {
-  const query = createQuery(() => ({
+  const query = useQuery(() => ({
     queryKey: ["movies"],
     queryFn: () => fetch('https://star-wars.brillout.com/api/films.json')
   }));
@@ -186,5 +186,5 @@ export default {
 ## See also
 
 - [Example](https://github.com/vikejs/vike-solid/tree/main/examples/solid-query)
-- [TanStack Query > CreateQuery > Usage with Suspense](https://tanstack.com/query/latest/docs/framework/solid/reference/createQuery#usage-with-suspense)
+- [TanStack Query > useQuery > Usage with Suspense](https://tanstack.com/query/latest/docs/framework/solid/reference/useQuery#usage-with-suspense)
 - [Vike > Data Fetching](https://vike.dev/data-fetching)
