@@ -42,10 +42,10 @@
     "@brillout/release-me": "^0.4.3",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^16.0.1",
-    "@tanstack/solid-query": "^5.74.7",
+    "@tanstack/solid-query": "^5.75.0",
     "rollup": "^4.40.1",
     "rollup-plugin-dts": "^6.2.1",
-    "solid-js": "^1.9.5",
+    "solid-js": "^1.9.6",
     "typescript": "^5.8.3",
     "vike": "^0.4.229",
     "vike-solid": "workspace:*"
