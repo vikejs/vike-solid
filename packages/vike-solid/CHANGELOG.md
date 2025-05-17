@@ -1,3 +1,12 @@
+## [0.7.10](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.9...vike-solid@0.7.10) (2025-05-17)
+
+
+### Bug Fixes
+
+* fix providePageContext usage ([b15c6d2](https://github.com/vikejs/vike-solid/commit/b15c6d292312f047a0f3cb350b393e4728677d23))
+
+
+
 ## [0.7.9](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.8...vike-solid@0.7.9) (2025-03-10)
 
 
