@@ -11,6 +11,9 @@ import type { Head } from "../types/Config.js";
 import type { JSX } from "solid-js/jsx-runtime";
 import { isCallable } from "../utils/isCallable.js";
 import isBot from "isbot-fast";
+import { isNotNullish } from "../utils/isNotNullish.js";
+import { isObject } from "../utils/isObject.js";
+import { isType } from "../utils/isType.js";
 
 export { onRenderHtml };
 
@@ -50,11 +53,12 @@ async function getPageHtml(pageContext: PageContextServer & PageContextInternal)
     pageContext.userAgent;
 
   if (pageContext.Page) {
+    const streamSetting = resolveStreamSetting(pageContext);
     if (userAgent && isBot(userAgent)) {
       pageHtml = dangerouslySkipEscape(await renderToStringAsync(() => getPageElement(pageContext)));
-    } else if (!pageContext.config.stream) {
+    } else if (!streamSetting.enable) {
       pageHtml = dangerouslySkipEscape(renderToString(() => getPageElement(pageContext)));
-    } else if (pageContext.config.stream === "web") {
+    } else if (streamSetting.type === "web") {
       pageHtml = renderToStream(() => getPageElement(pageContext), {
         onCompleteShell(info) {
           pageContext._stream ??= info;
@@ -161,4 +165,38 @@ function getViewportTag(viewport: Viewport | undefined): string {
     return `<meta name="viewport" content="width=${viewport}">`;
   }
   return "";
+}
+
+type StreamSetting = {
+  type: "node" | "web" | null;
+  enable: boolean | null;
+};
+function resolveStreamSetting(pageContext: PageContextServer): StreamSetting {
+  const { stream } = pageContext.config;
+  const streamSetting: StreamSetting = {
+    type: null,
+    enable: null,
+  };
+  stream
+    ?.reverse()
+    .filter(isNotNullish)
+    .forEach((setting) => {
+      if (typeof setting === "boolean") {
+        streamSetting.enable = setting;
+        return;
+      }
+      if (typeof setting === "string") {
+        streamSetting.type = setting;
+        streamSetting.enable = true;
+        return;
+      }
+      if (isObject(setting)) {
+        if (setting.enable !== null) streamSetting.enable = setting.enable ?? true;
+        if (setting.type !== undefined) streamSetting.type = setting.type;
+        return;
+      }
+      isType<never>(setting);
+      throw new Error(`Unexpected +stream value ${setting}`);
+    });
+  return streamSetting;
 }

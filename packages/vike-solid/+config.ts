@@ -57,6 +57,7 @@ export default {
     },
     stream: {
       env: { server: true },
+      cumulative: true,
     },
     htmlAttributes: {
       env: { server: true },

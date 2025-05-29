@@ -141,11 +141,30 @@ declare global {
       ssr?: boolean;
 
       /**
-       * Enable or disable HTML Streaming.
+       * Settings for HTML Streaming.
        *
        * https://vike.dev/stream
        */
-      stream?: boolean | "node" | "web";
+      stream?:
+        | boolean
+        | "node"
+        | "web"
+        | {
+            /**
+             * Whether the HTML stream should be a Web Stream or a Node.js Stream.
+             *
+             * https://vike.dev/stream
+             */
+            type?: "node" | "web";
+            /**
+             * Setting +stream to `{ enable: null }` is the same as not setting +stream at all.
+             *
+             * Useful for changing stream settings without enabling streaming. For example, Vike extensions can set +stream to `{ enable: null, type: 'web' }` to change the default stream type without enabling streaming.
+             *
+             * https://vike.dev/stream
+             */
+            enable?: boolean | null;
+          };
 
       /**
        * Client-side hook called after the page is rendered.
@@ -161,6 +180,7 @@ declare global {
       bodyAttributes?: TagAttributes[];
       htmlAttributes?: TagAttributes[];
       onAfterRenderClient?: Function[];
+      stream?: Exclude<Config["stream"], ImportString>[];
     }
   }
 }
