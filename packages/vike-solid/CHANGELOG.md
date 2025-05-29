@@ -1,3 +1,12 @@
+## [0.7.11](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.10...vike-solid@0.7.11) (2025-05-29)
+
+
+### Features
+
+* +stream.enable ([04ed852](https://github.com/vikejs/vike-solid/commit/04ed852f8227ddeaaf23b81ff8a5b5eced5fa266))
+
+
+
 ## [0.7.10](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.9...vike-solid@0.7.10) (2025-05-17)
 
 
