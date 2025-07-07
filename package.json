@@ -34,11 +34,11 @@
     "@biomejs/biome": "^1.9.4",
     "@brillout/test-e2e": "^0.6.14",
     "@brillout/test-types": "^0.1.15",
-    "eslint": "^9.29.0",
+    "eslint": "^9.30.1",
     "eslint-plugin-solid": "^0.14.5",
-    "playwright": "^1.53.1",
+    "playwright": "^1.53.2",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.34.1"
+    "typescript-eslint": "^8.35.1"
   },
   "packageManager": "pnpm@9.15.4"
 }
