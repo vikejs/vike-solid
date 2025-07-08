@@ -31,7 +31,7 @@
     }
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.1.1",
     "@brillout/test-e2e": "^0.6.14",
     "@brillout/test-types": "^0.1.15",
     "eslint": "^9.30.1",
