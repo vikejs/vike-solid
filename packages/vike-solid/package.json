@@ -35,7 +35,7 @@
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",
     "vike": "^0.4.235",
-    "vite": "^6.3.5"
+    "vite": "^7.0.4"
   },
   "exports": {
     "./config": "./dist/+config.js",
