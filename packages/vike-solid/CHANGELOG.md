@@ -1,3 +1,12 @@
+## [0.7.12](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.11...vike-solid@0.7.12) (2025-07-29)
+
+
+### Bug Fixes
+
+* vite-plugin-solid@^2.11.8 ([be81863](https://github.com/vikejs/vike-solid/commit/be81863271572c26eaabfd6e92c69f285ae641e3))
+
+
+
 ## [0.7.11](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.10...vike-solid@0.7.11) (2025-05-29)
 
 
