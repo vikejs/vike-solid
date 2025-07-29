@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "isbot-fast": "^1.2.0",
-    "vite-plugin-solid": "^2.11.7"
+    "vite-plugin-solid": "^2.11.8"
   },
   "peerDependencies": {
     "solid-js": "^1.8.7",
