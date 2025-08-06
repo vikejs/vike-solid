@@ -10,7 +10,7 @@
     "vike-solid": "workspace:*"
   },
   "devDependencies": {
-    "vite": "^6.3.5"
+    "vite": "^7.0.6"
   },
   "type": "module"
 }

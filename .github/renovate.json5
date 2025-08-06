@@ -9,6 +9,13 @@
     // peerDependencies ranges should be left untouched/wide.
     ":disablePeerDependencies",
   ],
+  ignorePresets: [":ignoreModulesAndTests"],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**",
+    "**/__fixtures__/**"
+  ],
   labels: ["dependencies"],
   rangeStrategy: "bump",
   assignees: ["@magne4000"],
