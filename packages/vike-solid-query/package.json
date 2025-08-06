@@ -31,7 +31,8 @@
     "build": "tsc --noEmit && rollup -c rollup.config.js",
     "release": "LANG=en_US release-me patch",
     "release:minor": "LANG=en_US release-me minor",
-    "release:commit": "LANG=en_US release-me commit"
+    "release:commit": "LANG=en_US release-me commit",
+    "test:types": "tsc --noEmit"
   },
   "peerDependencies": {
     "@tanstack/solid-query": ">=5.0.0",

@@ -1,6 +1,5 @@
 export { testRun };
 
-import assert from "node:assert";
 import { autoRetry, expect, fetchHtml, getServerUrl, page, partRegex, run, test } from "@brillout/test-e2e";
 const dataHk = partRegex`data-hk=${/[0-9-]+/}`;
 
@@ -73,21 +72,21 @@ function testNavigationBetweenWithSSRAndWithoutSSR() {
     body = await page.textContent("body");
     expect(body).toContain(t1);
     expect(body).not.toContain(t2);
-    ensureWasClientSideRouted("/pages/without-ssr");
+    await ensureWasClientSideRouted("!/pages/without-ssr");
 
     await page.click('a:has-text("Welcome")');
     await testCounter();
     body = await page.textContent("body");
     expect(body).toContain(t2);
     expect(body).not.toContain(t1);
-    ensureWasClientSideRouted("/pages/without-ssr");
+    await ensureWasClientSideRouted("!/pages/without-ssr");
 
     await page.click('a:has-text("Without SSR")');
     await testCounter();
     body = await page.textContent("body");
     expect(body).toContain(t1);
     expect(body).not.toContain(t2);
-    ensureWasClientSideRouted("/pages/without-ssr");
+    await ensureWasClientSideRouted("!/pages/without-ssr");
   });
 }
 
@@ -153,10 +152,10 @@ function testUseConfig() {
   test("useConfig() hydration", async () => {
     await page.goto(getServerUrl() + "/");
     await testCounter();
-    ensureWasClientSideRouted("/pages/index");
+    await ensureWasClientSideRouted("!/pages/index");
     await page.click('a:has-text("useConfig()")');
     await testCounter();
-    ensureWasClientSideRouted("/pages/index");
+    await ensureWasClientSideRouted("!/pages/index");
     await page.goto(getServerUrl() + "/images");
     await testCounter();
   });
@@ -185,7 +184,7 @@ async function testCounter() {
  *   await ensureWasClientSideRouted('/pages/index')
  *   await ensureWasClientSideRouted('/pages/about')
  */
-async function ensureWasClientSideRouted(pageIdFirst: `/pages/${string}`) {
+async function ensureWasClientSideRouted(pageIdFirst: `/pages/${string}` | `!/pages/${string}`) {
   // Check whether the HTML is from the first page before Client-side Routing.
   // page.content() doesn't return the original HTML (it dumps the DOM to HTML).
   // Therefore only the serialized pageContext tell us the original HTML.
@@ -209,6 +208,8 @@ function getAssetUrl(fileName: string) {
     return `/assets/${fileName}`;
   }
   const [fileBaseName, fileExt, ...r] = fileName.split(".");
-  assert(r.length === 0);
+  if (r.length !== 0) {
+    throw new Error(`getAssetUrl() doesn't support file names with more than one dot. Found: ${fileName}`);
+  }
   return partRegex`/assets/static/${fileBaseName}.${/[a-zA-Z0-9_-]+/}.${fileExt}`;
 }
