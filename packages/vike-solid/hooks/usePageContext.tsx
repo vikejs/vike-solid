@@ -10,10 +10,7 @@ const globalContext = getGlobalObject("PageContextProvider.ts", {
   solidContext: createContext<Store<PageContext>>(undefined as never),
 });
 
-function PageContextProvider(props: {
-  pageContext: Store<PageContext>;
-  children: JSX.Element;
-}) {
+function PageContextProvider(props: { pageContext: Store<PageContext>; children: JSX.Element }) {
   const { solidContext } = globalContext;
   // eslint-disable-next-line solid/reactivity
   return <solidContext.Provider value={props.pageContext}>{props.children}</solidContext.Provider>;

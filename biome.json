@@ -1,22 +1,10 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["./node_modules/@vikejs/biome-config/config.json"],
   "files": {
-    "ignore": ["dist/", "package.json"]
-  },
-  "formatter": {
-    "indentWidth": 2,
-    "indentStyle": "space"
-  },
-  "javascript": {
-    "formatter": {
-      "lineWidth": 120
-    }
+    "includes": ["!dist/", "!package.json"]
   },
   "linter": {
     "enabled": false
-  },
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git"
   }
 }
