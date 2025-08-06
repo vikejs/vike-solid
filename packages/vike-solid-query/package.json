@@ -31,7 +31,8 @@
     "build": "tsc --noEmit && rollup -c rollup.config.js",
     "release": "LANG=en_US release-me patch",
     "release:minor": "LANG=en_US release-me minor",
-    "release:commit": "LANG=en_US release-me commit"
+    "release:commit": "LANG=en_US release-me commit",
+    "test:types": "tsc --noEmit"
   },
   "peerDependencies": {
     "@tanstack/solid-query": ">=5.0.0",
@@ -42,12 +43,12 @@
     "@brillout/release-me": "^0.4.8",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^16.0.1",
-    "@tanstack/solid-query": "^5.83.0",
-    "rollup": "^4.45.0",
+    "@tanstack/solid-query": "^5.83.1",
+    "rollup": "^4.46.2",
     "rollup-plugin-dts": "^6.2.1",
     "solid-js": "^1.9.7",
-    "typescript": "^5.8.3",
-    "vike": "^0.4.235",
+    "typescript": "^5.9.2",
+    "vike": "^0.4.236",
     "vike-solid": "workspace:*"
   },
   "typesVersions": {

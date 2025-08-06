@@ -3,19 +3,19 @@
   "scripts": {
     "dev": "vike dev",
     "preview": "vike build && vike preview",
-    "test": "tsc --noEmit"
+    "test:types": "tsc --noEmit"
   },
   "dependencies": {
-    "@tanstack/solid-query": "^5.67.2",
+    "@tanstack/solid-query": "^5.83.1",
     "node-fetch": "^3.3.2",
-    "solid-js": "^1.9.5",
-    "vike": "^0.4.224",
+    "solid-js": "^1.9.7",
+    "vike": "^0.4.236",
     "vike-solid": "workspace:*",
     "vike-solid-query": "workspace:^"
   },
   "devDependencies": {
-    "typescript": "^5.8.2",
-    "vite": "^6.2.1"
+    "typescript": "^5.9.2",
+    "vite": "^6.3.5"
   },
   "type": "module"
 }
