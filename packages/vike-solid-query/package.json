@@ -2,21 +2,21 @@
   "name": "vike-solid-query",
   "version": "0.1.0",
   "type": "module",
-  "main": "./dist/src/server.js",
-  "typings": "dist/src/index.d.ts",
-  "module": "./dist/src/server.js",
-  "types": "./dist/src/index.d.ts",
+  "main": "./dist/server.js",
+  "typings": "dist/index.d.ts",
+  "module": "./dist/server.js",
+  "types": "./dist/index.d.ts",
   "browser": {
-    "./dist/src/server.js": "./dist/src/index.js"
+    "./dist/server.js": "./dist/index.js"
   },
   "exports": {
     ".": {
-      "browser": "./dist/src/index.js",
-      "node": "./dist/src/server.js",
-      "default": "./dist/src/index.js",
-      "types": "./dist/src/index.d.ts"
+      "browser": "./dist/index.js",
+      "node": "./dist/server.js",
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
-    "./config": "./dist/integration/+config.js",
+    "./config": "./dist/integration/config.js",
     "./__internal/integration/Wrapper": {
       "solid": "./dist/integration/Wrapper.js",
       "import": {
@@ -54,7 +54,7 @@
   "typesVersions": {
     "*": {
       "config": [
-        "dist/integration/+config.d.ts"
+        "dist/integration/config.d.ts"
       ],
       "__internal/integration/Wrapper": [
         "dist/integration/Wrapper.d.ts"
