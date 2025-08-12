@@ -16,7 +16,7 @@
       "default": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./config": "./dist/integration/+config.js",
+    "./config": "./dist/integration/config.js",
     "./__internal/integration/Wrapper": {
       "solid": "./dist/integration/Wrapper.js",
       "import": {
@@ -54,7 +54,7 @@
   "typesVersions": {
     "*": {
       "config": [
-        "dist/integration/+config.d.ts"
+        "dist/integration/config.d.ts"
       ],
       "__internal/integration/Wrapper": [
         "dist/integration/Wrapper.d.ts"

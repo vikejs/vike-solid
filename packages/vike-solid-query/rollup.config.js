@@ -5,7 +5,7 @@ export default [
   withSolid({
     input: {
       server: "./src/index.ts",
-      "integration/+config": "./src/integration/+config.ts",
+      "integration/config": "./src/integration/config.ts",
       "integration/Wrapper": "./src/integration/Wrapper.tsx",
     },
     ssr: true,
@@ -21,7 +21,7 @@ export default [
   {
     input: {
       index: "./src/index.ts",
-      "integration/+config": "./src/integration/+config.ts",
+      "integration/config": "./src/integration/config.ts",
       "integration/Wrapper": "./src/integration/Wrapper.tsx",
     },
     output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
