@@ -72,21 +72,21 @@ function testNavigationBetweenWithSSRAndWithoutSSR() {
     body = await page.textContent("body");
     expect(body).toContain(t1);
     expect(body).not.toContain(t2);
-    await ensureWasClientSideRouted("!/pages/without-ssr");
+    await ensureWasClientSideRouted("/pages/without-ssr");
 
     await page.click('a:has-text("Welcome")');
     await testCounter();
     body = await page.textContent("body");
     expect(body).toContain(t2);
     expect(body).not.toContain(t1);
-    await ensureWasClientSideRouted("!/pages/without-ssr");
+    await ensureWasClientSideRouted("/pages/without-ssr");
 
     await page.click('a:has-text("Without SSR")');
     await testCounter();
     body = await page.textContent("body");
     expect(body).toContain(t1);
     expect(body).not.toContain(t2);
-    await ensureWasClientSideRouted("!/pages/without-ssr");
+    await ensureWasClientSideRouted("/pages/without-ssr");
   });
 }
 
@@ -152,10 +152,10 @@ function testUseConfig() {
   test("useConfig() hydration", async () => {
     await page.goto(getServerUrl() + "/");
     await testCounter();
-    await ensureWasClientSideRouted("!/pages/index");
+    await ensureWasClientSideRouted("/pages/index");
     await page.click('a:has-text("useConfig()")');
     await testCounter();
-    await ensureWasClientSideRouted("!/pages/index");
+    await ensureWasClientSideRouted("/pages/index");
     await page.goto(getServerUrl() + "/images");
     await testCounter();
   });
@@ -198,8 +198,9 @@ function findFirstPageId(html: string) {
   expect(html.split('"pageId"').length).toBe(2);
   const match = partRegex`"pageId":"${/([^"]+)/}"`.exec(html);
   expect(match).toBeTruthy();
-  const pageId = match![1];
+  let pageId = match![1];
   expect(pageId).toBeTruthy();
+  pageId = pageId.replaceAll("\\\\/", "/");
   return pageId;
 }
 
