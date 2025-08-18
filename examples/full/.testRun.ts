@@ -207,22 +207,22 @@ async function ensureWasClientSideRouted(pageIdFirst: `/pages/${string}` | `!/pa
   // Check whether the HTML is from the first page before Client-side Routing.
   // page.content() doesn't return the original HTML (it dumps the DOM to HTML).
   // Therefore only the serialized pageContext tell us the original HTML.
-  const html = await page.content()
-  const pageId = findFirstPageId(html)
-  expect(pageId).toBe(pageIdFirst)
+  const html = await page.content();
+  const pageId = findFirstPageId(html);
+  expect(pageId).toBe(pageIdFirst);
 }
 function findFirstPageId(html: string) {
-  expect(html).toContain('<script id="vike_pageContext" type="application/json">')
-  expect(html).toContain('"pageId"')
-  expect(html.split('"pageId"').length).toBe(2)
-  const match = partRegex`"pageId":"${/([^"]+)/}"`.exec(html)
-  expect(match).toBeTruthy()
-  let pageId = match![1]
-  expect(pageId).toBeTruthy()
+  expect(html).toContain('<script id="vike_pageContext" type="application/json">');
+  expect(html).toContain('"pageId"');
+  expect(html.split('"pageId"').length).toBe(2);
+  const match = partRegex`"pageId":"${/([^"]+)/}"`.exec(html);
+  expect(match).toBeTruthy();
+  let pageId = match![1];
+  expect(pageId).toBeTruthy();
   pageId =
     // @ts-ignore
-    pageId.replaceAll('\\\\/', '/')
-  return pageId
+    pageId.replaceAll("\\\\/", "/");
+  return pageId;
 }
 
 function getAssetUrl(fileName: string) {
