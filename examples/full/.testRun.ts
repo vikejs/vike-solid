@@ -201,7 +201,7 @@ function findFirstPageId(html: string) {
   let pageId = match![1];
   expect(pageId).toBeTruthy();
   pageId =
-    // @ts-ignore
+    // @ts-expect-error
     pageId.replaceAll("\\\\/", "/");
   return pageId;
 }
