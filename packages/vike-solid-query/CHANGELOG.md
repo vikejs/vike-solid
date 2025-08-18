@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/vikejs/vike-solid/compare/vike-solid-query@0.1.0...vike-solid-query@0.1.1) (2025-08-18)
+
+
+### Bug Fixes
+
+* rename `+config` to `config` ([c6418e7](https://github.com/vikejs/vike-solid/pull/181/commits/c6418e73add279294fbecb82e197aa115e65d07c))
+
+
+
 # [0.1.0](https://github.com/vikejs/vike-solid/compare/vike-solid-query@0.0.1...vike-solid-query@0.1.0) (2024-09-29)
 
 
