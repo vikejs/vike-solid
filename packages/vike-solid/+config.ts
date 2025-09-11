@@ -7,6 +7,14 @@ export default {
     vike: ">=0.4.195",
   },
 
+  vite: {
+    ssr: {
+      optimizeDeps: {
+        include: ["solid-js/web"],
+      },
+    },
+  },
+
   // https://vike.dev/onRenderHtml
   onRenderHtml: "import:vike-solid/__internal/integration/onRenderHtml:onRenderHtml",
   // https://vike.dev/onRenderClient
