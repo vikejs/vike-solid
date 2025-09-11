@@ -1,5 +1,8 @@
 ## [0.7.13](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.12...vike-solid@0.7.13) (2025-09-11)
 
+### Bug Fixes
+
+* fix: add solid-js/web to ssr.optimizeDeps (cloudflare compat) ([31cccd0](https://github.com/vikejs/vike-solid/commit/31cccd0c7909c25ec5c57025565aeb50b8becac8))
 
 
 ## [0.7.12](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.11...vike-solid@0.7.12) (2025-07-29)
