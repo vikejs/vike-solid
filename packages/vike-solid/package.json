@@ -30,13 +30,13 @@
     "@types/node": "^22.17.0",
     "babel-preset-solid": "^1.9.9",
     "bumpp": "^10.3.1",
-    "rollup": "^4.52.4",
+    "rollup": "^4.52.5",
     "rollup-plugin-dts": "^6.2.3",
     "solid-js": "^1.9.9",
     "tslib": "^2.8.1",
     "typescript": "^5.9.3",
     "vike": "^0.4.242",
-    "vite": "^7.1.9"
+    "vite": "^7.1.11"
   },
   "exports": {
     "./config": "./dist/+config.js",
