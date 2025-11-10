@@ -28,15 +28,15 @@
     "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@types/node": "^22.17.0",
-    "babel-preset-solid": "^1.9.9",
+    "babel-preset-solid": "^1.9.10",
     "bumpp": "^10.3.1",
-    "rollup": "^4.52.5",
+    "rollup": "^4.53.1",
     "rollup-plugin-dts": "^6.2.3",
     "solid-js": "^1.9.10",
     "tslib": "^2.8.1",
     "typescript": "^5.9.3",
-    "vike": "^0.4.244",
-    "vite": "^7.1.12"
+    "vike": "^0.4.245",
+    "vite": "^7.2.2"
   },
   "exports": {
     "./config": "./dist/+config.js",
