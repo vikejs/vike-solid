@@ -43,12 +43,12 @@
     "@brillout/release-me": "^0.4.8",
     "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
-    "@tanstack/solid-query": "^5.90.6",
-    "rollup": "^4.52.5",
+    "@tanstack/solid-query": "^5.90.10",
+    "rollup": "^4.53.1",
     "rollup-plugin-dts": "^6.2.3",
     "solid-js": "^1.9.10",
     "typescript": "^5.9.3",
-    "vike": "^0.4.244",
+    "vike": "^0.4.245",
     "vike-solid": "workspace:*"
   },
   "typesVersions": {

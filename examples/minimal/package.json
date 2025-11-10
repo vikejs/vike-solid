@@ -6,11 +6,11 @@
   },
   "dependencies": {
     "solid-js": "^1.9.10",
-    "vike": "^0.4.244",
+    "vike": "^0.4.245",
     "vike-solid": "workspace:*"
   },
   "devDependencies": {
-    "vite": "^7.1.12"
+    "vite": "^7.2.2"
   },
   "type": "module"
 }
