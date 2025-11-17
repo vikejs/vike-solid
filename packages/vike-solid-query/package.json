@@ -13,16 +13,13 @@
     ".": {
       "browser": "./dist/index.js",
       "node": "./dist/server.js",
-      "default": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
     "./config": "./dist/integration/config.js",
     "./__internal/integration/Wrapper": {
-      "solid": "./dist/integration/Wrapper.js",
-      "import": {
-        "types": "./dist/integration/Wrapper.d.ts",
-        "default": "./dist/integration/Wrapper.js"
-      }
+      "types": "./dist/integration/Wrapper.d.ts",
+      "default": "./dist/integration/Wrapper.js"
     }
   },
   "scripts": {
