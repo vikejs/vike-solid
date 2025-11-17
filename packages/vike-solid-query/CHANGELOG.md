@@ -1,3 +1,12 @@
+## [0.1.2](https://github.com/vikejs/vike-solid/compare/vike-solid-query@0.1.1...vike-solid-query@0.1.2) (2025-11-17)
+
+
+### Bug Fixes
+
+* fix export condition ([791cfc1](https://github.com/vikejs/vike-solid/commit/791cfc1163e325c53028ced63e44f2847c09d42b))
+
+
+
 ## [0.1.1](https://github.com/vikejs/vike-solid/compare/vike-solid-query@0.1.0...vike-solid-query@0.1.1) (2025-08-18)
 
 
