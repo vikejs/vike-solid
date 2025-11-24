@@ -41,11 +41,11 @@
     "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@tanstack/solid-query": "^5.90.13",
-    "rollup": "^4.53.2",
+    "rollup": "^4.53.3",
     "rollup-plugin-dts": "^6.2.3",
     "solid-js": "^1.9.10",
     "typescript": "^5.9.3",
-    "vike": "^0.4.246",
+    "vike": "^0.4.247",
     "vike-solid": "workspace:*"
   },
   "typesVersions": {
