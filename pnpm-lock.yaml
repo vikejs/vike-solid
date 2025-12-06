@@ -12,8 +12,8 @@ importers:
         specifier: ^2.3.8
         version: 2.3.8
       '@brillout/test-e2e':
-        specifier: ^0.6.19
-        version: 0.6.19
+        specifier: ^0.6.20
+        version: 0.6.20
       '@vikejs/biome-config':
         specifier: ^2.0.1
         version: 2.0.1(@biomejs/biome@2.3.8)
@@ -786,8 +786,8 @@ packages:
   '@brillout/require-shim@0.1.2':
     resolution: {integrity: sha512-3I4LRHnVZXoSAsEoni5mosq9l6eiJED58d9V954W4CIZ88AUfYBanWGBGbJG3NztaRTpFHEA6wB3Hn93BmmJdg==}
 
-  '@brillout/test-e2e@0.6.19':
-    resolution: {integrity: sha512-+SrDlK67lGBmBWkHnAwt/e+M/Glc57LL4WgIQeSsDbgQZ9gZ8LIhcl0QjyizsPJGJp0Aw8CqaDxZdDPYOL7Psg==}
+  '@brillout/test-e2e@0.6.20':
+    resolution: {integrity: sha512-bhrUsLtmlPg0QayXS1ni7SpCG4cV19sXEV8s1uslXhpEWYujQieRqBUMUfFFkHp97Fl9uo/8xYqJ9zwEFoBNUw==}
     hasBin: true
 
   '@brillout/vite-plugin-server-entry@0.7.15':
@@ -3271,7 +3271,7 @@ snapshots:
 
   '@brillout/require-shim@0.1.2': {}
 
-  '@brillout/test-e2e@0.6.19':
+  '@brillout/test-e2e@0.6.20':
     dependencies:
       '@brillout/part-regex': 0.1.4
       '@brillout/picocolors': 1.0.29
