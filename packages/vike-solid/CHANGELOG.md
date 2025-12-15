@@ -1,3 +1,12 @@
+## [0.7.14](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.13...vike-solid@0.7.14) (2025-12-15)
+
+
+### Bug Fixes
+
+* ensure getPageContext() doesn't use async hooks ([37db49e](https://github.com/vikejs/vike-solid/commit/37db49e1d4a6c6ca90a8789401912a0c564ba444))
+
+
+
 ## [0.7.13](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.12...vike-solid@0.7.13) (2025-09-11)
 
 ### Bug Fixes
