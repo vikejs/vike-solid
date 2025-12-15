@@ -37,7 +37,7 @@
     "vike-solid": "workspace:^"
   },
   "devDependencies": {
-    "@brillout/release-me": "^0.4.8",
+    "@brillout/release-me": "^0.4.11",
     "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@tanstack/solid-query": "^5.90.15",
@@ -45,7 +45,7 @@
     "rollup-plugin-dts": "^6.3.0",
     "solid-js": "^1.9.10",
     "typescript": "^5.9.3",
-    "vike": "^0.4.247",
+    "vike": "^0.4.249",
     "vike-solid": "workspace:*"
   },
   "typesVersions": {
