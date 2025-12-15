@@ -9,7 +9,7 @@ import { applyHeadSettings } from "../../integration/applyHeadSettings.jsx";
 
 function useConfig(): (config: ConfigFromHook) => void {
   // Vike hook
-  let pageContext = getPageContext() as PageContext & PageContextInternal;
+  let pageContext = getPageContext({ asyncHook: false }) as PageContext & PageContextInternal;
 
   // Component
   if (!pageContext) pageContext = usePageContext() as PageContext & PageContextInternal;
