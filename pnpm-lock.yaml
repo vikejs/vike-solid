@@ -121,8 +121,8 @@ importers:
         specifier: ^7.28.5
         version: 7.28.5(@babel/core@7.28.5)
       '@brillout/release-me':
-        specifier: ^0.4.11
-        version: 0.4.11(conventional-commits-filter@5.0.0)
+        specifier: ^0.4.12
+        version: 0.4.12(conventional-commits-filter@5.0.0)
       '@rollup/plugin-babel':
         specifier: ^6.1.0
         version: 6.1.0(@babel/core@7.28.5)(@types/babel__core@7.20.5)(rollup@4.53.3)
@@ -163,8 +163,8 @@ importers:
   packages/vike-solid-query:
     devDependencies:
       '@brillout/release-me':
-        specifier: ^0.4.11
-        version: 0.4.11(conventional-commits-filter@5.0.0)
+        specifier: ^0.4.12
+        version: 0.4.12(conventional-commits-filter@5.0.0)
       '@rollup/plugin-babel':
         specifier: ^6.1.0
         version: 6.1.0(@babel/core@7.28.5)(@types/babel__core@7.20.5)(rollup@4.53.3)
@@ -779,8 +779,8 @@ packages:
   '@brillout/picocolors@1.0.29':
     resolution: {integrity: sha512-EKkqdFJD+CeP6GfpZNcWcCCXS5o0HFXhwISoN5JnHG/kplVE2MmF23eKtl4JRKU1rkR7s3kFIKiJf15aV/Uodg==}
 
-  '@brillout/release-me@0.4.11':
-    resolution: {integrity: sha512-BvDU3QIiEnbO1Aw57ihZ0rSs6tOwCCU0PMU/uXTZcMb+7FNSayGdoBs0hw53yMRv0oP1H8QzMsfgjESKnTZ/2A==}
+  '@brillout/release-me@0.4.12':
+    resolution: {integrity: sha512-0ONZeh7jt+7sZ94bZs0tnGaCQxFTgj7XFybG4jZkQxJJV81DXxzS1WT8aw86j37vO9irw9sShnqJzWE8/aPEqQ==}
     hasBin: true
 
   '@brillout/require-shim@0.1.2':
@@ -3255,7 +3255,7 @@ snapshots:
 
   '@brillout/picocolors@1.0.29': {}
 
-  '@brillout/release-me@0.4.11(conventional-commits-filter@5.0.0)':
+  '@brillout/release-me@0.4.12(conventional-commits-filter@5.0.0)':
     dependencies:
       '@brillout/picocolors': 1.0.29
       commander: 11.1.0
