@@ -17,20 +17,18 @@ const filterFunction = (id: string) => {
   return true
 }
 
-// For Solid, we need to handle the different compilation approaches.
-// Solid compiles JSX differently than React - it uses a custom JSX transform
-// that creates templates and reactive bindings.
+// Solid compiles JSX to createComponent calls.
+// We need to strip the children prop from createComponent(ClientOnly, {...}) calls.
 const defaultOptions: TransformOptions = {
   rules: [
-    // Rule for ClientOnly component wrapper - strip children on server
     {
       env: 'server',
       call: {
         match: {
-          // Match any function call where ClientOnly is used
-          function: 'ClientOnly',
+          function: 'import:solid-js/web:createComponent',
+          args: { 0: 'ClientOnly' },
         },
-        remove: { arg: 0, prop: 'children' },
+        remove: { arg: 1, prop: 'children' },
       },
     },
   ],
@@ -51,9 +49,9 @@ function vikeSolidClientOnly() {
       },
       transform: {
         filter: filterRolldown,
-        handler(code, id) {
+        async handler(code, id) {
           if (!filterFunction(id)) return null
-          return transformCode({ code, id, env: this.environment.name, options: defaultOptions })
+          return await transformCode({ code, id, env: this.environment.name, options: defaultOptions })
         },
       },
     },
