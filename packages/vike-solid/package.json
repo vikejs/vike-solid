@@ -12,6 +12,7 @@
     "test:types": "tsc --noEmit"
   },
   "dependencies": {
+    "@babel/types": "^7.28.5",
     "isbot-fast": "^1.2.0",
     "vite-plugin-solid": "^2.11.10"
   },
@@ -27,6 +28,7 @@
     "@brillout/release-me": "^0.4.12",
     "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
+    "@types/babel__core": "^7.20.5",
     "@types/node": "^22.17.0",
     "babel-preset-solid": "^1.9.10",
     "bumpp": "^10.3.2",
@@ -56,6 +58,7 @@
       "default": "./dist/components/Head/Head-server.js"
     },
     "./clientOnly": "./dist/helpers/clientOnly.js",
+    "./ClientOnly": "./dist/components/ClientOnly.js",
     "./__internal/integration/onRenderHtml": "./dist/integration/onRenderHtml.js",
     "./__internal/integration/onRenderClient": "./dist/integration/onRenderClient.js",
     "./client": {
@@ -90,6 +93,9 @@
       ],
       "clientOnly": [
         "dist/helpers/clientOnly.d.ts"
+      ],
+      "ClientOnly": [
+        "dist/components/ClientOnly.d.ts"
       ]
     }
   },

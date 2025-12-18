@@ -1,8 +1,10 @@
 export { Page };
 
 import { clientOnly } from "vike-solid/clientOnly";
+import { ClientOnly } from "vike-solid/ClientOnly";
 import { Config } from "vike-solid/Config";
 import image from "../../assets/logo-new.svg";
+import ClientOnlyComponent from "./ClientOnlyComponent";
 
 const ClientOnlyCounter = clientOnly(() => import("./Counter"));
 const ClientOnlyCounterSlow = clientOnly(async () => {
@@ -28,6 +30,11 @@ function Page() {
         <li>
           <ClientOnlyCounterSlow fallback={<>Waiting for client-side only component to load (slow)</>} />
         </li>
+
+        <ClientOnly fallback={<li>Loading client-only component...</li>}>
+          <ClientOnlyComponent />
+          <div>This is a test</div>
+        </ClientOnly>
       </ul>
     </>
   );

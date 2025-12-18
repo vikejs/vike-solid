@@ -104,6 +104,9 @@ importers:
 
   packages/vike-solid:
     dependencies:
+      '@babel/types':
+        specifier: ^7.28.5
+        version: 7.28.5
       isbot-fast:
         specifier: ^1.2.0
         version: 1.2.0
@@ -129,6 +132,9 @@ importers:
       '@rollup/plugin-node-resolve':
         specifier: ^16.0.3
         version: 16.0.3(rollup@4.53.3)
+      '@types/babel__core':
+        specifier: ^7.20.5
+        version: 7.20.5
       '@types/node':
         specifier: ^22.17.0
         version: 22.18.1

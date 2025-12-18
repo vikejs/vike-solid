@@ -1,5 +1,6 @@
 import type { Config } from "vike/types";
 import { ssrEffect } from "./integration/ssrEffect.js";
+import { vikeSolidClientOnly } from "./plugin/index.js";
 
 export default {
   name: "vike-solid",
@@ -8,6 +9,7 @@ export default {
   },
 
   vite: {
+    plugins: [vikeSolidClientOnly()],
     ssr: {
       optimizeDeps: {
         include: ["solid-js/web"],
