@@ -33,6 +33,20 @@ function processOptions(options) {
     ...Object.keys(pkg.peerDependencies || {}),
   ];
 
+  // Create a function that checks if a module should be external
+  // This handles both exact matches and sub-paths (e.g., 'vike-solid/config')
+  const externalFn = (id) => {
+    // Hardcoded externals
+    const builtins = ["solid-js", "solid-js/web", "solid-js/store", "path", "express", "stream"];
+    if (builtins.some(b => id === b || id.startsWith(b + '/'))) return true;
+    
+    // Check exact matches
+    if (external.includes(id)) return true;
+    
+    // Check if it starts with any of the external package names followed by '/'
+    return external.some(pkg => id === pkg || id.startsWith(pkg + '/'));
+  };
+
   const babelTargets = pkg.browserslist || "last 2 years";
 
   if (!src) {
@@ -60,7 +74,7 @@ function processOptions(options) {
 
   return {
     input: src,
-    external: ["solid-js", "solid-js/web", "solid-js/store", "path", "express", "stream", ...external],
+    external: externalFn,
     output,
     plugins: [
       babel({

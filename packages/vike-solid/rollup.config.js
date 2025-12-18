@@ -2,6 +2,7 @@ import withSolid from "./with-solid.js";
 import dts from "rollup-plugin-dts";
 import { babel } from "@rollup/plugin-babel";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 
 export default [
   withSolid({
@@ -67,6 +68,7 @@ export default [
         preferBuiltins: true,
         extensions: ['.js', '.ts', '.jsx', '.tsx'],
       }),
+      commonjs(),
       babel({
         extensions: [".js", ".ts", ".jsx", ".tsx"],
         babelHelpers: "bundled",
