@@ -1,12 +1,18 @@
-// TODO/ai change it to https://github.com/vikejs/vike-react/blob/8224b4dbf34e6d7c718243ef24063056f3e59a29/examples/full/components/ClientOnlyComponent.tsx#L3 and update test
-
-console.log('This will only run on the client side.')
+if (!isBrowser()) throw new Error("ClientOnlyComponent shouldn't be loaded on the server");
+const location = window.document.location;
 
 export default function ClientOnlyComponent() {
+  // Will be printed only in the browser:
+  console.log("Rendering the ClientOnlyComponent");
+
   return (
-    <div>
-      <h2>Client Only Component</h2>
-      <p>This component is rendered only on the client side.</p>
+    <div style={{ background: "#eee" }}>
+      <div>Only loaded in the browser</div>
+      <div>window.location.href: {location.href}</div>
     </div>
-  )
+  );
+}
+
+function isBrowser() {
+  return typeof window !== "undefined" && typeof window.scrollY === "number";
 }

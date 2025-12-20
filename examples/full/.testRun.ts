@@ -57,8 +57,8 @@ function testClientOnly() {
     // Fallback should be in the HTML
     expect(html).toContain("Loading client-only component...");
     // Children should NOT be in the server HTML (stripped by Babel transformer)
-    expect(html).not.toContain("Client Only Component");
-    expect(html).not.toContain("This component is rendered only on the client side.");
+    expect(html).not.toContain("Only loaded in the browser");
+    expect(html).not.toContain("window.location.href");
     expect(html).not.toContain("This is a test");
   });
 
@@ -69,8 +69,8 @@ function testClientOnly() {
       async () => {
         const body = await page.textContent("body");
         // After hydration, children should be visible
-        expect(body).toContain("Client Only Component");
-        expect(body).toContain("This component is rendered only on the client side.");
+        expect(body).toContain("Only loaded in the browser");
+        expect(body).toContain("window.location.href");
         expect(body).toContain("This is a test");
         // Fallback should be replaced
         expect(body).not.toContain("Loading client-only component...");
