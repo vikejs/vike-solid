@@ -2,6 +2,7 @@ import type { JSX } from "solid-js";
 import { children as resolveChildren, createSignal, onMount, Show } from "solid-js";
 import { isServer } from "solid-js/web";
 import { assert } from "../utils/assert.js";
+import { usePageContext } from "../hooks/usePageContext.js";
 
 /**
  * Render children only on the client-side.
@@ -46,6 +47,12 @@ export function ClientOnly(props: { children?: JSX.Element; fallback?: JSX.Eleme
  * );
  * ```
  */
-function useHydrated() {
-  // TODO/ai implement using pageContext.isClientSide and pageContext.isHydration
+export function useHydrated(): boolean {
+  const pageContext = usePageContext();
+
+  if (!pageContext.isClientSide) {
+    return false;
+  }
+
+  return !pageContext.isHydration;
 }
