@@ -9,14 +9,14 @@ export default [
       "integration/Wrapper": "./src/integration/Wrapper.tsx",
     },
     ssr: true,
-    external: ["vike-solid/usePageContext", "vike-solid/config"],
+    external: ["vike-solid/usePageContext"],
   }),
   withSolid({
     input: {
       index: "./src/index.ts",
     },
     ssr: false,
-    external: ["vike-solid/config"],
+    external: [],
   }),
   {
     input: {
