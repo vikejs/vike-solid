@@ -1,10 +1,18 @@
-console.log('This will only run on the client side.')
+if (!isBrowser()) throw new Error("ClientOnlyComponent shouldn't be loaded on the server");
+const location = window.document.location;
 
 export default function ClientOnlyComponent() {
+  // Will be printed only in the browser:
+  console.log("Rendering the ClientOnlyComponent");
+
   return (
-    <div>
-      <h2>Client Only Component</h2>
-      <p>This component is rendered only on the client side.</p>
+    <div style={{ background: "#eee" }}>
+      <div>Only loaded in the browser</div>
+      <div>window.location.href: {location.href}</div>
     </div>
-  )
+  );
+}
+
+function isBrowser() {
+  return typeof window !== "undefined" && typeof window.scrollY === "number";
 }

@@ -1,7 +1,6 @@
 import withSolid from "./with-solid.js";
 import dts from "rollup-plugin-dts";
 import { babel } from "@rollup/plugin-babel";
-import { nodeResolve } from "@rollup/plugin-node-resolve";
 
 export default [
   withSolid({
@@ -20,7 +19,7 @@ export default [
       "components/ClientOnly": "./components/ClientOnly.tsx",
     },
     ssr: true,
-    external: ["vike/server", "vike/plugin", "vike/getPageContext", "./plugin/index.js"],
+    external: ["vike/server", "vike/plugin", "vike/getPageContext"],
   }),
   withSolid({
     input: {
@@ -52,40 +51,26 @@ export default [
       "./helpers/clientOnly.tsx",
       "./components/ClientOnly.tsx",
       "./vite-plugin-vike-solid.ts",
-      "./plugin/index.ts",
     ],
     output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
     plugins: [dts()],
   },
   {
-    input: {
-      "vite-plugin-vike-solid": "./vite-plugin-vike-solid.ts",
-      "plugin/index": "./plugin/index.ts",
-    },
+    input: "./vite-plugin-vike-solid.ts",
     plugins: [
-      nodeResolve({
-        preferBuiltins: true,
-        extensions: ['.js', '.ts', '.jsx', '.tsx'],
-      }),
       babel({
         extensions: [".js", ".ts", ".jsx", ".tsx"],
         babelHelpers: "bundled",
-        presets: [
-          "@babel/preset-typescript",
-          ["@babel/preset-env", { 
-            bugfixes: true,
-            modules: false,
-          }]
-        ],
+        presets: ["@babel/preset-typescript"],
       }),
     ],
     output: [
       {
-        dir: "dist",
+        file: "dist/vite-plugin-vike-solid.js",
         format: "es",
         sanitizeFileName: false,
       },
     ],
-    external: ["vite", "vite-plugin-solid", "@babel/core", "@babel/types"],
+    external: ["vite"],
   },
 ];
