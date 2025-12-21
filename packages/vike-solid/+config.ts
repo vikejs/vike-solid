@@ -37,6 +37,15 @@ export default {
       },
       remove: { arg: 1, prop: "children" },
     },
+    {
+      env: "server",
+      filter: "vike-solid/useHydrated",
+      type: "call",
+      match: {
+        function: "import:vike-solid/useHydrated:useHydrated",
+      },
+      replace: { with: { value: false } },
+    },
   ],
 
   // https://vike.dev/meta
