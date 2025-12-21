@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "solid-js": "^1.9.10",
-    "vike": "^0.4.249",
+    "vike": "0.4.249-commit-03c7a15",
     "vike-solid": "workspace:*"
   },
   "devDependencies": {
