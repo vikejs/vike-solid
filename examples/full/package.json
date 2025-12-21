@@ -9,7 +9,7 @@
   "dependencies": {
     "node-fetch": "^3.3.2",
     "solid-js": "^1.9.10",
-    "vike": "0.4.249-commit-03c7a15",
+    "vike": "^0.4.249",
     "vike-solid": "workspace:*"
   },
   "devDependencies": {

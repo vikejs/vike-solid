@@ -42,8 +42,8 @@ importers:
         specifier: ^1.9.10
         version: 1.9.10
       vike:
-        specifier: 0.4.249-commit-03c7a15
-        version: 0.4.249-commit-03c7a15(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1))
+        specifier: ^0.4.249
+        version: 0.4.249(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1))
       vike-solid:
         specifier: workspace:*
         version: link:../../packages/vike-solid
@@ -64,8 +64,8 @@ importers:
         specifier: ^1.9.10
         version: 1.9.10
       vike:
-        specifier: 0.4.249-commit-03c7a15
-        version: 0.4.249-commit-03c7a15(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1))
+        specifier: ^0.4.249
+        version: 0.4.249(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1))
       vike-solid:
         specifier: workspace:*
         version: link:../../packages/vike-solid
@@ -86,8 +86,8 @@ importers:
         specifier: ^1.9.10
         version: 1.9.10
       vike:
-        specifier: 0.4.249-commit-03c7a15
-        version: 0.4.249-commit-03c7a15(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1))
+        specifier: ^0.4.249
+        version: 0.4.249(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1))
       vike-solid:
         specifier: workspace:*
         version: link:../../packages/vike-solid
@@ -160,8 +160,8 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       vike:
-        specifier: 0.4.249-commit-03c7a15
-        version: 0.4.249-commit-03c7a15(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1))
+        specifier: ^0.4.249
+        version: 0.4.249(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1))
       vite:
         specifier: ^7.2.7
         version: 7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1)
@@ -193,8 +193,8 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       vike:
-        specifier: 0.4.249-commit-03c7a15
-        version: 0.4.249-commit-03c7a15(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1))
+        specifier: ^0.4.249
+        version: 0.4.249(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1))
       vike-solid:
         specifier: workspace:*
         version: link:../vike-solid
@@ -784,9 +784,6 @@ packages:
 
   '@brillout/picocolors@1.0.29':
     resolution: {integrity: sha512-EKkqdFJD+CeP6GfpZNcWcCCXS5o0HFXhwISoN5JnHG/kplVE2MmF23eKtl4JRKU1rkR7s3kFIKiJf15aV/Uodg==}
-
-  '@brillout/picocolors@1.0.30':
-    resolution: {integrity: sha512-xJjdgyN1H0qh2nB2xlzazIipiDixuUd9oD5msh/Qv5bXJG9j8MSD/m4lREt6Z10ej6FF31b8vB4tdT7lDUbiyA==}
 
   '@brillout/release-me@0.4.12':
     resolution: {integrity: sha512-0ONZeh7jt+7sZ94bZs0tnGaCQxFTgj7XFybG4jZkQxJJV81DXxzS1WT8aw86j37vO9irw9sShnqJzWE8/aPEqQ==}
@@ -2429,8 +2426,8 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  vike@0.4.249-commit-03c7a15:
-    resolution: {integrity: sha512-giPOs6agOMWt0u+KhIWU5rtgvPLbUOsGvmOE9+H+2P4IlbZla6VvE14zcnTF5hyjzETxypTfePVbT40KPqASOw==}
+  vike@0.4.249:
+    resolution: {integrity: sha512-ZQpfmIclLCCLD9dsjTOwoczdjHJ7JrGww4b4vg3FpfrFZcSoNcrEtrwgbSqw9lMuYnkbfXPKFxwOf8VVp9Uftw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
@@ -3264,8 +3261,6 @@ snapshots:
 
   '@brillout/picocolors@1.0.29': {}
 
-  '@brillout/picocolors@1.0.30': {}
-
   '@brillout/release-me@0.4.12(conventional-commits-filter@5.0.0)':
     dependencies:
       '@brillout/picocolors': 1.0.29
@@ -3295,7 +3290,7 @@ snapshots:
   '@brillout/vite-plugin-server-entry@0.7.15':
     dependencies:
       '@brillout/import': 0.2.6
-      '@brillout/picocolors': 1.0.30
+      '@brillout/picocolors': 1.0.29
 
   '@conventional-changelog/git-client@2.5.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.2.0)':
     dependencies:
@@ -4788,14 +4783,14 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vike@0.4.249-commit-03c7a15(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1)):
+  vike@0.4.249(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1)):
     dependencies:
-      '@babel/core': 7.28.5
       '@brillout/import': 0.2.6
       '@brillout/json-serializer': 0.5.21
-      '@brillout/picocolors': 1.0.30
+      '@brillout/picocolors': 1.0.29
       '@brillout/require-shim': 0.1.2
       '@brillout/vite-plugin-server-entry': 0.7.15
+      acorn: 8.15.0
       cac: 6.7.14
       es-module-lexer: 1.7.0
       esbuild: 0.25.9
@@ -4808,8 +4803,6 @@ snapshots:
       tinyglobby: 0.2.15
     optionalDependencies:
       vite: 7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1)
-    transitivePeerDependencies:
-      - supports-color
 
   vite-plugin-solid@2.11.10(solid-js@1.9.10)(vite@7.2.7(@types/node@22.18.1)(jiti@2.6.1)(yaml@2.8.1)):
     dependencies:

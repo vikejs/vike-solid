@@ -37,7 +37,7 @@
     "solid-js": "^1.9.10",
     "tslib": "^2.8.1",
     "typescript": "^5.9.3",
-    "vike": "0.4.249-commit-03c7a15",
+    "vike": "^0.4.249",
     "vite": "^7.2.7"
   },
   "exports": {
