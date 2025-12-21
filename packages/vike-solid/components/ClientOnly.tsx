@@ -2,7 +2,6 @@ import type { JSX } from "solid-js";
 import { children as resolveChildren, createSignal, onMount, Show } from "solid-js";
 import { isServer } from "solid-js/web";
 import { assert } from "../utils/assert.js";
-import { usePageContext } from "../hooks/usePageContext.js";
 
 /**
  * Render children only on the client-side.
@@ -28,31 +27,4 @@ export function ClientOnly(props: { children?: JSX.Element; fallback?: JSX.Eleme
       {resolveChildren(() => props.children)()}
     </Show>
   );
-}
-
-/**
- * Return a boolean indicating if the JS has been hydrated already.
- * When doing Server-Side Rendering, the result will always be false.
- * When doing Client-Side Rendering, the result will always be false on the
- * first render and true from then on. Even if a new component renders it will
- * always start with true.
- *
- * Example: Disable a button that needs JS to work.
- * ```tsx
- * let hydrated = useHydrated();
- * return (
- *   <button type="button" disabled={!hydrated} onClick={doSomethingCustom}>
- *     Click me
- *   </button>
- * );
- * ```
- */
-export function useHydrated(): boolean {
-  const pageContext = usePageContext();
-
-  if (!pageContext.isClientSide) {
-    return false;
-  }
-
-  return !pageContext.isHydration;
 }
