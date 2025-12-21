@@ -12,7 +12,7 @@ import { usePageContext } from "./usePageContext.js";
  *
  * Example: Disable a button that needs JS to work.
  * ```tsx
- * let hydrated = useHydrated();
+ * const hydrated = useHydrated();
  * return (
  *   <button type="button" disabled={!hydrated()} onClick={doSomethingCustom}>
  *     Click me
