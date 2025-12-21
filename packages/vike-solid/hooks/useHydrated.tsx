@@ -1,6 +1,6 @@
 export { useHydrated };
 
-import { createSignal, onMount } from "solid-js";
+import { type Accessor, createSignal, onMount } from "solid-js";
 import { usePageContext } from "./usePageContext.js";
 
 /**
@@ -14,23 +14,21 @@ import { usePageContext } from "./usePageContext.js";
  * ```tsx
  * let hydrated = useHydrated();
  * return (
- *   <button type="button" disabled={!hydrated} onClick={doSomethingCustom}>
+ *   <button type="button" disabled={!hydrated()} onClick={doSomethingCustom}>
  *     Click me
  *   </button>
  * );
  * ```
  */
-function useHydrated(): boolean {
+function useHydrated(): Accessor<boolean> {
   const pageContext = usePageContext();
+  const [isHydrated, setIsHydrated] = createSignal(pageContext.isClientSide && !pageContext.isHydration);
 
-  /* TODO/ai
-  const [mounted, setMounted] = createSignal(false);
-  onMount(() => setMounted(true));
-  */
-
-  if (!pageContext.isClientSide) {
-    return false;
+  if (pageContext.isClientSide && !isHydrated()) {
+    onMount(() => {
+      setIsHydrated(true);
+    });
   }
 
-  return !pageContext.isHydration;
+  return isHydrated;
 }
