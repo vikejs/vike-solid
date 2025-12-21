@@ -8,6 +8,7 @@ export default [
       "integration/onRenderHtml": "./integration/onRenderHtml.tsx",
       "+config": "./+config.ts",
       "hooks/usePageContext": "./hooks/usePageContext.tsx",
+      "hooks/useHydrated": "./hooks/useHydrated.tsx",
       "hooks/useData": "./hooks/useData.tsx",
       "hooks/useConfig/useConfig-client": "./hooks/useConfig/useConfig-client.ts",
       "hooks/useConfig/useConfig-server": "./hooks/useConfig/useConfig-server.ts",
@@ -25,6 +26,7 @@ export default [
     input: {
       "integration/onRenderClient": "./integration/onRenderClient.tsx",
       "hooks/usePageContext": "./hooks/usePageContext.tsx",
+      "hooks/useHydrated": "./hooks/useHydrated.tsx",
       "hooks/useData": "./hooks/useData.tsx",
       "hooks/useConfig/useConfig-client": "./hooks/useConfig/useConfig-client.ts",
       "hooks/useConfig/useConfig-server": "./hooks/useConfig/useConfig-server.ts",
@@ -41,6 +43,7 @@ export default [
     input: [
       "./+config.ts",
       "./hooks/usePageContext.tsx",
+      "./hooks/useHydrated.tsx",
       "./hooks/useData.tsx",
       "./hooks/useConfig/useConfig-client.ts",
       "./hooks/useConfig/useConfig-server.ts",

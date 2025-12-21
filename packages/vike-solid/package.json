@@ -44,6 +44,7 @@
     "./config": "./dist/+config.js",
     "./vite": "./dist/vite-plugin-vike-solid.js",
     "./usePageContext": "./dist/hooks/usePageContext.js",
+    "./useHydrated": "./dist/hooks/useHydrated.js",
     "./useData": "./dist/hooks/useData.js",
     "./useConfig": {
       "browser": "./dist/hooks/useConfig/useConfig-client.js",
@@ -78,6 +79,9 @@
       ],
       "usePageContext": [
         "dist/hooks/usePageContext.d.ts"
+      ],
+      "useHydrated": [
+        "dist/hooks/useHydrated.d.ts"
       ],
       "useData": [
         "dist/hooks/useData.d.ts"
