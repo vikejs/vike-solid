@@ -17,16 +17,13 @@ export function ClientOnly(props: { children?: JSX.Element; fallback?: JSX.Eleme
     // eslint-disable-next-line solid/reactivity
     assert(props.children === undefined);
   }
-  
+
   const [mounted, setMounted] = createSignal(false);
-  
+
   onMount(() => setMounted(true));
 
   return (
-    <Show
-      when={!isServer && mounted()}
-      fallback={props.fallback}
-    >
+    <Show when={!isServer && mounted()} fallback={props.fallback}>
       {resolveChildren(() => props.children)()}
     </Show>
   );
