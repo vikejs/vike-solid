@@ -1,5 +1,6 @@
-export { useHydrated }
+export { useHydrated };
 
+import { createSignal, onMount } from "solid-js";
 import { usePageContext } from "./usePageContext.js";
 
 /**
@@ -21,6 +22,11 @@ import { usePageContext } from "./usePageContext.js";
  */
 function useHydrated(): boolean {
   const pageContext = usePageContext();
+
+  /* TODO/ai
+  const [mounted, setMounted] = createSignal(false);
+  onMount(() => setMounted(true));
+  */
 
   if (!pageContext.isClientSide) {
     return false;
