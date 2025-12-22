@@ -4,7 +4,7 @@ import { ssrEffect } from "./integration/ssrEffect.js";
 export default {
   name: "vike-solid",
   require: {
-    vike: ">=0.4.195",
+    vike: ">=0.4.250",
   },
 
   vite: {

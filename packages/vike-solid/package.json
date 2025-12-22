@@ -17,8 +17,7 @@
   },
   "peerDependencies": {
     "solid-js": "^1.8.7",
-    "vike": ">=0.4.195",
-    "vite": ">=5.0.0"
+    "vike": ">=0.4.250"
   },
   "devDependencies": {
     "@babel/core": "^7.28.5",
