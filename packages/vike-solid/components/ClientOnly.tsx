@@ -13,7 +13,8 @@ import { usePageContext } from "../hooks/usePageContext.jsx";
  */
 export function ClientOnly(props: { children?: JSX.Element; fallback?: JSX.Element }): JSX.Element {
   const pageContext = usePageContext();
-  // Assert tree-shaking: children should be removed on the server-side
+
+  // Assert tree-shaking: children should be statically removed on the server-side
   if (!pageContext.isClientSide) {
     // eslint-disable-next-line solid/reactivity
     assert(props.children === undefined);
