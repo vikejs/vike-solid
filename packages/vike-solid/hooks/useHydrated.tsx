@@ -24,11 +24,11 @@ import { usePageContext } from "./usePageContext.js";
  */
 function useHydrated(): Accessor<boolean> {
   const pageContext = usePageContext();
-  const [hydrated, setIsHydrated] = createSignal(pageContext.isClientSide && !pageContext.isHydration);
+  const [hydrated, setHydrated] = createSignal(pageContext.isClientSide && !pageContext.isHydration);
 
   if (pageContext.isClientSide && pageContext.isHydration) {
     onMount(() => {
-      setIsHydrated(true);
+      setHydrated(true);
     });
   }
 
