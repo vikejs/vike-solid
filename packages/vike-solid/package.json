@@ -12,7 +12,6 @@
     "test:types": "tsc --noEmit"
   },
   "dependencies": {
-    "@babel/types": "^7.28.5",
     "isbot-fast": "^1.2.0",
     "vite-plugin-solid": "^2.11.10"
   },
@@ -28,7 +27,6 @@
     "@brillout/release-me": "^0.4.12",
     "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
-    "@types/babel__core": "^7.20.5",
     "@types/node": "^22.17.0",
     "babel-preset-solid": "^1.9.10",
     "bumpp": "^10.3.2",
