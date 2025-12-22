@@ -18,10 +18,10 @@ export function ClientOnly(props: { children?: JSX.Element; fallback?: JSX.Eleme
     assert(props.children === undefined);
   }
 
-  const isHydrated = useHydrated();
+  const hydrated = useHydrated();
 
   return (
-    <Show when={!isServer && isHydrated()} fallback={props.fallback}>
+    <Show when={!isServer && hydrated()} fallback={props.fallback}>
       {resolveChildren(() => props.children)()}
     </Show>
   );
