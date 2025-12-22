@@ -1,3 +1,12 @@
+## [0.7.15](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.14...vike-solid@0.7.15) (2025-12-22)
+
+
+### Features
+
+* <ClientOnly> & `useHydrated()` ([#202](https://github.com/vikejs/vike-solid/issues/202)) ([9f1ee82](https://github.com/vikejs/vike-solid/commit/9f1ee8227e7f5a3a913d01291b5643324843f5b2))
+
+
+
 ## [0.7.14](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.13...vike-solid@0.7.14) (2025-12-15)
 
 
