@@ -25,14 +25,14 @@
     "preinstall": "npx only-allow pnpm"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.8",
+    "@biomejs/biome": "^2.3.10",
     "@brillout/test-e2e": "^0.6.21",
     "@vikejs/biome-config": "^2.0.1",
     "eslint": "^9.39.2",
     "eslint-plugin-solid": "^0.14.5",
     "playwright": "^1.57.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.49.0"
+    "typescript-eslint": "^8.50.1"
   },
   "packageManager": "pnpm@9.15.4"
 }
