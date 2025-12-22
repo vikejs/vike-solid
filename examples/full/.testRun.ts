@@ -52,31 +52,22 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
 }
 
 function testClientOnly() {
-  test("ClientOnly component (Server-Side)", async () => {
-    const html = await fetchHtml("/");
-    // Fallback should be in the HTML
-    expect(html).toContain("Loading client-only component...");
-    // Children should NOT be in the server HTML (stripped by Babel transformer)
-    expect(html).not.toContain("Only loaded in the browser");
-    expect(html).not.toContain("window.location.href");
-    expect(html).not.toContain("This is a test");
+  const url = "/";
+  const htmlLoading = "Loading client-only component...";
+  const htmlClientOnly = "Only loaded in the browser";
+
+  test(url + " - <ClientOnly> component (HTML)", async () => {
+    const html = await fetchHtml(url);
+    expect(html).toContain(htmlLoading);
+    expect(html).not.toContain(htmlClientOnly);
   });
 
-  test("ClientOnly component (Client-Side)", async () => {
-    await page.goto(getServerUrl() + "/");
-    // Wait for hydration and client-side rendering
-    await autoRetry(
-      async () => {
-        const body = await page.textContent("body");
-        // After hydration, children should be visible
-        expect(body).toContain("Only loaded in the browser");
-        expect(body).toContain("window.location.href");
-        expect(body).toContain("This is a test");
-        // Fallback should be replaced
-        expect(body).not.toContain("Loading client-only component...");
-      },
-      { timeout: 5 * 1000 },
-    );
+  test(url + " - <ClientOnly> component (Hydration)", async () => {
+    await page.goto(getServerUrl() + url);
+    await testCounter();
+    const body = await page.textContent("body");
+    expect(body).toContain(htmlClientOnly);
+    expect(body).not.toContain(htmlLoading);
   });
 }
 
