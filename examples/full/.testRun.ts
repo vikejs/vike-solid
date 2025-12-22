@@ -20,6 +20,8 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
     image: true,
   });
 
+  testClientOnly();
+
   testUrl({
     url: "/star-wars",
     title: "6 Star Wars Movies",
@@ -47,6 +49,26 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
   testNavigationBetweenWithSSRAndWithoutSSR();
 
   testUseConfig();
+}
+
+function testClientOnly() {
+  const url = "/";
+  const textLoading = "Loading client-only component...";
+  const textLoaded = "Only loaded in the browser";
+
+  test(url + " - <ClientOnly> component (HTML)", async () => {
+    const html = await fetchHtml(url);
+    expect(html).toContain(textLoading);
+    expect(html).not.toContain(textLoaded);
+  });
+
+  test(url + " - <ClientOnly> component (Hydration)", async () => {
+    await page.goto(getServerUrl() + url);
+    await testCounter();
+    const body = await page.textContent("body");
+    expect(body).toContain(textLoaded);
+    expect(body).not.toContain(textLoading);
+  });
 }
 
 function testNavigationBetweenWithSSRAndWithoutSSR() {

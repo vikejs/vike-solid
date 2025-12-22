@@ -1,6 +1,15 @@
-import { createSignal } from "solid-js";
+export { Counter };
+export default Counter;
 
-export function Counter() {
+import { createSignal } from "solid-js";
+import { useHydrated } from "vike-solid/useHydrated";
+
+function Counter() {
   const [count, setCount] = createSignal(0);
-  return <button onClick={() => setCount((count) => count + 1)}>Counter {count()}</button>;
+  const hydrated = useHydrated();
+  return (
+    <button disabled={!hydrated()} onClick={() => setCount((count) => count + 1)}>
+      Counter {count()}
+    </button>
+  );
 }

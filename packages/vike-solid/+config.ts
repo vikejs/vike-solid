@@ -4,7 +4,7 @@ import { ssrEffect } from "./integration/ssrEffect.js";
 export default {
   name: "vike-solid",
   require: {
-    vike: ">=0.4.195",
+    vike: ">=0.4.250",
   },
 
   vite: {
@@ -25,6 +25,19 @@ export default {
   hydrationCanBeAborted: true,
 
   passToClient: ["_configFromHook"],
+
+  staticReplace: [
+    {
+      env: "server",
+      filter: "vike-solid/ClientOnly",
+      type: "call",
+      match: {
+        function: "import:solid-js/web:createComponent",
+        args: { 0: "import:vike-solid/ClientOnly:ClientOnly" },
+      },
+      remove: { arg: 1, prop: "children" },
+    },
+  ],
 
   // https://vike.dev/meta
   meta: {

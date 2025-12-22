@@ -1,6 +1,7 @@
 export { Layout };
 
-import { createSignal, FlowProps } from "solid-js";
+import { FlowProps } from "solid-js";
+import Counter from "../../components/Counter";
 
 function Layout(props: FlowProps) {
   return (
@@ -27,14 +28,5 @@ function Layout(props: FlowProps) {
         {props.children}
       </div>
     </>
-  );
-}
-
-function Counter() {
-  const [count, setCount] = createSignal(0);
-  return (
-    <button type="button" onClick={() => setCount((count) => count + 1)}>
-      Counter {count()}
-    </button>
   );
 }

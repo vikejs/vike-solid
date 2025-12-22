@@ -17,8 +17,7 @@
   },
   "peerDependencies": {
     "solid-js": "^1.8.7",
-    "vike": ">=0.4.195",
-    "vite": ">=5.0.0"
+    "vike": ">=0.4.250"
   },
   "devDependencies": {
     "@babel/core": "^7.28.5",
@@ -42,6 +41,7 @@
     "./config": "./dist/+config.js",
     "./vite": "./dist/vite-plugin-vike-solid.js",
     "./usePageContext": "./dist/hooks/usePageContext.js",
+    "./useHydrated": "./dist/hooks/useHydrated.js",
     "./useData": "./dist/hooks/useData.js",
     "./useConfig": {
       "browser": "./dist/hooks/useConfig/useConfig-client.js",
@@ -56,6 +56,7 @@
       "default": "./dist/components/Head/Head-server.js"
     },
     "./clientOnly": "./dist/helpers/clientOnly.js",
+    "./ClientOnly": "./dist/components/ClientOnly.js",
     "./__internal/integration/onRenderHtml": "./dist/integration/onRenderHtml.js",
     "./__internal/integration/onRenderClient": "./dist/integration/onRenderClient.js",
     "./client": {
@@ -76,6 +77,9 @@
       "usePageContext": [
         "dist/hooks/usePageContext.d.ts"
       ],
+      "useHydrated": [
+        "dist/hooks/useHydrated.d.ts"
+      ],
       "useData": [
         "dist/hooks/useData.d.ts"
       ],
@@ -90,6 +94,9 @@
       ],
       "clientOnly": [
         "dist/helpers/clientOnly.d.ts"
+      ],
+      "ClientOnly": [
+        "dist/components/ClientOnly.d.ts"
       ]
     }
   },
