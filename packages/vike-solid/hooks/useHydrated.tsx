@@ -24,7 +24,7 @@ function useHydrated(): Accessor<boolean> {
   const pageContext = usePageContext();
   const [isHydrated, setIsHydrated] = createSignal(pageContext.isClientSide && !pageContext.isHydration);
 
-  if (pageContext.isClientSide && !isHydrated()) {
+  if (pageContext.isClientSide && pageContext.isHydration) {
     onMount(() => {
       setIsHydrated(true);
     });
