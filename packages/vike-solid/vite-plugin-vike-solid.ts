@@ -14,7 +14,7 @@ function overrideConfig(): Plugin {
 
 type PluginInterop = Record<string, unknown> & { name: string };
 // Return `PluginInterop` instead of `Plugin` to avoid type mismatch upon different Vite versions
-export default function (options: Partial<SolidOptions> = {}): Plugin[] {
+export default function (options: Partial<SolidOptions> = {}): PluginInterop[] {
   const plugins: Plugin[] = [
     solidPlugin(
       mergeConfig(
