@@ -1,3 +1,12 @@
+## [0.7.17](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.16...vike-solid@0.7.17) (2025-12-23)
+
+
+### Bug Fixes
+
+* furhter avoid vite type mismatch ([9d6af08](https://github.com/vikejs/vike-solid/commit/9d6af087a8e3284a68e3cb3e16bf544584dcf57c))
+
+
+
 ## [0.7.16](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.15...vike-solid@0.7.16) (2025-12-23)
 
 
