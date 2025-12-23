@@ -1,3 +1,12 @@
+## [0.7.18](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.17...vike-solid@0.7.18) (2025-12-23)
+
+
+### Bug Fixes
+
+* fix avoid vite type mismatch ([1b4f472](https://github.com/vikejs/vike-solid/commit/1b4f47281bd53b8646369cd2d1592173a7f1b2ec))
+
+
+
 ## [0.7.17](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.16...vike-solid@0.7.17) (2025-12-23)
 
 
