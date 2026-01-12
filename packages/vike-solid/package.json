@@ -34,8 +34,8 @@
     "solid-js": "^1.9.10",
     "tslib": "^2.8.1",
     "typescript": "^5.9.3",
-    "vike": "^0.4.250",
-    "vite": "^7.3.0"
+    "vike": "^0.4.251",
+    "vite": "^7.3.1"
   },
   "exports": {
     "./config": "./dist/+config.js",
