@@ -1,3 +1,12 @@
+## [0.7.19](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.18...vike-solid@0.7.19) (2026-01-14)
+
+
+### Bug Fixes
+
+* ensure Head in always an Array ([100aa13](https://github.com/vikejs/vike-solid/commit/100aa131cc5323a547e8e97c62c96b8c09c3768a))
+
+
+
 ## [0.7.18](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.17...vike-solid@0.7.18) (2025-12-23)
 
 
