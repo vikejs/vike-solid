@@ -1,19 +1,20 @@
 // https://vike.dev/onRenderHtml
+
+import isBot from "isbot-fast";
+import type { JSX } from "solid-js/jsx-runtime";
 import { generateHydrationScript, renderToStream, renderToString, renderToStringAsync } from "solid-js/web";
 import { dangerouslySkipEscape, escapeInject, stampPipe } from "vike/server";
-import { getHeadSetting } from "./getHeadSetting.js";
-import { getPageElement } from "./getPageElement.js";
 import type { OnRenderHtmlAsync, PageContextServer } from "vike/types";
 import { PageContextProvider } from "../hooks/usePageContext.js";
-import { getTagAttributesString, type TagAttributes } from "../utils/getTagAttributesString.js";
-import type { PageContextInternal } from "../types/PageContext.js";
 import type { Head } from "../types/Config.js";
-import type { JSX } from "solid-js/jsx-runtime";
+import type { PageContextInternal } from "../types/PageContext.js";
+import { getTagAttributesString, type TagAttributes } from "../utils/getTagAttributesString.js";
 import { isCallable } from "../utils/isCallable.js";
-import isBot from "isbot-fast";
 import { isNotNullish } from "../utils/isNotNullish.js";
 import { isObject } from "../utils/isObject.js";
 import { isType } from "../utils/isType.js";
+import { getHeadSetting } from "./getHeadSetting.js";
+import { getPageElement } from "./getPageElement.js";
 
 export { onRenderHtml };
 
@@ -98,9 +99,9 @@ function getHeadHtml(pageContext: PageContextServer & PageContextInternal) {
   const headElementsHtml = dangerouslySkipEscape(
     [
       // Added by +Head
-      ...(pageContext.config.Head ?? []),
+      ...ensureArray(pageContext.config.Head),
       // Added by useConfig()
-      ...(pageContext._configFromHook?.Head ?? []),
+      ...ensureArray(pageContext._configFromHook?.Head),
     ]
       .filter((Head) => Head !== null && Head !== undefined)
       .map((Head) => getHeadElementHtml(Head, pageContext))
@@ -133,6 +134,11 @@ function getHeadElementHtml(Head: Head, pageContext: PageContextServer): string 
 }
 function isElement(value: unknown): value is JSX.Element {
   return !isCallable(value);
+}
+function ensureArray<T>(a: T) {
+  if (typeof a === "undefined" || a === null) return [];
+  if (Array.isArray(a)) return a;
+  return [a];
 }
 
 function getTagAttributes(pageContext: PageContextServer) {
