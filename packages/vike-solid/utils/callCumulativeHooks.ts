@@ -1,12 +1,11 @@
-export { callCumulativeHooks };
-
 import { providePageContext } from "vike/getPageContext";
 import type { PageContext } from "vike/types";
+import { isCallable } from "./isCallable";
 
-async function callCumulativeHooks(values: undefined | unknown[], pageContext: PageContext): Promise<unknown[]> {
+export async function callCumulativeHooks(values: undefined | unknown[], pageContext: PageContext): Promise<unknown[]> {
   if (!values) return [];
   const valuesPromises = values.map((val) => {
-    if (typeof val === "function") {
+    if (isCallable(val)) {
       providePageContext(pageContext);
       // Hook
       return val(pageContext);
