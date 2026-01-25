@@ -1,4 +1,3 @@
-// TODO/soon: add deprecation warning in favor of <ClientOnly>
 // TO-DO/breaking-change: remove it
 
 import {
@@ -14,6 +13,7 @@ import {
   untrack,
 } from "solid-js";
 import { isServer } from "solid-js/web";
+import { assertWarning } from "../utils/assert";
 
 // Copied from https://github.com/solidjs/solid-start/blob/2d75d5fedfd11f739b03ca34decf23865868ac09/packages/start/src/shared/clientOnly.tsx#L7
 /**
@@ -24,6 +24,8 @@ export function clientOnly<T extends Component<any>>(
   fn: () => Promise<{ default: T } | T>,
   options: { lazy?: boolean } = {},
 ) {
+  assertWarning(false, "clientOnly() is deprecated — use <ClientOnly> https://vike.dev/ClientOnly");
+
   if (isServer) return (props: ComponentProps<T> & { fallback?: JSX.Element }) => <>{props.fallback}</>;
 
   const [comp, setComp] = createSignal<T>();
