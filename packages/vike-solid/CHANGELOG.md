@@ -1,3 +1,12 @@
+## [0.7.20](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.19...vike-solid@0.7.20) (2026-01-25)
+
+
+### Bug Fixes
+
+* add clientOnly() deprecation warning ([#211](https://github.com/vikejs/vike-solid/issues/211)) ([d233336](https://github.com/vikejs/vike-solid/commit/d233336e211ba44dae6972231be867e2607745f9))
+
+
+
 ## [0.7.19](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.18...vike-solid@0.7.19) (2026-01-14)
 
 
