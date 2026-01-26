@@ -11,6 +11,10 @@ declare global {
   }
 }
 
+// hack for following issue
+// [!] RollupError: Exported variable "global" is not defined in "types/PageContext.ts"
+export const global = null;
+
 // Internal usage
 export type PageContextInternal = {
   _configFromHook?: ConfigFromHookResolved;
