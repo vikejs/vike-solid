@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "node-fetch": "^3.3.2",
-    "solid-js": "^1.9.10",
+    "solid-js": "^1.9.11",
     "vike": "^0.4.252",
     "vike-solid": "workspace:*"
   },
