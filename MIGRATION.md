@@ -1,3 +1,10 @@
+## From 0.7.x to 0.8
+`vite-plugin-solid` needs to be manually installed in `devDependencies`
+
+```shell
+pnpm add -D vite-plugin-solid
+```
+
 ## From 0.4.x to 0.5
 ### `vike-solid/ClientOnly` replaced by `vike-solid/clientOnly`
 
