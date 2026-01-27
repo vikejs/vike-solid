@@ -9,7 +9,11 @@
 
 ### BREAKING CHANGES
 
-* `vite-plugin-solid` now needs to be manually installed next to `vike-solid`
+* `vite-plugin-solid` needs to be manually installed in `devDependencies`
+
+   ```shell
+   pnpm add -D vite-plugin-solid
+   ```
 
 
 
