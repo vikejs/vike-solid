@@ -1,3 +1,18 @@
+# [0.8.0](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.20...vike-solid@0.8.0) (2026-01-27)
+
+
+### Bug Fixes
+
+* set `vite-plugin-solid` as `peerDependency` ([d7ace38](https://github.com/vikejs/vike-solid/commit/d7ace38edebb4707635f40cf62576f9e585432be))
+* upgrade dependencies ([2a52cf6](https://github.com/vikejs/vike-solid/commit/2a52cf64c3019ab87722b68c1f0212a14e9e9808))
+
+
+### BREAKING CHANGES
+
+* `vite-plugin-solid` now needs to be manually installed next to `vike-solid`
+
+
+
 ## [0.7.20](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.19...vike-solid@0.7.20) (2026-01-25)
 
 
