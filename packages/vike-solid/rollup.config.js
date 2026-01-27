@@ -75,6 +75,6 @@ export default [
         sanitizeFileName: false,
       },
     ],
-    external: ["vite"],
+    external: ["vite-plugin-solid", "vite"],
   },
 ];
