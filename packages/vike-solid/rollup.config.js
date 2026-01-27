@@ -1,6 +1,6 @@
-import withSolid from "./with-solid.js";
-import dts from "rollup-plugin-dts";
 import { babel } from "@rollup/plugin-babel";
+import dts from "rollup-plugin-dts";
+import withSolid from "./with-solid.js";
 
 export default [
   withSolid({
@@ -56,6 +56,7 @@ export default [
       "./vite-plugin-vike-solid.ts",
     ],
     output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
+    external: ["vite-plugin-solid", "vite"],
     plugins: [dts()],
   },
   {
