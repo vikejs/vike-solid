@@ -9,10 +9,10 @@
 
 ### BREAKING CHANGES
 
-* `vite-plugin-solid` needs to be manually installed in `devDependencies`
+* Add `vite-plugin-solid` to `devDependencies`:
 
    ```shell
-   pnpm add -D vite-plugin-solid
+   npm install -D vite-plugin-solid
    ```
 
 
