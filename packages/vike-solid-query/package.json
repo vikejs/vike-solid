@@ -41,7 +41,7 @@
     "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@tanstack/solid-query": "^5.90.23",
-    "rollup": "^4.57.0",
+    "rollup": "^4.57.1",
     "rollup-plugin-dts": "^6.3.0",
     "solid-js": "^1.9.11",
     "typescript": "^5.9.3",
