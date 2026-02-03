@@ -1,3 +1,12 @@
+## [0.8.1](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.0...vike-solid@0.8.1) (2026-02-03)
+
+
+### Bug Fixes
+
+* fix support for Cloudflare Workers (fix photon-js/photon[#64](https://github.com/vikejs/vike-solid/issues/64)) ([dfd6cf9](https://github.com/vikejs/vike-solid/commit/dfd6cf9a5803abdaff598209f6b08f32e69effe3))
+
+
+
 # [0.8.0](https://github.com/vikejs/vike-solid/compare/vike-solid@0.7.20...vike-solid@0.8.0) (2026-01-27)
 
 
