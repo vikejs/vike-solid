@@ -11,10 +11,10 @@
   },
   "exports": {
     ".": {
-      "browser": "./dist/index.js",
-      "node": "./dist/server.js",
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "worker": "./dist/server.js",
+      "browser": "./dist/index.js",
+      "default": "./dist/server.js"
     },
     "./config": "./dist/integration/config.js",
     "./__internal/integration/Wrapper": {
