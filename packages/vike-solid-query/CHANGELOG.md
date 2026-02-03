@@ -1,3 +1,13 @@
+## [0.1.3](https://github.com/vikejs/vike-solid/compare/vike-solid-query@0.1.2...vike-solid-query@0.1.3) (2026-02-03)
+
+
+### Bug Fixes
+
+* fix support for Cloudflare Workers (fix photon-js/photon[#64](https://github.com/vikejs/vike-solid/issues/64)) ([dfd6cf9](https://github.com/vikejs/vike-solid/commit/dfd6cf9a5803abdaff598209f6b08f32e69effe3))
+* upgrade dependencies ([2a52cf6](https://github.com/vikejs/vike-solid/commit/2a52cf64c3019ab87722b68c1f0212a14e9e9808))
+
+
+
 ## [0.1.2](https://github.com/vikejs/vike-solid/compare/vike-solid-query@0.1.1...vike-solid-query@0.1.2) (2025-11-17)
 
 
