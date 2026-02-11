@@ -1,8 +1,7 @@
-import { createStore } from "solid-js/store";
-
-export { useData };
+export { useStoreWithData };
 
 import { createEffect } from "solid-js";
+import { type SetStoreFunction, createStore } from "solid-js/store";
 import { usePageContext } from "./usePageContext.js";
 
 /** Access `pageContext.data` from any SolidJS component
@@ -11,7 +10,7 @@ import { usePageContext } from "./usePageContext.js";
  * - https://vike.dev/data
  * - https://vike.dev/pageContext-anywhere
  */
-function useData<Data>(): Data {
+function useStoreWithData<Data>(): [Data, SetStoreFunction<Data>] {
   const pageContext = usePageContext() as any;
 
   // sub store to keep reactivity https://github.com/vikejs/vike-solid/issues/114
@@ -21,5 +20,5 @@ function useData<Data>(): Data {
     setData(pageContext?.data);
   });
 
-  return data;
+  return [data, setData];
 }
