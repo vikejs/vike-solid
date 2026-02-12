@@ -1,1 +1,1 @@
-Source code of: [Vike Extensions for Solid](https://vike.dev/extensions#solid)
+Source code of [Vike Extensions for Solid](https://vike.dev/extensions#solid).
