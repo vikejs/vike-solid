@@ -46,7 +46,7 @@ const Movie = (props: { id }) => {
         queryKey: ["movies", props.id],
         queryFn: () =>
         fetch(`https://brillout.github.io/star-wars/api/films/${props.id}.json`)
-        .then((res) => res.json()),
+        .then((res) => res.json())
     }));
 
   return (
