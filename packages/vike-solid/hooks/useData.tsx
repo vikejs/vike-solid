@@ -9,8 +9,8 @@ import { createDataStore } from "./createDataStore.jsx";
  * - https://vike.dev/pageContext-anywhere
  */
 function useData<Data>(): Data {
-  // We use a store to sync the store when the navigation (and thus `pageContext.data`) changes.
   // https://github.com/vikejs/vike-solid/issues/114
+  // We use `createEffect` to sync the store when the navigation (and thus `pageContext.data`) changes.
   const [data] = createDataStore<Data>();
   return data;
 }
