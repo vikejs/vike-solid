@@ -13,9 +13,11 @@ import { usePageContext } from "./usePageContext.jsx";
 function createDataStore<Data>(): [Data, SetStoreFunction<Data>] {
   const pageContext = usePageContext() as any;
 
-  // sub store to keep reactivity https://github.com/vikejs/vike-solid/issues/114
+  // https://github.com/vikejs/vike-solid/issues/114
+  // Use a Store to wrap `pageContext.data` and ensure fine-grained reactivity for Objects
   const [data, setData] = createStore(pageContext?.data);
 
+  // Sync the Store when the navigation (`pageContext.data`) changes
   createEffect(() => {
     setData(pageContext?.data);
   });
