@@ -1,9 +1,9 @@
 import { For } from "solid-js";
 import type { Data } from "./+data.js";
-import { createDataStore } from "vike-solid/createDataStore";
+import { useData } from "vike-solid/useData";
 
 export default function Page() {
-  const [movies] = createDataStore<Data>();
+  const movies = useData<Data>();
   return (
     <>
       <h1>Star Wars Movies</h1>
