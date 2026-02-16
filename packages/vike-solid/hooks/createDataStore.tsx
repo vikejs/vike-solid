@@ -4,11 +4,9 @@ import { createEffect } from "solid-js";
 import { type SetStoreFunction, createStore } from "solid-js/store";
 import { usePageContext } from "./usePageContext.jsx";
 
-/** Access `pageContext.data` from any SolidJS component, and create a store with `pageContext.data` as initial data.
+/** Access `pageContext.data` from any SolidJS component, and create a store with `pageContext.data` as initial state.
  *
- * See
- * - https://vike.dev/data
- * - https://vike.dev/pageContext-anywhere
+ * https://vike.dev/useData
  */
 function createDataStore<Data>(): [Data, SetStoreFunction<Data>] {
   const pageContext = usePageContext() as any;

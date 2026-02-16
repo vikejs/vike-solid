@@ -4,9 +4,7 @@ import { createDataStore } from "./createDataStore.jsx";
 
 /** Access `pageContext.data` from any SolidJS component.
  *
- * See
- * - https://vike.dev/data
- * - https://vike.dev/pageContext-anywhere
+ * https://vike.dev/useData
  */
 function useData<Data>(): Data {
   // https://github.com/vikejs/vike-solid/issues/114
