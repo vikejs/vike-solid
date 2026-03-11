@@ -1,25 +1,15 @@
-import { createStore } from "solid-js/store";
-
 export { useData };
 
-import { createEffect } from "solid-js";
-import { usePageContext } from "./usePageContext.js";
+import { createDataStore } from "./createDataStore.jsx";
 
-/** Access `pageContext.data` from any SolidJS component
+/**
+ * Access `pageContext.data` from any SolidJS component.
  *
- * See
- * - https://vike.dev/data
- * - https://vike.dev/pageContext-anywhere
+ * https://vike.dev/useData
  */
 function useData<Data>(): Data {
-  const pageContext = usePageContext() as any;
-
-  // sub store to keep reactivity https://github.com/vikejs/vike-solid/issues/114
-  const [data, setData] = createStore(pageContext?.data);
-
-  createEffect(() => {
-    setData(pageContext?.data);
-  });
-
+  // https://github.com/vikejs/vike-solid/issues/114
+  // We use `createEffect` to sync the store when the navigation (and thus `pageContext.data`) changes.
+  const [data] = createDataStore<Data>();
   return data;
 }

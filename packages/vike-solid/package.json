@@ -44,6 +44,7 @@
     "./usePageContext": "./dist/hooks/usePageContext.js",
     "./useHydrated": "./dist/hooks/useHydrated.js",
     "./useData": "./dist/hooks/useData.js",
+    "./createDataStore": "./dist/hooks/createDataStore.js",
     "./useConfig": {
       "worker": "./dist/hooks/useConfig/useConfig-server.js",
       "browser": "./dist/hooks/useConfig/useConfig-client.js",
@@ -86,6 +87,9 @@
       ],
       "useData": [
         "dist/hooks/useData.d.ts"
+      ],
+      "createDataStore": [
+        "dist/hooks/createDataStore.d.ts"
       ],
       "useConfig": [
         "dist/hooks/useConfig/useConfig-server.d.ts"
