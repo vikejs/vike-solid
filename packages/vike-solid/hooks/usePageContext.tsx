@@ -21,8 +21,8 @@ function PageContextProvider(props: { pageContext: Store<PageContext>; children:
  *
  * https://vike.dev/usePageContext
  */
-function usePageContext(): PageContext {
+function usePageContext<Data>(): PageContext<Data> {
   const { solidContext } = globalContext;
-  const pageContext = useContext(solidContext)!;
+  const pageContext = useContext(solidContext)! as unknown as PageContext<Data>;
   return pageContext;
 }
