@@ -1,3 +1,12 @@
+## [0.8.2](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.1...vike-solid@0.8.2) (2026-03-30)
+
+
+### Bug Fixes
+
+* type of usePageContext ([#227](https://github.com/vikejs/vike-solid/issues/227)) ([93ea4cc](https://github.com/vikejs/vike-solid/commit/93ea4cc7556588d5a9fdda071146fb807f956d0d))
+
+
+
 ## [0.8.1](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.0...vike-solid@0.8.1) (2026-02-03)
 
 
