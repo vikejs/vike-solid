@@ -6,9 +6,9 @@
     "test:types": "tsc --noEmit"
   },
   "dependencies": {
-    "@tanstack/solid-query": "^5.95.0",
+    "@tanstack/solid-query": "^5.95.2",
     "node-fetch": "^3.3.2",
-    "solid-js": "^1.9.11",
+    "solid-js": "^1.9.12",
     "vike": "^0.4.255",
     "vike-solid": "workspace:*",
     "vike-solid-query": "workspace:^"
