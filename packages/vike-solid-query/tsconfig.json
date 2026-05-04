@@ -15,5 +15,6 @@
     "outDir": "./dist",
     "declaration": true,
     "skipLibCheck": true
-  }
+  },
+  "exclude": ["rollup.config.js"]
 }
