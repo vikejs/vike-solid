@@ -9,14 +9,14 @@
     "@tanstack/solid-query": "^5.100.9",
     "node-fetch": "^3.3.2",
     "solid-js": "^1.9.12",
-    "vike": "^0.4.258",
+    "vike": "^0.4.259",
     "vike-solid": "workspace:*",
     "vike-solid-query": "workspace:^"
   },
   "devDependencies": {
     "vite-plugin-solid": "^2.11.12",
     "typescript": "^6.0.3",
-    "vite": "^8.0.10"
+    "vite": "^8.0.11"
   },
   "type": "module"
 }
