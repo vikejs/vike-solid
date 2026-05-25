@@ -1,6 +1,7 @@
 {
   "name": "vike-solid",
   "version": "0.8.2",
+  "repository": "https://github.com/vikejs/vike-solid",
   "type": "module",
   "scripts": {
     "dev": "rollup -c rollup.config.js --watch",
@@ -108,6 +109,9 @@
     "dist/",
     "client.d.ts"
   ],
-  "repository": "github:vikejs/vike-solid",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "solid",
+    "solidjs"
+  ]
 }
