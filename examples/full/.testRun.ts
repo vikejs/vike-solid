@@ -200,7 +200,8 @@ async function testCounter() {
   );
 }
 
-/** Ensure page wasn't server-side routed.
+/**
+ * Ensure page wasn't server-side routed.
  *
  * Examples:
  *   await ensureWasClientSideRouted('/pages/index')
