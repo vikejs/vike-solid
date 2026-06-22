@@ -31,9 +31,9 @@
     "@vikejs/biome-config": "^2.0.1",
     "eslint": "^10.5.0",
     "eslint-plugin-solid": "^0.14.5",
-    "playwright": "^1.60.0",
+    "playwright": "^1.61.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.61.0"
+    "typescript-eslint": "^8.61.1"
   },
   "packageManager": "pnpm@9.15.4"
 }
