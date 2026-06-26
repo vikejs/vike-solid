@@ -1,3 +1,13 @@
+## [0.8.3](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.2...vike-solid@0.8.3) (2026-06-26)
+
+
+### Bug Fixes
+
+* improve npm landing page ([7ffd86c](https://github.com/vikejs/vike-solid/commit/7ffd86c20119681530aa8f281eeefb5f1b151087))
+* preserve client-side useConfig() settings in server-side pageContext (vikejs/vike-vue[#233](https://github.com/vikejs/vike-solid/issues/233)) ([#243](https://github.com/vikejs/vike-solid/issues/243)) ([fbc502c](https://github.com/vikejs/vike-solid/commit/fbc502c8d3af4597b949bedae5e225d1da858089))
+
+
+
 ## [0.8.2](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.1...vike-solid@0.8.2) (2026-03-30)
 
 
