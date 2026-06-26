@@ -181,6 +181,21 @@ function testUseConfig() {
     await page.goto(getServerUrl() + "/images");
     await testCounter();
   });
+  // The <title> set via useConfig() inside a server-side +data() hook should be applied upon
+  // client-side navigation (and persist in prerendered `*.pageContext.json` files).
+  test("useConfig() in +data() upon client-side navigation", async () => {
+    await page.goto(getServerUrl() + "/");
+    expect(await page.title()).toBe("My Vike + Solid App");
+    await testCounter();
+    await page.click('a:has-text("Data Fetching")');
+    await ensureWasClientSideRouted("/pages/index");
+    // The movie page sets its <title> via useConfig({ title }) inside its server-side +data() hook.
+    await page.click('a:has-text("Return of the Jedi")');
+    await autoRetry(async () => {
+      expect(await page.title()).toBe("Return of the Jedi");
+    });
+    await ensureWasClientSideRouted("/pages/index");
+  });
 }
 
 function getTitle(html: string) {
