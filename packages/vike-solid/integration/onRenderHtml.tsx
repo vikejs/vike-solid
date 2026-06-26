@@ -15,6 +15,9 @@ import { isObject } from "../utils/isObject.js";
 import { isType } from "../utils/isType.js";
 import { getHeadSetting } from "./getHeadSetting.js";
 import { getPageElement } from "./getPageElement.js";
+import { configsClientSide } from "../hooks/useConfig/configsClientSide.js";
+import { objectKeys } from "../utils/objectKeys.js";
+import { includes } from "../utils/includes.js";
 
 export { onRenderHtml };
 
@@ -29,8 +32,9 @@ const onRenderHtml: OnRenderHtmlAsync = async (
 
   const { htmlAttributesString, bodyAttributesString } = getTagAttributes(pageContext);
 
-  // Not needed on the client-side, thus we remove it to save KBs sent to the client
-  delete pageContext._configFromHook;
+  // Keep only what the client-side applies upon navigation, and remove the rest (HTML-only and/or
+  // non-serializable values such as <Head> components). https://github.com/vikejs/vike-vue/issues/233
+  removeServerOnlyConfigFromHook(pageContext);
 
   return escapeInject`<!DOCTYPE html>
     <html${dangerouslySkipEscape(htmlAttributesString)}>
@@ -44,6 +48,16 @@ const onRenderHtml: OnRenderHtmlAsync = async (
       </body>
     </html>`;
 };
+
+function removeServerOnlyConfigFromHook(pageContext: PageContextInternal) {
+  const configFromHook = pageContext._configFromHook;
+  if (!configFromHook) return;
+  objectKeys(configFromHook).forEach((configName) => {
+    if (!includes(configsClientSide, configName)) delete configFromHook[configName];
+  });
+  // Remove it altogether if there isn't anything left, saving KBs sent to the client
+  if (objectKeys(configFromHook).length === 0) delete pageContext._configFromHook;
+}
 
 async function getPageHtml(pageContext: PageContextServer & PageContextInternal) {
   let pageHtml: string | ReturnType<typeof dangerouslySkipEscape> | TPipe = "";
