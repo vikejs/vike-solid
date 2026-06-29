@@ -24,7 +24,7 @@
     "@babel/core": "^7.29.7",
     "@babel/preset-env": "^7.29.7",
     "@babel/preset-typescript": "^7.29.7",
-    "@brillout/release-me": "^0.4.15",
+    "@brillout/release-me": "^0.4.16",
     "@rollup/plugin-babel": "^7.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@types/node": "^22.19.7",
@@ -35,8 +35,8 @@
     "solid-js": "^1.9.13",
     "tslib": "^2.8.1",
     "typescript": "^6.0.3",
-    "vike": "^0.4.259",
-    "vite": "^8.0.16",
+    "vike": "^0.4.260",
+    "vite": "^8.1.0",
     "vite-plugin-solid": "^2.11.12"
   },
   "exports": {
