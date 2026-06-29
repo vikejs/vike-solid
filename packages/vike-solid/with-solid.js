@@ -66,6 +66,9 @@ function processOptions(options) {
       babel({
         extensions,
         babelHelpers: "bundled",
+        parserOpts: {
+          plugins: ["jsx"],
+        },
         presets: [
           [
             "solid",
@@ -75,7 +78,7 @@ function processOptions(options) {
             },
           ],
           "@babel/preset-typescript",
-          ["@babel/preset-env", { bugfixes: true, targets: babelTargets }],
+          ["@babel/preset-env", { targets: babelTargets }],
         ],
         ...babelOptions,
       }),
