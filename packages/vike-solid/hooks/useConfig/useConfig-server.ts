@@ -6,6 +6,7 @@ import { usePageContext } from "../usePageContext.js";
 import { getPageContext } from "vike/getPageContext";
 import { objectKeys } from "../../utils/objectKeys.js";
 import { includes } from "../../utils/includes.js";
+import { escapeJavaScriptExpression } from "../../utils/escapeJavaScriptExpression.js";
 import { configsCumulative } from "./configsCumulative.js";
 import { configsClientSide } from "./configsClientSide.js";
 
@@ -55,7 +56,8 @@ function setPageContextConfigFromHook(config: ConfigFromHook, pageContext: PageC
 function apply(config: ConfigFromHook, stream: Stream) {
   const { title } = config;
   if (title) {
-    const htmlSnippet = `<script>document.title = ${JSON.stringify(title)}</script>`;
+    const titleJs = escapeJavaScriptExpression(JSON.stringify(title));
+    const htmlSnippet = `<script>document.title = ${titleJs}</script>`;
     stream.write(htmlSnippet);
   }
 }
