@@ -1,3 +1,12 @@
+## [0.8.4](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.3...vike-solid@0.8.4) (2026-08-14)
+
+
+### Bug Fixes
+
+* further escape JS expressions ([#248](https://github.com/vikejs/vike-solid/issues/248)) ([1fe4f4e](https://github.com/vikejs/vike-solid/commit/1fe4f4e2245ad2f1b6b6320078b1c3683e1f8ea9))
+
+
+
 ## [0.8.3](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.2...vike-solid@0.8.3) (2026-06-26)
 
 
