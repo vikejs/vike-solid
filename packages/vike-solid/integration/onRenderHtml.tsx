@@ -30,7 +30,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (
 
   const headHtml = getHeadHtml(pageContext);
 
-  const { htmlAttributesString, bodyAttributesString } = getTagAttributes(pageContext);
+  const { htmlAttributesString, bodyAttributesString, rootAttributesString } = getTagAttributes(pageContext);
 
   // Keep only what the client-side applies upon navigation, and remove the rest (HTML-only and/or
   // non-serializable values such as <Head> components). https://github.com/vikejs/vike-vue/issues/233
@@ -44,7 +44,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (
         ${dangerouslySkipEscape(generateHydrationScript())}
       </head>
       <body${dangerouslySkipEscape(bodyAttributesString)}>
-        <div id="root">${pageHtml}</div>
+        <div${dangerouslySkipEscape(rootAttributesString)}>${pageHtml}</div>
       </body>
     </html>`;
 };
@@ -162,15 +162,18 @@ function getTagAttributes(pageContext: PageContextServer & PageContextInternal) 
 
   const bodyAttributes = mergeTagAttributes("bodyAttributes", pageContext);
   const htmlAttributes = mergeTagAttributes("htmlAttributes", pageContext);
+  const rootAttributes = mergeTagAttributes("rootAttributes", pageContext);
 
   const bodyAttributesString = getTagAttributesString(bodyAttributes);
   const htmlAttributesString = getTagAttributesString({ ...htmlAttributes, lang: lang ?? htmlAttributes.lang });
+  // The root element's `id` is used by onRenderClient() — it's the user's responsibility to not override it.
+  const rootAttributesString = getTagAttributesString({ id: "root", ...rootAttributes });
 
-  return { htmlAttributesString, bodyAttributesString };
+  return { htmlAttributesString, bodyAttributesString, rootAttributesString };
 }
 // Merge the values of a cumulative tag attributes setting. Upon conflict, the value with the highest precedence wins.
 function mergeTagAttributes(
-  configName: "htmlAttributes" | "bodyAttributes",
+  configName: "htmlAttributes" | "bodyAttributes" | "rootAttributes",
   pageContext: PageContextServer & PageContextInternal,
 ): TagAttributes {
   // Set by +config.js (and Vike extensions). The list is sorted by precedence (the most specific value comes first, and
