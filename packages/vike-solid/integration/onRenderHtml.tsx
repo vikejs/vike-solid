@@ -155,36 +155,25 @@ function ensureArray<T>(a: T) {
   return [a];
 }
 
-function getTagAttributes(pageContext: PageContextServer & PageContextInternal) {
+function getTagAttributes(pageContext: PageContextServer) {
   let lang = getHeadSetting<string | null>("lang", pageContext);
   // Don't set `lang` to its default value if it's `null` (so that users can set it to `null` in order to remove the default value)
   if (lang === undefined) lang = "en";
 
-  const bodyAttributes = mergeTagAttributes("bodyAttributes", pageContext);
-  const htmlAttributes = mergeTagAttributes("htmlAttributes", pageContext);
-  const rootAttributes = mergeTagAttributes("rootAttributes", pageContext);
+  const bodyAttributes = mergeTagAttributesList(getHeadSetting<TagAttributes[]>("bodyAttributes", pageContext));
+  const htmlAttributes = mergeTagAttributesList(getHeadSetting<TagAttributes[]>("htmlAttributes", pageContext));
+  const rootAttributes = mergeTagAttributesList(getHeadSetting<TagAttributes[]>("rootAttributes", pageContext));
 
   const bodyAttributesString = getTagAttributesString(bodyAttributes);
   const htmlAttributesString = getTagAttributesString({ ...htmlAttributes, lang: lang ?? htmlAttributes.lang });
-  // The root element's `id` is used by onRenderClient() — it's the user's responsibility to not override it.
+  // The root element's `id` is used by onRenderClient(): it's the user's responsibility not to override it.
   const rootAttributesString = getTagAttributesString({ id: "root", ...rootAttributes });
 
   return { htmlAttributesString, bodyAttributesString, rootAttributesString };
 }
-// Merge the values of a cumulative tag attributes setting. Upon conflict, the value with the highest precedence wins.
-function mergeTagAttributes(
-  configName: "htmlAttributes" | "bodyAttributes" | "rootAttributes",
-  pageContext: PageContextServer & PageContextInternal,
-): TagAttributes {
-  // Set by +config.js (and Vike extensions). The list is sorted by precedence (the most specific value comes first, and
-  // the values set by Vike extensions come last) => we reverse it so that the most specific value is merged last.
-  const valuesFromConfig = [...(pageContext.config[configName] ?? [])].reverse();
-  // Set by useConfig() => highest precedence => merged last.
-  const valuesFromHook = pageContext._configFromHook?.[configName] ?? [];
+function mergeTagAttributesList(tagAttributesList: TagAttributes[] = []) {
   const tagAttributes: TagAttributes = {};
-  for (const val of [...valuesFromConfig, ...valuesFromHook]) {
-    Object.assign(tagAttributes, isCallable(val) ? val(pageContext) : val);
-  }
+  tagAttributesList.forEach((tagAttrs) => Object.assign(tagAttributes, tagAttrs));
   return tagAttributes;
 }
 
