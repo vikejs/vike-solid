@@ -155,33 +155,22 @@ function ensureArray<T>(a: T) {
   return [a];
 }
 
-function getTagAttributes(pageContext: PageContextServer & PageContextInternal) {
+function getTagAttributes(pageContext: PageContextServer) {
   let lang = getHeadSetting<string | null>("lang", pageContext);
   // Don't set `lang` to its default value if it's `null` (so that users can set it to `null` in order to remove the default value)
   if (lang === undefined) lang = "en";
 
-  const bodyAttributes = mergeTagAttributes("bodyAttributes", pageContext);
-  const htmlAttributes = mergeTagAttributes("htmlAttributes", pageContext);
+  const bodyAttributes = mergeTagAttributesList(getHeadSetting<TagAttributes[]>("bodyAttributes", pageContext));
+  const htmlAttributes = mergeTagAttributesList(getHeadSetting<TagAttributes[]>("htmlAttributes", pageContext));
 
   const bodyAttributesString = getTagAttributesString(bodyAttributes);
   const htmlAttributesString = getTagAttributesString({ ...htmlAttributes, lang: lang ?? htmlAttributes.lang });
 
   return { htmlAttributesString, bodyAttributesString };
 }
-// Merge the values of a cumulative tag attributes setting. Upon conflict, the value with the highest precedence wins.
-function mergeTagAttributes(
-  configName: "htmlAttributes" | "bodyAttributes",
-  pageContext: PageContextServer & PageContextInternal,
-): TagAttributes {
-  // Set by +config.js (and Vike extensions). The list is sorted by precedence (the most specific value comes first, and
-  // the values set by Vike extensions come last) => we reverse it so that the most specific value is merged last.
-  const valuesFromConfig = [...(pageContext.config[configName] ?? [])].reverse();
-  // Set by useConfig() => highest precedence => merged last.
-  const valuesFromHook = pageContext._configFromHook?.[configName] ?? [];
+function mergeTagAttributesList(tagAttributesList: TagAttributes[] = []) {
   const tagAttributes: TagAttributes = {};
-  for (const val of [...valuesFromConfig, ...valuesFromHook]) {
-    Object.assign(tagAttributes, isCallable(val) ? val(pageContext) : val);
-  }
+  tagAttributesList.forEach((tagAttrs) => Object.assign(tagAttributes, tagAttrs));
   return tagAttributes;
 }
 
