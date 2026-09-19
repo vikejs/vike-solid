@@ -1,3 +1,17 @@
+## [0.8.5](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.4...vike-solid@0.8.5) (2026-09-19)
+
+
+### Bug Fixes
+
+* let the app's htmlAttributes/bodyAttributes take precedence over the ones set by Vike extensions ([#249](https://github.com/vikejs/vike-solid/issues/249)) ([f2049db](https://github.com/vikejs/vike-solid/commit/f2049db5948e85ff709fea36b71df8e7bfb95016))
+
+
+### Features
+
+* new setting +rootAttributes ([#250](https://github.com/vikejs/vike-solid/issues/250)) ([48339fc](https://github.com/vikejs/vike-solid/commit/48339fcd4e2acc85507c5da730f38ca779f7b5c0))
+
+
+
 ## [0.8.4](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.3...vike-solid@0.8.4) (2026-08-14)
 
 
