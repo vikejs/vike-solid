@@ -1,8 +1,8 @@
 import type { Data } from "./+data.js";
-import { useData } from "vike-solid/useData";
+import { createDataStore } from "vike-solid/createDataStore";
 
 export default function Page() {
-  const movie = useData<Data>();
+  const [movie] = createDataStore<Data>();
   return (
     <>
       <h1>{movie.title}</h1>
