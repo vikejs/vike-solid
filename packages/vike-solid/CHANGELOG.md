@@ -6,7 +6,10 @@
 * update the description tags upon client-side navigation (vikejs/vike[#3524](https://github.com/vikejs/vike-solid/issues/3524)) ([#252](https://github.com/vikejs/vike-solid/issues/252)) ([0d09cc5](https://github.com/vikejs/vike-solid/commit/0d09cc5082491edc1a9b02353cc0c8889c3b0b87))
 
 
-### BREAKING CHANGES
+### MINOR BREAKING CHANGES
+
+> [!NOTE]
+> We recommend ignoring `MINOR BREAKING CHANGES` unless this version breaks your app, see [Vike Versioning](https://vike.dev/versioning).
 
 * +description is loaded on the client-side and rendered upon client-side navigation
 
