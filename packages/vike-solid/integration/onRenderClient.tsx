@@ -18,7 +18,12 @@ let rendered = false;
 const onRenderClient: OnRenderClientAsync = async (
   pageContext: PageContextClient & PageContextInternal,
 ): ReturnType<OnRenderClientAsync> => {
-  pageContext._headAlreadySet = pageContext.isHydration;
+  if (!pageContext.isHydration) {
+    // Applied before rendering the page, so that the settings set by useConfig() inside components take precedence (they
+    // are applied while rendering, see useConfig-client.ts)
+    applyHead(pageContext);
+  }
+  pageContext._headAlreadySet = true;
 
   if (!rendered) {
     // Dispose to prevent duplicate pages when navigating.
@@ -39,11 +44,6 @@ const onRenderClient: OnRenderClientAsync = async (
     // Client-side navigation
 
     setPageContext(pageContext);
-  }
-
-  if (!pageContext.isHydration) {
-    pageContext._headAlreadySet = true;
-    applyHead(pageContext);
   }
 
   // Use cases:
