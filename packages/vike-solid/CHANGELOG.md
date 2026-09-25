@@ -1,3 +1,17 @@
+## [0.8.7](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.6...vike-solid@0.8.7) (2026-09-25)
+
+
+### Bug Fixes
+
+* update the description tags upon client-side navigation (vikejs/vike[#3524](https://github.com/vikejs/vike-solid/issues/3524)) ([#252](https://github.com/vikejs/vike-solid/issues/252)) ([0d09cc5](https://github.com/vikejs/vike-solid/commit/0d09cc5082491edc1a9b02353cc0c8889c3b0b87))
+
+
+### BREAKING CHANGES
+
+* +description is loaded on the client-side and rendered upon client-side navigation
+
+
+
 ## [0.8.6](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.5...vike-solid@0.8.6) (2026-09-25)
 
 
