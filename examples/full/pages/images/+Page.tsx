@@ -30,7 +30,7 @@ function Image(props: { src: string; author: string }) {
   return (
     <>
       <img src={props.src} height={48} style={{ "vertical-align": "middle", "margin-left": "10px" }} />
-      <Config title={`Image created by ${props.author}`} />
+      <Config title={`Image created by ${props.author}`} description={`Logo created by ${props.author}`} />
       <Head>
         <script
           type="application/ld+json"

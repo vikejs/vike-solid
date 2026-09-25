@@ -28,6 +28,6 @@ function setPageContextConfigFromHook(config: ConfigFromHook, pageContext: PageC
 }
 
 function applyHead(config: ConfigFromHook) {
-  const { title, lang } = config;
-  applyHeadSettings(title, lang);
+  const { title, lang, description } = config;
+  applyHeadSettings(title, lang, description);
 }

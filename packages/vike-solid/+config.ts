@@ -57,7 +57,7 @@ export default {
       env: { server: true, client: true },
     },
     description: {
-      env: { server: true },
+      env: { server: true, client: true },
     },
     image: {
       env: { server: true },
