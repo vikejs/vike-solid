@@ -1,6 +1,7 @@
 export { Page };
 
 import { Head } from "vike-solid/Head";
+import { Config } from "vike-solid/Config";
 import logoOld from "../../assets/logo.svg";
 import logoNew from "../../assets/logo-new.svg";
 import { Counter } from "../../components/Counter";
@@ -29,6 +30,7 @@ function Image(props: { src: string; author: string }) {
   return (
     <>
       <img src={props.src} height={48} style={{ "vertical-align": "middle", "margin-left": "10px" }} />
+      <Config title={`Image created by ${props.author}`} />
       <Head>
         <script
           type="application/ld+json"

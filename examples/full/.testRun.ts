@@ -160,6 +160,7 @@ function testUrl({
 function testUseConfig() {
   test("useConfig() HTML", async () => {
     const html = await fetchHtml("/images");
+    expect(getTitle(html)).toBe("Image created by Romuald Brillout");
     expect(html).toMatch(
       partRegex`<script ${dataHk} type="application/ld+json">{"@context":"https://schema.org/","contentUrl":{"src":"${getAssetUrl(
         "logo-new.svg",
@@ -180,6 +181,7 @@ function testUseConfig() {
     await ensureWasClientSideRouted("/pages/index");
     await page.goto(getServerUrl() + "/images");
     await testCounter();
+    expect(await page.title()).toBe("Image created by Romuald Brillout");
   });
   // The <title> set via useConfig() inside a server-side +data() hook should be applied upon
   // client-side navigation (and persist in prerendered `*.pageContext.json` files).
@@ -194,6 +196,25 @@ function testUseConfig() {
     await page.click('a:has-text("Return of the Jedi")');
     await autoRetry(async () => {
       expect(await page.title()).toBe("Return of the Jedi");
+    });
+    await ensureWasClientSideRouted("/pages/index");
+  });
+  // useConfig() inside UI components has precedence over useConfig() inside Vike hooks and over +title, also upon
+  // client-side navigation. https://github.com/vikejs/vike/issues/3525
+  test("useConfig() in UI components upon client-side navigation", async () => {
+    await page.goto(getServerUrl() + "/");
+    expect(await page.title()).toBe("My Vike + Solid App");
+    await testCounter();
+    // The <title> is set by <Config> inside <Image>, overriding the title set by useConfig() inside +data()
+    await page.click('a:has-text("useConfig()")');
+    await testCounter();
+    await autoRetry(async () => {
+      expect(await page.title()).toBe("Image created by Romuald Brillout");
+    });
+    await page.click('a:has-text("Welcome")');
+    await testCounter();
+    await autoRetry(async () => {
+      expect(await page.title()).toBe("My Vike + Solid App");
     });
     await ensureWasClientSideRouted("/pages/index");
   });
