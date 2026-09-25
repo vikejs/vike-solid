@@ -1,3 +1,12 @@
+## [0.8.6](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.5...vike-solid@0.8.6) (2026-09-25)
+
+
+### Bug Fixes
+
+* let useConfig() inside UI components take precedence upon client-side navigation (vikejs/vike[#3525](https://github.com/vikejs/vike-solid/issues/3525)) ([#251](https://github.com/vikejs/vike-solid/issues/251)) ([ee5e9fe](https://github.com/vikejs/vike-solid/commit/ee5e9febfce376a3ffa9366135a9c8353494429f))
+
+
+
 ## [0.8.5](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.4...vike-solid@0.8.5) (2026-09-19)
 
 
