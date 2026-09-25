@@ -49,6 +49,8 @@ function testRun(cmd: `pnpm run ${"dev" | "preview"}`) {
   testNavigationBetweenWithSSRAndWithoutSSR();
 
   testUseConfig();
+
+  testPageNavigation_descriptionUpdate();
 }
 
 function testClientOnly() {
@@ -161,6 +163,8 @@ function testUseConfig() {
   test("useConfig() HTML", async () => {
     const html = await fetchHtml("/images");
     expect(getTitle(html)).toBe("Image created by Romuald Brillout");
+    expect(html).toContain('<meta name="description" content="Logo created by Romuald Brillout">');
+    expect(html).toContain('<meta property="og:description" content="Logo created by Romuald Brillout">');
     expect(html).toMatch(
       partRegex`<script ${dataHk} type="application/ld+json">{"@context":"https://schema.org/","contentUrl":{"src":"${getAssetUrl(
         "logo-new.svg",
@@ -194,9 +198,7 @@ function testUseConfig() {
     await ensureWasClientSideRouted("/pages/index");
     // The movie page sets its <title> via useConfig({ title }) inside its server-side +data() hook.
     await page.click('a:has-text("Return of the Jedi")');
-    await autoRetry(async () => {
-      expect(await page.title()).toBe("Return of the Jedi");
-    });
+    await expectTitle("Return of the Jedi");
     await ensureWasClientSideRouted("/pages/index");
   });
   // useConfig() inside UI components has precedence over useConfig() inside Vike hooks and over +title, also upon
@@ -208,16 +210,52 @@ function testUseConfig() {
     // The <title> is set by <Config> inside <Image>, overriding the title set by useConfig() inside +data()
     await page.click('a:has-text("useConfig()")');
     await testCounter();
-    await autoRetry(async () => {
-      expect(await page.title()).toBe("Image created by Romuald Brillout");
-    });
+    await expectTitle("Image created by Romuald Brillout");
     await page.click('a:has-text("Welcome")');
     await testCounter();
-    await autoRetry(async () => {
-      expect(await page.title()).toBe("My Vike + Solid App");
-    });
+    await expectTitle("My Vike + Solid App");
     await ensureWasClientSideRouted("/pages/index");
   });
+}
+// The og:title tag is updated as well
+async function expectTitle(title: string) {
+  await autoRetry(async () => {
+    expect(await page.title()).toBe(title);
+    expect(await getMetaContent('meta[property="og:title"]')).toBe(title);
+  });
+}
+
+// The description tags are updated upon client-side navigation. https://github.com/vikejs/vike/issues/3524
+function testPageNavigation_descriptionUpdate() {
+  test("description update client-side page navigation", async () => {
+    await page.goto(getServerUrl() + "/");
+    await testCounter();
+    // Set by /pages/+config.ts
+    await expectDescription("Demo showcasing Vike + Solid");
+    // Set by useConfig() inside +data()
+    await page.click('a:has-text("Data Fetching")');
+    await expectDescription("All the 6 movies from the Star Wars franchise");
+    await page.click('a:has-text("Return of the Jedi")');
+    await expectDescription("Star Wars Movie Return of the Jedi from Richard Marquand");
+    // Set by <Config> inside UI components
+    await page.click('a:has-text("useConfig()")');
+    await testCounter();
+    await expectDescription("Logo created by Romuald Brillout");
+    await page.click('a:has-text("Welcome")');
+    await testCounter();
+    await expectDescription("Demo showcasing Vike + Solid");
+    await ensureWasClientSideRouted("/pages/index");
+  });
+}
+async function expectDescription(description: string) {
+  await autoRetry(async () => {
+    for (const selector of ['meta[name="description"]', 'meta[property="og:description"]']) {
+      expect(await getMetaContent(selector)).toBe(description);
+    }
+  });
+}
+async function getMetaContent(selector: string) {
+  return await page.evaluate((selector) => document.querySelector(selector)?.getAttribute("content"), selector);
 }
 
 function getTitle(html: string) {
