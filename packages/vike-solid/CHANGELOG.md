@@ -1,3 +1,12 @@
+## [0.8.8](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.7...vike-solid@0.8.8) (2026-10-19)
+
+
+### Bug Fixes
+
+* escape HTML attribute values set by +htmlAttributes, +bodyAttributes, +rootAttributes and +lang ([#253](https://github.com/vikejs/vike-solid/issues/253)) ([da5619d](https://github.com/vikejs/vike-solid/commit/da5619d5c8683e4a10e8e69e32595f51d298de38))
+
+
+
 ## [0.8.7](https://github.com/vikejs/vike-solid/compare/vike-solid@0.8.6...vike-solid@0.8.7) (2026-09-25)
 
 
